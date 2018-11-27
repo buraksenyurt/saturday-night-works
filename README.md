@@ -5,7 +5,7 @@ Takip ettiğim kaynaklardaki örneklere ait çalışmaların bulunduğu kod depo
 
 ## Planlananlar
 
-1. Bootstrap Grid sistemini anlamak
+1. ~~Bootstrap Grid sistemini anlamak~~
 2. Asp.Net Core ile MongoDB kullanmak
 3. Go ve Vue.js kullanarak haber akışı yapmak
 4. ES6 Module kullanımını deneyimlemek
@@ -14,6 +14,6 @@ Takip ettiğim kaynaklardaki örneklere ait çalışmaların bulunduğu kod depo
 
 ## Tamamlananlar
 
-1. Bootstrap Grid sistemini anlamak (Bir heyecanla Cumartesi gecesi dışında tamamlandı)
+1. Bootstrap Grid sistemini anlamak _(Bir heyecanla Cumartesi gecesi dışında tamamlandı)_
 
 > MD dosyasını formatlarken [şu adresten](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) yararlanıyorum.
