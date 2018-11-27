@@ -1,5 +1,7 @@
 # saturday-night-works
-Takip ettiğim kaynaklardaki örneklere ait çalışmaların yer aldığı yer. Genellikle Cumartesi geceleri beslenir. Monitor ortadan ikiye bölünmüş haldedir. Sol tarafta takip edilen yazı, sağ tarafta çoğunlukla Visual Studio Code yer alır. Örnekleri WestWorld'de(Ubuntu 18.04 sistemim) yapılır.
+Takip ettiğim kaynaklardaki örneklere ait çalışmaların bulunduğu kod deposudur. Genellikle Cumartesi geceleri beslenir. Monitor ortadan ikiye bölünmüş haldedir. Sol tarafta takip edilen yazı, sağ tarafta çoğunlukla Visual Studio Code açıktır. Örnekler WestWorld'de(Ubuntu 18.04 sistemim) yapılır. 
+
+> Denemeler sırasında Copy-Paste yapmak kesinlikle yasaktır ve mutlak suretle örnekler yorumlanıp anın getirdiği ruh haline göre özelleştirilmelidir.
 
 ## Planlananlar
 
