@@ -13,3 +13,5 @@ Takip ettiğim kaynaklardaki örneklere ait çalışmaların bulunduğu kod depo
 - C# TDD Pratiği
 
 ## Tamamlananlar
+
+> MD dosyasını formatlarken [şu adresten](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#blockquotes) yararlanıyorum.
