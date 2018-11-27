@@ -14,4 +14,6 @@ Takip ettiğim kaynaklardaki örneklere ait çalışmaların bulunduğu kod depo
 
 ## Tamamlananlar
 
+1. Bootstrap Grid sistemini anlamak (Bir heyecanla Cumartesi gecesi dışında tamamlandı)
+
 > MD dosyasını formatlarken [şu adresten](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) yararlanıyorum.
