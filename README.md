@@ -5,13 +5,13 @@ Takip ettiğim kaynaklardaki örneklere ait çalışmaların bulunduğu kod depo
 
 ## Planlananlar
 
-- Bootstrap Grid sistemini anlamak
-- Asp.Net Core ile MongoDB kullanmak
-- Go ve Vue.js kullanarak haber akışı yapmak
-- ES6 Module kullanımını deneyimlemek
-- Visual Studio Code için Snippet yazmak
-- C# TDD Pratiği
+1. Bootstrap Grid sistemini anlamak
+2. Asp.Net Core ile MongoDB kullanmak
+3. Go ve Vue.js kullanarak haber akışı yapmak
+4. ES6 Module kullanımını deneyimlemek
+5. Visual Studio Code için Snippet yazmak
+6. C# TDD Pratiği
 
 ## Tamamlananlar
 
-> MD dosyasını formatlarken [şu adresten](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#blockquotes) yararlanıyorum.
+> MD dosyasını formatlarken [şu adresten](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) yararlanıyorum.
