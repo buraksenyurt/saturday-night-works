@@ -1,0 +1,15 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "build",
+            "command": "dotnet",
+            "type": "process",
+            "args": [
+                "build",
+                "${workspaceFolder}/No 2 - MongoDb with AspNet Core/KomancheApi/KomancheApi.csproj"
+            ],
+            "problemMatcher": "$msCompile"
+        }
+    ]
+}
