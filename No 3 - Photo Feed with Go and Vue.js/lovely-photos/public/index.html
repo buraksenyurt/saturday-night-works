@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+    <title>Photo Feed</title>
+</head>
+
+<body>
+    <div id="newsFeed">
+        <div>
+            <a v-on:click="browseFile" href="#">Yükle bakalım</a>
+            <input style="display:none" type="file" id="photoFile" ref="myPhotos" @change="sendFile" name="file" />
+        </div>
+        <div>
+            <div id="loading" v-if="loading">
+                <div class="col-xs-12">
+                    Geliyorlar...
+                </div>
+            </div>
+            <div v-for="photo in photos" class="justify-content-md-left">
+                <div>
+                    <img class="rounded img-fluid img-thumbnail" :src="photo.source" alt="" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="//js.pusher.com/4.0/pusher.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <script type="text/javascript">
+        new Vue({
+            el: '#newsFeed',
+            data: {
+                photos: [],
+                loading: true,
+            },
+            mounted() {
+
+                const pusher = new Pusher('3e8ba0d72e2a6e65a920', {
+                    cluster: 'eu',
+                    encrypted: true
+                });
+                let channel = pusher.subscribe('lovely-photos')
+                channel.bind('nice-shot', data => this.photos.unshift(data));
+                axios.get('/photos').then(res => {
+                    this.loading = false
+                    this.photos = res.data.items ? res.data.items : []
+                })
+            },
+            methods: {
+                browseFile: function () {
+                    let elem = document.getElementById('photoFile');
+                    if (elem && document.createEvent) {
+                        let evt = document.createEvent("MouseEvents");
+                        evt.initEvent("click", true, false);
+                        elem.dispatchEvent(evt);
+                    }
+                },
+                sendFile: function () {
+                    let payload = new FormData();
+                    payload.append('file', this.$refs.myPhotos.files[0]);
+                    axios.post('/photos', payload).then(res => console.log(res))
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
