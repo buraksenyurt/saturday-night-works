@@ -6,8 +6,8 @@ Takip ettiğim kaynaklardaki örneklere ait çalışmaların bulunduğu kod depo
 ## Planlananlar
 
 01. ~~Bootstrap Grid sistemini anlamak~~
-02. Asp.Net Core ile MongoDB kullanmak
-03. Go ve Vue.js kullanarak haber akışı yapmak
+02. ~~Asp.Net Core ile MongoDB kullanmak~~
+03. ~~Go ve Vue.js kullanarak haber akışı yapmak~~
 04. ES6 Module kullanımını deneyimlemek
 05. Visual Studio Code için Snippet yazmak
 06. C# TDD Pratiği
