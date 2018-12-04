@@ -6,7 +6,7 @@ Takip ettiğim kaynaklardaki örneklere ait çalışmaların bulunduğu kod depo
 ## Planlananlar
 
 01. ~~Bootstrap Grid sistemini anlamak~~
-02. ~~Asp.Net Core ile MongoDB kullanmak~~
+02. ~~AspNet Core ile MongoDB kullanmak~~
 03. ~~Go ve Vue.js kullanarak haber akışı yapmak~~
 04. ES6 Module kullanımını deneyimlemek
 05. ~~Visual Studio Code için Snippet yazmak~~
@@ -15,13 +15,15 @@ Takip ettiğim kaynaklardaki örneklere ait çalışmaların bulunduğu kod depo
 08. Javascript'in OOP yönünü kavramak(class, prototype, object vs)
 09. React ve NodeJS kullanarak bir forum arayüzü yazmak
 10. NodeJS ile bir GraphQL sunucusu yazmak
-11. Hangfire ile Asp.Net Core'da background işlemleri yürütmek
+11. Hangfire ile AspNet Core'da background işlemleri yürütmek
+12. ~~Web sayfasında Bootstrap Modal Popup kullanmak~~
 
 ## Tamamlananlar
 
 1. Bootstrap Grid sistemini anlamak _(Bir heyecanla Cumartesi gecesi dışında tamamlandı)_
-2. Asp.Net Core ile MongoDB kullanmak
+2. AspNet Core ile MongoDB kullanmak
 3. Go ve Vue.js kullanarak haber akışı yapmak
 4. Visual Studio Code için Snippet yazmak _(Bir öğle vakti deneyimlendi)_
+5. Web sayfasında Bootstrap Modal Popup kullanmak
 
 > MD dosyasını formatlarken [şu adresten](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) yararlanıyorum.
