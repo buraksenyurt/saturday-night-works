@@ -1,0 +1,25 @@
+{
+  "name": "using-modal-login",
+  "version": "1.0.0",
+  "description": "modal login popup with bootstrap",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "bootstrap",
+    "javascript",
+    "nodejs",
+    "npm",
+    "jquery"
+  ],
+  "author": "burak selim şenyurt",
+  "license": "ISC",
+  "devDependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "lodash": "^4.17.11",
+    "morgan": "^1.9.1"
+  }
+}
