@@ -1,10 +1,14 @@
-Ön Hazırlıklar
+#Bootstrap Grid Sistemini Tanımak
+
+Bootstrap ile önyüz tasarımları çok hoş bir hale gelebiliyor. Frontend tarafının bir acemisi olarak şirket bünyesindeki tasarımlarda da kullanılan bootstrap'i örnekler ile tanımak istedim. Temel bir kaç şey biliyor olsam da bilmediğim çok şey var. Takip ettiğim örnekten yararlanarak Grid sistemini anlamaya çalıştım.
+
+## Ön Hazırlıklar
 
 ```
 bower i bootstrap
 ```
 
-Bower yoksa npm ile yüklenebilir.
+> Bower yoksa npm ile de yükleme yapılabilir
 
 Sonra bower_components\bootstrap\dist\js adresinden bootstrap.min.css ile bootstrap.min.css.map dosyalarını aldım ve kolaylık olsun diye css klasörü içerisine attım.
 
