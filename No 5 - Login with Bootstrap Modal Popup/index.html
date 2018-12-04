@@ -3,18 +3,64 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>A simple Login</title>
-    <link rel="stylesheet" href="/css/bootstrap.min.css" />
-    <script src="/script/jquery.min.js"></script>
+    <title>Login Popup module denemesi</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <script src="script/jquery.min.js"></script>
+    <script src="script/bootstrap.min.js"></script>
 </head>
 
 <body>
-    <form>
-        <div class="container">
-            <p>Bir Login denemesi</p>
-            <button type="submit" class="btn btn-primary" id="buttonLogin">Giriş Yap</button>
+
+    <div class="container">
+        <h4>Bir Login denemesi</h4>
+        <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#loginModal">Giriş
+            Yap</button>
+    </div>
+
+
+    <!--Modal'in tanımlandığı div-->
+    <div id="loginModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <!--Modal içeriği-->
+            <div class="modal-content">
+
+                <!-- Başlık kısmı-->
+                <div class="modal-header">
+                    <h3 class="modal-title">Giriş Yapın</h3>
+                </div>
+
+                <!--Gövde içeriğinde kullanıcı adı ve şifre aldığımız kontroller var-->
+                <div class="modal-body">
+                    <table class="table table-borderless">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <input type="text" id="usernameInput" placeholder="Kullanıcı adı" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="text" id="passwordInput" placeholder="Şifreniz" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="button" class="btn btn-primary btn-dark" id="submitButton" value="Hadi!" />
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!--Alt başlık kısmında kapatma düğmesi var-->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Kapat</button>
+                </div>
+            </div>
         </div>
-    </form>
+        <!--Modal içeriğinin bittiği yer-->
+    </div>
+    <!--Modal tanımlamasının sonu-->
 
     <script>
 
