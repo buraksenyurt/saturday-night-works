@@ -1,4 +1,4 @@
-#Asp.Net Core ile MongoDB Kullanımı
+# Asp.Net Core ile MongoDB Kullanımı
 
 Amacım çok basit adımlarla bir .Net Core projesinde MongoDb'yi kullanabilmek. Örneği West-World(Ubuntu 18.04) üzerinde denedim.
 
