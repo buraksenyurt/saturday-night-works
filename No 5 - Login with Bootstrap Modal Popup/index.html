@@ -40,12 +40,17 @@
                             </tr>
                             <tr>
                                 <td>
-                                    <input type="text" id="passwordInput" placeholder="Şifreniz" />
+                                    <input type="password" id="passwordInput" placeholder="Şifreniz" />
                                 </td>
                             </tr>
                             <tr>
                                 <td>
                                     <input type="button" class="btn btn-primary btn-dark" id="submitButton" value="Hadi!" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <span id="information"></span>
                                 </td>
                             </tr>
                         </tbody>
@@ -63,6 +68,36 @@
     <!--Modal tanımlamasının sonu-->
 
     <script>
+        // kontrolleri alalım
+        var username = $("#usernameInput");
+        var password = $("#passwordInput");
+        var information = $("#information");
+
+        // butona basıldığında
+        $("#submitButton").click(function (e) {
+            // boş alan kontrolü
+            // validasyon da eklenebilir
+            if (username.val() != "" && password.val() != "") {
+                // payload'u ekle
+                var userData = {
+                    uname: username.val(),
+                    pwd: password.val()
+                };
+
+                // HTTP Post mesajını gönder
+                $.post('/login', userData, function (res, status) {
+                    if (status == "success") {
+                        var incomingId = res;
+                        setTimeout(function () { window.location = "/wellcome?id=" + incomingId; }, 2000);
+                    }
+                }).fail(function (res) {
+                    information.text("upss! bir sorun var");
+                });
+            }
+            else {
+                information.text("Kullanıcı adı girdin mi? Ya şifre?");
+            }
+        });
 
     </script>
 </body>
