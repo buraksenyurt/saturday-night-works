@@ -22,7 +22,6 @@ Takip ettiğim kaynaklardaki örneklere ait çalışmaların bulunduğu kod depo
 1. Bootstrap Grid sistemini anlamak _(Bir heyecanla Cumartesi gecesi dışında tamamlandı)_
 2. Asp.Net Core ile MongoDB kullanmak
 3. Go ve Vue.js kullanarak haber akışı yapmak
-4. Bekliyor...
-5. Visual Studio Code için Snippet yazmak _(Bir öğle vakti deneyimlendi)_
+4. Visual Studio Code için Snippet yazmak _(Bir öğle vakti deneyimlendi)_
 
 > MD dosyasını formatlarken [şu adresten](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) yararlanıyorum.
