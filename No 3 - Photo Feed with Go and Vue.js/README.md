@@ -1,6 +1,6 @@
 # Haber akışına fotoğraf eklemek
 
-Amaç bir haber akışına fotoğraf ekleyebilmek. Tabii haber akışı herkesin görebildiği bir alan. Yani "Barbarossa" masaüstünden bir fotoğraf seçip yüklediğinde, bağlı olan diğer kullanıcılar da eklenen fotoğrafı görebilmeli. Kılavuza göre örnek Go, Vue.js, SQLite ve Pusher Channels isimli uygulama içi bildirim aracı ile gerçekleştiriliyor.
+Amaç bir haber akışına fotoğraf ekleyebilmek _(Sosyal ağların web arayüzlerinde anlık güncellemelerle aşağıya doğru akan akış olarak düşünebiliriz)_ Tabii haber akışı herkesin görebildiği bir alan. Yani "Barbarossa" masaüstünden bir fotoğraf seçip yüklediğinde, bağlı olan diğer kullanıcılar da eklenen fotoğrafı görebilmeli. Kılavuza göre örnek Go, Vue.js, SQLite ve Pusher Channels isimli uygulama içi bildirim aracı ile gerçekleştiriliyor.
 
 > Sistemimizde Go, SQLite yüklü olmalı
 
