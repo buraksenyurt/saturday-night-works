@@ -1,0 +1,27 @@
+{
+  "name": "nodejs-clustering",
+  "version": "1.0.0",
+  "description": "clustering of nodejs server",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "node.js",
+    "npm",
+    "koa",
+    "concurrency",
+    "javascript",
+    "routing",
+    "scaling"
+  ],
+  "author": "burak selim şenyurt",
+  "license": "ISC",
+  "devDependencies": {
+    "cryptr": "^4.0.2",
+    "koa": "^2.6.2",
+    "koa-router": "^7.4.0",
+    "sleep": "^5.2.3"
+  }
+}

@@ -11,10 +11,10 @@ Gerçek hayat senaryosuna göre kullanıcı servise göndereceği bir HTTP Get t
 ## Gerekli Paketler
 
 ```
-npm install --save-dev koa koa-router cryptr
+npm install --save-dev koa koa-router cryptr sleep
 ```
 
-koa ve koa-router web sunucu tarafı için, cryptr ise dosya içeriğini AES-256 tipinde şifrelemek için kullanılır.
+koa ve koa-router web sunucu tarafı için, cryptr ise dosya içeriğini AES-256 tipinde şifrelemek için kullanılır. sleep modülü tuzak kurup dosya şifreleme işlemini rastgele uzatmak içindir.
 
 ## Aşamalarım
 
