@@ -1,6 +1,6 @@
 # Bir Node.js Web Sunucusunu Ölçeklendirmek
 
-Amacım HTTP taleplerine hizmet eden bir node.js sunucusunu ölçeklendirmek. Bir başka deyişle performasını arttırmak için talepleri paralel olarak karşılayabilmesini sağlamak. Normal şartlarda bir Node.js uygulaması tekil thread içinde çalışır ancak çok çekirdekli sistemlerde Node.js process'lerini daha etkili kullanabiliriz.
+Amacım HTTP taleplerine hizmet eden bir node.js sunucusunu ölçeklendirmek. Bir başka deyişle performasını arttırmak için talepleri paralel olarak karşılayabilmesini sağlamak. Normal şartlarda bir Node.js uygulaması tekil thread içinde çalışır ancak çok çekirdekli sistemlerde Node.js process'lerini daha etkili kullanabiliriz. Kısacası her bir http talebinin bir çekirdek(core) tarafından karşılanmasını sağlamak istiyoruz. 8 çekirdeğimiz varsa eş zamanlı olarak 8 talebi karşılayabilmeliyiz.
 
 >Örnekte express yerine Koa isimli paketi kullanıyoruz
 
@@ -19,7 +19,7 @@ koa ve koa-router web sunucu tarafı için, cryptr ise dosya içeriğini AES-256
 ## Aşamalarım
 
 - İlk olarak dosya şifreleyen işi yapmalıyım _(Sağlaması için ters şifreleme metodunu yazmam lazım)_
-- Sunucuyu yazdıktan sonra ona eş zamanlı n sayıda talep gönderebilecek bir yol bulmalıyım
+- Sunucuyu yazdıktan sonra ona eş zamanlı n sayıda talep gönderebilecek bir yol bulmalıyım _(golang'i tercih ettim)_
 - Örneğe cluster modülünü de katıp ölçeklemeyi denemeliyim
 - Sonuçları iyi değerlendirebilmek için sunucunun cevap verme sürelerini göz önünde bulundurmalıyım
 
@@ -35,3 +35,23 @@ http://localhost:4444/pong
 taleplerini kullanabiliriz. encrypt ve decrypt adlarını yazmak zor geldiğinden şifreleme için ping, ters şifreleme için pong isimlendirmesini kullandım :)
 
 >/ adresine yapılan talepler için istemciye sunucuda oluşturulan processId gönderiliyor
+
+## Testçi
+
+Arka arkaya n sayıda talep göndermek için GoLang ile yazılmış basit bir program kullanılıyor. Önce
+
+```
+npm start
+```
+
+ile servis tarafı çalıştırıp sonrasında gocurl klasöründe terminalden aşağıdaki komut verilerek
+
+```
+go run requester.go
+```
+
+arka arkaya 10 talebin gönderilmesi testi yapılabilir. 
+
+![credit_1.png](credit_1.png)
+
+Bundan sonra scaled-server.js ile denemeler başlatılabilir.

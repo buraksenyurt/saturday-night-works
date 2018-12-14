@@ -14,7 +14,8 @@
     "concurrency",
     "javascript",
     "routing",
-    "scaling"
+    "scaling",
+    "golang"
   ],
   "author": "burak selim şenyurt",
   "license": "ISC",
