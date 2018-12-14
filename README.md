@@ -12,7 +12,7 @@ Takip ettiğim kaynaklardaki örneklere ait çalışmaların bulunduğu kod depo
 04. ES6 Module kullanımını deneyimlemek
 05. ~~Visual Studio Code için Snippet yazmak~~
 06. Single-File Components ile Vue.js uygulaması geliştirmek
-07. Bir NodeJS sunucuunu ölçeklendirmeye çalışmak
+07. ~~Bir NodeJS sunucusunu ölçeklendirmek~~
 08. Javascript'in OOP yönünü kavramak(class, prototype, object vs)
 09. React ve NodeJS kullanarak bir forum tasarlamak
 10. NodeJS ile bir GraphQL sunucusu yazmak
@@ -24,10 +24,11 @@ Takip ettiğim kaynaklardaki örneklere ait çalışmaların bulunduğu kod depo
 
 ## Tamamlananlar
 
-1. Bootstrap Grid sistemini anlamak _(Bir heyecanla Cumartesi gecesi dışında tamamlandı)_
+1. Bootstrap Grid sistemini anlamak _(Bir heyecanla Cumartesi gecesi dışında tamamlandı
 2. Asp.Net Core ile MongoDB kullanmak
 3. Go ve Vue.js kullanarak haber akışı yapmak
 4. Visual Studio Code için Snippet yazmak _(Bir öğle vakti deneyimlendi)_
 5. Web sayfasında Bootstrap Modal Popup kullanmak
+6. Bir NodeJS sunucusunu ölçeklendirmek
 
 > MD dosyasını formatlarken [şu adresten](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) yararlanıyorum.
