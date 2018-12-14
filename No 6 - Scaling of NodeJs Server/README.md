@@ -11,10 +11,10 @@ Gerçek hayat senaryosuna göre kullanıcı servise göndereceği bir HTTP Get t
 ## Gerekli Paketler
 
 ```
-npm install --save-dev koa koa-router cryptr sleep
+npm install --save-dev koa koa-router cryptr sleep cluster
 ```
 
-koa ve koa-router web sunucu tarafı için, cryptr ise dosya içeriğini AES-256 tipinde şifrelemek için kullanılır. sleep modülü tuzak kurup dosya şifreleme işlemini rastgele uzatmak içindir.
+koa ve koa-router web sunucu tarafı için, cryptr ise dosya içeriğini AES-256 tipinde şifrelemek için kullanılır. sleep modülü tuzak kurup dosya şifreleme işlemini rastgele uzatmak içindir. cluster ikinci kısımda yapılacak ölçekleme için gerekli pakettir.
 
 ## Aşamalarım
 
@@ -38,10 +38,10 @@ taleplerini kullanabiliriz. encrypt ve decrypt adlarını yazmak zor geldiğinde
 
 ## Testçi
 
-Arka arkaya n sayıda talep göndermek için GoLang ile yazılmış basit bir program kullanılıyor. Önce
+Arka arkaya n sayıda talebi eş zamanlı olarak göndermek için GoLang ile yazılmış basit bir program kullanılıyor. Önce
 
 ```
-npm start
+node server.js
 ```
 
 ile servis tarafı çalıştırıp sonrasında gocurl klasöründe terminalden aşağıdaki komut verilerek
@@ -54,4 +54,22 @@ arka arkaya 10 talebin gönderilmesi testi yapılabilir.
 
 ![credit_1.png](credit_1.png)
 
+>Tüm işlemler aynı anda aynı toplam sürede istemciye ulaşmıştır.
+
 Bundan sonra scaled-server.js ile denemeler başlatılabilir.
+
+Önce
+
+```
+node sclsrv.js
+```
+
+ve ardından yine
+
+```
+go run requester.go
+```
+
+![credit_2.png](credit_2.png)
+
+Şimdi eş zamanlı gelen taleplerin çekirdekler arasında bölüştürüldüğünü görüyoruz. Her ne kadar ölçeklediysek de kurgu istediğim gibi olmadı. Talep sayısı yükseldikçe cevap süreleri şişiyor :/ Biraz daha çalışmam lazım.

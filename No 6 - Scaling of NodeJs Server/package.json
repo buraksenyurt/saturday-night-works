@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node sclsrv.js"
   },
   "keywords": [
     "node.js",
@@ -20,6 +20,7 @@
   "author": "burak selim şenyurt",
   "license": "ISC",
   "devDependencies": {
+    "cluster": "^0.7.7",
     "cryptr": "^4.0.2",
     "koa": "^2.6.2",
     "koa-router": "^7.4.0",
