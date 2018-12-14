@@ -19,6 +19,7 @@ Takip ettiğim kaynaklardaki örneklere ait çalışmaların bulunduğu kod depo
 11. Hangfire ile Asp.Net Core'da background işlemleri yürütmek
 12. ~~Web sayfasında Bootstrap Modal Popup kullanmak~~
 13. Go ile etkileşimli bir Shell uygulaması yazmak
+14. Node.js, MongoDB, Fastify ve Swagger kullanılan bir uygulama yazmak.
 
 > Planan yazılarda konu başlıkları değişiklik gösterebilir ve örnekler kronolojik sırada işlenmemektedir.
 
