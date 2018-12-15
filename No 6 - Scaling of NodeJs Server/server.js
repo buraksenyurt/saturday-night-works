@@ -7,7 +7,7 @@ var app = new Koa();
 router.get('/', async context => context.body = `Process ID ${process.pid} is here`)
     .get('/ping', async context => {
         const result = await enigma.encrypt('README.md', 'README.mdx');
-        context.body = result;
+        context.body = result;'No 6'
     })
     .get('/pong', async context => {
         const result = await enigma.decrypt('README.mdx', 'benioku.md');
