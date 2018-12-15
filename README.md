@@ -19,7 +19,7 @@ Takip ettiğim kaynaklardaki örneklere ait çalışmaların bulunduğu kod depo
 11. Hangfire ile Asp.Net Core'da background işlemleri yürütmek
 12. ~~Web sayfasında Bootstrap Modal Popup kullanmak~~
 13. Go ile etkileşimli bir Shell uygulaması yazmak
-14. Node.js, MongoDB, Fastify ve Swagger kullanılan bir uygulama yazmak.
+14. ~~Node.js, MongoDB, Fastify ve Swagger kullanılan bir uygulama yazmak~~
 
 > Planan yazılarda konu başlıkları değişiklik gösterebilir ve örnekler kronolojik sırada işlenmemektedir.
 
@@ -31,5 +31,6 @@ Takip ettiğim kaynaklardaki örneklere ait çalışmaların bulunduğu kod depo
 4. Visual Studio Code için Snippet yazmak _(Bir öğle vakti deneyimlendi)_
 5. Web sayfasında Bootstrap Modal Popup kullanmak
 6. Bir NodeJS sunucusunu ölçeklendirmek
+7. Node.js, MongoDB, Fastify ve Swagger kullanılan bir uygulama yazmak
 
 > MD dosyasını formatlarken [şu adresten](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) yararlanıyorum.
