@@ -1,0 +1,28 @@
+{
+  "name": "minion-api",
+  "version": "1.0.0",
+  "description": "node.js, mongodb, fastify ve swagger kullanilan bir api ornegi",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "./node_modules/nodemon/bin/nodemon.js ./src/index.js"
+  },
+  "keywords": [
+    "node.js",
+    "javascript",
+    "mongodb",
+    "fastify",
+    "swagger",
+    "tutorial",
+    "npm"
+  ],
+  "author": "burak selim şenyurt",
+  "license": "ISC",
+  "dependencies": {
+    "boom": "^7.3.0",
+    "fastify": "^1.13.2",
+    "fastify-swagger": "^0.16.2",
+    "mongoose": "^5.4.0",
+    "nodemon": "^1.18.9"
+  }
+}
