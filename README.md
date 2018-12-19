@@ -9,7 +9,7 @@ Takip ettiğim kaynaklardaki örneklere ait çalışmaların bulunduğu kod depo
 01. ~~Bootstrap Grid sistemini anlamak~~
 02. ~~Asp.Net Core ile MongoDB kullanmak~~
 03. ~~Go ve Vue.js kullanarak haber akışı yapmak~~
-04. ES6 Module kullanımını deneyimlemek
+04. Express kullanan bir React uygulamasını Heroku'da yayınlamak
 05. ~~Visual Studio Code için Snippet yazmak~~
 06. Single-File Components ile Vue.js uygulaması geliştirmek
 07. ~~Bir NodeJS sunucusunu ölçeklendirmek~~
