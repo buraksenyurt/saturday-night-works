@@ -1,0 +1,25 @@
+{
+  "name": "hello_react",
+  "version": "1.0.0",
+  "description": "react, express ve heroku üçlemesi antrenmanı",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "keywords": [
+    "heroku",
+    "react",
+    "node.js",
+    "tutorial",
+    "saturday-night-works",
+    "npm"
+  ],
+  "author": "burak selim şenyurt",
+  "license": "ISC",
+  "devDependencies": {
+    "create-react-app": "^2.1.1",
+    "express": "^4.16.4",
+    "nodemon": "^1.18.9"
+  }
+}
