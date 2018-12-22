@@ -61,3 +61,13 @@ Denemeler sırasında Pusher üzerinde oluşan hareketlilikleri Dashboard üzeri
 - Sadece izin verilen formatların yüklenmesi garanti edilmeli
 - Zararlı içerik yüklenemeyeceğinden emin olunmalı
 - Arayüz tasarımı daha şık bir hale getirilmeli
+
+## Neler Öğrendim?
+
+- Go ile sqlLite'ı nasıl konuşturabileceğimi,
+- Go'yu web sunucusu olarak nasıl ele alabileceğimi,
+- Basit bir Vue.js kodlamasının nasıl yapıldığını,
+- axios ile XmlHttpRequest'leri nasıl yapabileceğimi,
+- pusher'ın ne işe yaradığını,
+
+öğrendim.

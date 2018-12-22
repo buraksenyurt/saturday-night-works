@@ -35,7 +35,7 @@ Eğer doğru kullanıcı bilgileri girilirse aşağıdaki güzel fotoğrafla kar
 
 Querystring'e gelen id parametresi login olan kullanıcı için özel üretilmiş bir Guid değeri. Şayet değiştirip aynı sayfayı yüklersek, Guid'in sunuc tarafındaki aktif kullanıcı listesinde yer alması gerekiyor _(aktif kullanıcı listesi dediğime bakmayın. Havalı ismi o. Örnekte ben basit bir array kullandım. Sunucuyu kapatınca uçup gidecek)_ Aksi durumda 403 hatası alacağız. Bunu Wellcome gibi bir sayfaya login olunmadan gelinmesin diye ekledik.
 
->Sistemi daha güvenli hale getirmeye çalışmak lazım tabii ama ana amaç Bootstrap Model bileşenini bir Login işleminde nasıl ele alabileceğimizi görmekti.
+>Sistemi daha güvenli hale getirmeye çalışmak lazım tabii ama ana amaç Bootstrap Modal bileşenini bir Login işleminde nasıl ele alabileceğimizi görmekti.
 
 ## Çalıştırmak için
 
@@ -46,3 +46,13 @@ npm start
 ```
 
 ile işe başlayın. Sonra localhost:5001/ adresine gidin ve giriş yapmayı deneyin.
+
+## Neler Öğrendim?
+
+- Bower ile bootstrap'in nasıl yüklendiğini,
+- Bootstrap modal pencereleri ile node serverlarını nasıl haberleştirebileceğimizi,
+- Morgan'ın ne işe yaradığını,
+- JSON parse işlemlerinde body-parser'ı nasıl kullanabileceğimi,
+- Çok basit bir Login kurgusunun nasıl tesis edilebileceğini,
+
+öğrendim.

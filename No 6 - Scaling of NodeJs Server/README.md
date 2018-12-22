@@ -73,3 +73,11 @@ go run requester.go
 ![credit_2.png](credit_2.png)
 
 Şimdi eş zamanlı gelen taleplerin çekirdekler arasında bölüştürüldüğünü görüyoruz. Her ne kadar ölçeklediysek de kurgu istediğim gibi olmadı. Talep sayısı yükseldikçe cevap süreleri şişiyor :/ Biraz daha çalışmam lazım.
+
+## Neler Öğrendim?
+
+- Node.js tarafında basit veri şifrelemelerini nasıl yapabileceğimi,
+- Ölçeklemeye gereksinim olduğu noktalarda cluster paketinin nasıl kullanılabileceğini,
+- Birden fazla çekirdeğe göre master ve slave process'lerin ne işe yarayabileceğini,
+
+öğrendim.

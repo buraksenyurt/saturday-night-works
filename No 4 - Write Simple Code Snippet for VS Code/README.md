@@ -69,3 +69,9 @@ node index.js
 ![credit_4](credit_4.png)
 
 Biraz daha detay için [şu](https://scotch.io/bar-talk/write-less-code-by-creating-snippets-in-visual-studio-code) adrese uğranabilir.
+
+## Neler Öğrendim?
+
+- Visual Studio Code için geliştirmeyi hızlandırıcı snippet'ların nasıl yazılabileceğini,
+
+öğrendim.

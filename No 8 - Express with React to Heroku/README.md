@@ -152,3 +152,14 @@ komutunu kullandım. Buradan edindiğim bilgilere göre sorunları çözdüm.
 - İkinci hatam package.json'dan node engine versiyonunu söylememiş olmamdı.
 - Diğer problemse bağımlı olunan npm paketleri için package.json'dan dependencies yerine devDependencies sektörünü bırakmamdı.
 - Ayrıca .gitignore koymayıp node_modules ve package-log.json'ları hariç tutmadığım için bu klasörleri de komple push'lamış oldum _Sonraki versiyonda düzelttim tabii_
+
+## Neler Öğrendim?
+
+- Heroku'da nasıl hesap açacağımı,
+- Heroku'yu Ubuntu'da nasıl kullanabileceğimi,
+- Node.js sunucusundan bir React uygulamasını nasıl ayağa kaldırabileceğimi,
+- Bir React uygulamasının nasıl oluşturulabildiğini,
+- Heroku CLI ile uygulamanın nasıl deploy edildiğini,
+- Deployment sırasındaki veya çalışma zamanındaki hatalara ait loglara nasıl bakabileceğimi ve onları nasıl yorumlayabileceğimi,
+
+öğrendim.

@@ -20,3 +20,10 @@ Sonra bower_components\bootstrap\dist\js adresinden bootstrap.min.css ile bootst
 - .col-md for tablets (≥768px);
 - .col-lg for laptops (≥992px);
 - .col-xl for desktops (≥1200px)
+
+## Neler Öğrendim?
+
+- Temel class kullanımlarını,
+- Grid içeriklerinin nasıl yerleştirildiğini
+
+öğrendim.

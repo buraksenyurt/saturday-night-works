@@ -1,6 +1,6 @@
 # Asp.Net Core ile MongoDB Kullanımı
 
-Amacım çok basit adımlarla bir .Net Core projesinde MongoDb'yi kullanabilmek. Örneği West-World(Ubuntu 18.04) üzerinde denedim.
+Amacım çok basit adımlarla bir .Net Core projesinde MongoDb'yi kullanabilmek. Örneği West-World _(Ubuntu 18.04)_ üzerinde denedim.
 
 ## Ubuntu 18.04 MongoDb Kurulumu için Adımlar
 
@@ -143,3 +143,10 @@ Bir dokümanı güncellemek istersek yine http://localhost:5004/api/artists/5bfd
 ```
 { "Title":"Jon Bon Jovi","Tags" : "Music,Group,Legendry"}
 ```
+## Neler Öğrendim?
+
+- MongoDb'yi Ubuntu'ya nasıl kuracağımı,
+- Terminalden mongodb ile nasıl anlaşabileceğimi,
+- .Net core tarafında mongocsharpdriver'dan nasıl yararlanıldığını
+
+öğrendim.

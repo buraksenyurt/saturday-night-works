@@ -1,4 +1,4 @@
-# Angular ile Basit Bir ToDo Uygulaması Yazmak
+# Angular ile Basit Bir Görevle Listesi Uygulaması Yazmak
 
 Amacım Angular için basit bir Hello World uygulaması oluşturmak.
 
@@ -47,3 +47,10 @@ ng new sonrası oluşan proje içerisinde çok fazla dosya var. Örneği sonrada
 ## Çalışma zamanı
 
 ![credit_1.png](credit_1.png)
+
+## Neler Öğrendim?
+
+- Typescript ile HTML tarafındaki Angular yapılarının nasıl anlaştığını,
+- Bootstrap'i bir Angular projesinde nasıl kullanabileceğimi,
+
+öğrendim

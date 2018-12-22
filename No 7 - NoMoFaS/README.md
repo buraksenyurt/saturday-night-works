@@ -1,6 +1,6 @@
 # Node.js, MongoDB, Fastify ve Swagger Kullanılan bir uygulama
 
-Amacım başlıktaki konuları kullanarak komple bir Web API uygulaması geliştirmek. West-World'de (Ubuntu 18.04) Node.js, npm ve MongoDB yüklü. Bu örnek sayesinde javascript, node.js, mongodb ve REST API bilgilerimi tazelemiş _(geliştirmiş)_ olacağım.
+Amacım başlıktaki konuları kullanarak komple bir Web API uygulaması geliştirmek. West-World'de _(Ubuntu 18.04)_ Node.js, npm ve MongoDB yüklü. Bu örnek sayesinde javascript, node.js, mongodb ve REST API bilgilerimi tazelemiş _(geliştirmiş)_ olacağım.
 
 >MongoDB'yi Ubuntu'ya kurmak için [https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/](adresinden) yararlanabiliriz.
 
@@ -29,7 +29,7 @@ npm i nodemon mongoose fastify fastify-swagger boom
 
 nodemon'u herhangibir dosyada değişiklik olduğunda node sunucusunu otomatik olarak yeniden başlatmak için kullanıyoruz. Ancak kullanımı için package.json'daki start komutunu değiştirdik.
 
-mongoose, mongodb ile konuşabilmek için. Fastify, Hapi ve Express'ten ilham alınmış oldukça hızlı bir web framework ve onu deneyimlemek istedim. API dokümantasyonu içinse Fastify'a Swagger desteği veren Fastify-swagger modülünü kullandık. HTTP hata mesajları içinde boom isimli utility paketinden yararlanıyoruz.
+mongoose, mongodb ile konuşabilmek için. Fastify, Hapi ve Express'ten ilham alınarak yazılmış oldukça hızlı bir web framework ve onu deneyimlemek istedim. API dokümantasyonu içinse Fastify'a Swagger desteği veren Fastify-swagger modülünü kullandık. HTTP hata mesajları içinde boom isimli utility paketinden yararlanıyoruz.
 
 ## İçerde neler var?
 
@@ -74,3 +74,12 @@ http://localhost:4005/api/minions/5c1581e579140d6969b5951f için şöyle bir son
 ![credit_4.png](credit_4.png)
 
 Benzer şekilde aynı adresi PUT metodu ile kullanıp BODY kısmında mini bilgisini JSON formatında göndererek güncelleme işlemini de gerçekleştirebiliriz.
+
+## Neler Öğrendim?
+
+- express yerine Fastify'ı nasıl kullanabileceğimi,
+- mongodb'de temel veri işlemlerini web api üzerinden nasıl karşılayabileceğimi,
+- Swagger ile API arayüzünü nasıl kullanıcı dostu okunabilir hale getireceğimi,
+- Postman ile basit REST testlerini nasıl yapabileceğimi,
+
+öğrendim.
