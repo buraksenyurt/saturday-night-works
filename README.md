@@ -13,12 +13,12 @@ Takip ettiğim kaynaklardaki örneklere ait çalışmaların bulunduğu kod depo
 05. ~~Visual Studio Code için Snippet yazmak~~
 06. Single-File Components ile Vue.js uygulaması geliştirmek
 07. ~~Bir NodeJS sunucusunu ölçeklendirmek~~
-08. Javascript'in OOP yönünü kavramak(class, prototype, object vs)
+08. Angular ile basit bir Todo uygulaması yazmak
 09. React ve NodeJS kullanarak bir forum tasarlamak
 10. NodeJS ile bir GraphQL sunucusu yazmak
-11. Hangfire ile Asp.Net Core'da background işlemleri yürütmek
+11. 
 12. ~~Web sayfasında Bootstrap Modal Popup kullanmak~~
-13. Go ile etkileşimli bir Shell uygulaması yazmak
+13. 
 14. ~~Node.js, MongoDB, Fastify ve Swagger kullanılan bir uygulama yazmak~~
 
 > Planan yazılarda konu başlıkları değişiklik gösterebilir ve örnekler kronolojik sırada işlenmemektedir.
