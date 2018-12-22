@@ -4,8 +4,12 @@
   "description": "react, express ve heroku üçlemesi antrenmanı",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon server.js"
+    "client-install": "npm install --prefix fromwestworld",
+    "start": "node index.js",
+    "server": "nodemon index.js",
+    "client": "npm start --prefix fromwestworld",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "heroku-postbuild":"NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
   },
   "keywords": [
     "heroku",
@@ -18,6 +22,7 @@
   "author": "burak selim şenyurt",
   "license": "ISC",
   "devDependencies": {
+    "concurrently": "^4.1.0",
     "create-react-app": "^2.1.1",
     "express": "^4.16.4",
     "nodemon": "^1.18.9"
