@@ -121,7 +121,10 @@ Hatta sonuçları Heroku Dashboard'unda da görebildim.
 Sonrasında iş git ile yapılacak iş birliğinde.
 
 ```
-
+heroku git:remote -a frozen-hamlet-75426
+git add .
+git commit -am 'Heroku React Express örneği eklendi'
+git push heroku master
 ```
 
 Yani kısaca
@@ -130,3 +133,22 @@ Yani kısaca
 - Tüm değişiklikleri stage'e al
 - Bunları commit'le
 - Sonrada master branch'e push'la
+
+Sonrasında tek yapmam gereken https://frozen-hamlet-75426.herokuapp.com/ adresine gitmekti.
+
+![credit_5.png](credit_5.png)
+
+##Yaptığım Hatalar
+
+Uygulamayı tek seferde Heroku'ya alamadım. Sorunları görmek için terminalden
+
+```
+heroku logs --tail
+```
+
+komutunu kullandım. Buradan edindiğim bilgilere göre sorunları çözdüm.
+
+- İlk hatam server.js dosyasında process.env.PORT yerine process.env.port kullanmış olmamdı. Heroku port'u anlamadığı için 5005 nolu porttan yayın yapmaya çalıştı ki bu mümkün değildi.
+- İkinci hatam package.json'dan node engine versiyonunu söylememiş olmamdı.
+- Diğer problemse bağımlı olunan npm paketleri için package.json'dan dependencies yerine devDependencies sektörünü bırakmamdı.
+- Ayrıca .gitignore koymayıp node_modules ve package-log.json'ları hariç tutmadığım için bu klasörleri de komple push'lamış oldum _Sonraki versiyonda düzelttim tabii_

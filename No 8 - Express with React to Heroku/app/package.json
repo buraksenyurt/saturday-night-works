@@ -3,13 +3,16 @@
   "version": "1.0.0",
   "description": "react, express ve heroku üçlemesi antrenmanı",
   "main": "server.js",
+  "engines": {
+    "node": "11.0.0"
+  },
   "scripts": {
     "client-install": "npm install --prefix fromwestworld",
-    "start": "node index.js",
-    "server": "nodemon index.js",
+    "start": "node server.js",
+    "server": "nodemon server.js",
     "client": "npm start --prefix fromwestworld",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "heroku-postbuild":"NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
+    "heroku-postbuild":"NPM_CONFIG_PRODUCTION=false npm install --prefix fromwestworld && npm run build --prefix fromwestworld"
   },
   "keywords": [
     "heroku",
@@ -21,7 +24,7 @@
   ],
   "author": "burak selim şenyurt",
   "license": "ISC",
-  "devDependencies": {
+  "dependencies": {
     "concurrently": "^4.1.0",
     "create-react-app": "^2.1.1",
     "express": "^4.16.4",

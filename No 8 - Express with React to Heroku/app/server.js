@@ -1,7 +1,7 @@
 var express = require('express');
 var app = express();
 var path = require('path');
-var port = process.env.port || 5005; //heroku'nun portu veya local geliştirme için belirlediğimiz 5005 nolu port
+var port = process.env.PORT || 5005; //heroku'nun portu veya local geliştirme için belirlediğimiz 5005 nolu port
 
 // statik klasör bildirimini yapıyoruz
 app.use(express.static(path.join(__dirname, 'fromwestworld/build')));
