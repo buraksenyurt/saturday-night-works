@@ -1,8 +1,8 @@
-#Express, React ve Heroku
+# Express, React ve Heroku
 
 Bu örnekteki amacım node/Express servisi kullanan basit bir React uygulamasını Heroku üzerine deploy etmekti. express, HTTP yönlendiricisi olarak görev yapacak.
 
-##Ön hazırlıklar
+## Ön hazırlıklar
 
 Tabii öncelikle Heroku üzerinde bir hesap açmam gerekti. Hesap açıldıktan sonra West-World'e(Ubuntu 18.04, 64bit) heroku CLI kurulumu da yaptım. 
 
@@ -20,7 +20,7 @@ komutu sonrası credential bilgilerim soruldu. Email ve şifre. _(-i parametresi
 
 Ön hazırlıklar sonrası kodlamaya başladım. Nitekim Heroku için tekrar bir şeyler yapacaktım.
 
-##Gerekli paketlerin yüklenmesi
+## Gerekli paketlerin yüklenmesi
 
 Uygulamayı app isimli klasörde oluşturmaya karar verdim. 
 
@@ -36,7 +36,7 @@ npm i --save-dev express nodemon concurrently
 
 express servis tarafını kolay kullanabilmemiz için gerekli özellikleri sunan paket. nodemon ile de node.js tarafında yapılan değişikliklerin otomatik olarak algılanmasını sağlayacağız. Yani uygulamayı tekrar tekrar başlatmamıza gerek kalmadan değişikliklerimizi yapabileceğiz. concurrently paketini ise hem express hem react uygulamalarını aynı anda kolaca başlatabilmek için kullanacağız. 
 
-##React hello world uygulamasının oluşturulması
+## React hello world uygulamasının oluşturulması
 
 React uygulamasını oluşturmak içinse aşağıdaki komutları kullandım.
 
@@ -53,7 +53,7 @@ Elimde hazır şablonundan üretilmiş bir React uygulması ve dummy node.js ser
 
 Tahmin edileceği üzere express ile tanımlanan API'nin React içerisinden çağırılmasını anlamaya çalışıyorum. Bu nedenle şablonla gelen app.js içeriğinde çok az değişiklik yaptım.
 
-##package.json'daki scripts kısmı
+## package.json'daki scripts kısmı
 
 app klasöründe bulunan package.json dosyasındaki scripts kısmı önemli. Güncel hali aşağıdaki gibi.
 
@@ -82,7 +82,7 @@ node index.js
 
 Diğer yandan _npm run server_ ile nodemon'u devreye alırız ve kodda yapılan değişiklik anında çalışma zamanına yansır. _npm run client_ sunucuyu başlatmadan react uygulamasını çalıştırır. _npm run client-install_ sayesinde React uygulaması için gerekli tüm bağımlılıklar ilgili ortama _(örnekte Heroku olacaktır)_ yüklenir. _npm run dev_ ile de development ortamı başlatılır ve hem node sunucusu hem de react uygulaması aynı anda başlatılır.
 
-##Komple Çalıştırmak için
+## Komple Çalıştırmak için
 
 İlk olarak development ortamında çalıştırmak lazım. O nedenle app klasöründeyken
 
@@ -138,7 +138,7 @@ Sonrasında tek yapmam gereken https://frozen-hamlet-75426.herokuapp.com/ adresi
 
 ![credit_5.png](credit_5.png)
 
-##Yaptığım Hatalar
+## Yaptığım Hatalar
 
 Uygulamayı tek seferde Heroku'ya alamadım. Sorunları görmek için terminalden
 
