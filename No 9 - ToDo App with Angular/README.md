@@ -26,7 +26,7 @@ Ayrıca önyüz tarafında Bootstrap kullanılmıştır.
 bower i bootstrap
 ```
 
->Ben bootstrap'i indirdikten sonra gerekli css dosyalarını assets/css altına alıp oradan kullandırttım. _(index.html sayfasına bakın)_
+>Ben bootstrap'i indirdikten sonra gerekli css dosyalarını assets/css altına alıp orayı referans göstermeyi tercih ettim. _(index.html sayfasına bakın)_
 
 ## Angular Uygulamasını Oluşturmak
 
