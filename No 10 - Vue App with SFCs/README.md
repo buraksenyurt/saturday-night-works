@@ -38,8 +38,36 @@ npm install vue vue-loader vue-template-compiler webpack webpack-cli webpack-dev
 
 ## Çalışma zamanı
 
+package.json'a eklenen serve script'i sayesinde uygulama aşağıdaki gibi çalıştırılabilir.
+
+```
+npm run serve
+```
+
+![credit_2.png](credit_2.png)
+
+webpack.config.js'teki open:true ataması sayesinde tarayıcı otomatik olarak açılır ve localhost:8080 adresine yönlenilir. Vue, progressive uygulama yazmamıza olanak sağladığından herhangibir emulator ile sonuçlara bakabiliriz.
+
+package.json'a eklenen build betiği ile uygulamanın önceki dağıtımlarının silinmesi ve ardından yeni bir dağıtım paketinin oluşturulması sağlanır. Bu dağıtım paketi hazırlanırken build işlemi de gerçekleştirilir. Sonuç olarak _npm run serve_ komutunu çalıştırmadan direkt index.html dosyasını tıklayarak uygulamayı açabiliriz. Tabii öncesinde build etmek lazım :)
+
+```
+npm run build
+```
+
+build sonrası dist klasörü aşağıdaki gibi oluştu.
+
+![credit_3.png](credit_3.png)
+
+Sonrasında _npm run serve_ demeden index.html'i fiziki lokasyonundan tarayıcı ile açtığımda çalıştığını gördüm.
+
+![credit_4.png](credit_4.png)
+
+>Tabii asıl farkı görebilmek için serve edilen ve fiziki klasörde çalıştırılan index.html dosyalarının source kısımlarına bakıp karşılaştırmak lazım. Sizde böyle yapın ;)
+
 ## Neler Öğrendim?
 
-- 
+- Bir Vue.js uygulamasının genel anatomisini
+- Webpack'in ne işe yaradığını, ona ne yapması gerektiğini nasıl söyleyeceğimi ve nasıl çalıştıracağımı
+- package.json'a eklenen betikler ile build ve deploy işlemlerinin nasıl gerçekleştirilebileceğini
 
 öğrendim
