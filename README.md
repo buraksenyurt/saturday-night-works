@@ -11,7 +11,7 @@ Takip ettiğim kaynaklardaki örneklere ait çalışmaların bulunduğu kod depo
 03. ~~Go ve Vue.js kullanarak haber akışı yapmak~~
 04. ~~Express kullanan bir React uygulamasını Heroku'da yayınlamak~~
 05. ~~Visual Studio Code için Snippet yazmak~~
-06. Single-File Components ile Vue.js uygulaması geliştirmek
+06. ~~Single-File Components ile Vue.js uygulaması geliştirmek~~
 07. ~~Bir NodeJS sunucusunu ölçeklendirmek~~
 08. ~~Angular ile basit bir Todo uygulaması yazmak~~
 09. React ve NodeJS kullanarak bir forum tasarlamak
@@ -25,14 +25,15 @@ Takip ettiğim kaynaklardaki örneklere ait çalışmaların bulunduğu kod depo
 
 ## Tamamlananlar
 
-1. Bootstrap Grid sistemini anlamak _(Bir heyecanla Cumartesi gecesi dışında tamamlandı
-2. Asp.Net Core ile MongoDB kullanmak
-3. Go ve Vue.js kullanarak haber akışı yapmak
-4. Visual Studio Code için Snippet yazmak _(Bir öğle vakti deneyimlendi)_
-5. Web sayfasında Bootstrap Modal Popup kullanmak
-6. Bir NodeJS sunucusunu ölçeklendirmek
-7. Node.js, MongoDB, Fastify ve Swagger kullanılan bir uygulama yazmak
-8. Express kullanan bir React uygulamasını Heroku'da yayınlamak
-9. Angular ile basit bir Todo uygulaması yazmak
+01. Bootstrap Grid sistemini anlamak _(Bir heyecanla Cumartesi gecesi dışında tamamlandı
+02. Asp.Net Core ile MongoDB kullanmak
+03. Go ve Vue.js kullanarak haber akışı yapmak
+04. Visual Studio Code için Snippet yazmak _(Bir öğle vakti deneyimlendi)_
+05. Web sayfasında Bootstrap Modal Popup kullanmak
+06. Bir NodeJS sunucusunu ölçeklendirmek
+07. Node.js, MongoDB, Fastify ve Swagger kullanılan bir uygulama yazmak
+08. Express kullanan bir React uygulamasını Heroku'da yayınlamak
+09. Angular ile basit bir Todo uygulaması yazmak
+10. Single-File Components ile Vue.js uygulaması geliştirmek
 
 > MD dosyasını formatlarken [şu adresten](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) yararlanıyorum.
