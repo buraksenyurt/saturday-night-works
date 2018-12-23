@@ -1,0 +1,37 @@
+{
+  "name": "cometovue",
+  "version": "1.0.0",
+  "description": "basit bir vue.js uygulaması",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "node",
+    "npm",
+    "vue.js",
+    "babel",
+    "webpack",
+    "javascript",
+    "html",
+    "saturday-night-works"
+  ],
+  "author": "burak selim şenyurt",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "babel-loader": "^8.0.4",
+    "babel-preset-env": "^1.7.0",
+    "css-loader": "^2.0.2",
+    "html-webpack-plugin": "^3.2.0",
+    "rimraf": "^2.6.2",
+    "vue": "^2.5.21",
+    "vue-loader": "^15.4.2",
+    "vue-style-loader": "^4.1.2",
+    "vue-template-compiler": "^2.5.21",
+    "webpack": "^4.28.2",
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-server": "^3.1.13"
+  }
+}

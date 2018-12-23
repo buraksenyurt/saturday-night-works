@@ -13,7 +13,7 @@ Takip ettiğim kaynaklardaki örneklere ait çalışmaların bulunduğu kod depo
 05. ~~Visual Studio Code için Snippet yazmak~~
 06. Single-File Components ile Vue.js uygulaması geliştirmek
 07. ~~Bir NodeJS sunucusunu ölçeklendirmek~~
-08. Angular ile basit bir Todo uygulaması yazmak
+08. ~~Angular ile basit bir Todo uygulaması yazmak~~
 09. React ve NodeJS kullanarak bir forum tasarlamak
 10. NodeJS ile bir GraphQL sunucusu yazmak
 11. 
@@ -33,5 +33,6 @@ Takip ettiğim kaynaklardaki örneklere ait çalışmaların bulunduğu kod depo
 6. Bir NodeJS sunucusunu ölçeklendirmek
 7. Node.js, MongoDB, Fastify ve Swagger kullanılan bir uygulama yazmak
 8. Express kullanan bir React uygulamasını Heroku'da yayınlamak
+9. Angular ile basit bir Todo uygulaması yazmak
 
 > MD dosyasını formatlarken [şu adresten](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) yararlanıyorum.
