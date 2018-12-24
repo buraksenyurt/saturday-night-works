@@ -4,22 +4,11 @@ Takip ettiğim kaynaklardaki örneklere ait çalışmaların bulunduğu kod depo
 
 > Denemeler sırasında Copy-Paste yapmak kesinlikle yasaktır ve mutlak suretle örnekler yorumlanıp anın getirdiği ruh haline göre özelleştirilmelidir.
 
-## Planlananlar
+## Güncel Liste
 
-01. ~~Bootstrap Grid sistemini anlamak~~
-02. ~~Asp.Net Core ile MongoDB kullanmak~~
-03. ~~Go ve Vue.js kullanarak haber akışı yapmak~~
-04. ~~Express kullanan bir React uygulamasını Heroku'da yayınlamak~~
-05. ~~Visual Studio Code için Snippet yazmak~~
-06. ~~Single-File Components ile Vue.js uygulaması geliştirmek~~
-07. ~~Bir NodeJS sunucusunu ölçeklendirmek~~
-08. ~~Angular ile basit bir Todo uygulaması yazmak~~
-09. React ve NodeJS kullanarak bir forum tasarlamak
-10. NodeJS ile bir GraphQL sunucusu yazmak
-11. 
-12. ~~Web sayfasında Bootstrap Modal Popup kullanmak~~
-13. 
-14. ~~Node.js, MongoDB, Fastify ve Swagger kullanılan bir uygulama yazmak~~
+- React ve NodeJS kullanarak bir forum tasarlamak
+- GraphQL'i NodeJS ile tanımak
+- MEVN _(MongoDb, Express, Vue.Js, NodeJS)_ deneyimini yaşatacak bir Hello World yazmak
 
 > Planan yazılarda konu başlıkları değişiklik gösterebilir ve örnekler kronolojik sırada işlenmemektedir.
 
