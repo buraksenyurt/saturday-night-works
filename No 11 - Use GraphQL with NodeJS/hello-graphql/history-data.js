@@ -1,4 +1,4 @@
-let today = [
+let todayEvents = [
     {
         id: 1,
         title: 'İngiliz matematikçi ve modern fiziğin kurucusu Isaac Newton doğdu',
@@ -25,5 +25,5 @@ let today = [
     }
 ];
 
-exports.today = today;
+exports.today = todayEvents;
 // Örnek bir veri setini dışarıya sunuyoruz.

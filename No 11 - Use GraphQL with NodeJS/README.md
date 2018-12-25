@@ -70,6 +70,24 @@ denediğimizde aşağıdaki sonucu alırız. _(4 numaralı bilgi için, sadece y
 
 >play tuşuna bastığımızda URL adresinin nasıl değiştiğine ayrıca sol taraftaki json sorgularında ne yazdığımıza, argümanı nasıl gönderdiğimize dikkat edelim.
 
+Eğer numarasının karşılığı olmayan bir sorgu atarsak null değer alırız.
+
+```
+{
+  history(number:99){
+    title,
+    year,
+    category
+  }  
+}
+```
+
+için
+
+![credit_4.png](credit_4.png)
+
+gibi.
+
 ## Neler Öğrendim?
 
 - GraphQL için sorgu endpoint'lerini nasıl oluşturabileceğimi,

@@ -8,7 +8,7 @@ const { historyType } = require('./types.js');
 let { today } = require('./history-data.js');
 
 // helloWorldQT, sorgu tipimizin adı ve aslında bir GraphQLObjectType nesnesi
-const queries = new GraphQLObjectType({
+const queryController = new GraphQLObjectType({
     name: 'Queries', //Ona bir isim verdik
     fields: { // İçinde motto ve history isimli iki alan var. Aslında bunlar sorgu endpoint'leri.
         motto: {
@@ -31,4 +31,4 @@ const queries = new GraphQLObjectType({
     }
 });
 
-exports.queries = queries;
+exports.queryController = queryController;
