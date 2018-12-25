@@ -12,12 +12,18 @@ Burasu takip ettiğim kaynaklardaki örneklere ait çalışmaların bulunduğu k
 
 > Denemeler sırasında Copy-Paste yapmam kesinlikle yasaktır ve mutlak suretle örnekleri yorumlayıp anın getirdiği ruh haline göre özelleştirmem gerekmektedir.
 
+## Takipçi Ne Yapabilir?
+
+Readme dosyalarından yararlanarak kendi başlangıçlarınızı yapabilir, örnek kodları sağa sola çekiştirip iyileştirebilir ya da farklılaştırabilirsiniz. Ama en nihayetinde keşfetme ve farklı örnekleri anlamaya çalışma kaslarınızı geliştirirsiniz.
+
 ## Güncel Liste
 
 Burası işlenecek konu başlıklarının olduğu havuzdur.
 
 - React ve NodeJS kullanarak bir forum tasarlamak
 - MEVN _(MongoDb, Express, Vue.Js, NodeJS)_ deneyimini yaşatacak bir Hello World yazmak
+- NodeJS ile bir GraphQL sunucusu yazmak _(11nci örneği pekiştirmek adına)_
+- WestWorld'de fonksiyonel dil yaklaşımını anlamak için Clojure'u deneyimlemek
 
 > Planlanan yazılarda konu başlıkları değişiklik gösterebilir ve örnekler kronolojik sırada işlenmemektedir.
 
