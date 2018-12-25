@@ -7,7 +7,6 @@ Takip ettiğim kaynaklardaki örneklere ait çalışmaların bulunduğu kod depo
 ## Güncel Liste
 
 - React ve NodeJS kullanarak bir forum tasarlamak
-- GraphQL'i NodeJS ile tanımak
 - MEVN _(MongoDb, Express, Vue.Js, NodeJS)_ deneyimini yaşatacak bir Hello World yazmak
 
 > Planlanan yazılarda konu başlıkları değişiklik gösterebilir ve örnekler kronolojik sırada işlenmemektedir.
@@ -24,5 +23,6 @@ Takip ettiğim kaynaklardaki örneklere ait çalışmaların bulunduğu kod depo
 08. Express kullanan bir React uygulamasını Heroku'da yayınlamak
 09. Angular ile basit bir Todo uygulaması yazmak
 10. Single-File Components ile Vue.js uygulaması geliştirmek
+11. GraphQL'i NodeJS ile kullanmaya çalışmak
 
 > MD dosyasını formatlarken [şu adresten](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) yararlanıyorum.
