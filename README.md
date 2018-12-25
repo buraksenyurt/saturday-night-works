@@ -1,10 +1,20 @@
 # Saturday Night Works
 
-Takip ettiğim kaynaklardaki örneklere ait çalışmaların bulunduğu kod deposudur. Genellikle Cumartesi geceleri beslenir _(Konunun uzunluğu veya içimdeki isteğe göre öğle araları da olabilir)_ Monitor ortadan ikiye bölünmüş haldedir_(İkinci bir monitör daha alıp Bilgem Çakır'ın yaptığı gibi dikine kullanım isteklerim arasında)_ Sol tarafta takip edilen yazı, sağ tarafta çoğunlukla Visual Studio Code açıktır. Örnekler ağırlıklı olarak WestWorld'de(Ubuntu 18.04 sistemim) yapılır. Duruma göre MacOS veya Windows geçişleri de olabilir. 
+<img src="tim-foster-387975-unsplash.jpg" width="767" height="532">
 
-> Denemeler sırasında Copy-Paste yapmak kesinlikle yasaktır ve mutlak suretle örnekler yorumlanıp anın getirdiği ruh haline göre özelleştirilmelidir.
+Photo by [Tim Foster](https://unsplash.com/@timberfoster) on [Unsplash](https://unsplash.com/)
+
+Aynen bu resimdeki gibi bir manzara ile karşı karşıya değildim belki de ama bir yaz gecesi, sahil kenarında oturmuş Tekirdağ kıyılarına bakıyordum. Saat gece yarısını çoktan geçmişti bile. Yazın bitmesine yakın günlerdi. Okullar açıldığı için ada artık çok daha sakindi. Sessizlik benim hoşuma gidiyordu. Henüz senenin ortasıydı belki ama 2019 yılında neler yapmalıyım diye düşünüyordum. Makale yazmak artık yorucu olmaya başlamıştı. Oysaki kendim için öğrendiğim şeyleri paylaşmak bu kadar yorucu olmamalıydı. Ancak ivmenin aşağıya doğru kaymakta olduğunun farkındaydım. Eskisi kadar hızlı anlayamıyorum artık. Okuma ve anlama hızım düşüşte. Ama öğrenmekten de vazgeçmemem gerekiyordu. Sonunda aklıma şöyle bir fikir geldi. Makaleye dökemediğim, ama kısa kısa notlar alarak deneyimlediğim örnekleri github reposunda tutabilirdim. Üstelik kaynakçam oldukça geniş ve zengindi. En nihayetinde 2018 sonlarında başladığım ve 2019 boyunca devam etmeyi istediğim bu repo oluştu. 
+
+## Özetle
+
+Burasu takip ettiğim kaynaklardaki örneklere ait çalışmaların bulunduğu kod deposu. Genellikle Cumartesi geceleri beslenir _(Konunun uzunluğu veya içimdeki isteğe göre öğle araları da olabilir)_ Monitor ortadan ikiye bölünmüş haldedir _(İkinci bir monitör daha alıp Bilgem Çakır'ın yaptığı gibi dikine kullanım isteklerim arasında)_ Sol tarafta takip edilen yazı, sağ tarafta çoğunlukla Visual Studio Code açıktır. Örnekler ağırlıklı olarak WestWorld'de _(Ubuntu 18.04 sistemimde)_ icra edilir. Duruma göre MacOS veya Windows geçişleri de olabilir elbette. 
+
+> Denemeler sırasında Copy-Paste yapmam kesinlikle yasaktır ve mutlak suretle örnekleri yorumlayıp anın getirdiği ruh haline göre özelleştirmem gerekmektedir.
 
 ## Güncel Liste
+
+Burası işlenecek konu başlıklarının olduğu havuzdur.
 
 - React ve NodeJS kullanarak bir forum tasarlamak
 - MEVN _(MongoDb, Express, Vue.Js, NodeJS)_ deneyimini yaşatacak bir Hello World yazmak
@@ -12,6 +22,8 @@ Takip ettiğim kaynaklardaki örneklere ait çalışmaların bulunduğu kod depo
 > Planlanan yazılarda konu başlıkları değişiklik gösterebilir ve örnekler kronolojik sırada işlenmemektedir.
 
 ## Tamamlananlar
+
+Şu ana kadar tamamlayabildiğim örnekler.
 
 01. Bootstrap Grid sistemini anlamak _(Bir heyecanla Cumartesi gecesi dışında tamamlandı
 02. Asp.Net Core ile MongoDB kullanmak
