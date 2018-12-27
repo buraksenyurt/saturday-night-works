@@ -37,7 +37,7 @@ curl -d '{"id":9034,"name":"Modem"}' -H "Content-Type: application/json" -X POST
 
 ile bir POST talebi gönderiyoruz. Body kısmında basit bir JSON içeriği var. Yeni bir kategorinin eklenmesini bu şekilde test edebiliriz. 
 
-### İlk Örneği Çalışırken
+### 1nci Örneği Çalışırken
 
 Aşağıdaki curl komutlarını kullanarak testlerimi gerçekleştirdim.
 
@@ -51,7 +51,7 @@ curl -d '{"id":9034,"name":"Modem","count":8}' -H "Content-Type: application/jso
 curl -d '{"id":-1,"name":"Book","count":35}' -H "Content-Type: application/json" -X PUT http://localhost:4446/categories/1
 ```
 
-### İkinci Örneği Çalışırken
+### 2nci Örneği Çalışırken
 
 rest-plus'ın hazır gelen davranışlarından birisi de Swagger dokümantasyonunu otomatik olarak hazırlaması. _http://localhost:4446/_ adresine ikinci örnek için gidildiğinde bunu görebiliriz.
 
@@ -82,6 +82,12 @@ Ama bunları kullanmak şart değil. Pekala Swagger arayüzü de kullanılabilir
 
 ![credit_2.png](credit_2.png)
 
+### 3ncü Örneği Çalışırken
+
+Bu sefer hem basit bir MVC Modeli uygulanışı hemde namespace kullanımına bakmak istedim. Namespace'leri birbirleri ile ilişkili kaynakları _(Resource)_ ortak bir alanda gruplamak için kullanabiliyoruz. Buna göre ikinci örnekteki route tanımlamalarında yer alan categories ifadelerini _(iki Resource'ta geçiyor ama gerçek bir projede bu şekilde n sayıda Resource olabilir)_ en başta bir namespace şeklinde tanımladık. _(iki örnekteki route kullanımlarını karşılaştırınca anlaşılıyor)_
+
+>Bu örnekte testleri tamamen Swagger arayüzü üzerinden yaptım.
+
 ## Eklenmesi gerkenler
 
 - JSON Schema Validation
@@ -92,7 +98,7 @@ Ama bunları kullanmak şart değil. Pekala Swagger arayüzü de kullanılabilir
 - jsonify' ın ne işe yaradığını
 - API içinde sınıfları Resource olarak ele almayı
 - Rest-Plus'ın basit uygulanışını
-- 
+- api.doc ve api.expect'in Swagger üzerindeki etkilerini
 - CURL kullanmayı
 
 öğrendim.
