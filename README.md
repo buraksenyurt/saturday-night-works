@@ -24,6 +24,8 @@ Burası işlenecek konu başlıklarının olduğu havuzdur.
 - MEVN _(MongoDb, Express, Vue.Js, NodeJS)_ deneyimini yaşatacak bir Hello World yazmak
 - NodeJS ile bir GraphQL sunucusu yazmak _(11nci örneği pekiştirmek adına)_
 - WestWorld'de fonksiyonel dil yaklaşımını anlamak için Clojure'u deneyimlemek
+- Flask-RESTPlus ile Python'da REST Api geliştirmek
+- WebAssembly ve Go ile Frontend Web Framework yazmak
 
 > Planlanan yazılarda konu başlıkları değişiklik gösterebilir ve örnekler kronolojik sırada işlenmemektedir.
 
