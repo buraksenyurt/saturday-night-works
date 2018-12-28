@@ -26,6 +26,9 @@ Burası işlenecek konu başlıklarının olduğu havuzdur.
 - WestWorld'de fonksiyonel dil yaklaşımını anlamak için Clojure'u deneyimlemek
 - WebAssembly ve Go ile Frontend Web Framework yazmak
 - Flask-RestPlus tarafında çoklu namespace ve versiyonlama kullanımını içeren bir örnek yapmak _(Blueprint modeline uygun)_
+- Harici paketler veya yardımcı paketlere başvurmadan Node.js ve Javascript ile basit bir Web Server nasıl yazılır?
+- Python ile e-mail göndermek _(Eğlencelik)_
+- Ruby ile şık komut satırı uygulamaları yazmak
 
 > Planlanan yazılarda konu başlıkları değişiklik gösterebilir ve örnekler kronolojik sırada işlenmemektedir.
 
