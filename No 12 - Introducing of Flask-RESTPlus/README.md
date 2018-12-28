@@ -84,7 +84,7 @@ Ama bunları kullanmak şart değil. Pekala Swagger arayüzü de kullanılabilir
 
 ### 3ncü Örneği Çalışırken
 
-Bu sefer hem basit bir MVC Modeli uygulanışı hemde namespace kullanımına bakmak istedim. Namespace'leri birbirleri ile ilişkili kaynakları _(Resource)_ ortak bir alanda gruplamak için kullanabiliyoruz. Buna göre ikinci örnekteki route tanımlamalarında yer alan categories ifadelerini _(iki Resource'ta geçiyor ama gerçek bir projede bu şekilde n sayıda Resource olabilir)_ en başta bir namespace şeklinde tanımladık. _(iki örnekteki route kullanımlarını karşılaştırınca anlaşılıyor)_
+Bu sefer hem basit bir DAO _(Data Access Object)_ nesnesi hemde namespace kullanımına bakmak istedim. Namespace'leri birbirleri ile ilişkili kaynakları _(Resource)_ ortak bir alanda gruplamak için kullanabiliyoruz. Buna göre ikinci örnekteki route tanımlamalarında yer alan categories ifadelerini _(iki Resource'ta geçiyor ama gerçek bir projede bu şekilde n sayıda Resource olabilir)_ en başta bir namespace şeklinde belirtiyoruz. _(iki örnekteki route kullanımlarını karşılaştırınca anlaşılıyor)_ DAO işlemlerini üstlenen sınıfımız ayrı bir dosyada duruyor. En azından temel CRUD operasyonlarının sorumluluğunu ayrıştırmış oluyoruz.
 
 >Bu örnekte testleri tamamen Swagger arayüzü üzerinden yaptım.
 
