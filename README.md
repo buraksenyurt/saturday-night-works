@@ -24,8 +24,8 @@ Burası işlenecek konu başlıklarının olduğu havuzdur.
 - MEVN _(MongoDb, Express, Vue.Js, NodeJS)_ deneyimini yaşatacak bir Hello World yazmak
 - NodeJS ile bir GraphQL sunucusu yazmak _(11nci örneği pekiştirmek adına)_
 - WestWorld'de fonksiyonel dil yaklaşımını anlamak için Clojure'u deneyimlemek
-- Flask-RESTPlus ile Python'da REST Api geliştirmek
 - WebAssembly ve Go ile Frontend Web Framework yazmak
+- Flask-RestPlus tarafında çoklu namespace ve versiyonlama kullanımını içeren bir örnek yapmak _(Blueprint modeline uygun)_
 
 > Planlanan yazılarda konu başlıkları değişiklik gösterebilir ve örnekler kronolojik sırada işlenmemektedir.
 
@@ -44,5 +44,6 @@ Burası işlenecek konu başlıklarının olduğu havuzdur.
 09. Angular ile basit bir Todo uygulaması yazmak
 10. Single-File Components ile Vue.js uygulaması geliştirmek
 11. GraphQL'i NodeJS ile kullanmaya çalışmak
+12. Flask-RESTPlus ile Python'da REST Api geliştirmek
 
 > MD dosyasını formatlarken [şu adresten](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) yararlanıyorum.
