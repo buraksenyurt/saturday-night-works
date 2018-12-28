@@ -37,7 +37,7 @@ curl -d '{"id":9034,"name":"Modem"}' -H "Content-Type: application/json" -X POST
 
 ile bir POST talebi gönderiyoruz. Body kısmında basit bir JSON içeriği var. Yeni bir kategorinin eklenmesini bu şekilde test edebiliriz. 
 
-### 1nci Örneği Çalışırken
+### 1nci Örneği Çalışırken (classic_api.py)
 
 Aşağıdaki curl komutlarını kullanarak testlerimi gerçekleştirdim.
 
@@ -51,7 +51,7 @@ curl -d '{"id":9034,"name":"Modem","count":8}' -H "Content-Type: application/jso
 curl -d '{"id":-1,"name":"Book","count":35}' -H "Content-Type: application/json" -X PUT http://localhost:4446/categories/1
 ```
 
-### 2nci Örneği Çalışırken
+### 2nci Örneği Çalışırken (restplus_1.py)
 
 rest-plus'ın hazır gelen davranışlarından birisi de Swagger dokümantasyonunu otomatik olarak hazırlaması. _http://localhost:4446/_ adresine ikinci örnek için gidildiğinde bunu görebiliriz.
 
@@ -82,15 +82,42 @@ Ama bunları kullanmak şart değil. Pekala Swagger arayüzü de kullanılabilir
 
 ![credit_2.png](credit_2.png)
 
-### 3ncü Örneği Çalışırken
+### 3ncü Örneği Çalışırken (restplus_2.py)
 
 Bu sefer hem basit bir DAO _(Data Access Object)_ nesnesi hemde namespace kullanımına bakmak istedim. Namespace'leri birbirleri ile ilişkili kaynakları _(Resource)_ ortak bir alanda gruplamak için kullanabiliyoruz. Buna göre ikinci örnekteki route tanımlamalarında yer alan categories ifadelerini _(iki Resource'ta geçiyor ama gerçek bir projede bu şekilde n sayıda Resource olabilir)_ en başta bir namespace şeklinde belirtiyoruz. _(iki örnekteki route kullanımlarını karşılaştırınca anlaşılıyor)_ DAO işlemlerini üstlenen sınıfımız ayrı bir dosyada duruyor. En azından temel CRUD operasyonlarının sorumluluğunu ayrıştırmış oluyoruz.
 
 >Bu örnekte testleri tamamen Swagger arayüzü üzerinden yaptım.
 
-## Eklenmesi gerkenler
+### 4ncü Örneği Çalışırken (restplus_3.py)
+
+Bu basit servis şu an için 5 API operasyonu sunuyor. Ancak canlı ortamlarda bu sayı giderek artar. Resource sayıları fazlalaşır ve yönetim zorlaşır. En başından itibaren versiyonlamak iyi bir stratejidir. Flesk Blueprints bu tip ihtiyaçları karşılayan bir tasarım modeli sunuyor. 4ncü örnekte çok fazla kod müdahalesi yapmadan versiyon desteği sunuyoruz. Bu örnek Blueprint tasarımının çok ilkel bir halini içeriyor.
+
+Tabii URL adresimiz değişti.
+
+http://localhost:4446/api/v1/docs 
+
+![credit_3.png](credit_3.png)
+
+Birden fazla versiyonun ve n sayıda Resource'un kullanıldığı senaryolarda klasör yapısını da doğru uygulamak lazım. Mesela,
+
+```
+proje/
+|----- app.py
+|----- api_v1.py
+|----- api_v2.py
+|_____ apis/
+        |----- __init__.py
+        |----- namespace1.py
+        |----- namespace2.py
+        |----- ...
+```
+
+## Yapılması Gerekenler
 
 - JSON Schema Validation
+- Nesne koleksiyonu olarak bir DB seçilmesi ve kullanılması _(mongodb olur postgresql olur vs)_
+- İkinci bir resource'un daha eklenmesi _(Product gibi)_
+- Blueprint konusunun daha detaylı araştırılması 
 
 ## Ne Öğrendim?
 
@@ -99,6 +126,9 @@ Bu sefer hem basit bir DAO _(Data Access Object)_ nesnesi hemde namespace kullan
 - API içinde sınıfları Resource olarak ele almayı
 - Rest-Plus'ın basit uygulanışını
 - api.doc ve api.expect'in Swagger üzerindeki etkilerini
+- Veri operasyonları için bir DAO sınıfını nasıl kullanabileceğimi
+- namespace kavramını
 - CURL kullanmayı
+- Blueprint tasarım modeline göre versiyonlamanın nasıl yapılabileceğini
 
 öğrendim.
