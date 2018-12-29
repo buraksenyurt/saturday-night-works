@@ -8,7 +8,7 @@ Bu resimdeki manzara ile karşı karşıya değildim belki de ama o yaz gecesi, 
 
 Sonunda aklıma bir fikir geldi. Makaleye dökemediğim ama kısa kısa notlar alarak deneyimlediğim örnekleri github depomda tutabilirdim. Üstelik kaynakçam oldukça geniş ve zengindi. En nihayetinde 2018 sonlarında başladığım ve 2019 boyunca devam etmeyi planladığım bu repo oluştu. Makale tadında olmasalar bile, her klasör içerisindeki README dosyası gerekli bilgileri içermekte. Amaç, kurulumlar, dikkat edilmesi gereken noktalar, öğrenilenler, konuya özgün notlar vb... Kod dosyalarını da mümkün mertebe yorumlarla desteklemeyi planladım. Üstünü tamamlamaksa repo'yu takip edenlerin göreviydi.
 
->Faydalo olması için gerekli 3 kritik nokta; monitörün ikiye bölünmesi, copy-paste yasağı ve özgün düşünceyi zorlamak...
+>Faydalı olması için gerekli 3 kritik nokta; monitörün ikiye bölünmesi, copy-paste yasağı ve özgün düşünceyi zorlamak...
 
 ## Özetle
 
