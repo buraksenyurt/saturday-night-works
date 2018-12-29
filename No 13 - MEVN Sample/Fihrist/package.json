@@ -1,0 +1,28 @@
+{
+  "name": "fihrist",
+  "version": "1.0.0",
+  "description": "en sevdiğim arkadaşlarım",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "node.js",
+    "expressjs",
+    "mongodb",
+    "vue.js",
+    "saturday-night-works",
+    "training",
+    "javascript"
+  ],
+  "author": "burak selim şenyurt",
+  "license": "ISC",
+  "devDependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "method-override": "^3.0.0",
+    "mongoose": "^5.4.1",
+    "morgan": "^1.9.1"
+  }
+}
