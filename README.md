@@ -16,7 +16,7 @@ Burası takip ettiğim kaynaklardaki örneklere ait çalışmaların bulunduğu 
 
 ## Takipçi Ne Yapabilir?
 
-Readme dosyalarından yararlanarak kendi başlangıçlarınızı yapabilir, örnek kodları sağa sola çekiştirip iyileştirebilir ya da farklılaştırabilirsiniz. Ama en nihayetinde keşfetme ve farklı örnekleri anlamaya çalışma kaslarınızı geliştirirsiniz.
+Readme dosyalarından yararlanarak kendi başlangıçlarınızı yapabilir, örnek kodları sağa sola çekiştirip iyileştirebilir ya da farklılaştırabilirsiniz. Ama en nihayetinde keşfetme ve farklı örnekleri anlamaya çalışma kaslarınızı geliştirirsiniz. Hata yapmaktan korkmayın.
 
 ## Güncel Liste
 
