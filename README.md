@@ -23,7 +23,6 @@ Readme dosyalarından yararlanarak kendi başlangıçlarınızı yapabilir, örn
 Burası işlenecek konu başlıklarının olduğu havuzdur.
 
 - React ve NodeJS kullanarak bir forum tasarlamak
-- MEVN _(MongoDb, Express, Vue.Js, NodeJS)_ deneyimini yaşatacak bir Hello World yazmak
 - NodeJS ile bir GraphQL sunucusu yazmak _(11nci örneği pekiştirmek adına)_
 - WestWorld'de fonksiyonel dil yaklaşımını anlamak için Clojure'u deneyimlemek
 - WebAssembly ve Go ile Frontend Web Framework yazmak
@@ -33,6 +32,10 @@ Burası işlenecek konu başlıklarının olduğu havuzdur.
 - Ruby ile şık komut satırı uygulamaları yazmak
 
 > Planlanan yazılarda konu başlıkları değişiklik gösterebilir ve örnekler kronolojik sırada işlenmemektedir.
+
+## Üzerinde Çalışılıyor
+
+- MEVN _(MongoDb, Express, Vue.Js, NodeJS)_ deneyimini yaşatacak bir Hello World yazmak
 
 ## Tamamlananlar
 

@@ -2,14 +2,15 @@
 var mongoose = require('mongoose')
 
 // contact isimli bir şemamız var
+// örnek olması açısından bir kaç özellik içeriyor
 var contact = new mongoose.Schema({
-    fullname: { type: string },
-    phoneNumber: { type: string },
-    location: { type: string },
+    fullname: { type: String },
+    phoneNumber: { type: String },
+    location: { type: String },
     birtdate: { type: Date }
 },
     {
-        collection: contacts // kontaklarımızı tuttuğumuz koleksiyon
+        collection: 'contacts' // kontaklarımızı tuttuğumuz koleksiyon
     }
 )
 
