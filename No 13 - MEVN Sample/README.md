@@ -129,3 +129,4 @@ Ekleme işlemi ile ilgili ilk test sonucum.
 - template üzerinde model kullanımı nasıldır
 - axios ile HTTP Post,Get,Put gibi metodlar nasıl çağrılır
 - webpack.config dosyası nasıl hazırlanır
+- bir bileşenden event bus'a bildirim nasıl yapılır ve diğer bileşenlerden bu değişiklik nasıl yakalanır
