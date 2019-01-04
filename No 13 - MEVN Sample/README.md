@@ -123,6 +123,18 @@ Ekleme işlemi ile ilgili ilk test sonucum.
 
 ![credit_2.png](credit_2.png)
 
+Listeleme ve listenen bağlantıları silme işini contacts.vue isimli bileşen üstlenmekte. Buda app.vue içerisinde tanımlanıp sayfaya yerleştiriliyor. contacts.vue içerisinde bootstrap card'ları kullanmayı tercih ettim. Çok berbat bir tasarım olmadı ama çok iyi de olmadı. Fonksiyonel olarak bağlantıları listeletebiliyor, silme ve yenilerini ekleme işlemlerini gerçekleştirebiliyoruz.
+
+>Update işlemi içinde buraya bir şeyler eklemek lazım. Bunu kendinize ödev edinebilirsiniz.
+
+contacts.vue kodlaması tamamlandıktan sonra bir kaç test yaptım. Hatalarımı düzelttim. Pek tabii öncesinde webpack build işlemini yeniden çalıştırmak gerekiyor ki son güncellemelerimiz de pakete yansısın. İşte örnek bir ekran görüntüsü.
+
+![credit_3.png](credit_3.png)
+
+## Tepeden Aşağıya
+
+Olayın başlangıç noktası olan index.html son derece sadedir. İçinde vue bileşenlerimiz, bootstrap ve vue.js gibi gerekli diğer kütüphaneleri barındırmaktadır. Vue kodları event bus ve api servislerini kullanarak arayüzün model ile olan ilişkisinde rol alır ve temel CRUD operasyonlarına izin verir.  
+
 ## Neler Öğrendim
 
 - Vue'da component nasıl geliştirilir
@@ -130,3 +142,4 @@ Ekleme işlemi ile ilgili ilk test sonucum.
 - axios ile HTTP Post,Get,Put gibi metodlar nasıl çağrılır
 - webpack.config dosyası nasıl hazırlanır
 - bir bileşenden event bus'a bildirim nasıl yapılır ve diğer bileşenlerden bu değişiklik nasıl yakalanır
+- Biraz daha bootstrap yazdım.
