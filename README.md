@@ -22,6 +22,7 @@ Readme dosyalarından yararlanarak kendi başlangıçlarınızı yapabilir, örn
 
 Burası işlenecek konu başlıklarının olduğu havuzdur.
 
+- Uçtan uca Ruby on Rails ile bir uygulama yazmak
 - React ve NodeJS kullanarak bir forum tasarlamak
 - NodeJS ile bir GraphQL sunucusu yazmak _(11nci örneği pekiştirmek adına)_
 - WestWorld'de fonksiyonel dil yaklaşımını anlamak için Clojure'u deneyimlemek
@@ -29,12 +30,13 @@ Burası işlenecek konu başlıklarının olduğu havuzdur.
 - Flask-RestPlus tarafında çoklu namespace ve versiyonlama kullanımını içeren bir örnek yapmak _(Blueprint modeline uygun)_
 - Python ile e-mail göndermek _(Eğlencelik)_
 - Ruby ile şık komut satırı uygulamaları yazmak
+- Harici paketler veya yardımcı paketlere başvurmadan Node.js ve Javascript ile basit bir Web Server nasıl yazılır?
 
 > Planlanan yazılarda konu başlıkları değişiklik gösterebilir ve örnekler kronolojik sırada işlenmemektedir.
 
 ## Üzerinde Çalışılıyor
 
-- Harici paketler veya yardımcı paketlere başvurmadan Node.js ve Javascript ile basit bir Web Server nasıl yazılır?
+- Uçtan uca Ruby on Rails ile bir uygulama yazmak
 
 ## Tamamlananlar
 
