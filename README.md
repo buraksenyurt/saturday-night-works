@@ -22,7 +22,6 @@ Readme dosyalarından yararlanarak kendi başlangıçlarınızı yapabilir, örn
 
 Burası işlenecek konu başlıklarının olduğu havuzdur.
 
-- Uçtan uca Ruby on Rails ile bir uygulama yazmak
 - React ve NodeJS kullanarak bir forum tasarlamak
 - NodeJS ile bir GraphQL sunucusu yazmak _(11nci örneği pekiştirmek adına)_
 - WestWorld'de fonksiyonel dil yaklaşımını anlamak için Clojure'u deneyimlemek
