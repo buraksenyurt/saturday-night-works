@@ -8,12 +8,22 @@ Amacım FortJs isimli projeyi kullanarak, Typescript ile bir Web API servisi gel
 
 ```
 git clone https://github.com/ujjwalguptaofficial/fortjs-typescript-starter
+cd fortjs-typescript-starter
 npm install
 npm run start
 ```
 
 ![cover_1.png](cover_1.png)
 
+QuoteController isimli ilk controller bileşenini ekledikten sonra http://localhost:4000/quote adresine gittiğimde aşağıdaki çıktıyı elde ettim.
+
+![cover_2.png](cover_2.png)
+
 ## Yapılan Değişiklikler
+
+- controllers klasörüne quote_controller.ts eklendi
+- routes.ts dosyasında eklenen controller bildirimi yapıldı
+- models klasörü oluşturulup içersine quote.ts isimli model sınıfı eklendi
+- services klasörü oluşturulup içersine quote_service.ts dosyası eklendi
 
 ## Neler Öğrendim
