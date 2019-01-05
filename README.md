@@ -30,7 +30,7 @@ Burası işlenecek konu başlıklarının olduğu havuzdur.
 
 ## Üzerinde Çalışılıyor
 
--
+- Typescript ile REST Api geliştirmek _(FortJs ile)_
 
 ## Tamamlananlar
 
