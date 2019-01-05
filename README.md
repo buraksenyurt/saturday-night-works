@@ -23,6 +23,7 @@ Readme dosyalarından yararlanarak kendi başlangıçlarınızı yapabilir, örn
 Burası işlenecek konu başlıklarının olduğu havuzdur.
 
 - Briaz daha GraphQL
+- Typescript ile REST Api geliştirmek _(FortJs ile)_
 - Harici paketler veya yardımcı paketlere başvurmadan Node.js ve Javascript ile basit bir Web Server nasıl yazılır?
 
 > Planlanan yazılarda konu başlıkları değişiklik gösterebilir ve örnekler kronolojik sırada işlenmemektedir.
