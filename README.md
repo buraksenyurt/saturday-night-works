@@ -22,20 +22,14 @@ Readme dosyalarından yararlanarak kendi başlangıçlarınızı yapabilir, örn
 
 Burası işlenecek konu başlıklarının olduğu havuzdur.
 
-- React ve NodeJS kullanarak bir forum tasarlamak
-- NodeJS ile bir GraphQL sunucusu yazmak _(11nci örneği pekiştirmek adına)_
-- WestWorld'de fonksiyonel dil yaklaşımını anlamak için Clojure'u deneyimlemek
-- WebAssembly ve Go ile Frontend Web Framework yazmak
-- Flask-RestPlus tarafında çoklu namespace ve versiyonlama kullanımını içeren bir örnek yapmak _(Blueprint modeline uygun)_
-- Python ile e-mail göndermek _(Eğlencelik)_
-- Ruby ile şık komut satırı uygulamaları yazmak
+- Briaz daha GraphQL
 - Harici paketler veya yardımcı paketlere başvurmadan Node.js ve Javascript ile basit bir Web Server nasıl yazılır?
 
 > Planlanan yazılarda konu başlıkları değişiklik gösterebilir ve örnekler kronolojik sırada işlenmemektedir.
 
 ## Üzerinde Çalışılıyor
 
-- Uçtan uca Ruby on Rails ile bir uygulama yazmak
+-
 
 ## Tamamlananlar
 
