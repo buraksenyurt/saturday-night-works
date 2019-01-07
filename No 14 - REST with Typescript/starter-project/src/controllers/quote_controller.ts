@@ -1,5 +1,6 @@
-import { Controller, DefaultWorker, jsonResult, HTTP_STATUS_CODE, HTTP_METHOD, Worker, Route } from 'fortjs'
+import { Controller, DefaultWorker, jsonResult, HTTP_STATUS_CODE, HTTP_METHOD, Worker, Route, Guards } from 'fortjs'
 import { QuoteService } from '../services/quote_service';
+import { DataValidatorGuard } from '../guards/dataValidatorGuard';
 
 export class QuoteController extends Controller {
 
@@ -22,6 +23,7 @@ export class QuoteController extends Controller {
     // HTTP Post'a hizmet edecen Worker metodumuz
     @Worker([HTTP_METHOD.Post])
     @Route("/") // adres bildirimi. Yani http://localhost:4000/quote 
+    @Guards([DataValidatorGuard]) // body ile gelen verinin kontrolünü devrettiğimiz Guard nesne bildirimi
     async createQuote() {
         // body'den gelen alanlara bakılarak payload elde edildi
         const payload = {

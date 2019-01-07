@@ -67,6 +67,8 @@ curl -H "Content-Type: application/json" -X PUT -d '{"text":"bla bla bla bla..."
 curl -X DELETE http://localhost:4000/quote/100
 ```
 
+Post çağrımında gelen verinin çeşitli kurallara göre kontrolü için bir decarator nesne kullanımı söz konusu. Bu FortJS içinden hazır olarak gelen Guard türevli bir tip ile gerçekleniyor _(koddaki izleri takip edin)_ Guard'ın neler yapabileceğini öğrenmek için dataValidatorGuard.ts sınıfındaki check metodundan dönen değerleri değiştirebilirsiniz.
+
 ## Neler Öğrendim
 
 - FortJS'in sunduğu imkanlar
