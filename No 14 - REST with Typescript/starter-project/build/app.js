@@ -324,7 +324,10 @@ var __generator = (undefined && undefined.__generator) || function (thisArg, bod
 var QuoteController = /** @class */ (function (_super) {
     __extends(QuoteController, _super);
     function QuoteController() {
-        return _super !== null && _super.apply(this, arguments) || this;
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.service = new _services_quote_service__WEBPACK_IMPORTED_MODULE_1__["QuoteService"](); // CRUD operasyonlarını üstlenen servis nesnemizi örnekledik
+        return _this;
+        //TODO: Belli bir yazara göre özlü sözleri listeleyen metod denenebilir
     }
     /*
     @DefaultWorker()
@@ -343,28 +346,75 @@ var QuoteController = /** @class */ (function (_super) {
     // HTTP Post'a hizmet edecen Worker metodumuz
     QuoteController.prototype.createQuote = function () {
         return __awaiter(this, void 0, void 0, function () {
-            var service, payload, newQuote;
+            var payload, newQuote;
             return __generator(this, function (_a) {
-                service = new _services_quote_service__WEBPACK_IMPORTED_MODULE_1__["QuoteService"]();
                 payload = {
                     id: this.body.id,
                     text: this.body.text,
                     available: this.body.available,
                     owner: this.body.owner
                 };
-                newQuote = service.createQuote(payload);
+                newQuote = this.service.createQuote(payload);
                 // geriye oluşturulan quote içeriğini(id'de barındırır) ve HTTP 201 kodunu gönderdik
                 return [2 /*return*/, Object(fortjs__WEBPACK_IMPORTED_MODULE_0__["jsonResult"])(newQuote, fortjs__WEBPACK_IMPORTED_MODULE_0__["HTTP_STATUS_CODE"].Created)];
+            });
+        });
+    };
+    // Silme operasyonumuz HTTP Delete metoduna cevap verecek
+    QuoteController.prototype.deleteQuote = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            var id, q;
+            return __generator(this, function (_a) {
+                id = Number(this.param.id);
+                q = this.service.getQuoteById(id);
+                if (q != null) {
+                    this.service.deleteQuote(id);
+                    return [2 /*return*/, Object(fortjs__WEBPACK_IMPORTED_MODULE_0__["jsonResult"])("Silindi", fortjs__WEBPACK_IMPORTED_MODULE_0__["HTTP_STATUS_CODE"].Ok)];
+                }
+                else {
+                    return [2 /*return*/, Object(fortjs__WEBPACK_IMPORTED_MODULE_0__["jsonResult"])("Bulunamadığı için silinemedi", fortjs__WEBPACK_IMPORTED_MODULE_0__["HTTP_STATUS_CODE"].NotFound)];
+                }
+                return [2 /*return*/];
+            });
+        });
+    };
+    // Bir özlü sözü güncellemek için kullanılır
+    // HTTP Put taleplerine karşılık verir
+    QuoteController.prototype.updateQuote = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            var payload, updatedValue;
+            return __generator(this, function (_a) {
+                console.log(this.body);
+                payload = {
+                    id: this.body.id,
+                    text: this.body.text,
+                    available: this.body.available,
+                    owner: this.body.owner
+                };
+                updatedValue = this.service.updateQuote(payload);
+                return [2 /*return*/, updatedValue];
             });
         });
     };
     // varsayılan worker'ımız HTTP Get talepleri sonrası çalışır
     QuoteController.prototype.getQuoteList = function () {
         return __awaiter(this, void 0, void 0, function () {
-            var service;
             return __generator(this, function (_a) {
-                service = new _services_quote_service__WEBPACK_IMPORTED_MODULE_1__["QuoteService"]();
-                return [2 /*return*/, Object(fortjs__WEBPACK_IMPORTED_MODULE_0__["jsonResult"])(service.getAllQuotes())]; // Sonuçları json formatında gönderdik
+                return [2 /*return*/, Object(fortjs__WEBPACK_IMPORTED_MODULE_0__["jsonResult"])(this.service.getAllQuotes())]; // Sonuçları json formatında gönderdik
+            });
+        });
+    };
+    // HTTP Get ve querystring'teki id değerine göre quote döner
+    QuoteController.prototype.getQuoteById = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            var id, q;
+            return __generator(this, function (_a) {
+                id = Number(this.param.id);
+                q = this.service.getQuoteById(id);
+                if (q == null) {
+                    return [2 /*return*/, Object(fortjs__WEBPACK_IMPORTED_MODULE_0__["jsonResult"])("Bulamadım :(", fortjs__WEBPACK_IMPORTED_MODULE_0__["HTTP_STATUS_CODE"].NotFound)];
+                }
+                return [2 /*return*/, Object(fortjs__WEBPACK_IMPORTED_MODULE_0__["jsonResult"])(q, fortjs__WEBPACK_IMPORTED_MODULE_0__["HTTP_STATUS_CODE"].Ok)];
             });
         });
     };
@@ -373,8 +423,20 @@ var QuoteController = /** @class */ (function (_super) {
         Object(fortjs__WEBPACK_IMPORTED_MODULE_0__["Route"])("/") // adres bildirimi. Yani http://localhost:4000/quote 
     ], QuoteController.prototype, "createQuote", null);
     __decorate([
+        Object(fortjs__WEBPACK_IMPORTED_MODULE_0__["Worker"])([fortjs__WEBPACK_IMPORTED_MODULE_0__["HTTP_METHOD"].Delete]),
+        Object(fortjs__WEBPACK_IMPORTED_MODULE_0__["Route"])("/{id}") // QueryString parametresi olarak gelen id değeri
+    ], QuoteController.prototype, "deleteQuote", null);
+    __decorate([
+        Object(fortjs__WEBPACK_IMPORTED_MODULE_0__["Worker"])([fortjs__WEBPACK_IMPORTED_MODULE_0__["HTTP_METHOD"].Put]),
+        Object(fortjs__WEBPACK_IMPORTED_MODULE_0__["Route"])("/") // yönlendirme adresi yine http://localhost:4000/quote şeklinde
+    ], QuoteController.prototype, "updateQuote", null);
+    __decorate([
         Object(fortjs__WEBPACK_IMPORTED_MODULE_0__["DefaultWorker"])()
     ], QuoteController.prototype, "getQuoteList", null);
+    __decorate([
+        Object(fortjs__WEBPACK_IMPORTED_MODULE_0__["Worker"])([fortjs__WEBPACK_IMPORTED_MODULE_0__["HTTP_METHOD"].Get]),
+        Object(fortjs__WEBPACK_IMPORTED_MODULE_0__["Route"])("/{id}")
+    ], QuoteController.prototype, "getQuoteById", null);
     return QuoteController;
 }(fortjs__WEBPACK_IMPORTED_MODULE_0__["Controller"]));
 

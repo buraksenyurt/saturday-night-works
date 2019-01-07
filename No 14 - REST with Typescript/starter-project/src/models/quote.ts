@@ -8,7 +8,7 @@ export class Quote {
     @Length(100)
     owner?: string;
 
-    @IsIn(["evet", "hayır"]) //seçenekleri evet veya hayır olabilen string bir değişken
+    @IsIn(["yes", "no"]) //seçenekleri evet veya hayır olabilen string bir değişken
     available: string;
 
     constructor(quote: any) {

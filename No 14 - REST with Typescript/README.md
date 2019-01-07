@@ -26,6 +26,8 @@ QuoteController isimli ilk controller bileşenini ekledikten sonra http://localh
 - models klasörü oluşturulup içersine quote.ts isimli model sınıfı eklendi
 - services klasörü oluşturulup içersine quote_service.ts dosyası eklendi
 
+>Detaylar için kodlardaki yorum satırlarını takip etmeye çalışın
+
 ## Testler için
 
 quote_service.ts tamamlandıktan sonra aşağıdaki komutlar ile CRUD operasyonları test edilebilir.
@@ -48,16 +50,26 @@ curl -H "Content-Type: application/json" -X POST -d '{"id":107,"text":"Be the ch
 curl -H "Content-Type: application/json" -X POST -d '{"id":109,"text":"Don’t walk in front of me… I may not follow Don’t walk behind me… I may not lead Walk beside me… just be my friend","owner":"Albert Camus","available":"yes"}' http://localhost:4000/quote
 
 curl http://localhost:4000/quote
+
+curl http://localhost:4000/quote/100
 ```
 
 Yukardaki eklemeler sonrası örneğin Postman ile ilgili adrese gidilirse aşağıdaki sonuçla karşılaşılır.
 
 ![cover_3.png](cover_3.png)
 
+Güncelleme ve silme için örnek
+
+```
+curl -H "Content-Type: application/json" -X PUT -d '{"text":"bla bla bla bla...","owner":"Albert Einstein","available":"no"}' http://localhost:4000/quote/100
+
+curl -X DELETE http://localhost:4000/quote/100
+```
+
 ## Neler Öğrendim
 
-- Typescriptçe kabaca nasıl bir şeydir
-- Typesrciptçe'ye göre MVC kavaca nasıl uygulanır
-- Routes sistemi Typescript için nasıl çalışır
-- @DefaultWorker ve @Worker ne işe yarar
-- Typescript tarafında controller'ın yardımcısı olacak bir servis sınıfı nasıl inşa edilir
+- Typescriptçe kabaca nasıl bir şeydir?
+- Typesrciptçe'ye göre MVC kabaca nasıl uygulanır?
+- Routes sistemi Typescript için nasıl çalışır?
+- @DefaultWorker ve @Worker ne işe yarar?
+- Typescript tarafında controller'ın yardımcısı olacak bir servis sınıfı nasıl inşa edilir?
