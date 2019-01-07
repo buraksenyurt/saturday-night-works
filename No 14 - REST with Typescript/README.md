@@ -26,4 +26,38 @@ QuoteController isimli ilk controller bileşenini ekledikten sonra http://localh
 - models klasörü oluşturulup içersine quote.ts isimli model sınıfı eklendi
 - services klasörü oluşturulup içersine quote_service.ts dosyası eklendi
 
+## Testler için
+
+quote_service.ts tamamlandıktan sonra aşağıdaki komutlar ile CRUD operasyonları test edilebilir.
+
+```
+npm start
+```
+
+ile uygulama çalıştırılır ve sunucu aktif hale getirilir.
+
+Yeni özlü sözler eklemek için
+
+```
+curl -H "Content-Type: application/json" -X POST -d '{"id":100,"text":"Two things are infinite: the universe and human stupidity; and Im not sure about the universe.","owner":"Albert Einstein","available":"yes"}' http://localhost:4000/quote
+
+curl -H "Content-Type: application/json" -X POST -d '{"id":105,"text":"So many books, so little time.","owner":"Frank Zappa","available":"no"}' http://localhost:4000/quote
+
+curl -H "Content-Type: application/json" -X POST -d '{"id":107,"text":"Be the change that you wish to see in the world.","owner":"Mahatma Gandhi","available":"yes"}' http://localhost:4000/quote
+
+curl -H "Content-Type: application/json" -X POST -d '{"id":109,"text":"Don’t walk in front of me… I may not follow Don’t walk behind me… I may not lead Walk beside me… just be my friend","owner":"Albert Camus","available":"yes"}' http://localhost:4000/quote
+
+curl http://localhost:4000/quote
+```
+
+Yukardaki eklemeler sonrası örneğin Postman ile ilgili adrese gidilirse aşağıdaki sonuçla karşılaşılır.
+
+![cover_3.png](cover_3.png)
+
 ## Neler Öğrendim
+
+- Typescriptçe kabaca nasıl bir şeydir
+- Typesrciptçe'ye göre MVC kavaca nasıl uygulanır
+- Routes sistemi Typescript için nasıl çalışır
+- @DefaultWorker ve @Worker ne işe yarar
+- Typescript tarafında controller'ın yardımcısı olacak bir servis sınıfı nasıl inşa edilir

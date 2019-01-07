@@ -264,6 +264,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "QuoteController", function() { return QuoteController; });
 /* harmony import */ var fortjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! fortjs */ "fortjs");
 /* harmony import */ var fortjs__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(fortjs__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _services_quote_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../services/quote_service */ "./src/services/quote_service.ts");
 var __extends = (undefined && undefined.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
@@ -319,29 +320,61 @@ var __generator = (undefined && undefined.__generator) || function (thisArg, bod
     }
 };
 
+
 var QuoteController = /** @class */ (function (_super) {
     __extends(QuoteController, _super);
     function QuoteController() {
         return _super !== null && _super.apply(this, arguments) || this;
     }
-    QuoteController.prototype.default = function () {
+    /*
+    @DefaultWorker()
+    async default() {
+        var result = {
+            "quotes":
+                [
+                    { "quote": { "id": 1, "text": "Kontrolsüz güç güç değildir" } },
+                    { "quote": { "id": 2, "text": "Ali veli 49 50" } },
+                    { "quote": { "id": 3, "text": "Ak akçe karagün içindir" } },
+                ]
+        };
+        return jsonResult(result, HTTP_STATUS_CODE.Ok);
+    }
+    */
+    // HTTP Post'a hizmet edecen Worker metodumuz
+    QuoteController.prototype.createQuote = function () {
         return __awaiter(this, void 0, void 0, function () {
-            var result;
+            var service, payload, newQuote;
             return __generator(this, function (_a) {
-                result = {
-                    "quotes": [
-                        { "quote": { "id": 1, "text": "Kontrolsüz güç güç değildir" } },
-                        { "quote": { "id": 2, "text": "Ali veli 49 50" } },
-                        { "quote": { "id": 3, "text": "Ak akçe karagün içindir" } },
-                    ]
+                service = new _services_quote_service__WEBPACK_IMPORTED_MODULE_1__["QuoteService"]();
+                payload = {
+                    id: this.body.id,
+                    text: this.body.text,
+                    available: this.body.available,
+                    owner: this.body.owner
                 };
-                return [2 /*return*/, Object(fortjs__WEBPACK_IMPORTED_MODULE_0__["jsonResult"])(result, fortjs__WEBPACK_IMPORTED_MODULE_0__["HTTP_STATUS_CODE"].Ok)];
+                newQuote = service.createQuote(payload);
+                // geriye oluşturulan quote içeriğini(id'de barındırır) ve HTTP 201 kodunu gönderdik
+                return [2 /*return*/, Object(fortjs__WEBPACK_IMPORTED_MODULE_0__["jsonResult"])(newQuote, fortjs__WEBPACK_IMPORTED_MODULE_0__["HTTP_STATUS_CODE"].Created)];
+            });
+        });
+    };
+    // varsayılan worker'ımız HTTP Get talepleri sonrası çalışır
+    QuoteController.prototype.getQuoteList = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            var service;
+            return __generator(this, function (_a) {
+                service = new _services_quote_service__WEBPACK_IMPORTED_MODULE_1__["QuoteService"]();
+                return [2 /*return*/, Object(fortjs__WEBPACK_IMPORTED_MODULE_0__["jsonResult"])(service.getAllQuotes())]; // Sonuçları json formatında gönderdik
             });
         });
     };
     __decorate([
+        Object(fortjs__WEBPACK_IMPORTED_MODULE_0__["Worker"])([fortjs__WEBPACK_IMPORTED_MODULE_0__["HTTP_METHOD"].Post]),
+        Object(fortjs__WEBPACK_IMPORTED_MODULE_0__["Route"])("/") // adres bildirimi. Yani http://localhost:4000/quote 
+    ], QuoteController.prototype, "createQuote", null);
+    __decorate([
         Object(fortjs__WEBPACK_IMPORTED_MODULE_0__["DefaultWorker"])()
-    ], QuoteController.prototype, "default", null);
+    ], QuoteController.prototype, "getQuoteList", null);
     return QuoteController;
 }(fortjs__WEBPACK_IMPORTED_MODULE_0__["Controller"]));
 
@@ -370,6 +403,63 @@ var routes = [{
         path: "/quote",
         controller: _controllers_quote_controller__WEBPACK_IMPORTED_MODULE_1__["QuoteController"]
     }];
+
+
+/***/ }),
+
+/***/ "./src/services/quote_service.ts":
+/*!***************************************!*\
+  !*** ./src/services/quote_service.ts ***!
+  \***************************************/
+/*! exports provided: QuoteService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "QuoteService", function() { return QuoteService; });
+var library = {
+    quotes: []
+};
+// Servis sınıfımız temel CRUD operasyonlarını içermekte
+var QuoteService = /** @class */ (function () {
+    function QuoteService() {
+    }
+    // yeni bir quote nesnesi ekler
+    QuoteService.prototype.createQuote = function (quote) {
+        library.quotes.push(quote);
+        return quote;
+    };
+    // gelen quote bilgisine bakarak güncelleme yapar
+    QuoteService.prototype.updateQuote = function (quote) {
+        // gelen quote nesnesindeki id değerini kullanarak kaydı bul
+        var current = library.quotes.find(function (q) { return q.id === quote.id; });
+        if (current != null) { //kayıt varsa alanlarını güncelle
+            current.id = quote.id;
+            current.text = quote.text;
+            current.owner = quote.owner;
+            current.available = quote.available;
+            return current;
+        }
+        else
+            return quote;
+    };
+    // id değerine göre silme işlemini yapar
+    QuoteService.prototype.deleteQuote = function (id) {
+        var currentID = library.quotes.findIndex(function (q) { return q.id === id; }); // id üzerinden kaydın indeksini bul
+        library.quotes.splice(currentID, 1); // index'in bulunduğu yerden itibaren 1 kayıt sil
+    };
+    // id değerine göre quote'ı bulur
+    QuoteService.prototype.getQuoteById = function (id) {
+        var current = library.quotes.find(function (q) { return q.id === id; });
+        return current;
+    };
+    // tüm özlü sözleri döndürür
+    QuoteService.prototype.getAllQuotes = function () {
+        return library.quotes;
+    };
+    return QuoteService;
+}());
+
 
 
 /***/ }),
