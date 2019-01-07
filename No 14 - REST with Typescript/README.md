@@ -69,11 +69,10 @@ curl -X DELETE http://localhost:4000/quote/100
 
 ## Neler Öğrendim
 
-- Typescriptçe kabaca nasıl bir şeydir?
-- Typesrciptçe'ye göre MVC kabaca nasıl uygulanır?
-- Routes sistemi Typescript için nasıl çalışır?
-- @DefaultWorker ve @Worker ne işe yarar?
-- Typescript tarafında controller'ın yardımcısı olacak bir servis sınıfı nasıl inşa edilir?
-- Veri kontrolü için FortJs'e özgü olan Guard bileşenleri nasıl yazılır, nasıl kullanılır?
+- FortJS'in sunduğu imkanlar
+- FortJs router sisteminin çalışma şekli
+- FortJs ile gelen @DefaultWorker, @Worker, @Route, @Guards gibi dekoratör sınıfların kullanımı
+- Genel Typescript kavramları
+- MVC yapısının uygulanış biçimi
 
 >Örnek özlü söz listesi için https://www.goodreads.com/quotes adresinden yararlandım.
