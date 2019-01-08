@@ -22,15 +22,13 @@ Readme dosyalarından yararlanarak kendi başlangıçlarınızı yapabilir, örn
 
 Burası işlenecek konu başlıklarının olduğu havuzdur.
 
-- Briaz daha GraphQL
-- Typescript ile REST Api geliştirmek _(FortJs ile)_
 - Harici paketler veya yardımcı paketlere başvurmadan Node.js ve Javascript ile basit bir Web Server nasıl yazılır?
 
 > Planlanan yazılarda konu başlıkları değişiklik gösterebilir ve örnekler kronolojik sırada işlenmemektedir.
 
 ## Üzerinde Çalışılıyor
 
-- Typescript ile REST Api geliştirmek _(FortJs ile)_
+- Briaz daha GraphQL _(Graphpack ile)_
 
 ## Tamamlananlar
 
@@ -49,5 +47,6 @@ Burası işlenecek konu başlıklarının olduğu havuzdur.
 11. GraphQL'i NodeJS ile kullanmaya çalışmak
 12. Flask-RESTPlus ile Python'da REST Api geliştirmek
 13. MEVN _(MongoDb, Express, Vue.Js, NodeJS)_ deneyimini yaşatacak bir Hello World yazmak
+14. Typescript ile REST Api geliştirmek _(FortJs ile)_
 
 > MD dosyasını formatlarken [şu adresten](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) yararlanıyorum.
