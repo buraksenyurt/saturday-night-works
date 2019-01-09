@@ -1,0 +1,23 @@
+{
+  "name": "nobelapi",
+  "version": "1.0.0",
+  "description": "basit bir graphql uygulaması daha",
+  "main": "index.js",
+  "scripts": {
+    "dev": "graphpack",
+    "build": "graphpack build"
+  },
+  "keywords": [
+    "graphql",
+    "saturday-night-works",
+    "nodejs",
+    "javascript",
+    "npm",
+    "graphpack"
+  ],
+  "author": "burak selim şenyurt",
+  "license": "ISC",
+  "devDependencies": {
+    "graphpack": "^1.0.6"
+  }
+}
