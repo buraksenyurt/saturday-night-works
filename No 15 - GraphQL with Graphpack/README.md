@@ -1,6 +1,6 @@
 # Graphpack ile Biraz Daha Graphql
 
-Son zamanlarda GraphQL'i daha fazla duymaya başladım. Facebook tarafından açık kaynak olarak geliştirilen bu API sistemi REST yerine tercih edilir olmaya başladı. Amacım onu daha çok deneyimlemek. Daha önceden graphql paketi ile deneme yapmıştım. Konuyu pekiştirmek için karşıma çıkan ilk graphql öğretisi ile devam ettim. Bu kez graphpack'i kullandım.
+Son zamanlarda GraphQL'i daha fazla duymaya başladım. Facebook tarafından açık kaynak olarak geliştirilen bu API sistemi REST yerine tercih edilir olmaya başladı. Amacım onu daha çok deneyimlemek. Daha önceden graphql paketi ile deneme yapmıştım. Konuyu pekiştirmek için karşıma çıkan ilk graphql öğretisi ile devam ettim. Bu kez graphpack'i kullandım. Ayrıca Mutations konusuna bakıp CreateUpdateDelete işlemlerini anlamaya çalıştım.
 
 >Dikkat çekici özelliklerden birisi GraphQL'in REST'in aksine tek bir endpoint sunması. Bir diğeri ise strongly-typed geliştirilmiş olması ki bu sayede sorgular çalıştırılmadan önce doğrulanabiliyor. Ayrıca sadece ilgilendiğimiz veriyi okuyor veya yazmak istediğimiz veriyi gönderiyoruz _(REST'teki gibi gereğinden fazlasını değil)_
 
@@ -36,6 +36,23 @@ terminal komutunu verip varsayılan olarak gelen http://localhost:4000 adresine 
 
 ## Örnek Sorgulamalar
 
+İlk sorgumuz tüm nobel ödüllüleri geriye döndürmekte.
 
+```
+query {
+  allLaureates{
+    id
+    firstname
+    surname
+    born
+    died
+    prizes{
+      year
+      category
+      motivation
+    }
+  }
+}
+```
 
 ## Neler Öğrendim?

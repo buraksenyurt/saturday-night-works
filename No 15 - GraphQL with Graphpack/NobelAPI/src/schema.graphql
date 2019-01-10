@@ -1,0 +1,29 @@
+# sorgumuza ait şema tanımı
+type Query{
+    allLaureates:[Laureate!]! # Laurate tipinden array döndüren tanımımız var. 
+}
+
+# Kullanıcı için bir tip sunuyoruz
+type Laureate{
+    id: ID! # ünlem işareti id alanının null olamayacağını ifade etmekte
+    firstname: String
+    surname: String
+    born: String
+    died: String
+    bornCountry: String
+    bornCountryCode: String
+    bornCity: String
+    diedCountry: String
+    diedCountryCode: String
+    diedCity: String
+    #gender:String # Bu alan aslında Laureate.js veri dosyası içerisinde var. Ancak tip tanımına koymadığımız için kullanılabilir durumda olmayacak. Bunu deneyimlemek için yorum satırı haline getirdik.
+    prizes:[Prize] # Laureate tipi içinde yıllara göre ödül bilgisinin tutulduğu bir dizi söz konusu (Bir noble ödülü sahibi farklı yıllarda birden fazla ödül almış olabilir)
+}
+
+# Ödüllere ait yıl, kategori ve motivasyon bilgisinin tutulduğu tip
+# Laureate içindeki prizes dizisinin temel tipi aslında
+type Prize{
+    year: Int
+    category: String
+    motivation: String
+}
