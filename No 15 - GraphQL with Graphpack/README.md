@@ -55,4 +55,9 @@ query {
 }
 ```
 
+![cover_1.png](cover_1.png)
+
 ## Neler Öğrendim?
+
+- GraphQL schema tanımlamalarında çoklu alt listeleri nasıl kullanacağımı _(one to many ilişki diyelim)_
+- Graphpack'in nasıl kullanıldığını
