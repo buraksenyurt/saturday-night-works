@@ -57,7 +57,27 @@ query {
 
 ![cover_1.png](cover_1.png)
 
+İkinci sorgumuzda bir ID değerine göre Nobel sahibini ve ödüllerini çekiyoruz. Sorguyu yazarken resolver tarafındaki metodu ve sonrasında görmek istediğimiz tipin içeriğini belirtiyoruz. 
+
+```
+query{
+    oneLaureate(id:40){
+    id
+    firstname
+    surname
+    prizes{
+        year
+        category
+        motivation
+    }
+  }
+}
+```
+
+![cover_2.png](cover_2.png)
+
 ## Neler Öğrendim?
 
 - GraphQL schema tanımlamalarında çoklu alt listeleri nasıl kullanacağımı _(one to many ilişki diyelim)_
 - Graphpack'in nasıl kullanıldığını
+- 

@@ -1,6 +1,7 @@
 # sorgumuza ait şema tanımı
 type Query{
     allLaureates:[Laureate!]! # Laurate tipinden array döndüren tanımımız var. 
+    oneLaureate(id:ID!):Laureate # ID'ye göre tek bir Nobel sahibinin bilgilerini alacağımız sorgu. Parametre olarak ID türünden değer alıyor
 }
 
 # Kullanıcı için bir tip sunuyoruz

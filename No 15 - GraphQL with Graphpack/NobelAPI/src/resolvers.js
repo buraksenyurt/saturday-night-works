@@ -8,6 +8,10 @@ const resolvers = {
     // burayı, sözleşmenin uygulandığı fonksiyon olarak düşünebiliriz
     allLaureates: (parent, args, context, info) => {
       return laureates;
+    },
+    // ikinci sorgumuz ise id değerine göre arama yapıp sonucunu döndürmekte
+    oneLaureate: (parent, { id }, context, info) => {
+      return laureates.find(l => l.id === id);
     }
   }
 };
