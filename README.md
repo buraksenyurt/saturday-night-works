@@ -23,12 +23,20 @@ Readme dosyalarından yararlanarak kendi başlangıçlarınızı yapabilir, örn
 Burası işlenecek konu başlıklarının olduğu havuzdur.
 
 - Harici paketler veya yardımcı paketlere başvurmadan Node.js ve Javascript ile basit bir Web Server nasıl yazılır?
+- Blazor Hello World uygulaması
+- Javascript tarafında async, await kullanımları ile ilgili örnek
+- AWS'de Serverless Async API örneği yazmak
+- Ruby ile doküman şifreleyen bir AWS Lambda uygulaması yazmak
+- WebPack ile build işlemini deneyimlemek
+- C# 8.0 ile gelen yeniliklere kısa kod parçaları ile bakmak
+- Asp.Net Web API'de Policy Based Authorization kullanmak
+- Twilio ile bir WhatsApp Bot geliştirmek
 
 > Planlanan yazılarda konu başlıkları değişiklik gösterebilir ve örnekler kronolojik sırada işlenmemektedir.
 
 ## Üzerinde Çalışılıyor
 
-- Briaz daha GraphQL _(Graphpack ile)_
+- Briaz daha GraphQL _(Graphpack kullanımı, Mutations ve bir Client)_
 
 ## Tamamlananlar
 
