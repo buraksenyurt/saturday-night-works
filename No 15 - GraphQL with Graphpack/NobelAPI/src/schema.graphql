@@ -2,6 +2,7 @@
 type Query{
     allLaureates:[Laureate!]! # Laurate tipinden array döndüren tanımımız var. 
     oneLaureate(id:ID!):Laureate # ID'ye göre tek bir Nobel sahibinin bilgilerini alacağımız sorgu. Parametre olarak ID türünden değer alıyor
+    laureatesByYear(year:Int):[Laureate!]! # Yıla göre nobel ödüllülerin listeini döndürecek.
 }
 
 # Kullanıcı için bir tip sunuyoruz
@@ -27,4 +28,19 @@ type Prize{
     year: Int
     category: String
     motivation: String
+}
+
+# Mutation'lar CUD(Create Update Delete) operasyonları için kullanılmaktalar
+type Mutation{
+    #JSON desenini tanımladık
+    #TODO: Custom Type göndermenin bir yolunu bulmam lazım
+    createLaureate(id:ID!,firstname:String!,surname:String!,born:String!):Laureate! # Yeni bir Nobel ödülü sahibi eklemek için yaptığımız fonkisyon tanımı
+    
+    #Nobel sahibine ödülünü eklemek için kullanılacak şema tanımm
+    addPrize(id:ID!,year:Int,category:String,motivation:String):Laureate!
+
+    #Silme işlemi için şema tanımı
+    deleteLaureate(id:ID!):Laureate!
+
+    # UPDATE Fonksiyonu da yazılmalı! Deneyin ;)
 }
