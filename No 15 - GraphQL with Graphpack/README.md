@@ -76,8 +76,85 @@ query{
 
 ![cover_2.png](cover_2.png)
 
+Yeni bir nobel ödülü sahibi eklemek için aşağıdaki sorgu nesnesi kullanılabilir.
+
+```
+mutation{
+  createLaureate(
+    id:9999
+    ,firstname:"Burak"
+    ,surname:"Selim Şenyurt"
+    ,born:"1976-12-04"
+  ){
+    id,
+    firstname,
+    surname,
+    born
+  }
+}
+```
+
+![cover_3.png](cover_3.png)
+
+Ödül eklemek için
+
+```
+mutation{
+  addPrize(
+    id:9999
+    ,year:2018
+    ,category:"Programming Languages"
+    ,motivation:"lorem ipsum...."
+  ){
+    firstname,
+    surname,
+    prizes{
+      year,
+      category,
+      motivation
+    }
+  }
+}
+```
+
+![cover_4.png](cover_4.png)
+
+Bir nobel ödülü sahibinin bilgilerini silmek için,
+
+```
+mutation{
+  deleteLaureate(
+    id:9999
+  ){
+    firstname,
+    surname
+    }
+  }
+```
+
+![cover_5.png](cover_5.png)
+
+Belli bir yıldaki nobel ödülü sahiplerini bulmak için,
+
+```
+query{
+    laureatesByYear(year:1976){
+    firstname
+    surname
+    prizes{
+        year
+        category
+        motivation
+    }
+  }
+}
+```
+
+![cover_6.png](cover_6.png)
+
 ## Neler Öğrendim?
 
 - GraphQL schema tanımlamalarında çoklu alt listeleri nasıl kullanacağımı _(one to many ilişki diyelim)_
 - Graphpack'in nasıl kullanıldığını
-- 
+- Mutaion nesneleri ile CUD operasyonlarının nasıl yapıldığını
+- Javascript tarafında JSON array üzerinde filter ve some fonksiyonlarının kullanımlarını
