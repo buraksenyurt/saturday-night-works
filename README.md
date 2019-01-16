@@ -22,15 +22,19 @@ Readme dosyalarından yararlanarak kendi başlangıçlarınızı yapabilir, örn
 
 Burası işlenecek konu başlıklarının olduğu havuzdur.
 
-- Harici paketler veya yardımcı paketlere başvurmadan Node.js ve Javascript ile basit bir Web Server nasıl yazılır?
-- Blazor Hello World uygulaması
-- Javascript tarafında async, await kullanımları ile ilgili örnek
-- AWS'de Serverless Async API örneği yazmak
-- Ruby ile doküman şifreleyen bir AWS Lambda uygulaması yazmak
-- WebPack ile build işlemini deneyimlemek
-- C# 8.0 ile gelen yeniliklere kısa kod parçaları ile bakmak
-- Asp.Net Web API'de Policy Based Authorization kullanmak
-- Twilio ile bir WhatsApp Bot geliştirmek
+- Vue ile Desktop uygulaması oluşturmak _(Electron benzeri)_
+- Python tarafında Concurrency kullanımı
+- Asp.Net Core'da arka plan görevleri
+- Blazor ile tanışma
+- Bir WhatsApp Bot yazma deneyimi
+- Harici paketler olmadan basit bir NodeJS Web sunucusu yazmak _(Express siz gibi)_
+- Go Echo web framework'ünü tanımak
+- NodeJS ile Gantt Chart'lar oluşturmak
+- Material UI kullanarak MERN tipinde uygulama oluşturmak
+- AWS Lambda deneyimini Ruby ile gerçekleştirmek
+- MERN tipinde bir uygulamayı Heroku'ya Deploy etmek
+- Jets ile bir Ruby uygulamasını AWS'e ye Deploy etmek
+- Angular ve Webpack deneyimi
 
 > Planlanan yazılarda konu başlıkları değişiklik gösterebilir ve örnekler kronolojik sırada işlenmemektedir.
 
