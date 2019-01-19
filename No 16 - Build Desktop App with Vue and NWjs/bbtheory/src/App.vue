@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <h2>Bölüm adını yazar mısın?</h2>
-    <section>
+    <section class="input-Section">
       <input type="text" v-model="query">
       <button :disabled="!query.length" @click="findEpisode">Göster</button>
       <!-- butona basılınca findEpisode metodu çağırılacak -->
@@ -71,6 +71,30 @@ export default {
   padding:10px;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  margin-top: 10px;
 }
+input {
+  width: 75%;
+  outline: none;
+  height: 20px;
+  font-size: 1em;
+}
+
+button{
+  display: block;
+  width: 25%;
+  height: 25px;
+  outline: none;
+  border-radius: 4px;
+  white-space: nowrap; 
+  margin:0 10px;
+  font-size: 1rem;
+}
+
+.input-Section {
+  display: flex;
+  align-items: center;
+  padding: 20px 0;
+}
+
 </style>
