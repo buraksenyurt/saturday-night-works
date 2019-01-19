@@ -44,6 +44,8 @@ API çağrısı yapabilmek için axios paketinden yararlanıyoruz.
 ## Değişiklikler
 
 App.vue dosyası değiştirildi. Bu desktop uygulamasının arayüzü.
+main.js tarafında değişiklik yapıldı.
+_Bu konu kapsamı dışında ama birde Asp.Net Core Web API yazıldı_
 
 ## Çalışma Zamanı
 
@@ -58,6 +60,10 @@ npm run desktop
 Big Bang Theory'den örnek bir bölüm girip aratabiliriz.
 
 ![cover_1.png](cover_1.png)
+
+## Paketleme
+
+>Paket boyutu oldukça yüksek!
 
 ## Neler Öğrendim?
 
