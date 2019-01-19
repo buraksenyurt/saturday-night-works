@@ -22,7 +22,6 @@ Readme dosyalarından yararlanarak kendi başlangıçlarınızı yapabilir, örn
 
 Burası işlenecek konu başlıklarının olduğu havuzdur.
 
-- Vue ile Desktop uygulaması oluşturmak _(Electron benzeri)_
 - Python tarafında Concurrency kullanımı
 - Asp.Net Core'da arka plan görevleri
 - Blazor ile tanışma
@@ -40,7 +39,7 @@ Burası işlenecek konu başlıklarının olduğu havuzdur.
 
 ## Üzerinde Çalışılıyor
 
-- Briaz daha GraphQL _(Graphpack kullanımı, Mutations ve bir Client)_
+- Vue ile Desktop uygulaması oluşturmak _(Electron benzeri)_
 
 ## Tamamlananlar
 
@@ -60,5 +59,6 @@ Burası işlenecek konu başlıklarının olduğu havuzdur.
 12. Flask-RESTPlus ile Python'da REST Api geliştirmek
 13. MEVN _(MongoDb, Express, Vue.Js, NodeJS)_ deneyimini yaşatacak bir Hello World yazmak
 14. Typescript ile REST Api geliştirmek _(FortJs ile)_
+15. Briaz daha GraphQL _(Graphpack kullanımı, Mutations)_
 
 > MD dosyasını formatlarken [şu adresten](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) yararlanıyorum.
