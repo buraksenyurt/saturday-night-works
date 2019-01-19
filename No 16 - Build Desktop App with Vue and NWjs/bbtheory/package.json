@@ -49,5 +49,12 @@
     "last 2 versions",
     "not ie <= 8"
   ],
-  "main": "http://localhost:8080"
+  "main": "http://localhost:8080",
+  "window": {
+    "width": 800,
+    "height": 600
+  },
+  "build": {
+    "nwVersion": "0.35.5"
+  }
 }

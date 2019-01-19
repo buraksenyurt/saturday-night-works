@@ -63,7 +63,17 @@ Big Bang Theory'den örnek bir bölüm girip aratabiliriz.
 
 ## Paketleme
 
->Paket boyutu oldukça yüksek!
+Uygulamayı paketlemek için packages.json içerisine build kısmı eklenir. Burada nw'nin versiyonu belirtlilir. bbtheory isimli uygulamanın root klasöründe aşağıdaki komut ile 64bit linux platformu için gerekli paketin üretilmesi sağlanır.
+
+```
+./node_modules/.bin/build --tasks linux-x64 .
+```
+
+![cover_2.png](cover_2.png)
+
+>Paket boyutu oldukça yüksek! Ancak küçültmek için çeşitli yollar varmış. _Araştırmak lazım_
+
+![cover_3.png](cover_3.png)
 
 ## Neler Öğrendim?
 
