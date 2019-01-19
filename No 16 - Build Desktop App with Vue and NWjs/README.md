@@ -60,3 +60,8 @@ Big Bang Theory'den örnek bir bölüm girip aratabiliriz.
 ![cover_1.png](cover_1.png)
 
 ## Neler Öğrendim?
+
+- Vue tarafında nasıl ön yüz geliştirilir
+- axion ile nasıl servis talebi gönderilir
+- newtonsoft.json ile bir json dizisinde nasıl linq sorgusu çalıştırılır
+- CORS ne işe yarar
