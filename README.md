@@ -39,7 +39,6 @@ Burası işlenecek konu başlıklarının olduğu havuzdur.
 
 ## Üzerinde Çalışılıyor
 
-- Vue ile Desktop uygulaması oluşturmak _(Electron benzeri)_
 
 ## Tamamlananlar
 
@@ -60,5 +59,6 @@ Burası işlenecek konu başlıklarının olduğu havuzdur.
 13. MEVN _(MongoDb, Express, Vue.Js, NodeJS)_ deneyimini yaşatacak bir Hello World yazmak
 14. Typescript ile REST Api geliştirmek _(FortJs ile)_
 15. Briaz daha GraphQL _(Graphpack kullanımı, Mutations)_
+16. Vue ile Desktop uygulaması oluşturmak _(Electron benzeri)_
 
 > MD dosyasını formatlarken [şu adresten](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) yararlanıyorum.
