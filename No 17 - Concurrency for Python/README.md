@@ -42,6 +42,26 @@ _çalışma zamanı sonuçları eklenecek_
 
 Bu örnekte geliştiricinin işini biraz daha kolaylaştıran üst seviye threading yardımcılarından olan ThreadPoolExecutor nesnesi kullanılır. Thread'lerin başlatılması, havuza atılması veya birisinin bekletilip diğerine geçiş yapılması gibi yönetsel işlemleri üstlenir. Örnekte kullanılan requests.Session thread safe olmayan bir nesnedir. Bu nedenle threading.local() mekanizmasına başvurulmuş ve her bir thread'in yaşamı boyunca kendisi için oluşturulan Session ile çalışması garanti edilmiştir. Burada sıkıntı thread'lar arası veri paylaşımıdır. Örneğin 8 eş zamanlı işçi çalıştığında ve n sayıda Session açılıp HTTP talebi gönderildiğinde işçilerin kendileri ile alakalı Session nesneleri ile çalışabilmesini garanti etmek gerekir.
 
+```
+python sample_2.py
+```
+
 _çalışma zamanı ölçümlemeleri farklı workerCount'lara göre eklenecek_
+
+### sample_3.py _(asyncio kullanımı)_
+
+Bu örnekte task bazlı çalışma söz konusudur. HTTP talepleri için n adet task kullanılır. Tüm task'lar aynı Session'ı paylaşabilir nitekim aynı thread içerisinde çalışmaktadır. Örnekte aiohttp paketine ihtiyaç vardır.
+
+```
+pip install aiohttp
+```
+
+>Bu kullanım şeklindeki en büyük sorun tutarsızlık. Requests tam anlamıyla bloklandığında açılan olay döngüsünü uyarabilecek kabiliyette değil ve bu nedenle bazı hallerde işlem süresi beklenenden de fazla olabilir.
+
+```
+python sample_3.py
+```
+
+_çalışma zamanı ölçümlemeleri eklenecek_
 
 ## Neler Öğrendim?
