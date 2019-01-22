@@ -56,7 +56,7 @@ if __name__ == "__main__":
         "https://www.buraksenyurt.com/post/raspberry-pi-ve-python-calisma-notlarim"
     ] * 300  # 300er adet oluşturur
     beginning = time.time()  # başlamadan önceki zamanı al
-    getAll(targetSites, 8)
+    getAll(targetSites, 16)
     duration = time.time()-beginning  # toplam süreyi hesapla
     print(f"Toplam çalışma süresi {duration} saniye")
 
