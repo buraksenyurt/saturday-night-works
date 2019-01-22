@@ -18,7 +18,7 @@ if __name__ == "__main__":
             # http get talebini gönderip dönen cevabı response nesnesine al
             with session.get(url) as response:
                 # boyutu bildir
-                print(f"{url} adresinden {len(response.content)} bytes geldi.\n")
+                print("{0} adresinden {1} bytes geldi".format(url,len(response.content)))
 
     duration = time.time()-beginning  # toplam süreyi hesapla
-    print(f"Toplam çalışma süresi {duration} saniye")
+    print("Toplam çalışma süresi {0} saniye".format(duration))

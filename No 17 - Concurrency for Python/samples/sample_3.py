@@ -7,7 +7,7 @@ import time
 # talebi gönder
 async def getResponse(address, session):
     async with session.get(address) as response:
-        print(f"{address} adresinden {response.content_length} bytes geldi.\n")
+        print("{0} adresinden {1} bytes geldi.\n".format(address,response.content_length))
 
 #tümü için talepleri işlet
 async def getAll(addresses):
@@ -32,4 +32,4 @@ if __name__ == "__main__":
     beginning = time.time()  # başlamadan önceki zamanı al
     asyncio.get_event_loop().run_until_complete(getAll(targetSites)) # burada bir olay döngüsü başlatılır ve getAll fonksiyonu işini tamamlayınca kadar yaşamını sürdürür
     duration = time.time()-beginning  # toplam süreyi hesapla
-    print(f"Toplam çalışma süresi {duration} saniye")
+    print("Toplam çalışma süresi {0} saniye".format(duration))

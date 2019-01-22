@@ -76,4 +76,29 @@ West-World çalışma zamanında işlemler 48 saniye civarında sürmüştür. D
 
 ![cover_4.png](cover_4.png)
 
+### sample_4.py _(multiprocessing kullanarak tüm çekirdekleri işe katmak)_
+
+Bu örnekte bir öncekilerde olduğu gibi tek python process tarafından ele alınan farklı veya tekil thread'lerin aksine, gerçek anlamda farklı process'lerin işin içerisine katıldığı çoklu çalışma zamanı söz konusudur. multiprocessing temel olarak çoklu işlemci ve çekirdek gücünü kullanabilmeyi sağlar. Bunun için CPU başına ayrı birer python yorumlayıcısı eş zamanlı olarak çalıştırılır. 
+
+Açılan process'ler arasındaki koordinasyon ve haberleşme yine bir havuzda yönetilir. Havuz genel olarak CPU sayısına göre şekillenir. Buradaki process miktarı değiştirilebilir ama CPU sayısından çok olması işlemleri daha da yavaşlatabilir.
+
+>Bu senaryoda diğer python interpreter'ların ayrı process olarak açılmasının bir maliyeti vardır ve aslında süreye olumsuz etki edecektir. O yüzden gerçekten uygun senaryolarda uygulanması gerekir.
+
+```
+python3 sample_4.py
+```
+
+West-World'de bu çalışmanın sonuçları aşağıdaki gibi oldu. İfade ediliği üzere öyle yüksek bir performans artışı olmadı. Nitekim uygun bir senaryoyu bulmak gerekiyor. 
+
+![cover_5.png](cover_5.png)
+
+West-World 4 çekirdekli bir işlemciye sahip. Buna göre Fork edilen Worker sayısı 4.
+
 ## Neler Öğrendim?
+
+- multiprocessing kanalıyla yapılan concurrency modelinin diğerlerine göre farklarını.
+- I/O Bound ve CPU Bound operasyonların ne anlama geldiğini
+- Thread pool çalışma mekanizmasını
+- Task bazlı çalışma modelini
+
+,öğrendim.

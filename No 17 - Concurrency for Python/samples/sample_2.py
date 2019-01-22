@@ -30,7 +30,7 @@ def getResponse(address):  # talebi gönder
             threads.append(threading.get_ident())
 
         print(threading.get_ident())
-        print(f"{address} adresinden {len(response.content)} bytes geldi.\n")
+        print("{0} adresinden {1} bytes geldi".format(address,len(response.content)))
 
 
 # Thread Pool yönetimini yapan ve toplu talepleri gönderen metodumuz
@@ -58,6 +58,6 @@ if __name__ == "__main__":
     beginning = time.time()  # başlamadan önceki zamanı al
     getAll(targetSites, 16)
     duration = time.time()-beginning  # toplam süreyi hesapla
-    print(f"Toplam çalışma süresi {duration} saniye")
+    print("Toplam çalışma süresi {0} saniye".format(duration))
 
-    print(f"Oluşan thread'ler {threads}")
+    print("Oluşan thread'ler {0}".format(threads))
