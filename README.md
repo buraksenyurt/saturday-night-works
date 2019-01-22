@@ -22,7 +22,6 @@ Readme dosyalarından yararlanarak kendi başlangıçlarınızı yapabilir, örn
 
 Burası işlenecek konu başlıklarının olduğu havuzdur.
 
-- Python tarafında Concurrency kullanımı
 - Asp.Net Core'da arka plan görevleri
 - Blazor ile tanışma
 - Bir WhatsApp Bot yazma deneyimi
@@ -39,6 +38,7 @@ Burası işlenecek konu başlıklarının olduğu havuzdur.
 
 ## Üzerinde Çalışılıyor
 
+- Python tarafında Concurrency kullanımı
 
 ## Tamamlananlar
 
