@@ -24,6 +24,8 @@ python3 sample_1.py
 
 şeklinde ilerlenebilir.
 
+>Örneklerin testleri çoğunlukla West-World üzerinde _(Ubuntu 18.04 64bit)_ gerçekleştirilmiştir. Farklı Python sürümleri yüklü olduğundan python3 ve pip3 çalıştırıcıları ile ilerlenilmiştir.
+
 ## Örnekler
 
 ### sample_1.py _(Senkron versiyon)_
