@@ -94,11 +94,27 @@ West-World'de bu çalışmanın sonuçları aşağıdaki gibi oldu. İfade edili
 
 West-World 4 çekirdekli bir işlemciye sahip. Buna göre Fork edilen Worker sayısı 4.
 
+## CPU Bound işlemler
+
+Bu sefer network, dosya yazma okuma gibi işlemer gibi dış etkenlerin durumuna göre değil de, tamamen CPU'nun becerisine göre zaman alan baraj işlemleri düşünelim. Matematik yoğun işlemler bu anlamda ele alınabilir. threading ve asyncio gibi kullanımlar senkron kullanıma göre daha uzun sürelerde tamamlanabilirler. Çünkü, hem thread hem task kullanımında tüm işlemler aynı CPU'nun aynı process'inde icra edilir. Yani concurrent'luğu işin içerisine katarsak ekstradan yük getirmiş oluruz.
+
+### sample_5.py
+
+Bu örnekte sembolik olarak büyük bir rastsal sayı dizisinin elemanlarını faktöryel hesabına tabi tutuyoruz. Aynı sayı kümesi için senkron ve çoklu process tekniği ile süreleri karşılaştırıyoruz.
+
+![cover_6.png](cover_6.png)
+
+mGörüldüğü üzere Multiprocessing modelinin kullanımı oldukça basit. Ayrıca tüm CPU gücünü almamıza olanak sağlıyor. Lakin yapılacak işlemleri process'lere göre ayırmak daha zor. Process'ler arası haberleşme gerektiren durumların kurgulanması da pek kolay değil.
+
 ## Neler Öğrendim?
 
-- multiprocessing kanalıyla yapılan concurrency modelinin diğerlerine göre farklarını.
+- multiprocessing kanalıyla yapılan concurrency modelinin diğerlerine göre farklarını
 - I/O Bound ve CPU Bound operasyonların ne anlama geldiğini
 - Thread pool çalışma mekanizmasını
 - Task bazlı çalışma modelini
+- Makinedeki CPU sayısını bulmayı
+- CPU Bound problemlerde performans için multiprocessing modelinin kullanılması gerektiğini
+- I/O Bound problemlerde en azından threading kullanılması gerekiğini _(eğer yapabiliyorsak onun yerine asyncio ile ilerlenmesi öneriliyor)_
+- Hangisi olursa olsun öncelikle iyi şekilde anlaşılmaları gerektiğini 
 
-,öğrendim.
+öğrendim.
