@@ -38,7 +38,6 @@ Burası işlenecek konu başlıklarının olduğu havuzdur.
 
 ## Üzerinde Çalışılıyor
 
-- Python tarafında Concurrency kullanımı
 
 ## Tamamlananlar
 
@@ -60,5 +59,6 @@ Burası işlenecek konu başlıklarının olduğu havuzdur.
 14. Typescript ile REST Api geliştirmek _(FortJs ile)_
 15. Briaz daha GraphQL _(Graphpack kullanımı, Mutations)_
 16. Vue ile Desktop uygulaması oluşturmak _(Electron benzeri)_
+17. Python tarafında Concurrency kullanımı
 
 > MD dosyasını formatlarken [şu adresten](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) yararlanıyorum.
