@@ -102,9 +102,13 @@ Bu sefer network, dosya yazma okuma gibi işlemer gibi dış etkenlerin durumuna
 
 Bu örnekte sembolik olarak büyük bir rastsal sayı dizisinin elemanlarını faktöryel hesabına tabi tutuyoruz. Aynı sayı kümesi için senkron ve çoklu process tekniği ile süreleri karşılaştırıyoruz.
 
+```
+python3 sample_5.py
+```
+
 ![cover_6.png](cover_6.png)
 
-mGörüldüğü üzere Multiprocessing modelinin kullanımı oldukça basit. Ayrıca tüm CPU gücünü almamıza olanak sağlıyor. Lakin yapılacak işlemleri process'lere göre ayırmak daha zor. Process'ler arası haberleşme gerektiren durumların kurgulanması da pek kolay değil.
+Görüldüğü üzere Multiprocessing modelinin kullanımı oldukça basit. Ayrıca tüm CPU gücünü almamıza olanak sağlıyor. Lakin yapılacak işlemleri process'lere göre ayırmak daha zor. Process'ler arası haberleşme gerektiren durumların kurgulanması da pek kolay değil.
 
 ## Neler Öğrendim?
 
