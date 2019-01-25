@@ -25,15 +25,16 @@ def computeSync(numbers):
     for n in numbers:
         factorial(n)
 
+processorCount=multiprocessing.cpu_count()
 
 def computeMultiprocessing(numbers):
     # dizideki her bir sayı için factorial fonksiyonuna map'leme yapılıyor
-    with multiprocessing.Pool(processes=4) as pool: #process sayısını vermek zorunda değiliz. Varsayılan olarak makinedeki CPU sayısı kadardır.
+    with multiprocessing.Pool(processes=processorCount) as pool: #process sayısını vermek zorunda değiliz. Varsayılan olarak makinedeki CPU sayısı kadardır.
         pool.map(factorial, numbers)
 
 
 if __name__ == "__main__":
-    print("West-World'de {0} CPU var".format(multiprocessing.cpu_count()))
+    print("Programın çalıştığı bilgisayarda {0} CPU var".format(processorCount))
     numbers = getRandoms(3000000)
 
     beginning = time.time()  # başlamadan önceki zamanı al
