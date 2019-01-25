@@ -110,6 +110,10 @@ python3 sample_5.py
 
 Görüldüğü üzere Multiprocessing modelinin kullanımı oldukça basit. Ayrıca tüm CPU gücünü almamıza olanak sağlıyor. Lakin yapılacak işlemleri process'lere göre ayırmak daha zor. Process'ler arası haberleşme gerektiren durumların kurgulanması da pek kolay değil.
 
+_Windows 10 tabanlı başka bir ortamdaki çalışma zamanı sonuçları da aşağıdaki gibi oldu._
+
+![cover_7.png](cover_7.png)
+
 ## Neler Öğrendim?
 
 - multiprocessing kanalıyla yapılan concurrency modelinin diğerlerine göre farklarını
