@@ -78,6 +78,6 @@ Uygulamayı paketlemek için packages.json içerisine build kısmı eklenir. Bur
 ## Neler Öğrendim?
 
 - Vue tarafında nasıl ön yüz geliştirilir
-- axion ile nasıl servis talebi gönderilir
+- axios ile nasıl servis talebi gönderilir
 - newtonsoft.json ile bir json dizisinde nasıl linq sorgusu çalıştırılır
 - CORS ne işe yarar
