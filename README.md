@@ -22,7 +22,6 @@ Readme dosyalarından yararlanarak kendi başlangıçlarınızı yapabilir, örn
 
 Burası işlenecek konu başlıklarının olduğu havuzdur.
 
-- Asp.Net Core'da arka plan görevleri
 - Blazor ile tanışma
 - Bir WhatsApp Bot yazma deneyimi
 - Harici paketler olmadan basit bir NodeJS Web sunucusu yazmak _(Express siz gibi)_
@@ -38,6 +37,7 @@ Burası işlenecek konu başlıklarının olduğu havuzdur.
 
 ## Üzerinde Çalışılıyor
 
+- Asp.Net Core'da arka plan görevleri
 
 ## Tamamlananlar
 
