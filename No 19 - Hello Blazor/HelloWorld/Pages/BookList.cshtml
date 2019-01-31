@@ -1,0 +1,32 @@
+@page "/bookList"
+
+<h1>Okuduğum Kitaplar</h1>
+
+<blockquote class="blockquote">
+    Burada okumaktan keyif aldığım kitaplar yer alıyor.
+</blockquote>
+
+<ul>
+    @foreach(var book in books){
+        <li>@book.Title</li>
+    }
+</ul>
+
+<div class="form-group">
+    <input class="form-control" id="txtTitle" placeholder="Kitabın adı">
+</div>
+<div class="form-group">
+    <input class="form-control" id="txtAuthors" placeholder="Yazarlar">
+</div>
+<div class="form-group">
+    <input class="form-control" id="txtPageCount" placeholder="Sayfa sayısı">
+</div>
+<div class="form-group">
+    <input class="form-control" id="txtSummary" aria-describedby="summaryHelp" placeholder="Özet">
+    <small id="summaryHelp" class="form-text text-muted">Lütfen bir cümleyle kitabın neyle ilgili olduğunu anlat</small>
+</div>
+<button type="submit" class="btn btn-primary">Listeye ekleyelim</button>
+
+@functions{
+    IList<Book> books=new List<Book>();
+}

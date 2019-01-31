@@ -1,0 +1,21 @@
+﻿@page "/counter"
+
+<h1>Rastgele Toplamlar</h1>
+<p>Blazor'a geçişten önce bu tarafı anlamaya çalışıyorum...</p>
+<p>Güncel rastgele toplam: @currentCount</p>
+<p>Arttırım miktarı: @incraseValue </p>
+
+<button class="btn btn-primary" onclick="@IncrementValue">Arttırmak için bas!</button>
+
+@functions {
+    // Değişken değerlerini HTML tarafında @ operatörü ile kolayca kullanabiliriz
+    int currentCount = 0;
+    int incraseValue=0;
+    Random random=new Random();
+
+    void IncrementValue() // button'un onclick metodunda @ operatörü ile erişiyoruz
+    {        
+        incraseValue=random.Next(1,100); //1 ile 100 arasında rastgele değer ürettirdik
+        currentCount+=incraseValue; 
+    }
+}
