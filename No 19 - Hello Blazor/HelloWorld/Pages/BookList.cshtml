@@ -7,26 +7,29 @@
 </blockquote>
 
 <ul>
+    <!-- Tüm kitapları dolaşıp örnek olarak başlıklarını listeliyoruz-->
     @foreach(var book in books){
         <li>@book.Title</li>
     }
 </ul>
+<!-- Yeni bir kitap bilgisinin girişi için Bootstrap ile zenginleştirilmiş basit bir formumuz var -->
+<div class="form-group">
+    <input class="form-control" id="txtTitle" placeholder="Kitabın adı" bind="@newBook.Title"/><br/> <!--bind attribute'una atanan değer ile Title özelliğine bağladık -->
+    <input class="form-control" id="txtAuthors" placeholder="Yazarlar" bind="@newBook.Authors" /><br/>
+    <input class="form-control" id="txtPageCount" placeholder="Sayfa sayısı" bind="@newBook.PageCount" /><br/>
+    <input class="form-control" id="txtSummary" aria-describedby="summaryHelp" placeholder="Özet" bind="@newBook.Summary" />
+    <small id="summaryHelp" class="form-text text-muted">Lütfen bir cümleyle kitabın neyle ilgili olduğunu anlat</small> <!-- yardımcı bilgi veren metin için koyduk -->
+</div>
+<button onclick="@AddNewBook" class="btn btn-primary">Listeye ekleyelim</button> <!-- onclick attribute'unda AddNewBook metoduna bağladık -->
 
-<div class="form-group">
-    <input class="form-control" id="txtTitle" placeholder="Kitabın adı">
-</div>
-<div class="form-group">
-    <input class="form-control" id="txtAuthors" placeholder="Yazarlar">
-</div>
-<div class="form-group">
-    <input class="form-control" id="txtPageCount" placeholder="Sayfa sayısı">
-</div>
-<div class="form-group">
-    <input class="form-control" id="txtSummary" aria-describedby="summaryHelp" placeholder="Özet">
-    <small id="summaryHelp" class="form-text text-muted">Lütfen bir cümleyle kitabın neyle ilgili olduğunu anlat</small>
-</div>
-<button type="submit" class="btn btn-primary">Listeye ekleyelim</button>
-
+<!-- Fonksiyonlarımız -->
 @functions{
+    // Tüm kitap listemizi ifade eden koleksiyonumuz
     IList<Book> books=new List<Book>();
+    Book newBook=new Book();
+    // Yeni bir kitap eklemek için kullanıyoruz.
+    void AddNewBook(){
+        books.Add(newBook); // Kitabı listeye ekledik
+        newBook=new Book(); // Eğer newBook nesnesini sıfırlamassak büyük ihtimalle koleksiyona hep aynı nesne örneği eklenecektir.
+    }
 }
