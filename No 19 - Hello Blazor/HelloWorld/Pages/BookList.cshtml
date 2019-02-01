@@ -1,15 +1,17 @@
 @page "/bookList"
 
-<h1>Okuduğum Kitaplar</h1>
+<h1>Okuduğum Kitaplar (Toplam @books.Count() kitabım var) </h1> 
+<!--Toplam kitap sayısını da başlığa ekledik -->
 
 <blockquote class="blockquote">
     Burada okumaktan keyif aldığım kitaplar yer alıyor.
 </blockquote>
 
 <ul>
-    <!-- Tüm kitapları dolaşıp örnek olarak başlıklarını listeliyoruz-->
+    <!-- Tüm kitapları dolaşıp örnek olarak başlıklarını listeliyor ve hemen alt kısmına özet bilgilerini yerleştiriyoruz-->
     @foreach(var book in books){
-        <li>@book.Title</li>
+        <li aria-describedby="bookTitle">@book.Title</li>
+         <small id="bookTitle" class="form-text text-muted">@book.Summary</small> 
     }
 </ul>
 <!-- Yeni bir kitap bilgisinin girişi için Bootstrap ile zenginleştirilmiş basit bir formumuz var -->
