@@ -37,7 +37,6 @@ Burası işlenecek konu başlıklarının olduğu havuzdur.
 ## Üzerinde Çalışılıyor
 
 - Asp.Net Core'da arka plan görevleri
-- Blazor ile tanışma
 
 ## Tamamlananlar
 
@@ -60,5 +59,7 @@ Burası işlenecek konu başlıklarının olduğu havuzdur.
 15. Briaz daha GraphQL _(Graphpack kullanımı, Mutations)_
 16. Vue ile Desktop uygulaması oluşturmak _(Electron benzeri)_
 17. Python tarafında Concurrency kullanımı
+18. 
+19. Blazor ile tanışma
 
 > MD dosyasını formatlarken [şu adresten](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) yararlanıyorum.
