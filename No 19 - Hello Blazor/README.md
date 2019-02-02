@@ -33,12 +33,23 @@ Sayfaları incelemekte yarar var. Index, Counter ve FetchData _(Dependency Injec
 
 >CSS tarafında bootstrap hazır olarak geliyor. Sol taraftaki navigation menu'yü kurcalamak istersek, Shared klasöründeki NavMenu.cshtml ile oynamak yeterli. Her şeyin giriş noktası olan index.html içerisinde, blazor.webassembly.js isimli javascript dosyası için bir referans var _(Bu niye var öğrenmek lazım)_
 
+## Dependency Injection Kullanımı
+
+Blazor doğal olarak DI mekanizmasını destekler ve built-in servisler haricinde kendi servislerimizinde içeriye DI mekanizması ile alınmasına olanak sağlar _(hatta buna zolar)_ Söz gelimi HttpClient gibi built-in bir servisi client-side Razor tarafına enjekte edip kullanabiliriz. IJSRuntime, IUriHelper gibi bir çok yararlı built-in servis bulunmakta. Kendi servislerimizi de _(söz gelimi bir data repository için kullanılabilecek tipleri)_ DI ile sisteme dahil etmemiz mümkün. Aynen .Net Core'da olduğu gibi ConfigureServices metoduna gelen IServicesCollection arayüzünden yararlanmalıyız. 
+
+```
+services.AddSingleton<IMessenger, SMSMessenger>();
+```
+
+gibi...
+
 ## Yapılanlar
 
 - Pages klasörüne Book.cshtml isimli bir dosya eklendi.
 - NavMenu.cshtml içeriği ile birazcık oynandı.
 - Kitapları temsil eden book sınıfı eklendi.
 - Counter.cshtml kurcalandı ve değiştirildi.
+- DI örneği için ProductList.cshtml eklendi.
 
 ## Çalışma Zamanı
 
@@ -53,6 +64,10 @@ dotnet run
 bookList.cshtml içeriği tarayıcıda aşağıdaki gibi oluşur.
 
 ![Cover_3.png](cover_3.png)
+
+Built-In HttpClient servisini enjekte ettiğimiz dünya nüfus verileri sayfası.
+
+![Cover_4.png](cover_4.png)
 
 ## Paketleme
 

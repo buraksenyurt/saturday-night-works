@@ -1,0 +1,46 @@
+@page "/population"
+@inject HttpClient httpClient
+<!-- built-in servislerden olan HttpClient servisini buraya enjekte ettik. 
+httpClient değişken adıyla kullanabiliriz -->
+
+<h2>Güncel 3 Günlük Dünya Nüfusu Bilgileri</h2>
+
+<blockquote class="blockquote">
+    Bilgiler api.population.io sitesinden alınmıştır.
+</blockquote>
+
+@if (values == null) // Henüz veriler gelmemiş olabilir.
+{
+    <p><em>Bilgiler alınıyor...</em></p>
+}
+else
+{
+    <div class="card" style="width: 18rem;">
+        <ul class="list-group list-group-flush">
+            @foreach (var currentData in @values) // Tüm değerleri dolaşıp güncel nüfus verisini ekrana basıyoruz            
+            {
+                <li class="list-group-item">@string.Format("{0:#,0}",@currentData.Value) - @currentData.Date.ToShortDateString() </li>
+            }
+        </ul>
+    </div>
+}
+
+@functions{
+    Population[] values; // istatistik bilgilerin dizisi
+
+    // Sayfamızın başlangıç aşamasında çalışan asenkron olay metodumuz
+    protected override async Task OnInitAsync()
+    {
+        // GetJsonAsync metodunu kullanarak bir talep gönderiyoruz ve sunucu tarafından json dosyasını alıyoruz
+        // Burada harici bir servis adresine de çıkılabilir
+        //TODO: world.json içeriğini veren bir .net web api dahil edelim
+        values = await httpClient.GetJsonAsync<Population[]>("db/world.json");
+    }
+
+    // Nüfus bilgilerini tutan sınıfımız
+    class Population
+    {
+        public DateTime Date { get; set; }
+        public Int64 Value { get; set; }
+    }
+}
