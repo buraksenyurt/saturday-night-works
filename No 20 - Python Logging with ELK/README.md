@@ -96,7 +96,7 @@ logstash etkinleştirildikten sonra Kibana'ya gidip yeni bir index oluşturabili
 Container'ların listesini görmek ve durdurmak için aşağıdaki komutlar kullanılabilir. _(Container ID'ler farklılık gösterecektir)_
 
 ```
-sudo docker ps
+sudo docker ps -a
 sudo docker stop 3402e6aaced3
 ```
 
