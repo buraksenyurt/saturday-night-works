@@ -22,7 +22,6 @@ Readme dosyalarından yararlanarak kendi başlangıçlarınızı yapabilir, örn
 
 Burası işlenecek konu başlıklarının olduğu havuzdur.
 
-- Python log'ları için ELK Kullanımı
 - Harici paketler olmadan basit bir NodeJS Web sunucusu yazmak _(Express siz gibi)_
 - Go Echo web framework'ünü tanımak
 - NodeJS ile Gantt Chart'lar oluşturmak
@@ -61,5 +60,6 @@ Burası işlenecek konu başlıklarının olduğu havuzdur.
 17. Python tarafında Concurrency kullanımı
 18. 
 19. Blazor ile tanışma
+20. Python log'ları için ELK Kullanımı
 
 > MD dosyasını formatlarken [şu adresten](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) yararlanıyorum.
