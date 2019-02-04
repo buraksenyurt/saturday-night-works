@@ -34,3 +34,4 @@ bld/
 !**/packages/build/
 *.nuget.props
 *.nuget.targets
+.vscode/settings.json
