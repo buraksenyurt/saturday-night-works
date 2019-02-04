@@ -1,10 +1,10 @@
 # AspNet Core Web Api'lerde Background Task Kullanımı
 
-AspNet Core uygulamalarında IHostedService türevli tipleri kullanarak arka plan hizmetleri çalıştırabiliyoruz. Bu sayede uygulamanın yaşamı boyunca çalışmasını istediğimiz bir takım periyodik işleri arka plan servislerine atayabiliriz. Amacım IHostedService türevli tipleri anlamaya çalışmak ve arka plan görevlerini icra ettirmek. Üç örnek üzerinde çalışılıyor. 
+AspNet Core uygulamalarında IHostedService türevli tipleri kullanarak arka plan hizmetleri çalıştırabiliyoruz. Bu sayede uygulamanın yaşamı boyunca çalışmasını istediğimiz bir takım periyodik işleri arka plan servislerine atayabiliriz. Amacım IHostedService türevli tipleri anlamaya çalışmak ve arka plan görevlerini icra ettirmek. Ben ilk iki görevi yapmaya çalıştım. 
 
 1. Zamanlayıcıya bağlı arka plan görevlerini icra ettiren servisimiz IHostedService'in en ilkel uygulanan şablonu. 
 2. İkinci örnekteki hosted service, ilgili arka plan görevlerini içeren daha kapsamlı servisleri kullanılıyor. Bu servisler_(Scoped Service olarak ifade edebiliriz)_ Dependency Injection yardımıyla HostedService'e geçiyorlar..
-3. Arka plan işleri bir sıraya göre kuyruklandırılarak değerlendiriliyor.
+3. Arka plan işleri bir sıraya göre kuyruklandırılarak değerlendiriliyor. _(İlerleyen zamanlarda tekrar değerlendirilecek)_
 
 ## Birinci Örnek _(GarbageHostService)_
 
@@ -54,10 +54,6 @@ dotnet run
 ```
 
 ![cover_2.png](cover_2.png)
-
-## Üçüncü Örnek _()_
-
-## Çalışma Zamanı
 
 ## Neler Öğrendim?
 

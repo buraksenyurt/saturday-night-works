@@ -22,6 +22,7 @@ Readme dosyalarından yararlanarak kendi başlangıçlarınızı yapabilir, örn
 
 Burası işlenecek konu başlıklarının olduğu havuzdur.
 
+- Asp.Net Core'da Razor Pages kullanımı
 - Harici paketler olmadan basit bir NodeJS Web sunucusu yazmak _(Express siz gibi)_
 - Go Echo web framework'ünü tanımak
 - NodeJS ile Gantt Chart'lar oluşturmak
@@ -35,7 +36,7 @@ Burası işlenecek konu başlıklarının olduğu havuzdur.
 
 ## Üzerinde Çalışılıyor
 
-- Asp.Net Core'da arka plan görevleri
+- 
 
 ## Tamamlananlar
 
@@ -58,7 +59,7 @@ Burası işlenecek konu başlıklarının olduğu havuzdur.
 15. Briaz daha GraphQL _(Graphpack kullanımı, Mutations)_
 16. Vue ile Desktop uygulaması oluşturmak _(Electron benzeri)_
 17. Python tarafında Concurrency kullanımı
-18. 
+18. Asp.Net Core'da arka plan görevleri
 19. Blazor ile tanışma
 20. Python log'ları için ELK Kullanımı
 
