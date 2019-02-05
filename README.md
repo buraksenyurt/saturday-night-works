@@ -22,7 +22,6 @@ Readme dosyalarından yararlanarak kendi başlangıçlarınızı yapabilir, örn
 
 Burası işlenecek konu başlıklarının olduğu havuzdur.
 
-- Asp.Net Core'da Razor Pages kullanımı
 - Harici paketler olmadan basit bir NodeJS Web sunucusu yazmak _(Express siz gibi)_
 - Go Echo web framework'ünü tanımak
 - NodeJS ile Gantt Chart'lar oluşturmak
@@ -36,7 +35,7 @@ Burası işlenecek konu başlıklarının olduğu havuzdur.
 
 ## Üzerinde Çalışılıyor
 
-- 
+- Asp.Net Core'da Razor Pages kullanımı
 
 ## Tamamlananlar
 
