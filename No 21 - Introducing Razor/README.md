@@ -11,17 +11,19 @@ Amacım, Microsoft'un Asp.Net Core MVC tarafında özellikle sayfa odaklı senar
 | /Index                                      | pages/Index.cshtml            | pages/Index.cshtml.cs            |
 | /                                           | pages/Index.cshtml            | pages/Index.cshtml.cs            |
 
->Çalışmada veri girişi yapılabilen basit bir form tasarlayıp, Razor'un kod dinamiklerini anlamak istiyorum.
+>Çalışmada veri girişi yapılabilen basit bir form tasarlayıp, Razor'un kod dinamiklerini anlamak istiyorum. Veriyi InMemory veritabanında tutmayı planlıyorum.
 
 ## Başlangıç
 
-Örneği West-World _(Ubuntu 18.04 64bit)_ üzerinde deniyorum. Linux tarafında Razor uygulamalarını oluşturmak için .Net Core 2.2'ye ihtiyacımız var. Projeyi oluşturmak için,
+Örneği West-World _(Ubuntu 18.04 64bit)_ üzerinde deniyorum. Linux tarafında Razor uygulamalarını oluşturmak için .Net Core 2.2'ye ihtiyacımız var. Kodları geliştirmek içinse Visual Studio Code'dan yararlanabiliriz. Projeyi oluşturmak için aşağıdaki komutu vermek yeterli.
 
 ```
 dotnet new webapp -o MyBookStore
 ```
 
-Proje iskeletini incelersek Razor sayfaları ve ilişkili model sınıflarının Pages klasöründe konuşlandırıldığını görürüz. Static Html dosyaları, javascript kütüphaneleri ve CSS içerikleri de wwwroot altında tutulur.
+Oluşan uygulama iskeletini incelersek Razor sayfaları ve ilişkili model sınıflarının Pages klasöründe konuşlandırıldığını görürüz. Static HTML dosyaları, javascript kütüphaneleri ve CSS içerikleri de wwwroot altında tutulur.
 
 ## Yapılan Geliştirmeler
 
+- Data klasörü oluşturulup StoreDataContext.cs ve Book.cs dosyaları eklendi. _(Entity tarafı)_
+- Pages klasörü altına AddBook.cshtml ve AddBook.cshtml.cs dosyaları eklendi. _(Razor Page ve PageModel tarafı)_
