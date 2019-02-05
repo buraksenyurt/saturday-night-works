@@ -1,6 +1,6 @@
 # Saturday Night Works
 
-<img src="tim-foster-387975-unsplash.jpg" width="767" height="532">
+<img src="tim-foster-387975-unsplash.jpg" width="1024" height="658">
 
 Photo by [Tim Foster](https://unsplash.com/@timberfoster) on [Unsplash](https://unsplash.com/)
 
