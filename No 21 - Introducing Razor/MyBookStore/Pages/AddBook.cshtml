@@ -4,37 +4,31 @@
 <html>
     <body>
         <h2>Yeni bir kitap eklemek ister misin?</h2>
-        <div asp-validation-summary="All"></div>
         <form method="POST">
-            <table>
-                <tr>
-                    <td>Başlığı</td>
-                    <!--BookData sayfaya bağladığımız entity tipinden nesne örneği. 
-                    Bunu bağlamak için AddModel sınıfında BindProperty niteliği ile işaretlenmiş 
-                    bir özellik tanımladık-->
-                    <td><input asp-for="BookData.Title"/></td>
-                </tr>
-                <tr>
-                    <td>Yazarları</td>
-                    <td><input asp-for="BookData.Authors"/></td>
-                </tr>
-                </tr>
-                <tr>
-                    <td>Kısa Özet</td>
-                    <td><input asp-for="BookData.Summary"/></td>
-                </tr>
-                </tr>
-                <tr>
-                    <td>Sayfa Sayısı</td>
-                    <td><input asp-for="BookData.PageCount"/></td>
-                </tr>
-                </tr>
-                <tr>
-                    <td>List Fiyatı</td>
-                    <td><input asp-for="BookData.ListPrice"/></td>
-                </tr>
-            </table>
-            <input type="submit" value="Kaydet"/>
+            <!--BookData sayfaya bağladığımız entity tipinden nesne örneği. 
+            Bunu bağlamak için AddBookModel sınıfında BindProperty niteliği ile işaretlenmiş 
+            bir özellik tanımladık. Her input kontrolünde dikkat edileceği üzere asp-for
+            niteliği ile bir özelliğe bağlantı yapılmakta -->
+
+            <div class="input-group mb-3">
+                <input type="text" asp-for="BookData.Title" placeholder="Başlığı" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+            </div>
+            <div class="input-group mb-3">
+                <input type="text" asp-for="BookData.Authors" placeholder="Yazarları" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+            </div>
+            <div class="input-group mb-3">
+                <input type="text" asp-for="BookData.PageCount" placeholder="Sayfa sayısı" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+            </div>
+            <div class="input-group mb-3">
+                <input type="text" asp-for="BookData.ListPrice" placeholder="Liste fiyatı" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+            </div>
+            <div class="input-group mb-3">
+                <textarea asp-for="BookData.Summary" placeholder="Kısa bir özeti" class="form-control" aria-label="Özet"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-lg btn-block">Kaydet</button>
         </form>
+        <!--asp-for kullanılan tüm elementler için çalışacak olan
+        validation işleminin sonuçları buraya yansıtılıyor-->
+        <div asp-validation-summary="All"></div>
     </body>
 </html>
