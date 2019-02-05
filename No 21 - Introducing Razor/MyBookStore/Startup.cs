@@ -10,6 +10,7 @@ using Microsoft.EntityFrameworkCore; //EF Core kullanacağımız için eklendi
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using MyBookStore.Data;
 
 namespace MyBookStore
 {

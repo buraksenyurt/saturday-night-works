@@ -11,6 +11,8 @@ namespace MyBookStore.Data
         public int PageCount { get; set; }
         [Required]
         public double ListPrice { get; set; }
+        [Required, StringLength(250)]
+        public string Summary { get; set; }
         [Required]
         public string Authors { get; set; } //TODO Author isimli bir Entity modeli kullanalım
     }

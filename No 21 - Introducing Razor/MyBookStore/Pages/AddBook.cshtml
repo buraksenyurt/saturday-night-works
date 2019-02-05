@@ -1,0 +1,40 @@
+@page // sayfanın bir razor page olduğunu belirttik
+@model MyBookStore.Pages.AddBookModel  // sayfanın konuşacağı model sınıfını işaret ettik.
+
+<html>
+    <body>
+        <h2>Yeni bir kitap eklemek ister misin?</h2>
+        <div asp-validation-summary="All"></div>
+        <form method="POST">
+            <table>
+                <tr>
+                    <td>Başlığı</td>
+                    <!--BookData sayfaya bağladığımız entity tipinden nesne örneği. 
+                    Bunu bağlamak için AddModel sınıfında BindProperty niteliği ile işaretlenmiş 
+                    bir özellik tanımladık-->
+                    <td><input asp-for="BookData.Title"/></td>
+                </tr>
+                <tr>
+                    <td>Yazarları</td>
+                    <td><input asp-for="BookData.Authors"/></td>
+                </tr>
+                </tr>
+                <tr>
+                    <td>Kısa Özet</td>
+                    <td><input asp-for="BookData.Summary"/></td>
+                </tr>
+                </tr>
+                <tr>
+                    <td>Sayfa Sayısı</td>
+                    <td><input asp-for="BookData.PageCount"/></td>
+                </tr>
+                </tr>
+                <tr>
+                    <td>List Fiyatı</td>
+                    <td><input asp-for="BookData.ListPrice"/></td>
+                </tr>
+            </table>
+            <input type="submit" value="Kaydet"/>
+        </form>
+    </body>
+</html>
