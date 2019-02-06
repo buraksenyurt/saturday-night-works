@@ -27,3 +27,46 @@ Oluşan uygulama iskeletini incelersek Razor sayfaları ve ilişkili model sın�
 
 - Data klasörü oluşturulup StoreDataContext.cs ve Book.cs dosyaları eklendi. _(Entity tarafı)_
 - Pages klasörü altına AddBook.cshtml ve AddBook.cshtml.cs dosyaları eklendi. _(Razor Page ve PageModel tarafı)_
+- Varsayılan olarak gelen Index.cshtml ve Index.cshtml.cs içerikleri değiştirildi.
+- _Layout.cshtml içeriği değiştirildi.
+
+## Çalışma Zamanı
+
+Uygulamayı 
+
+```
+dotnet run
+```
+
+komutuyla çalıştırdıktan sonra http://localhost:5401/ adresi üzerinden test edebiliriz. İster üst bara eklediğimiz linkten ister http://localhost:5401/AddBook adresine giderek yeni kitap ekleme sayfasına ulaşabiliriz.
+
+>In Memory veritabanı kullandığımız için uygulama sonlandığında tüm kayıtlar uçacaktır. Kalıcı bir Repository için SQL, SQLite ve benzeri sistemleri içeriye enjekte etmeyi deneyebilirsiniz.
+
+Uncle Bob temalı örnek bir kitap verisini ilk denemede kullanabilirsiniz.
+
+```
+Clean Architecture
+Robert C. Martin (Uncle Bob)
+393
+34.99
+"This is essential reading for every current of aspiring software architect..."
+```
+
+![Cover_1.png](Cover_1.png)
+
+![Cover_2.png](Cover_2.png)
+
+Validasyona takılabiliriz de...
+
+![Cover_3.png](Cover_3.png)
+
+Başarılı girişler sonrası gelinen Index sayfasının çıktısı ise,
+
+## Neler Öğrendim?
+
+- Razor Page ve Page Model kavramlarını
+- Razor'un temel çalışma prensiplerini
+- Yönlendirmelerin _(Routing)_ nasıl işlediğini
+- Razor içinden model nesnelerine nasıl bağlanılabileceğini _(property binding)_
+- Entity Framework Core'da InMemory veritabanı kullanımını
+- Çeşitli DataAnnotations niteliklerini _(attributes)_
