@@ -1,10 +1,32 @@
 ﻿@page
 @model IndexModel
 @{
-    ViewData["Title"] = "Home page";
+    ViewData["Title"] = "Kitaplarım";
 }
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<h2>Güncel Liste</h2>
+<form method="post">
+    <!-- Modeldeki Books özelliğinin işaret ettiği nesnelerin her biri için dönüyoruz -->
+    @foreach (var book in Model.Books)
+    {
+      <div class="card">
+        <div class="card-body">
+            <!--O anki book nesne örneğinin özelliklerine ulaşıp değerlerini basıyoruz -->
+            <h5 class="card-title">@book.Title (@book.PageCount sayfa)</h5>
+            <h6 class="card-subtitle mb-2 text-muted">@book.Authors</h6>
+            <p class="card-text">@book.Summary</p>
+            <p class="card-text">@book.ListPrice</p>
+            <!--Güncelleme başka bir Razor Page tarafından yapılacak -->
+            <a asp-page="./EditBook" asp-route-id="@book.Id" class="card-link">Düzenle</a>
+            <!--Silme işlemi ise bu sayfadan Post edilerek gerçekleşecek
+            asp-route-id ile silme ve güncelleme operasyonlarında gerekli identity
+            alanının nereden bağlanacağını belirtiyoruz
+            -->
+            <button type="submit" asp-page-handler="delete" asp-route-id="@book.Id" class="card-link">Sil</button>
+        </div>
+      </div>  
+    }
+    <!--Yeni bir kitap eklemek için AddBook sayfasına yönlendiriyoruz-->
+    <a asp-page="./AddBook">Yeni Kitap</a>
+</form>

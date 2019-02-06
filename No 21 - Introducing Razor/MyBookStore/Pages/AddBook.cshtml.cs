@@ -1,3 +1,4 @@
+using System;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
@@ -27,9 +28,10 @@ namespace MyBookStore.Pages
                 return Page();
             }
 
-            _context.Books.Add(BookData);
+            var addedBook=_context.Books.Add(BookData).Entity;
+            Console.WriteLine($"{addedBook.Title} eklendi");
             await _context.SaveChangesAsync();
-            return RedirectToPage("/Index");
+            return RedirectToPage("/Index"); // Kitap eklendikten sonra ana sayfaya yönlendirme yapıyoruz
         }
     }
 }
