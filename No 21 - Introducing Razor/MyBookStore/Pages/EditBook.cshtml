@@ -1,0 +1,41 @@
+@page "{id:int}" // Sayfa direktifinde parametre bilidirmi söz konusu. Nitekim buraya güncellenmek istenen sayfanın id bilgisini almamız gerekiyor
+@model MyBookStore.Pages.EditBookModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    ViewData["Title"] = "Kitap Bilgisi Güncelleme"; //Sayfa başlığını değiştirdik
+}
+
+<!--
+Yeni bir kitap ekleme sayfasındakine benzer olacak şekilde bir formumuz var.
+Form verisini Page Model sınıfındaki BindProperty'nin verisi ile dolduruyoruz.
+Bunun için HTML kontrollerinin asp-for niteliklerini kullanmaktayız.
+Submit özellikli Button'a basılması Sayfa model sınıfındaki OnPostAsync fonksiyonunun
+tetiklenmesine neden olacaktır. Bu sayfa yüklenirken devreye giren OnGetAsync metodunun parametresi
+Page direktifinde belirtilmiştir. Yani sayfa Id parametresi ile gelen talepleri karşıladığında
+bunu ilgili metoda iletir. Tahmin edileceği üzere integer tipinden olmayan geçersiz bir Id değeri ile 
+sayfaya gelinmesi HTTP 404 etkisi yaratacaktır.
+Bir sayfaya gelen router parametrelerinin opsiyonel olmasını istersek ? takısını kullanmak yeterlidir.
+"{id:int?}" gibi
+-->
+<h3>@Model.BookData.Id numaralı kitabın bilgilerini günelleyebilirsiniz</h3>
+<form method="post">
+    <input asp-for="BookData.Id" type="hidden" />
+    <div class="input-group mb-3">
+    <input type="text" asp-for="BookData.Title" placeholder="Başlığı" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+    </div>
+    <div class="input-group mb-3">
+        <input type="text" asp-for="BookData.Authors" placeholder="Yazarları" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+    </div>
+    <div class="input-group mb-3">
+        <input type="text" asp-for="BookData.PageCount" placeholder="Sayfa sayısı" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+    </div>
+    <div class="input-group mb-3">
+        <input type="text" asp-for="BookData.ListPrice" placeholder="Liste fiyatı" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+    </div>
+    <div class="input-group mb-3">
+        <textarea asp-for="BookData.Summary" placeholder="Kısa bir özeti" class="form-control" aria-label="Özet"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary btn-lg btn-block">Kaydet</button>
+    <div asp-validation-summary="All"></div>
+</form>
