@@ -62,15 +62,15 @@ Validasyona takılabiliriz de...
 
 Başarılı girişler sonrası gelinen Index sayfasının çıktısı ise,
 
-_EKLENECEK_
+![Cover_4.png](Cover_4.png)
 
 Düzenleme sayfamız,
 
-_EKLENECEK_
+![Cover_5.png](Cover_5.png)
 
 Düzenleme sonrası sonuçlar,
 
-_EKLENECEK_
+![Cover_6.png](Cover_6.png)
 
 ## Neler Öğrendim?
 
