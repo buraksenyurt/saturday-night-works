@@ -22,20 +22,19 @@ Readme dosyalarından yararlanarak kendi başlangıçlarınızı yapabilir, örn
 
 Burası işlenecek konu başlıklarının olduğu havuzdur.
 
+- Bir WebAPI servisinde SQLite ile birlikte Dapper Micro ORM kütüphanesini kullanmak
 - Harici paketler olmadan basit bir NodeJS Web sunucusu yazmak _(Express siz gibi)_
-- Go Echo web framework'ünü tanımak
 - NodeJS ile Gantt Chart'lar oluşturmak
 - Material UI kullanarak MERN tipinde uygulama oluşturmak
 - AWS Lambda deneyimini Ruby ile gerçekleştirmek
 - MERN tipinde bir uygulamayı Heroku'ya Deploy etmek
 - Jets ile bir Ruby uygulamasını AWS'e ye Deploy etmek
-- Angular ve Webpack deneyimi
 
 > Planlanan yazılarda konu başlıkları değişiklik gösterebilir ve örnekler kronolojik sırada işlenmemektedir.
 
 ## Üzerinde Çalışılıyor
 
-- Asp.Net Core'da Razor Pages kullanımı
+
 
 ## Tamamlananlar
 
@@ -61,5 +60,6 @@ Burası işlenecek konu başlıklarının olduğu havuzdur.
 18. Asp.Net Core'da arka plan görevleri
 19. Blazor ile tanışma
 20. Python log'ları için ELK Kullanımı
+21. Asp.Net Core'da Razor Pages kullanımı
 
 > MD dosyasını formatlarken [şu adresten](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) yararlanıyorum.
