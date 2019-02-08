@@ -11,7 +11,7 @@ Amacım, Microsoft'un Asp.Net Core MVC tarafında özellikle sayfa odaklı senar
 | /Index                                      | pages/Index.cshtml            | pages/Index.cshtml.cs            |
 | /                                           | pages/Index.cshtml            | pages/Index.cshtml.cs            |
 
->Çalışmada veri girişi yapılabilen basit bir form tasarlayıp, Razor'un kod dinamiklerini anlamak istiyorum. Veriyi InMemory veritabanında tutmayı planlıyorum.
+>Çalışmada veri girişi yapılabilen basit bir form tasarlayıp, Razor'un kod dinamiklerini anlamak istiyorum. Veriyi InMemory veritabanında tutmayı planlıyorum. En son aşamada ise SQLite'ı kullamayı amaçlıyorum.
 
 ## Başlangıç
 
@@ -72,6 +72,35 @@ Düzenleme sonrası sonuçlar,
 
 ![Cover_6.png](Cover_6.png)
 
+## InMemory Veritabanını SQLite ile Değiştirme
+
+SQLite kullanımı için EntityFramework Core'un ilgili NuGet paketini projeye eklemek lazım.
+
+```
+dotnet add package Microsoft.EntityFrameworkCore.SQLite
+```
+
+Ardından appsettings.json dosyasına bir Connection String bildirimi ekleyip, Startup sınıfındaki ConfigureServices metodunda minik bir ayarlama yapmamız lazım. Bunlar başlangıç aşamasında yeterli değil nitelim SQLite veritabanının oluşturulması da gerekiyor.
+
+```
+dotnet ef migrations add InitialCreate
+dotnet ef database update
+```
+
+sayesinde DataContext türevli sınıf baz alınarak migration planları çıkartılır. Planlar hazırlandıktan sonra ikinci komut ile update planı yürütülür.
+
+![Cover_8.png](Cover_8.png)
+
+Eğer veritabanını baştan hazırlamazsak ve update planını çalıştırmazsa aşağıdakine benzer bir hata ile karşılaşabiliriz.
+
+![Cover_7.png](Cover_7.png)
+
+>Artık verilerimiz SQLite ile fiziki olarak da kayıt altında.
+
+Hatta Visual Studio Code'a SQLite Explorer Extension'ının yüklersek oluşan DB dosyasının içeriğini görebiliriz.
+
+![Cover_9.png](Cover_9.png)
+
 ## Neler Öğrendim?
 
 - Razor Page ve Page Model kavramlarını
@@ -80,3 +109,4 @@ Düzenleme sonrası sonuçlar,
 - Razor içinden model nesnelerine nasıl bağlanılabileceğini _(property binding)_
 - Entity Framework Core'da InMemory veritabanı kullanımını
 - Çeşitli DataAnnotations niteliklerini _(attributes)_
+- InMemory veritabanında SQLite kullanımına geçince yapılması gereken değişiklikleri ve Migration'ın ne işe yaradığını.

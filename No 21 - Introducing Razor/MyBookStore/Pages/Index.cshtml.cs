@@ -7,7 +7,6 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using MyBookStore.Data;
 
-
 namespace MyBookStore.Pages
 {
 
