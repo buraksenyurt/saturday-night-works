@@ -22,7 +22,6 @@ Readme dosyalarından yararlanarak kendi başlangıçlarınızı yapabilir, örn
 
 Burası işlenecek konu başlıklarının olduğu havuzdur.
 
-- Bir WebAPI servisinde SQLite ile birlikte Dapper Micro ORM kütüphanesini kullanmak
 - Harici paketler olmadan basit bir NodeJS Web sunucusu yazmak _(Express siz gibi)_
 - NodeJS ile Gantt Chart'lar oluşturmak
 - Material UI kullanarak MERN tipinde uygulama oluşturmak
@@ -61,5 +60,6 @@ Burası işlenecek konu başlıklarının olduğu havuzdur.
 19. Blazor ile tanışma
 20. Python log'ları için ELK Kullanımı
 21. Asp.Net Core'da Razor Pages kullanımı
+22. Bir WebAPI servisinde SQLite ile birlikte Dapper Micro ORM kütüphanesini kullanmak
 
 > MD dosyasını formatlarken [şu adresten](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) yararlanıyorum.
