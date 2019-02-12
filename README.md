@@ -23,7 +23,6 @@ Readme dosyalarından yararlanarak kendi başlangıçlarınızı yapabilir, örn
 Burası işlenecek konu başlıklarının olduğu havuzdur.
 
 - Harici paketler olmadan basit bir NodeJS Web sunucusu yazmak _(Express siz gibi)_
-- NodeJS ile Gantt Chart'lar oluşturmak
 - Material UI kullanarak MERN tipinde uygulama oluşturmak
 - AWS Lambda deneyimini Ruby ile gerçekleştirmek
 - MERN tipinde bir uygulamayı Heroku'ya Deploy etmek
@@ -33,7 +32,7 @@ Burası işlenecek konu başlıklarının olduğu havuzdur.
 
 ## Üzerinde Çalışılıyor
 
-
+- Asp.Net Core Tarafında Gantt Chart'lar oluşturmak
 
 ## Tamamlananlar
 
