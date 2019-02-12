@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Project - 19</title>
+    <link href="css/dhtmlxgantt.css"
+          rel="stylesheet" type="text/css" />
+    <script src="js/dhtmlxgantt.js"></script>
+    <script>
+        // index.html dokükamanı yüklendiğinde ilgili fonksiyon devreye girerek 
+        // proje veri içeriğini ekrana basacak
+        document.addEventListener("DOMContentLoaded", function(event) {
+            // standart zaman formatını belirtiyoruz
+            gantt.config.xml_date = "%Y-%m-%d %H:%i";
+            gantt.init("project_map");
+ 
+            // veri yükleme işinin üstlenildiği kısım
+            gantt.load("/api/data");
+            // veri işleyicisi (bir web api servis adresi gibi düşünülebilir)
+            var dp = new gantt.dataProcessor("/api/");
+            dp.init(gantt);
+            // REST tipinden iletişim sağlanacak
+            dp.setTransactionMode("REST");
+        });
+    </script>
+</head>
+<body>
+    <h2>Apollo 19 Project Plan</h2>
+    <div id="project_map" style="width: 100%; height: 100vh;"></div>
+</body>
+</html>
