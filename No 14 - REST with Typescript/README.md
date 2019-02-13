@@ -13,11 +13,11 @@ npm install
 npm run start
 ```
 
-![cover_1.png](cover_1.png)
+![cover_1.png](./assets/cover_1.png)
 
 QuoteController isimli ilk controller bileşenini ekledikten sonra http://localhost:4000/quote adresine gittiğimde aşağıdaki çıktıyı elde ettim.
 
-![cover_2.png](cover_2.png)
+![cover_2.png](./assets/cover_2.png)
 
 ## Yapılan Değişiklikler
 
@@ -59,7 +59,7 @@ curl http://localhost:4000/quote/100
 
 Ayrıca yeni eklemeler sonrası Postman ile ilgili adrese gidilirse aşağıdaki sonuçla karşılaşılır.
 
-![cover_3.png](cover_3.png)
+![cover_3.png](./assets/cover_3.png)
 
 ### Güncelleme ve silme işlemleri
 
