@@ -37,7 +37,7 @@ Temel olarak mongodb dokümanlarına ait şemaları models klasöründe tutuyoru
 
 Swagger ile ilgili ayarlamalar için config klasöründeki swagger.js dosyası kullanılıyor. Dosyaya göre localhost:4005/help şeklinde geldiğimizde aşağıdaki ekran görüntüsünde yer alan yardım sayfası ile karşılaşıyoruz. minions altındaki GET ve POST bildirimleri routes/swagger-help klasöründeki js dosyası içerisindeki tanımlamalardan oluşuyor. Yani Swagger arayüzüne swagger.js ve miniApi.js dosyalarındaki gibi müdahale edip değiştirebiliriz.
 
-![credit_2.png](credit_2.png)
+![credit_2.png](./assets/credit_2.png)
 
 ## Testler
 
@@ -48,7 +48,7 @@ mongod
 npm start
 ```
 
-![credit_1.png](credit_1.png)
+![credit_1.png](./assets/credit_1.png)
 
 Sonrasında aşağıdaki testler yapılabilir _(Testler için Postman gibi bir araçtan yararlanılabilir)_
 
@@ -64,7 +64,7 @@ Yeni bir mini eklemek için http://localhost:4005/api/minions adresine json form
 
 >id değerleri tahmin edileceği üzere MongoDB tarafından otomatik olarak üretilmiştir. Silme ve güncelleme işlemleri için kullanabiliriz.
 
-![credit_3.png](credit_3.png)
+![credit_3.png](./assets/credit_3.png)
 
 Bir kaç minion daha ekledikten sonra bunların güncel listesini elde etmek için http://localhost:4005/api/minions adresine gidebiliriz.
 
@@ -72,7 +72,7 @@ Belli bir minion'u elde etmek içinse MongoDb'nin verdiği ID değerinden yararl
 
 http://localhost:4005/api/minions/5c1581e579140d6969b5951f talebi için şöyle bir sonuç döndü mesela.
 
-![credit_4.png](credit_4.png)
+![credit_4.png](./assets/credit_4.png)
 
 Benzer şekilde aynı adresi PUT metodu ile kullanıp BODY kısmında mini bilgisini JSON formatında göndererek güncelleme işlemini de gerçekleştirebiliriz.
 
