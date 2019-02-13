@@ -1,9 +1,9 @@
 # AspNet Core Web Api'lerde Background Task Kullanımı
 
-AspNet Core uygulamalarında IHostedService türevli tipleri kullanarak arka plan hizmetleri çalıştırabiliyoruz. Bu sayede uygulamanın yaşamı boyunca çalışmasını istediğimiz bir takım periyodik işleri arka plan servislerine atayabiliriz. Amacım IHostedService türevli tipleri anlamaya çalışmak ve arka plan görevlerini icra ettirmek. Ben ilk iki görevi yapmaya çalıştım. 
+AspNet Core uygulamalarında IHostedService türevli tipleri kullanarak arka plan hizmetleri çalıştırabiliyoruz. Bu sayede uygulamanın yaşamı boyunca çalışmasını istediğimiz bir takım periyodik işleri arka plan servislerine devredebiliriz. Amacım IHostedService türevli tipleri anlamaya çalışmak ve arka plan görevlerini icra ettirmek. Ben ilk iki görevi yapmaya çalıştım. 
 
 1. Zamanlayıcıya bağlı arka plan görevlerini icra ettiren servisimiz IHostedService'in en ilkel uygulanan şablonu. 
-2. İkinci örnekteki hosted service, ilgili arka plan görevlerini içeren daha kapsamlı servisleri kullanılıyor. Bu servisler_(Scoped Service olarak ifade edebiliriz)_ Dependency Injection yardımıyla HostedService'e geçiyorlar..
+2. İkinci örnekteki hosted service, ilgili arka plan görevlerini içeren daha kapsamlı servisleri kullanılıyor. Bu servisler _(Scoped Service olarak ifade edebiliriz)_ Dependency Injection yardımıyla HostedService'e geçiyorlar.
 3. Arka plan işleri bir sıraya göre kuyruklandırılarak değerlendiriliyor. _(İlerleyen zamanlarda tekrar değerlendirilecek)_
 
 ## Birinci Örnek _(GarbageHostService)_
@@ -22,7 +22,7 @@ Ardından IHostedService türevli sınıf içeriği yazılır ve Startup dosyas�
 
 ## Çalışma Zamanı
 
-Uygulamayı başlatmak için
+Uygulamayı başlatmak için terminalden aşağıdaki komutu vermemiz yeterlidir.
 
 ```
 dotnet run
@@ -30,7 +30,7 @@ dotnet run
 
 ![cover_1.png](cover_1.png)
 
-Kodların çalışma sırasına dikkat edelim. KOnfigurasyon dosyasındaki değerelere göre belli bir zaman aşımı noktasına gelindiğinde gerekli Task metodu icra ediliyor. Örnekte Cache temizleme işlemi uyduruldu.
+Kodların çalışma sırasına dikkat edelim. Konfigurasyon dosyasındaki değerelere göre belli bir zaman aşımı noktasına gelindiğinde gerekli Task metodu icra ediliyor. Örnek uydurulmuş bir Cache temizleme işlemini icra etmekte.
 
 ## İkinci Örnek _(GarbageConsumerHostService.cs)_
 
@@ -60,5 +60,3 @@ dotnet run
 - En ilkel haliyle arka plan işlerini zamanlayıcı bağımlı çalıştıran bağımsız bir servisin nasıl yazılabileceğini
 - IHostedService arayüzünden gelen metodların ne işe yaradığını
 - Dependency Injection yardımıyla birden fazla background servis'in nasıl ele alınabileceğini
-
-öğrendim.
