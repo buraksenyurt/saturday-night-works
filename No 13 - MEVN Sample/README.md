@@ -72,7 +72,7 @@ mongo
 db
 ```
 
-![credit_1.png](credit_1.png)
+![credit_1.png](./assets/credit_1.png)
 
 Sonrasında web arayüzüne erişerek denemelere başlanabilir.
 
@@ -123,7 +123,7 @@ Test etmek için node ve mongodb sunucularını çalıştırmamız ve http://loc
 
 Ekleme işlemi ile ilgili ilk test sonucu aşağıdaki gibidir.
 
-![credit_2.png](credit_2.png)
+![credit_2.png](./assets/credit_2.png)
 
 Listeleme ve listenen bağlantıları silme işini contacts.vue isimli bileşen üstlenmekte. Buda app.vue içerisinde tanımlanıp sayfaya yerleştiriliyor. contacts.vue içerisinde bootstrap card'ları kullanmayı tercih ettim. Çok berbat bir tasarım olmadı ama çok iyi de olmadı. Fonksiyonel olarak bağlantıları listeletebiliyor, silme ve yenilerini ekleme işlemlerini gerçekleştirebiliyoruz.
 
@@ -131,7 +131,7 @@ Listeleme ve listenen bağlantıları silme işini contacts.vue isimli bileşen 
 
 contacts.vue kodlaması tamamlandıktan sonra bir kaç test yaptım. Hatalarımı düzelttim. Pek tabii öncesinde webpack build işlemini yeniden çalıştırmak gerekiyor ki son güncellemelerimiz de pakete yansısın. İşte örnek bir ekran görüntüsü.
 
-![credit_3.png](credit_3.png)
+![credit_3.png](./assets/credit_3.png)
 
 ## Tepeden Aşağıya
 
