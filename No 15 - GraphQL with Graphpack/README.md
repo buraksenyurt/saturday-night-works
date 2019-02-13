@@ -55,7 +55,7 @@ query {
 }
 ```
 
-![cover_1.png](cover_1.png)
+![cover_1.png](./assets/cover_1.png)
 
 İkinci sorgumuzda bir ID değerine göre Nobel sahibini ve ödüllerini çekiyoruz. Sorguyu yazarken resolver tarafındaki metodu ve sonrasında görmek istediğimiz tipin içeriğini belirtiyoruz. 
 
@@ -74,7 +74,7 @@ query{
 }
 ```
 
-![cover_2.png](cover_2.png)
+![cover_2.png](./assets/cover_2.png)
 
 Yeni bir nobel ödülü sahibi eklemek için aşağıdaki sorgu nesnesi kullanılabilir.
 
@@ -94,7 +94,7 @@ mutation{
 }
 ```
 
-![cover_3.png](cover_3.png)
+![cover_3.png](./assets/cover_3.png)
 
 Ödül eklemek için,
 
@@ -117,7 +117,7 @@ mutation{
 }
 ```
 
-![cover_4.png](cover_4.png)
+![cover_4.png](./assets/cover_4.png)
 
 Bir nobel ödülü sahibinin bilgilerini silmek için,
 
@@ -132,7 +132,7 @@ mutation{
   }
 ```
 
-![cover_5.png](cover_5.png)
+![cover_5.png](./assets/cover_5.png)
 
 Belli bir yıldaki nobel ödülü sahiplerini bulmak için,
 
@@ -150,7 +150,7 @@ query{
 }
 ```
 
-![cover_6.png](cover_6.png)
+![cover_6.png](./assets/cover_6.png)
 
 gibi sorgulardan yararlanabiliriz.
 
