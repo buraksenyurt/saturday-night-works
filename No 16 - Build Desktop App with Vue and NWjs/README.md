@@ -57,7 +57,7 @@ npm run desktop
 
 Big Bang Theory'den örnek bir bölüm girip aratabiliriz.
 
-![cover_1.png](cover_1.png)
+![cover_1.png](./assets/cover_1.png)
 
 ## Paketleme
 
@@ -67,11 +67,11 @@ Uygulamayı paketlemek için packages.json içerisine build kısmı eklenir. Bur
 ./node_modules/.bin/build --tasks linux-x64 .
 ```
 
-![cover_2.png](cover_2.png)
+![cover_2.png](./assets/cover_2.png)
 
 >Paket boyutu oldukça yüksek! Ancak küçültmek için çeşitli yollar varmış. _(Araştırmak lazım)_
 
-![cover_3.png](cover_3.png)
+![cover_3.png](./assets/cover_3.png)
 
 ## Neler Öğrendim?
 
