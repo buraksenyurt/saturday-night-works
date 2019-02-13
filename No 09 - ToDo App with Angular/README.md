@@ -46,7 +46,7 @@ ng new sonrası oluşan proje içerisinde çok fazla dosya var. Örneği sonrada
 
 Uygulamanın çalışma zamanına ait örnek bir görüntü.
 
-![credit_1.png](credit_1.png)
+![credit_1.png](./assets/credit_1.png)
 
 ## Neler Öğrendim?
 
