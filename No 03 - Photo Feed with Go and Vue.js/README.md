@@ -8,9 +8,9 @@ Amaç bir haber akışına fotoğraf ekleyebilmek _(Sosyal ağların web arayüz
 
 İlk olarak [Pusher Channels](https://pusher.com/) adresine giderek bir uygulama kaydettirmemiz gerekiyor. Bu ürüne github veya google hesaplarımız ile bağlanabiliyoruz. Uygulamayı oluşturduktan sonra App Keys sayfasından geliştirmemiz için gerekli app_id, key, secret gibi bilgileri alabiliriz. Pusher temel olarak içeriklerin hissedilip abone olan taraflara yollanması ile ilgili bir rol üstleniyor.
 
-![credit_1](credit_1.png)
+![credit_1](./assets/credit_1.png)
 
-![credit_2](credit_2.png)
+![credit_2](./assets/credit_2.png)
 
 ## İkinci hamle klasör yapısını oluşturmak
 
@@ -43,17 +43,17 @@ go run main.go
 
 dememiz yeterli. Sorun çıkmazsa aşağıdakine benzer bir ekran görüntüsü ile karşılaşmamız gerekiyor.
 
-![credit_3](credit_3.png)
+![credit_3](./assets/credit_3.png)
 
 Bundan sonra http://localhost:7470 adresine gidebiliriz. 
 
 En az iki sayfa açmanızı öneririm. Bir tanesinden yüklenecek dosya içeriği anında diğer tarayıcıdaki haber akışına da yansıyacaktır. index.html sayfasında Vue.js kullanılmıştır. axios kütüphanesi ise XmlHttpRequest tipinden talepleri gerçekleştirmek için kullanılmaktadır _(Yani go server'ına göndereceğimiz Post, Get, Put, Delete gibi komutlar için kullanılır)_ Pusher tarafındaki kanala abone olmak içinse pusher'ın istemci için yazılmış javascript kütüphanesinden yararlanıyoruz. Çok azcık ucundan da olsa bootstrap ile css desteği sağlayıp erkanı biraz da güzelleştirdik :P
 
-![credit_4](credit_4.png)
+![credit_4](./assets/credit_4.png)
 
 Denemeler sırasında Pusher üzerinde oluşan hareketlilikleri Dashboard üzerinden de gözlemleyebiliriz.
 
-![credit_5](credit_5.png)
+![credit_5](./assets/credit_5.png)
 
 > index.html dosyasında pusher nesnesi için gerekli application key ve cluster bilgisi sizin uygulamanızınkine ait olmalıdır
 
