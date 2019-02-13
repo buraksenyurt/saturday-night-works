@@ -1,6 +1,6 @@
 # AspNet Core Web API Tarafında Dapper Kullanımı
 
-Veri kaynakları ile kod tarafındaki modeller arasında devreye giren bir çok ORM aracı mevcut. Stackoverflow tarafından geliştirilen ve Micro ORM olarak nitelendirilen Dapper' da bunlardan birisi. SQLite, MySQL, SQLCE, SQL Server, Firebird ve daha bir çok veritabanı platformu ile çalışabilen Dapper'ın performans olarak da iyi sonuçlar verdiği ifade edilmekte. Amacım Dapper'ı bir Web API uygulamasında SQLite ile birlikte kullanabilmek.
+Veri kaynakları ile kod tarafındaki modeller arasında devreye giren bir çok ORM aracı mevcut. Stackoverflow tarafından geliştirilen ve Micro ORM olarak nitelendirilen Dapper bunlardan birisi. SQLite, MySQL, SQLCE, SQL Server, Firebird ve daha bir çok veritabanı platformu ile çalışabilen Dapper'ın performans olarak da iyi sonuçlar verdiği ifade edilmekte. Amacım Dapper'ı bir Web API uygulamasında SQLite ile birlikte kullanabilmek.
 
 ## Hazırlıklar
 
@@ -43,7 +43,7 @@ dotnet add package Dapper
 
 ## Çalışma Zamanı
 
-Uygulamayı 
+Uygulamayı terminalden
 
 ```
 dotnet run
@@ -51,7 +51,7 @@ dotnet run
 
 komutu ile çalıştırdıktan sonra Postman veya muadili bir aracı kullanarak API fonksiyonelliklerini deneyebiliriz.
 
-Örnek veri girişi
+Örnek veri girişi için,
 
 ```
 http://localhost:5404/api/Firms 
@@ -65,7 +65,7 @@ Aynı ID ile tekrar giriş yapmak istersek, SQLite tarafındaki Primary Key alan
 
 ![Cover_4.png](Cover_4.png)
 
-Belli bir şehirdeki şirketleri elde etmek için
+Belli bir şehirdeki şirketleri elde etmek için,
 
 ```
 http://localhost:5404/api/Firms/Detroit
@@ -74,7 +74,7 @@ GET
 
 ![Cover_5.png](Cover_5.png)
 
-Tüm firmaların listesi için
+Tüm firmaların listesi için,
 
 ```
 http://localhost:5404/api/Firms
@@ -99,7 +99,7 @@ ID bazlı bir firma bilgisini silmek için,
 http://localhost:5404/api/Firms/103
 DELETE
 ```
-Tabii o ID için bir kayıt yoksa HTTP 404 NotFound döndürüyoruz
+Tabii o ID için bir kayıt yoksa HTTP 404 NotFound döndürüyoruz.
 
 ![Cover_8.png](Cover_8.png)
 
