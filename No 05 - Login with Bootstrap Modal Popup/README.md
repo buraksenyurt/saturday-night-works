@@ -17,21 +17,21 @@ uuid paketini login olan kullanıcı için benzersiz bir guid üretmek maksadıy
 
 Kullanıcı / adresine gelirse (yani http://localhost:5001/ 'e) index.html sayfası render edilir. Bu bizim için sembolik bir sayfadır. Genelde varsayılan giriş noktaları bildiğiniz üzere index.html gibi sayfalar oluyor.
 
-![credit_1](credit_1.png)
+![credit_1](./assets/credit_1.png)
 
 Burada 'Giriş Yap' düğmesine basılınca Modal Popup kontrolü açılır. Aslında kendisini index.html içerisine bir div olarak ekledik. 
 
 >Bunu harici bir sayfaya nasıl alabilirsiniz? Malum başka yerlerden de Login'e göndermek isteyebiliriz. Her sayfaya gidip de modal div gömmesek iyi olur değil mi? Bunu biraz düşünün ;)
 
-![credit_2](credit_2.png)
+![credit_2](./assets/credit_2.png)
 
 Eğer hatalı kullanıcı bilgisi girersek şöyle bir şeyler olmalı.
 
-![credit_3](credit_3.png)
+![credit_3](./assets/credit_3.png)
 
 Eğer doğru kullanıcı bilgileri girilirse aşağıdaki güzel fotoğrafla karşılaşmamız lazım.
 
-![credit_4](credit_4.png)
+![credit_4](./assets/credit_4.png)
 
 Querystring'e gelen id parametresi login olan kullanıcı için özel üretilmiş bir Guid değeri. Şayet değiştirip aynı sayfayı yüklersek, Guid'in sunucu tarafındaki aktif kullanıcı listesinde yer alması gerekiyor _(aktif kullanıcı listesi dediğime bakmayın. Havalı ismi o. Örnekte ben basit bir array kullandım. Sunucuyu kapatınca uçup gidecek)_ Aksi durumda 403 hatası alacağız. Bunu Wellcome gibi bir sayfaya login olunmadan gelinmesin diye ekledik.
 
