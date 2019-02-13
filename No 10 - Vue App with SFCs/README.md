@@ -18,7 +18,7 @@ mkdir src
 
 Sonrasında aşağıdaki ilaveleri yaparak ilerleyebiliriz.
 
-![credit_1.png](credit_1.png)
+![credit_1.png](./assets/credit_1.png)
 
 Projenin diğer bağımlılıklarını yüklemek içinse npm aracından yararlanıyoruz. _(Epey bir bağımlılık yüklemem gerekti)_
 
@@ -44,7 +44,7 @@ package.json'a eklenen serve script'i sayesinde uygulama aşağıdaki gibi çal�
 npm run serve
 ```
 
-![credit_2.png](credit_2.png)
+![credit_2.png](./assets/credit_2.png)
 
 webpack.config.js'teki open:true ataması sayesinde tarayıcı otomatik olarak açılır ve localhost:8080 adresine yönlenilir. Vue, progressive uygulama yazmamıza olanak sağladığından herhangibir emulator ile sonuçlara bakabiliriz.
 
@@ -56,11 +56,11 @@ npm run build
 
 build sonrası dist klasörü aşağıdaki ekran görüntüsünde olduğu gibi oluştu.
 
-![credit_3.png](credit_3.png)
+![credit_3.png](./assets/credit_3.png)
 
 Sonrasında _npm run serve_ demeden index.html'i fiziki lokasyonundan tarayıcı ile açtığımda çalıştığını gördüm.
 
-![credit_4.png](credit_4.png)
+![credit_4.png](./assets/credit_4.png)
 
 >Tabii asıl farkı görebilmek için serve edilen ve fiziki klasörde çalıştırılan index.html dosyalarının source kısımlarına bakıp karşılaştırmak lazım. Sizde böyle yapın ;)
 
