@@ -1,4 +1,4 @@
-#Bootstrap Grid Sistemini Tanımak
+# Bootstrap Grid Sistemini Tanımak
 
 Bootstrap ile önyüz tasarımları çok hoş bir hale gelebiliyor. Frontend tarafının bir acemisi olarak şirket bünyesindeki tasarımlarda da kullanılan bootstrap'i örnekler ile tanımak istedim. Temel bir kaç şey biliyor olsam da bilmediğim çok şey var. Takip ettiğim örnekten yararlanarak Grid sistemini anlamaya çalıştım.
 
