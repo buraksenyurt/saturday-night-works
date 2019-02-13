@@ -1,12 +1,12 @@
 # Webpack ile basit bir vue.js uygulaması geliştirmek
 
-Amacım Single-File Components kavramını anlamak ve Webpack'ten yararlanarak bir Vue.js uygulaması yazıp onu paketlemek.
+Amacım Single-File Components kavramını anlamak ve Webpack'ten yararlanarak bir Vue.js uygulaması yazıp onu paketlemek. Vue halen daha oldukça yabancı olduğum bir alan. Webpack ortamlara göre dağıtım işini de ele alıp ürünleri daha az parçada ve merkezileştirerek paketlememize yarayan bir araç olarak düşünülebilir.
 
->Platform olarak West-World _(Ubuntu 18.04)_ üzerinde çalıştım.
+>Platform olarak WestWorld _(Ubuntu 18.04, 64bit)_ üzerinde çalıştım.
 
 ## Ön Gereklilikler
 
-İşe proje iskeletini oluşturarak başladım.
+İşe proje iskeletini oluşturarak başlayabiliriz.
 
 ```
 mkdir cometovue
@@ -16,11 +16,11 @@ mkdir src
 
 ```
 
-Sonrasında aşağıdaki ilaveleri yaptım.
+Sonrasında aşağıdaki ilaveleri yaparak ilerleyebiliriz.
 
-![credit_1.png](credit_1.png)
+![credit_1.png](./assets/credit_1.png)
 
-Projenin diğer bağımlılıklarını yüklemek içinse npm aracından yararlandım. _(Epey bir bağımlılık yüklemem gerekti)_
+Projenin diğer bağımlılıklarını yüklemek içinse npm aracından yararlanıyoruz. _(Epey bir bağımlılık yüklemem gerekti)_
 
 ```
 npm install vue vue-loader vue-template-compiler webpack webpack-cli webpack-dev-server babel-loader @babel/core babel-preset-env css-loader vue-style-loader html-webpack-plugin rimraf -D
@@ -28,8 +28,8 @@ npm install vue vue-loader vue-template-compiler webpack webpack-cli webpack-dev
 
 - rimraf sıkça build edilmiş eski dosyaları silme ihtiyacı için kullanılıyor
 - webpack kodları bazı dönüşümlerle tek bir dosya içerisine paketlemek için
-- webpack-cli, webpack komutlarını çalıştırmak için
-- babel-loader, ES6 kodlarını ES5'e dönüştürmek için
+- webpack-cli, webpack'in terminalden çalıştırılacak komutlarını ele almak için
+- babel-loader, ES6 kodlarını ES5 standartlarına dönüştürmek için
 - css-loader, CSS dosyalarının nerede olduğunu anlayıp yüklemeyi kolaylaştırdığı için
 - vue-css-loader, css-loader'dan alınan css'i HTML içerisine enjekte etmek için
 - html-webpack-plugin, index.html'in başına paketlenmiş Javascript dosyasını enjekte edip dosyayı bu haliyle dist klasörüne attığı için
@@ -44,7 +44,7 @@ package.json'a eklenen serve script'i sayesinde uygulama aşağıdaki gibi çal�
 npm run serve
 ```
 
-![credit_2.png](credit_2.png)
+![credit_2.png](./assets/credit_2.png)
 
 webpack.config.js'teki open:true ataması sayesinde tarayıcı otomatik olarak açılır ve localhost:8080 adresine yönlenilir. Vue, progressive uygulama yazmamıza olanak sağladığından herhangibir emulator ile sonuçlara bakabiliriz.
 
@@ -54,13 +54,13 @@ package.json'a eklenen build betiği ile uygulamanın önceki dağıtımlarını
 npm run build
 ```
 
-build sonrası dist klasörü aşağıdaki gibi oluştu.
+build sonrası dist klasörü aşağıdaki ekran görüntüsünde olduğu gibi oluştu.
 
-![credit_3.png](credit_3.png)
+![credit_3.png](./assets/credit_3.png)
 
 Sonrasında _npm run serve_ demeden index.html'i fiziki lokasyonundan tarayıcı ile açtığımda çalıştığını gördüm.
 
-![credit_4.png](credit_4.png)
+![credit_4.png](./assets/credit_4.png)
 
 >Tabii asıl farkı görebilmek için serve edilen ve fiziki klasörde çalıştırılan index.html dosyalarının source kısımlarına bakıp karşılaştırmak lazım. Sizde böyle yapın ;)
 
@@ -69,5 +69,3 @@ Sonrasında _npm run serve_ demeden index.html'i fiziki lokasyonundan tarayıcı
 - Bir Vue.js uygulamasının genel anatomisini
 - Webpack'in ne işe yaradığını, ona ne yapması gerektiğini nasıl söyleyeceğimi ve nasıl çalıştıracağımı
 - package.json'a eklenen betikler ile build ve deploy işlemlerinin nasıl gerçekleştirilebileceğini
-
-öğrendim

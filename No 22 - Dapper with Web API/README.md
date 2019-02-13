@@ -1,6 +1,6 @@
 # AspNet Core Web API Tarafında Dapper Kullanımı
 
-Veri kaynakları ile kod tarafındaki modeller arasında devreye giren bir çok ORM aracı mevcut. Stackoverflow tarafından geliştirilen ve Micro ORM olarak nitelendirilen Dapper' da bunlardan birisi. SQLite, MySQL, SQLCE, SQL Server, Firebird ve daha bir çok veritabanı platformu ile çalışabilen Dapper'ın performans olarak da iyi sonuçlar verdiği ifade edilmekte. Amacım Dapper'ı bir Web API uygulamasında SQLite ile birlikte kullanabilmek.
+Veri kaynakları ile kod tarafındaki modeller arasında devreye giren bir çok ORM aracı mevcut. Stackoverflow tarafından geliştirilen ve Micro ORM olarak nitelendirilen Dapper bunlardan birisi. SQLite, MySQL, SQLCE, SQL Server, Firebird ve daha bir çok veritabanı platformu ile çalışabilen Dapper'ın performans olarak da iyi sonuçlar verdiği ifade edilmekte. Amacım Dapper'ı bir Web API uygulamasında SQLite ile birlikte kullanabilmek.
 
 ## Hazırlıklar
 
@@ -22,9 +22,9 @@ INSERT INTO FIRM (ID,NAME,CITY,SALARY) VALUES (2,'Cycling Do','London',9000000);
 
 SELECT * FROM FIRM;
 ```
-![Cover_1.png](Cover_1.png)
+![Cover_1.png](./assets/Cover_1.png)
 
-![Cover_2.png](Cover_2.png)
+![Cover_2.png](./assets/Cover_2.png)
 
 Ardından .Net Core Web API projesi oluşturulur ve gerekli Nuget paketleri sisteme ilave edilir.
 
@@ -43,7 +43,7 @@ dotnet add package Dapper
 
 ## Çalışma Zamanı
 
-Uygulamayı 
+Uygulamayı terminalden
 
 ```
 dotnet run
@@ -51,7 +51,7 @@ dotnet run
 
 komutu ile çalıştırdıktan sonra Postman veya muadili bir aracı kullanarak API fonksiyonelliklerini deneyebiliriz.
 
-Örnek veri girişi
+Örnek veri girişi için,
 
 ```
 http://localhost:5404/api/Firms 
@@ -59,29 +59,29 @@ POST
 {"Id":21,"Name":"Dust&Dones Guitars","City":"Detroit","Salary":5250000}
 ```
 
-![Cover_3.png](Cover_3.png)
+![Cover_3.png](./assets/Cover_3.png)
 
 Aynı ID ile tekrar giriş yapmak istersek, SQLite tarafındaki Primary Key alanı nedeniyle exception fırlatılacaktır.
 
-![Cover_4.png](Cover_4.png)
+![Cover_4.png](./assets/Cover_4.png)
 
-Belli bir şehirdeki şirketleri elde etmek için
+Belli bir şehirdeki şirketleri elde etmek için,
 
 ```
 http://localhost:5404/api/Firms/Detroit
 GET
 ```
 
-![Cover_5.png](Cover_5.png)
+![Cover_5.png](./assets/Cover_5.png)
 
-Tüm firmaların listesi için
+Tüm firmaların listesi için,
 
 ```
 http://localhost:5404/api/Firms
 GET
 ```
 
-![Cover_6.png](Cover_6.png)
+![Cover_6.png](./assets/Cover_6.png)
 
 ID bazlı güncelleme için,
 
@@ -91,7 +91,7 @@ PUT
 {"Id":55,"Name":"Queen Marry Music LTD","City":"London","Salary":4350000}
 ```
 
-![Cover_7.png](Cover_7.png)
+![Cover_7.png](./assets/Cover_7.png)
 
 ID bazlı bir firma bilgisini silmek için,
 
@@ -99,9 +99,9 @@ ID bazlı bir firma bilgisini silmek için,
 http://localhost:5404/api/Firms/103
 DELETE
 ```
-Tabii o ID için bir kayıt yoksa HTTP 404 NotFound döndürüyoruz
+Tabii o ID için bir kayıt yoksa HTTP 404 NotFound döndürüyoruz.
 
-![Cover_8.png](Cover_8.png)
+![Cover_8.png](./assets/Cover_8.png)
 
 ## Neler Öğrendim
 

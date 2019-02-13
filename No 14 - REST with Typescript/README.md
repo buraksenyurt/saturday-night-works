@@ -1,10 +1,10 @@
 # Typescript Kullanarak Bir Web API Geliştirmek
 
-Amacım FortJs isimli projeyi kullanarak, Typescript ile bir Web API servisi geliştirebilmek. FortJs, MVC tabanlı bir web framework. Nodejs için geliştirilmiş ve Typescript desteği sunmakta. Bende bu tarafını kurcalamak istedim.
+Amacım FortJs isimli projeyi kullanarak, Typescript ile bir Web API servisi geliştirebilmek. FortJs, MVC tabanlı bir web framework. Nodejs için geliştirilmiş ve Typescript desteği sunmakta. Ben de bu tarafını kurcalamak istedim.
 
 ## Kurulumlar
 
-İlk olarak https://github.com/ujjwalguptaofficial/fortjs-typescript-starter adresinden bir projeyi klonlamam gerekti. Sonrasında WestWorld için gerekli eksik npm paketlerinin yüklemesini yaptım. Sonra node uygulamasını başlattım ve localhost:4000 adresine gittim. Varsayılan FortJs sayfası ile karşılaştım.
+İlk olarak [başlangıç](https://github.com/ujjwalguptaofficial/fortjs-typescript-starter) adresinden bir projeyi klonlamam gerekti. Sonrasında WestWorld için gerekli eksik npm paketlerinin yüklemesini yaptım. Ardından node uygulamasını başlattım ve localhost:4000 adresine gittim. Varsayılan şablona ait FortJs sayfası ile karşılaştım.
 
 ```
 git clone https://github.com/ujjwalguptaofficial/fortjs-typescript-starter
@@ -13,11 +13,11 @@ npm install
 npm run start
 ```
 
-![cover_1.png](cover_1.png)
+![cover_1.png](./assets/cover_1.png)
 
 QuoteController isimli ilk controller bileşenini ekledikten sonra http://localhost:4000/quote adresine gittiğimde aşağıdaki çıktıyı elde ettim.
 
-![cover_2.png](cover_2.png)
+![cover_2.png](./assets/cover_2.png)
 
 ## Yapılan Değişiklikler
 
@@ -39,7 +39,9 @@ npm start
 
 ile uygulama çalıştırılır ve sunucu aktif hale getirilir.
 
-Yeni özlü sözler eklemek için
+### Yeni verilerin eklenmesi
+
+Yeni özlü sözler eklemek için terminalden curl aracını aşağıdaki gibi kullanabiliriz. POST taleplerini takiben quote ve quote/100 gibi adreslere gittiğimizde eklediğimiz içerikleri çekebiliriz.
 
 ```
 curl -H "Content-Type: application/json" -X POST -d '{"id":100,"text":"Two things are infinite: the universe and human stupidity; and Im not sure about the universe.","owner":"Albert Einstein","available":"yes"}' http://localhost:4000/quote
@@ -55,11 +57,11 @@ curl http://localhost:4000/quote
 curl http://localhost:4000/quote/100
 ```
 
-Yukardaki eklemeler sonrası örneğin Postman ile ilgili adrese gidilirse aşağıdaki sonuçla karşılaşılır.
+Ayrıca yeni eklemeler sonrası Postman ile ilgili adrese gidilirse aşağıdaki sonuçla karşılaşılır.
 
-![cover_3.png](cover_3.png)
+![cover_3.png](./assets/cover_3.png)
 
-Güncelleme ve silme için örnek
+### Güncelleme ve silme işlemleri
 
 ```
 curl -H "Content-Type: application/json" -X PUT -d '{"text":"bla bla bla bla...","owner":"Albert Einstein","available":"no"}' http://localhost:4000/quote/100
@@ -77,4 +79,4 @@ Post çağrımında gelen verinin çeşitli kurallara göre kontrolü için bir 
 - Genel Typescript kavramları
 - MVC yapısının uygulanış biçimi
 
->Örnek özlü söz listesi için https://www.goodreads.com/quotes adresinden yararlandım.
+>Örnek özlü söz listesi için [GoodReads'in şu adresinden](https://www.goodreads.com/quotes) yararlandım.

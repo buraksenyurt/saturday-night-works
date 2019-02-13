@@ -15,7 +15,7 @@ Amacım, Microsoft'un Asp.Net Core MVC tarafında özellikle sayfa odaklı senar
 
 ## Başlangıç
 
-Örneği West-World _(Ubuntu 18.04 64bit)_ üzerinde deniyorum. Linux tarafında Razor uygulamalarını oluşturmak için .Net Core 2.2'ye ihtiyacımız var. Kodları geliştirmek içinse Visual Studio Code'dan yararlanabiliriz. Projeyi oluşturmak için aşağıdaki komutu vermek yeterli.
+Örneği WestWorld _(Ubuntu 18.04, 64bit)_ üzerinde deniyorum. Linux tarafında Razor uygulamalarını oluşturmak için en azından .Net Core 2.2'ye ihtiyacımız var. Kodları geliştirmek içinse Visual Studio Code'dan yararlanabiliriz. Projeyi oluşturmak için aşağıdaki terminal komutunu vermek yeterli.
 
 ```
 dotnet new webapp -o MyBookStore
@@ -52,25 +52,25 @@ Robert C. Martin (Uncle Bob)
 "This is essential reading for every current of aspiring software architect..."
 ```
 
-![Cover_1.png](Cover_1.png)
+![Cover_1.png](./assets/Cover_1.png)
 
-![Cover_2.png](Cover_2.png)
+![Cover_2.png](./assets/Cover_2.png)
 
 Validasyona takılabiliriz de...
 
-![Cover_3.png](Cover_3.png)
+![Cover_3.png](./assets/Cover_3.png)
 
 Başarılı girişler sonrası gelinen Index sayfasının çıktısı ise,
 
-![Cover_4.png](Cover_4.png)
+![Cover_4.png](./assets/Cover_4.png)
 
 Düzenleme sayfamız,
 
-![Cover_5.png](Cover_5.png)
+![Cover_5.png](./assets/Cover_5.png)
 
 Düzenleme sonrası sonuçlar,
 
-![Cover_6.png](Cover_6.png)
+![Cover_6.png](./assets/Cover_6.png)
 
 ## InMemory Veritabanını SQLite ile Değiştirme
 
@@ -80,7 +80,7 @@ SQLite kullanımı için EntityFramework Core'un ilgili NuGet paketini projeye e
 dotnet add package Microsoft.EntityFrameworkCore.SQLite
 ```
 
-Ardından appsettings.json dosyasına bir Connection String bildirimi ekleyip, Startup sınıfındaki ConfigureServices metodunda minik bir ayarlama yapmamız lazım. Bunlar başlangıç aşamasında yeterli değil nitelim SQLite veritabanının oluşturulması da gerekiyor.
+Ardından appsettings.json dosyasına bir Connection String bildirimi dahil edip, Startup sınıfındaki ConfigureServices metodunda minik bir ayarlama yapmamız gerekmekte. Bunlar başlangıç aşamasında yeterli değil nitekim SQLite veritabanının oluşturulması da gerekiyor.
 
 ```
 dotnet ef migrations add InitialCreate
@@ -89,17 +89,17 @@ dotnet ef database update
 
 sayesinde DataContext türevli sınıf baz alınarak migration planları çıkartılır. Planlar hazırlandıktan sonra ikinci komut ile update planı yürütülür.
 
-![Cover_8.png](Cover_8.png)
+![Cover_8.png](./assets/Cover_8.png)
 
-Eğer veritabanını baştan hazırlamazsak ve update planını çalıştırmazsa aşağıdakine benzer bir hata ile karşılaşabiliriz.
+Eğer veritabanını baştan hazırlamazsak ve update planını çalıştırmazsak aşağıdakine benzer bir hata ile karşılaşabiliriz.
 
-![Cover_7.png](Cover_7.png)
+![Cover_7.png](./assets/Cover_7.png)
 
 >Artık verilerimiz SQLite ile fiziki olarak da kayıt altında.
 
 Hatta Visual Studio Code'a SQLite Explorer Extension'ının yüklersek oluşan DB dosyasının içeriğini görebiliriz.
 
-![Cover_9.png](Cover_9.png)
+![Cover_9.png](./assets/Cover_9.png)
 
 ## Neler Öğrendim?
 

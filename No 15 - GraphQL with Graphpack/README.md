@@ -8,7 +8,7 @@ Sunucu tarafındaki konfigurasyonları minimize eden Graphpack paketini kullanar
 
 ## Ön Gereklilikler ve Kurulumlar
 
-Örnek node.js tabanlı. Bu nedenle sistemde node ve npm _(ya da yarn paket yöneticisi)_ yüklü olmalı. Örneği yine WestWorld _(Ubuntu 18.04 64Bit)_ üzerinde geliştirmekteyim. Klasör hazırlıkları ve kurulumlar için aşağıdaki terminal komutlarından yararlanabiliriz.
+Örnek uygulamamız node.js tabanlı. Bu nedenle sistemde node ve npm _(ya da yarn paket yöneticisi)_ yüklü olmalı. Örneği yine WestWorld _(Ubuntu 18.04, 64Bit)_ üzerinde geliştirmekteyim. Klasör hazırlıkları ve kurulumlar için aşağıdaki terminal komutlarından yararlanabiliriz.
 
 ```
 mkdir NobelAPI
@@ -24,7 +24,7 @@ touch schema.graphql
 
 ## Çalışma Zamanı
 
-Örneği çalıştırmak için
+Örneği çalıştırmak için terminalden aşağıdaki komutu vermek yeterli.
 
 ```
 npm run dev
@@ -32,7 +32,7 @@ npm run dev
 
 >package.json içerisindeki script kısmına bir bakın.
 
-terminal komutunu verip varsayılan olarak gelen http://localhost:4000 adresine gitmek yeterli. Burada bizi GraphQL sorgularını kolayca deneyimleyeceğimiz arabirim karşılayacak.
+Sunucu tarafı ayağa kalktıktan sonra http://localhost:4000 adresine giderek testlere başlanabilir. Burada bizi GraphQL sorgularını kolayca deneyimleyeceğimiz arabirim karşılayacaktır.
 
 ## Örnek Sorgulamalar
 
@@ -55,7 +55,7 @@ query {
 }
 ```
 
-![cover_1.png](cover_1.png)
+![cover_1.png](./assets/cover_1.png)
 
 İkinci sorgumuzda bir ID değerine göre Nobel sahibini ve ödüllerini çekiyoruz. Sorguyu yazarken resolver tarafındaki metodu ve sonrasında görmek istediğimiz tipin içeriğini belirtiyoruz. 
 
@@ -74,7 +74,7 @@ query{
 }
 ```
 
-![cover_2.png](cover_2.png)
+![cover_2.png](./assets/cover_2.png)
 
 Yeni bir nobel ödülü sahibi eklemek için aşağıdaki sorgu nesnesi kullanılabilir.
 
@@ -94,9 +94,9 @@ mutation{
 }
 ```
 
-![cover_3.png](cover_3.png)
+![cover_3.png](./assets/cover_3.png)
 
-Ödül eklemek için
+Ödül eklemek için,
 
 ```
 mutation{
@@ -117,7 +117,7 @@ mutation{
 }
 ```
 
-![cover_4.png](cover_4.png)
+![cover_4.png](./assets/cover_4.png)
 
 Bir nobel ödülü sahibinin bilgilerini silmek için,
 
@@ -132,7 +132,7 @@ mutation{
   }
 ```
 
-![cover_5.png](cover_5.png)
+![cover_5.png](./assets/cover_5.png)
 
 Belli bir yıldaki nobel ödülü sahiplerini bulmak için,
 
@@ -150,7 +150,9 @@ query{
 }
 ```
 
-![cover_6.png](cover_6.png)
+![cover_6.png](./assets/cover_6.png)
+
+gibi sorgulardan yararlanabiliriz.
 
 ## Neler Öğrendim?
 
