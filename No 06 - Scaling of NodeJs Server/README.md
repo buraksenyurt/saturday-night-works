@@ -54,7 +54,7 @@ go run requester.go
 
 arka arkaya 10 talebin gönderilmesi sağlanıyor. 
 
-![credit_1.png](credit_1.png)
+![credit_1.png](./assets/credit_1.png)
 
 >Tüm işlemler aynı anda aynı toplam sürede istemciye ulaşmıştır. Bu çalışma şekli görüldükten sonra scaled-server.js ile asıl amaçladığımız kurgunun denemelerine başlanabilir.
 
@@ -72,7 +72,7 @@ go run requester.go
 
 ile testleri yapabiliriz.
 
-![credit_2.png](credit_2.png)
+![credit_2.png](./assets/credit_2.png)
 
 Şimdi eş zamanlı gelen taleplerin çekirdekler arasında bölüştürüldüğünü görüyoruz. Her ne kadar ölçeklediysek de kurgu tam da istediğimiz gibi olmadı. Talep sayısı yükseldikçe cevap süreleri şişiyor :/ _(Biraz daha çalışmam lazım)_
 
