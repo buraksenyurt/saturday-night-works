@@ -1,25 +1,22 @@
 # Flask-RESTPlus ile REST Api Geliştirmek
 
-Python galaksisinde, Resource bazında büyüyen, versiyonalamaların artması sonrası karmaşıklaşan REST Api'ler için bir standart olması açısından Flask Blueprints yaklaşımı uygulanıyor. RESTPlus bu standardı daha kolay uygulayabilmek için gerekli kuralları bünyesinde barındırmakta. Otomatik dokümantasyon hazırlama, request/response validation, RESTful API'ler için minimum kurulum gereksinimi vb... Amacım Flask'in bir uzantısı olan Flask-RESTPlus'ın basit anlamda nasıl uygulanabileceğini incelemek.
+Python galaksisinde, Resource bazında büyüyen ve versiyonlamaların artması sonrası karmaşıklaşan REST Api'ler için bir standart olması açısından Flask Blueprints yaklaşımı uygulanıyor. RESTPlus bu standardı daha kolay uygulayabilmek için gerekli kuralları bünyesinde barındırmakta. Otomatik dokümantasyon hazırlama, request/response validation, RESTful API'ler için minimum kurulum gereksinimi ve benzeri gereksinimlerin kolayca hazırlanmasında kullanılıyor. Amacım Flask'in bir uzantısı olan Flask-RESTPlus'ın basit anlamda nasıl uygulanabileceğini incelemek.
 
->Örneği her zaman olduğu gibi West World _(Ubuntu 18.04 64bit)_ üzerinde çalıştım.
+>Örneği her zaman olduğu gibi WestWorld _(Ubuntu 18.04, 64bit)_ üzerinde çalıştım.
 
 ## Gereksinimler
 
-Sistemde python ve pip yüklü olmalı. Temel seviyede Python ve RESTful servis nedir bilgim var. Bunlar başlangıç için yeterli.
-
-Flask-RestPlus paketini kullanabilmek için
+Sistemde python ve pip _(python paket yöneticisi)_ yüklü olmalı. Temel seviyede Python ve RESTful servis bilgisi de örneği geliştirirken işimizi kolaylaştırır. Bunlar başlangıç için yeterli. Flask-RestPlus paketini projemizde kullanabilmek için
 
 ```
 pip install Flask-RestPlus
 ```
 
-terminal komutunu kullanabiliriz.
+terminal komutu ile yüklememiz gerekiyor.
 
 ## Örnekler
 
-- classic-api.py klasik olarak Flask ile geliştirilmiş bir REST API'dir.
-- restplus_1.py Rest-Plus'ın kullanıldığı ilk örnektir.
+Çalışma sırasında bir kaç örnek üzerinden ilerlenilmiştir.classic-api.py klasik olarak Flask ile geliştirilmiş bir REST API'dir. Buna ek olarak 3 program kodu daha geliştirilmiştir.
 
 ## Örnekleri Çalıştırmak
 
@@ -35,7 +32,7 @@ komutunu işletmek yeterlidir. Sonrasında tarayıcıdan ilgili adreslere gidere
 curl -d '{"id":9034,"name":"Modem"}' -H "Content-Type: application/json" -X POST http://localhost:4446/categories
 ```
 
-ile bir POST talebi gönderiyoruz. Body kısmında basit bir JSON içeriği var. Yeni bir kategorinin eklenmesini bu şekilde test edebiliriz. 
+ile servise bir POST talebi gönderilmektedir. Body kısmında basit bir JSON içeriği bulunuyor. Yeni bir kategorinin eklenmesini bu şekilde test edebiliriz. 
 
 ### 1nci Örneği Çalışırken (classic_api.py)
 
@@ -78,27 +75,27 @@ curl http://localhost:4446/categories
 
 Ama bunları kullanmak şart değil. Pekala Swagger arayüzü de kullanılabilir. 
 
->POST için gerekli olan payload model bildirimi sonrası Swagger Try Out kısmı aşağıdaki gibi oldu.
+>POST için gerekli olan payload model bildirimi sonrası Swagger Try Out kısmı aşağıdaki gibi olur.
 
 ![credit_2.png](credit_2.png)
 
 ### 3ncü Örneği Çalışırken (restplus_2.py)
 
-Bu sefer hem basit bir DAO _(Data Access Object)_ nesnesi hemde namespace kullanımına bakmak istedim. Namespace'leri birbirleri ile ilişkili kaynakları _(Resource)_ ortak bir alanda gruplamak için kullanabiliyoruz. Buna göre ikinci örnekteki route tanımlamalarında yer alan categories ifadelerini _(iki Resource'ta geçiyor ama gerçek bir projede bu şekilde n sayıda Resource olabilir)_ en başta bir namespace şeklinde belirtiyoruz. _(iki örnekteki route kullanımlarını karşılaştırınca anlaşılıyor)_ DAO işlemlerini üstlenen sınıfımız ayrı bir dosyada duruyor. En azından temel CRUD operasyonlarının sorumluluğunu ayrıştırmış oluyoruz.
+Bu sefer hem basit bir DAO _(Data Access Object)_ nesnesi hemde namespace kullanımını örnekliyoruz. Namespace'leri birbirleri ile ilişkili kaynakları _(Resource)_ ortak bir alanda gruplamak için kullanmaktayız. Buna göre ikinci örnekteki route tanımlamalarında yer alan categories ifadelerini _(iki Resource'ta geçiyor ama gerçek bir projede bu şekilde n sayıda Resource olabilir)_ en başta bir namespace şeklinde belirtiyoruz. _(iki örnekteki route kullanımlarını karşılaştırınca anlaşılıyor)_ DAO işlemlerini üstlenen CategoryDAO isimli ayrı bir pyhton dosyasında duruyor. En azından temel CRUD operasyonlarının sorumluluğunu ayrıştırmış oluyoruz.
 
->Bu örnekte testleri tamamen Swagger arayüzü üzerinden yaptım.
+>Bu örnekte testleri tamamen Swagger arayüzü üzerinden icra edebiliriz.
 
 ### 4ncü Örneği Çalışırken (restplus_3.py)
 
-Bu basit servis şu an için 5 API operasyonu sunuyor. Ancak canlı ortamlarda bu sayı giderek artar. Resource sayıları fazlalaşır ve yönetim zorlaşır. En başından itibaren versiyonlamak iyi bir stratejidir. Flesk Blueprints bu tip ihtiyaçları karşılayan bir tasarım modeli sunuyor. 4ncü örnekte çok fazla kod müdahalesi yapmadan versiyon desteği sunuyoruz. Bu örnek Blueprint tasarımının çok ilkel bir halini içeriyor.
+Bu basit servis şu an için 5 API operasyonu sunuyor. Ancak canlı ortamlarda bu sayı giderek artabilir. Resource sayıları fazlalaştığında çok doğal olarak yönetim de zorlaşacaktır. En başından itibaren versiyonlamak iyi bir stratejidir. Flesk Blueprints bu tip ihtiyaçları karşılayan bir tasarım modeli tanımlar. 4ncü örnekte çok fazla kod müdahalesi yapmadan versiyon desteği sunmaktayız _(Bu örnek Blueprint tasarımının çok ilkel bir halini içeriyor)_
 
-Tabii URL adresimiz değişti.
+Tabii URL adresimiz aşağıdaki gibi değişmiş durumda.
 
 http://localhost:4446/api/v1/docs 
 
 ![credit_3.png](credit_3.png)
 
-Birden fazla versiyonun ve n sayıda Resource'un kullanıldığı senaryolarda klasör yapısını da doğru uygulamak lazım. Mesela,
+Birden fazla versiyonun ve n sayıda Resource'un kullanıldığı senaryolarda klasör yapısını da doğru uygulamak gerekmekte. Mesela aşağıdaki gibi bir ağaç yapısı kurgulanabilir.
 
 ```
 proje/
@@ -121,14 +118,12 @@ proje/
 
 ## Ne Öğrendim?
 
-- Flask ile klasik bir REST servisi geliştirilmesini
+- Flask ile klasik bir REST servisinin geliştirilmesini
 - jsonify' ın ne işe yaradığını
 - API içinde sınıfları Resource olarak ele almayı
 - Rest-Plus'ın basit uygulanışını
 - api.doc ve api.expect'in Swagger üzerindeki etkilerini
-- Veri operasyonları için bir DAO sınıfını nasıl kullanabileceğimi
+- Veri operasyonları için bir DAO sınıfını nasıl kullanılabileceğini
 - namespace kavramını
-- CURL kullanmayı
+- CURL aracı ile komut satırından HTTP talepleri göndermeyi
 - Blueprint tasarım modeline göre versiyonlamanın nasıl yapılabileceğini
-
-öğrendim.
