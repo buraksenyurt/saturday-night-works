@@ -35,7 +35,7 @@ dememiz ve sonrasında http://localhost:3001/graphql adresine gitmemiz yeterli. 
 
 yazıp play tuşuna basarsak motto endPoint'i çalışır ve aşağıdaki sonucu elde ederiz.
 
-![credit_1.png](credit_1.png)
+![credit_1.png](./assets/credit_1.png)
 
 Benzer şekilde yine sol tarafa
 
@@ -51,7 +51,7 @@ Benzer şekilde yine sol tarafa
 
 sorgusunu yazıp play tuşuna basarsak history endPoint'ini karşılayan sorgu çalışır ve aşağıdaki çıktı elde edilir.
 
-![credit_2.png](credit_2.png)
+![credit_2.png](./assets/credit_2.png)
 
 ya da şunu
 
@@ -66,7 +66,7 @@ ya da şunu
 
 denediğimizde aşağıdaki sonucu alırız. _(4 numaralı bilgi için, sadece year ve title alanlarının değerlerini istedik)_
 
-![credit_3.png](credit_3.png)
+![credit_3.png](./assets/credit_3.png)
 
 >play tuşuna bastığımızda URL adresinin nasıl değiştiğine ayrıca sol taraftaki JSON sorgularında ne yazdığımıza, argümanı nasıl gönderdiğimize dikkat edelim.
 
@@ -84,7 +84,7 @@ Eğer numarasının karşılığı olmayan bir sorgu atarsak beklendiği üzere 
 
 için
 
-![credit_4.png](credit_4.png)
+![credit_4.png](./assets/credit_4.png)
 
 gibi.
 
