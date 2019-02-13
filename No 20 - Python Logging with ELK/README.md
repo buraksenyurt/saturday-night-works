@@ -2,7 +2,7 @@
 
 ELK yani Elasticsearch, Logstash ve Kibana üçlüsü. Microservis'lerde log stratejisi olarak sıklıkla kullanılıyorlar. Uygulamaların log bilgileri logstash tarafından dinlenip JSON formatına dönüştürülüyor ve Elasticsearch'e basılıyor. Elasticsearch'e alınan log'lar Kibana arayüzü ile izleniyor. Benim amacım ELK üçlüsünü WestWorld'de _(Ubuntu 18.04, 64bit)_ deneyimlemek ve loglama işini yapan uygulama tarafında basit bir Python kodunu kullanmak. WestWorld'ün uzun denemeler sonrası bozulan ekosistemini daha da dağıtmak istemediğimden Elasticsearch ve Kibana tarafı için Docker Container'larını kullanmak istiyorum. Kabaca aşağıdaki gibi bir senaryo söz konusu.
 
-![Cover_1.jpg](Cover_1.jpg)
+![Cover_1.jpg](./assets/Cover_1.jpg)
 
 ## Ön Gereklilikler
 
@@ -31,9 +31,9 @@ http://localhost:9200/ -> Elasticsearch
 http://localhost:5601/status -> Kibana
 ```
 
-![Cover_2.png](Cover_2.png)
+![Cover_2.png](./assets/Cover_2.png)
 
-![Cover_3.png](Cover_3.png)
+![Cover_3.png](./assets/Cover_3.png)
 
 ### Logstash Tarafı
 
@@ -89,7 +89,7 @@ komutunu çalıştırmak yeterli.
 
 logstash etkinleştirildikten sonra Kibana'ya gidip yeni bir index oluşturabiliriz. index_name* ve @timestamp field'ını seçerek ilerlediğimizde python uygulaması tarafından üretilen logların yakalandığını görürüz.
 
-![Cover_4.png](Cover_4.png)
+![Cover_4.png](./assets/Cover_4.png)
 
 >Visualize kısmını kurcalayarak çeşitli tipte grafikler hazırlayıp Dashboard'u etkili bir monitoring aracı haline dönüştürebiliriz.
 
