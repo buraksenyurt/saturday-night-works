@@ -29,7 +29,7 @@ Sayfaları incelemekte yarar var. Index, Counter ve FetchData _(Dependency Injec
 
 İlgili sayfada oynayarak farklı sonuçlar elde etmeye çalışabiliriz _(Ben hemen bir kaç değişiklik yapıp konuyu anlamaya çalıştım)_
 
-![cover_1.png](cover_1.png)
+![cover_1.png](./assets/cover_1.png)
 
 >CSS tarafında bootstrap hazır olarak geliyor. Sol taraftaki navigation menu'yü kurcalamak istersek, Shared klasöründeki NavMenu.cshtml ile oynamak yeterli. Her şeyin giriş noktası olan index.html içerisinde, blazor.webassembly.js isimli javascript dosyası için bir referans var _(Bu niye var öğrenmek lazım)_
 
@@ -61,15 +61,15 @@ dotnet run
 
 Örnek olarak bir iki kitap girip sonuçları görebiliriz.
 
-![Cover_2.png](cover_2.png)
+![Cover_2.png](./assets/cover_2.png)
 
 bookList.cshtml içeriği tarayıcıda aşağıdaki gibi oluşur.
 
-![Cover_3.png](cover_3.png)
+![Cover_3.png](./assets/cover_3.png)
 
 Built-In HttpClient servisini enjekte ettiğimiz dünya nüfus verileri sayfası ise şöyle görünecektir.
 
-![Cover_4.png](cover_4.png)
+![Cover_4.png](./assets/cover_4.png)
 
 ## Paketleme
 
