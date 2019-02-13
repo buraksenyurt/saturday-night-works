@@ -1,8 +1,10 @@
 # MongoDb, Express, Vue.js ve Node.js Birlikteliği
 
-Amacım bu 4 enstrümanı kullanarak Web API tabanlı çalışan basit bir web uygulaması geliştirmek. Veriyi tutmak için MongoDB'yi, sunucu tarafı için Node.js'i, Web Framework amacıyla Express'i ve önyüz geliştirmesinde de Vue.js'i kullanmak istedim. Kobay olarakta 90lardan aklıma gelen ve Cobol öğretirlerken gösterdikleri Fihrist modelini seçtim. Özellikle Vue.js tarafında component geliştirmenin nasıl yapılabileceğini, bunlar arasındaki haberleşmenin nasıl tesis edileceğini merak ettim. İşin içerisine WebPack ve Babel gibi değişik paketler de girdi.
+Amacım bu 4 enstrümanı kullanarak Web API tabanlı çalışan basit bir web uygulaması geliştirmek. Veriyi tutmak için MongoDB'yi, sunucu tarafı için Node.js'i, Web Framework amacıyla Express'i ve önyüz geliştirmesinde de Vue.js'i kullanmak istedim. Kobay olarakta 90lardan aklıma gelen ve Cobol öğretirlerken gösterdikleri Fihrist örneğini seçtim _(O vakitler sanırım hepimiz öğrendiğim dillerle arkadaşlarımızın telefon numaralarına yer verdiğimiz bir fihrist uygulaması yazmışızdır)_ Özellikle Vue.js tarafında component geliştirmenin nasıl yapılabileceğini, bunlar arasındaki haberleşmenin nasıl tesis edileceğini merak ediyordum. İşin içerisine WebPack ve Babel gibi değişik paketler de girince güzel bir çalışma alanı oluştu.
 
 ## Projenin İskeleti
+
+Projenin genel iskelet yapısı ve dosyaları aşağıdaki gibi tesis edilebilir.
 
 ```
 Fihrist/
@@ -24,7 +26,7 @@ Fihrist/
 |----- webpack.config.js
 ```
 
-app klasöründe modelimiz, yönlendirme paketi ve konfigurasyon dosyamız yer alıyor. public klasöründe html ve gerekirse css, image gibi asset'lere ve vue uygulamasının kendisine yer vereceğiz. server.js tahmin edileceği üzere node server'ımız.
+app klasöründe model sınıf, yönlendirme paketi ve konfigurasyon dosyası yer alıyor. public klasöründe html ve gerekirse css, image gibi asset'lere ve vue uygulamasının kendisine yer vereceğiz. server.js tahmin edileceği üzere node server rolünü üstleniyor.
 
 ```
 mkdir Fihrist
@@ -52,6 +54,8 @@ ile başlangıcı yapıp gerekli paket kurulumlarını gerçekleştiriyoruz.
 npm install body-parser express mongoose morgan method-override
 ```
 
+Servis mesaj gövdelerini kolayca parse etmek için body-parser, HTTP sunucusu ve servis taleplerinin karşılaması için express, mongodb ile konuşmak için mongoose paketlerinden yararlanmaktayız.
+
 ## Uygulamayı Başlatmak için
 
 ```
@@ -74,9 +78,7 @@ Sonrasında web arayüzüne erişerek denemelere başlanabilir.
 
 ## Servis Testleri
 
-Servis tarafının işlerliğini kontrol etmek için CURL ile aşağıdaki denemeler yapılabilir.
-
-4 tane insert, ardından tüm listenin çekilmesi, sonrasında belli bir id'ye bağlı kontak bilgisinin alınması, derken bir güncelleme ve son olarak da silme.
+Servis tarafının işlerliğini kontrol etmek için CURL ile aşağıdaki denemeler yapılabilir. 4 tane insert, ardından tüm listenin çekilmesi, sonrasında belli bir id'ye bağlı kontak bilgisinin alınması, derken bir güncelleme ve son olarak da silme operasyonlarını icra etmekteyiz.
 
 ```
 curl -H "Content-Type: application/json" -X POST -d '{"fullname":"M.J.","phoneNumber":"555 55 23","location":"chicago","birtdate":"1963-05-18T16:00:00Z"}' http://localhost:5003/api
@@ -113,13 +115,13 @@ Frontend tarafı geliştmeleri bittikten sonra bir build işlemi ile mypackage.j
 npm run build
 ```
 
-Eğer sorunsuz bir şekilde _(sorunsuz diyorum çünkü webpack.config.js dosyasını ayarlarken epey vakit kaybedip sorun yaşadım)_ Fihrist'in altında dist/public//build/mypackage.js şeklinde bir dosya oluşacaktır. Bu bohçayı index.html public klasörüne alıp index.html içerisinden kullanıma açabiliriz.
+Eğer sorunsuz bir şekilde _(sorunsuz diyorum çünkü webpack.config.js dosyasını ayarlarken epey vakit kaybedip sorun yaşadım)_ Fihrist'in altında dist/public/build/mypackage.js şeklinde bir dosya oluşacaktır. Bu bohçayı index.html public klasörüne alıp index.html içerisinden kullanıma açabiliriz.
 
 Test etmek için node ve mongodb sunucularını çalıştırmamız ve http://localhost:5003/ adresine gitmemiz yeterli. Malum burası varsayılan olarak index.html'e yönlendiriyordu. index.html içinde de Vue kodlarımızı paketlediğimiz mypackage.js dosyamız olduğundan ilgili template'lerin buraya yüklenmesi gerekiyor.
 
 >Build işlemi sonrası bileşenlerden bir değişiklik yapılırsa tekrardan build işleminin çalıştırılması ve bundle paketinin kullanıma alınması gerekir.
 
-Ekleme işlemi ile ilgili ilk test sonucum.
+Ekleme işlemi ile ilgili ilk test sonucu aşağıdaki gibidir.
 
 ![credit_2.png](credit_2.png)
 
@@ -142,4 +144,4 @@ Olayın başlangıç noktası olan index.html son derece sadedir. İçinde vue b
 - axios ile HTTP Post,Get,Put gibi metodlar nasıl çağrılır
 - webpack.config dosyası nasıl hazırlanır
 - bir bileşenden event bus'a bildirim nasıl yapılır ve diğer bileşenlerden bu değişiklik nasıl yakalanır
-- Biraz daha bootstrap yazdım.
+- Bootstrap Card'ları nasıl kullanılır
