@@ -2,9 +2,9 @@
 
 Amacım Python dilinde özellikle I/O bound ve CPU bound türünden işlemlerde Concurrency, paralel çalışma gibi konuları anlamak. Nitekim çok yukardan bakıldığında aynı anlamda kullanılan Thread, task ve process gibi terimler biraz daha detaylı incelendiğinde tamamen farklılar. Bu detayları görebilmek için bilgisayarları en çok yoran dosya giriş çıkış ve CPU yoğun işlemlere ait örnekleri kod parçaları aracılığıyla incelemek istiyorum.
 
->I/O Bound işlemler: programın sıklıkla harici kaynaklara gitip geldiği durumlardır. Dosya sistemi ve network hareketlilikleri örnek gösterilebilir. Bu hareketliliklerin program içinde ve dışına doğru fazla olması uygulamanın yavaşlamasına neden olur.
+>I/O Bound işlemler: Programın sıklıkla harici kaynaklara gidip geldiği durumlardır. Dosya sistemi ve network hareketlilikleri örnek gösterilebilir. Bu hareketliliklerin program içine ve dışına doğru fazla olması uygulamanın yavaşlamasına neden olur.
 
->CPU Bound işlemler: Genellikle CPU'yu yoracak kadar yoğun işlemler için kullanılan terimdir. Bu tip işlemler de uygulamanın hızını doğrudan etkiler. 
+>CPU Bound işlemler: Genellikle CPU'yu yoracak kadar yoğun işlemler için kullanılan terimdir. Bu tip işlemler de uygulamanın hızını doğrudan etkiler. Bilimsel matematik hesaplamalar, görüntü/ses işleme ve benzeri vakalarda sıklıkla karşılaşırız.
 
 Concurrency tipleri aşağıdaki gibi özetlenebilir.
 
@@ -16,15 +16,13 @@ Concurrency tipleri aşağıdaki gibi özetlenebilir.
 
 ## Ön Gereklilikler
 
-Pek tabii ortamda python'un uygun sürümünün yüklü olması gerekiyor. Kodları çalıştırmak için 
+Pek tabii ortamda python'un uygun sürümünün yüklü olması gerekiyor. Kodları çalıştırmak için terminalden aşağıdaki komut verilerek ilerlenebilir.
 
 ```
 python3 sample_1.py
 ```
 
-şeklinde ilerlenebilir.
-
->Örneklerin testleri çoğunlukla West-World üzerinde _(Ubuntu 18.04 64bit)_ gerçekleştirilmiştir. Farklı Python sürümleri yüklü olduğundan python3 ve pip3 çalıştırıcıları ile ilerlenilmiştir.
+>Örneklerin testleri çoğunlukla WestWorld üzerinde _(Ubuntu 18.04, 64bit)_ gerçekleştirilmiştir. Farklı Python sürümleri yüklü olduğundan python3 ve pip3 çalıştırıcıları ile ilerlenilmiştir.
 
 ## Örnekler
 
@@ -38,7 +36,7 @@ I/O Bound operasyonlara bakılan ve senkron çalıştırılan örnektir. Örnek 
 pip3 install requests
 ```
 
-West-World'de bu çalışma yaklaşık olarak 233 saniye sürmüştür.
+WestWorld'de bu çalışma yaklaşık olarak 233 saniye sürmüştür.
 
 ![cover_1.png](cover_1.png)
 
@@ -50,7 +48,7 @@ Bu örnekte geliştiricinin işini biraz daha kolaylaştıran üst seviye thread
 python3 sample_2.py
 ```
 
-West-World'bu çalışma yaklaşık olarak 76 saniye sürmüş ve 8 iş parçacığı çalışmıştır.
+WestWorld ortamında bu çalışma yaklaşık olarak 76 saniye sürmüş ve 8 iş parçacığı çalışmıştır.
 
 ![cover_2.png](cover_2.png)
 
@@ -60,27 +58,25 @@ West-World'bu çalışma yaklaşık olarak 76 saniye sürmüş ve 8 iş parçac�
 
 ### sample_3.py _(asyncio kullanımı)_
 
-Bu örnekte task bazlı çalışma söz konusudur. HTTP talepleri için n adet task kullanılır. Tüm task'lar aynı Session'ı paylaşabilir nitekim aynı thread içerisinde çalışmaktadır. Örnekte aiohttp paketine ihtiyaç vardır.
+Bu örnekte task bazlı çalışma söz konusudur. HTTP talepleri için n adet task kullanılır. Tüm task'lar aynı Session'ı paylaşabilirler, nitekim aynı thread içerisinde çalışmaktadırlar. Örnekte aiohttp paketine ihtiyaç vardır.
 
 ```
 pip3 install aiohttp
 ```
 
->Bu kullanım şeklindeki en büyük sorun tutarsızlık. Requests tam anlamıyla bloklandığında açılan olay döngüsünü uyarabilecek kabiliyette değil ve bu nedenle bazı hallerde işlem süresi beklenenden de fazla olabilir.
+>Bu kullanım şeklindeki en büyük sorun tutarsızlıktır. Requests tam anlamıyla bloklandığında açılan olay döngüsünü uyarabilecek kabiliyette değil ve bu nedenle bazı hallerde işlem süresi beklenenden de fazla olabilir.
 
 ```
 python3 sample_3.py
 ```
 
-West-World çalışma zamanında işlemler 48 saniye civarında sürmüştür. Dikkat çekici sıra senkronize bir sıranın olmamasıdır. Task'lar arasındaki geçişler farklı sıralarda gerçekleşir.
+WestWorld çalışma zamanında işlemler 48 saniye civarında sürmüştür. Dikkat çekici nokta senkronize bir sıranın olmamasıdır. Task'lar arasındaki geçişler farklı sıralarda gerçekleşir.
 
 ![cover_4.png](cover_4.png)
 
 ### sample_4.py _(multiprocessing kullanarak tüm çekirdekleri işe katmak)_
 
-Bu örnekte bir öncekilerde olduğu gibi tek python process tarafından ele alınan farklı veya tekil thread'lerin aksine, gerçek anlamda farklı process'lerin işin içerisine katıldığı çoklu çalışma zamanı söz konusudur. multiprocessing temel olarak çoklu işlemci ve çekirdek gücünü kullanabilmeyi sağlar. Bunun için CPU başına ayrı birer python yorumlayıcısı eş zamanlı olarak çalıştırılır. 
-
-Açılan process'ler arasındaki koordinasyon ve haberleşme yine bir havuzda yönetilir. Havuz genel olarak CPU sayısına göre şekillenir. Buradaki process miktarı değiştirilebilir ama CPU sayısından çok olması işlemleri daha da yavaşlatabilir.
+Bu örnekte bir öncekilerde olduğu gibi tek python process tarafından ele alınan farklı veya tekil thread'lerin aksine, gerçek anlamda farklı process'lerin işin içerisine katıldığı çoklu çalışma zamanı söz konusudur. multiprocessing temel olarak çoklu işlemci ve çekirdek gücünü kullanabilmeyi sağlar. Bunun için CPU başına ayrı birer python yorumlayıcısı eş zamanlı olarak çalıştırılır. Açılan process'ler arasındaki koordinasyon ve haberleşme yine bir havuzda yönetilir. Havuz genel olarak CPU sayısına göre şekillenir. Buradaki process miktarı değiştirilebilir ama CPU sayısından çok olması işlemleri daha da yavaşlatabilir.
 
 >Bu senaryoda diğer python interpreter'ların ayrı process olarak açılmasının bir maliyeti vardır ve aslında süreye olumsuz etki edecektir. O yüzden gerçekten uygun senaryolarda uygulanması gerekir.
 
@@ -88,15 +84,15 @@ Açılan process'ler arasındaki koordinasyon ve haberleşme yine bir havuzda y�
 python3 sample_4.py
 ```
 
-West-World'de bu çalışmanın sonuçları aşağıdaki gibi oldu. İfade ediliği üzere öyle yüksek bir performans artışı olmadı. Nitekim uygun bir senaryoyu bulmak gerekiyor. 
+West-World'de bu çalışmanın sonuçları aşağıdaki gibi olmuştur. İfade ediliği üzere öyle yüksek bir performans artışı olmadı. Nitekim uygun bir senaryoyu bulmak gerekiyor. 
 
 ![cover_5.png](cover_5.png)
 
-West-World 4 çekirdekli bir işlemciye sahip. Buna göre Fork edilen Worker sayısı 4.
+WestWorld 4 çekirdekli bir işlemciye sahip. Buna göre Fork edilen Worker sayısı 4.
 
 ## CPU Bound işlemler
 
-Bu sefer network, dosya yazma okuma gibi işlemer gibi dış etkenlerin durumuna göre değil de, tamamen CPU'nun becerisine göre zaman alan baraj işlemleri düşünelim. Matematik yoğun işlemler bu anlamda ele alınabilir. threading ve asyncio gibi kullanımlar senkron kullanıma göre daha uzun sürelerde tamamlanabilirler. Çünkü, hem thread hem task kullanımında tüm işlemler aynı CPU'nun aynı process'inde icra edilir. Yani concurrent'luğu işin içerisine katarsak ekstradan yük getirmiş oluruz.
+Bu sefer network, dosya yazma okuma gibi işlemler gibi dış etkenlerin durumuna göre değil, tamamen CPU'nun becerisine göre zaman alan baraj işlemleri düşünelim. Matematik yoğun işlemler bu anlamda ele alınabilir. threading ve asyncio gibi kullanımlar senkron kullanıma göre daha uzun sürelerde tamamlanabilirler. Çünkü, hem thread hem task kullanımında tüm işlemler aynı CPU'nun aynı process'inde icra edilir. Yani concurrent'luğu işin içerisine katarsak ekstradan yük getirmiş oluruz.
 
 ### sample_5.py
 
@@ -123,6 +119,4 @@ _Windows 10 tabanlı başka bir ortamdaki çalışma zamanı sonuçları da aşa
 - Makinedeki CPU sayısını bulmayı
 - CPU Bound problemlerde performans için multiprocessing modelinin kullanılması gerektiğini
 - I/O Bound problemlerde en azından threading kullanılması gerekiğini _(eğer yapabiliyorsak onun yerine asyncio ile ilerlenmesi öneriliyor)_
-- Hangisi olursa olsun öncelikle iyi şekilde anlaşılmaları gerektiğini 
-
-öğrendim.
+- Hangisi olursa olsun öncelikle iyi şekilde anlaşılmaları gerektiğini
