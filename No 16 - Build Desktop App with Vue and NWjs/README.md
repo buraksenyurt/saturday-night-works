@@ -1,12 +1,12 @@
 # Vue ve NW.js ile Desktop Uygulaması Geliştirmek
 
-Daha önceden Electron ile cross platform desktop uygulamalarının geliştirilmesi üzerine çalışmıştım. Bu kez eskiden node-webkit olarak bilinen NW.js kullanarak West-World üzerinden desktop uygulaması geliştirmek istedim. NW.js cephesinde de aynen Electron'da olduğu gibi Chromium, Node.js, HTML, CSS ve javascript kullanılmakta. Lakin ufak tefek farklılıklar var. Electron'da entry point yeri Javascript script'i iken NW.js tarafında script haricinde bir web sayfası da giriş noktası olabiliyor. Build süreçlerinde de farklılık var.
+Daha önceden Electron ile cross platform desktop uygulamalarının geliştirilmesi üzerine çalışmıştım. Bu kez eskiden node-webkit olarak bilinen NW.js kullanarak WestWorld üzerinden desktop uygulaması geliştirmek istedim. NW.js cephesinde de aynen Electron'da olduğu gibi Chromium, Node.js, HTML, CSS ve javascript kullanılmakta. Lakin ufak tefek farklılıklar var. Electron'da entry point yeri Javascript script'i iken NW.js tarafında script haricinde bir web sayfası da giriş noktası olabiliyor. Build süreçlerinde de bir takım farklılıklar var.
 
-Uygulama çok basit bir arayüze sahip olacak. Textbox'a bir bölüm adı girilecek ve Big Bang Theory'nin ilgili bölümüne ait bilgiler bazı bilgiler ekrana bastırılacak. Bölüm bilgisini bigbangapi isimli .net core ile yazılmış web api sağlayacak. _(Bölümün konusu web api yazımı olmadığından o konuya değinilmedi)_
+Uygulama çok basit bir arayüze sahip olacak. Textbox'a bir bölüm adı girilecek ve Big Bang Theory'nin ilgili bölümüne ait bazı bilgiler ekrana bastırılacak. Bölüm bilgisini ise bigbangapi isimli .net core ile yazılmış web api sağlayacak. _(Bölümün konusu web api yazımı olmadığından o konuya değinmedik)_
 
 ## Ön Gereklilikler
 
-West-World'de _(Şu anda Ubuntu 18.04 64bit)_ bu örnek için Vue CLI'a ihtiyaç var. Önce versiyonu kontrol edip yoksa yüklemek lazım. Ayrıca projeyi oluşturduktan sonra NW paketini de eklemek gerekiyor.
+WestWorld'de _(Ubuntu 18.04 64bit)_ bu örnek için Vue CLI'a ihtiyaç var. Önce versiyonu kontrol edip yoksa yüklemek lazım. Ayrıca projeyi oluşturduktan sonra NW paketini de eklemek gerekiyor. axios'u servis haberleşmesi için kullanacağız.
 
 ```
 vue --version
@@ -21,7 +21,7 @@ sudo npm install axios
 
 ## Bazı Notlar
 
-Uygulamanın giriş noktasını belirtmek için package.json' main özelliği eklendi ve bir adres yönlendirilmesi yapıldı. Buna göre uygulamadaki her değişiklik anında çalışma zamanına yansıyacak. _(Uygulamayı açtıktan sonra örneğin App.vue da değişiklikler yapın)_
+Uygulamanın giriş noktasını belirtmek için package.json dosyasında main özelliği eklendi ve bir adres yönlendirilmesi yapıldı. Buna göre uygulamadaki her değişiklik anında çalışma zamanına yansıyacak. _(Uygulamayı açtıktan sonra örneğin App.vue da değişiklikler yapın)_
 
 Normalde desktop uygulamasını çalıştırmak için proje klasöründeyken birinci terminalden
 
@@ -37,19 +37,17 @@ ile sunucuyu etkinleştirmek ve ardından ikinci bir terminal penceresinden
 
 yazmak gerekiyor. Lakin bu durumda NW.js'in ilgili SDK'sı indirilip development ortamı ayağa kalkıyor. Bunu otomatikleştirmek için nw@sdk isimli paketi yükledik ve package.json'a _desktop_ betiğini dahil ettik. 
 
-Desktop uygulaması çalıştıktan sonra tarayıcının Development Tools'unu kullanarak debug yapılabiliyor.
-
-API çağrısı yapabilmek için axios paketinden yararlanıyoruz.
+Desktop uygulaması çalıştıktan sonra tarayıcının Development Tools'unu kullanarak debug yapılabiliyor. API çağrısı yapabilmek içinse axios paketinden yararlanıyoruz.
 
 ## Değişiklikler
 
-App.vue dosyası değiştirildi. Bu desktop uygulamasının arayüzü.
-main.js tarafında değişiklik yapıldı.
-_Bu konu kapsamı dışında ama birde Asp.Net Core Web API yazıldı_
+- App.vue dosyası değiştirildi. Bu, desktop uygulamasının arayüzü.
+- main.js tarafında değişiklik yapıldı.
+- _Bu konu kapsamı dışında ama birde Asp.Net Core Web API yazıldı_
 
 ## Çalışma Zamanı
 
-Öncelikle web api servisi çalıştırılır. Ardından Node.js server ve desktop uygulaması. Bunları 3 ayrı terminal penceresinden çalıştırabiliriz.
+Öncelikle web api servisi çalıştırılır. Ardından Node.js server ve desktop uygulaması. Bunları 3 ayrı terminal penceresinden yürütebiliriz.
 
 ```
 dotnet run
@@ -71,7 +69,7 @@ Uygulamayı paketlemek için packages.json içerisine build kısmı eklenir. Bur
 
 ![cover_2.png](cover_2.png)
 
->Paket boyutu oldukça yüksek! Ancak küçültmek için çeşitli yollar varmış. _Araştırmak lazım_
+>Paket boyutu oldukça yüksek! Ancak küçültmek için çeşitli yollar varmış. _(Araştırmak lazım)_
 
 ![cover_3.png](cover_3.png)
 
