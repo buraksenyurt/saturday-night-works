@@ -15,7 +15,7 @@ Amacım, Microsoft'un Asp.Net Core MVC tarafında özellikle sayfa odaklı senar
 
 ## Başlangıç
 
-Örneği West-World _(Ubuntu 18.04 64bit)_ üzerinde deniyorum. Linux tarafında Razor uygulamalarını oluşturmak için .Net Core 2.2'ye ihtiyacımız var. Kodları geliştirmek içinse Visual Studio Code'dan yararlanabiliriz. Projeyi oluşturmak için aşağıdaki komutu vermek yeterli.
+Örneği WestWorld _(Ubuntu 18.04, 64bit)_ üzerinde deniyorum. Linux tarafında Razor uygulamalarını oluşturmak için en azından .Net Core 2.2'ye ihtiyacımız var. Kodları geliştirmek içinse Visual Studio Code'dan yararlanabiliriz. Projeyi oluşturmak için aşağıdaki terminal komutunu vermek yeterli.
 
 ```
 dotnet new webapp -o MyBookStore
@@ -80,7 +80,7 @@ SQLite kullanımı için EntityFramework Core'un ilgili NuGet paketini projeye e
 dotnet add package Microsoft.EntityFrameworkCore.SQLite
 ```
 
-Ardından appsettings.json dosyasına bir Connection String bildirimi ekleyip, Startup sınıfındaki ConfigureServices metodunda minik bir ayarlama yapmamız lazım. Bunlar başlangıç aşamasında yeterli değil nitelim SQLite veritabanının oluşturulması da gerekiyor.
+Ardından appsettings.json dosyasına bir Connection String bildirimi dahil edip, Startup sınıfındaki ConfigureServices metodunda minik bir ayarlama yapmamız gerekmekte. Bunlar başlangıç aşamasında yeterli değil nitekim SQLite veritabanının oluşturulması da gerekiyor.
 
 ```
 dotnet ef migrations add InitialCreate
@@ -91,7 +91,7 @@ sayesinde DataContext türevli sınıf baz alınarak migration planları çıkar
 
 ![Cover_8.png](Cover_8.png)
 
-Eğer veritabanını baştan hazırlamazsak ve update planını çalıştırmazsa aşağıdakine benzer bir hata ile karşılaşabiliriz.
+Eğer veritabanını baştan hazırlamazsak ve update planını çalıştırmazsak aşağıdakine benzer bir hata ile karşılaşabiliriz.
 
 ![Cover_7.png](Cover_7.png)
 
