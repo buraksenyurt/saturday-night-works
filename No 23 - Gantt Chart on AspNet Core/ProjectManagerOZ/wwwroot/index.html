@@ -15,7 +15,9 @@
             gantt.init("project_map");
  
             // veri yükleme işinin üstlenildiği kısım
-            gantt.load("/api/data");
+            // tahmin edileceği üzere /api/backlog şeklinde bir REST API çağrısı olacak
+            // bu kod tarafındaki Controller ile karşılanacak
+            gantt.load("/api/backlog");
             // veri işleyicisi (bir web api servis adresi gibi düşünülebilir)
             var dp = new gantt.dataProcessor("/api/");
             dp.init(gantt);

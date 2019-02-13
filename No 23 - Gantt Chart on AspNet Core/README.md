@@ -19,6 +19,8 @@ dotnet new web -o ProjectManagerOZ
 - SQLite veritabanını tutmak için db klasörü oluşturuldu.
 - Models klasörü açıldı ve içerisine ApolloDataContext, Link, Task sınıfları eklendi.
 - Initializers klasörü açıldı ve içerisine DataFiller, DataFillerExtension sınıfları eklendi.
+- dto klasörü açıldı ve içerisinde LinkDTO ile TaskDTO sınıfları eklendi _(Data Transform Object sınıflarımız olarak düşünülebilirler)_
+- Controllers klasörü oluşturuldu ve içerisinde ana sayfa, Task ve Link için gerekli Controller tipleri eklendi.
 
 >Sınıfların ne işe yaradığı içlerindeki yorum satırlarında mevcuttur.
 
@@ -43,8 +45,27 @@ sayesinde DataContext türevli sınıf baz alınarak migration planları çıkar
 
 ## Çalışma Zamanı
 
+Kod ilk çalıştırıldığında eğer Tasks tablosunda herhangibir kayıt yoksa aşağıdaki gibi 3 satır oluşturulacaktır.
+
+![Credit_2.png](./assets/credit_2.png)
+
+Benzer şekilde Links tablosunda da ilgili bağlantılar tesis edilecektir.
+
+![Credit_3.png](./assets/credit_3.png)
+
+Index.html sayfasına geldiğimizde ise bizi bir proje yönetim sayfası karşılayacaktır :) Bu sayfanın verisi MainController tarafından sağlanmaktadır.
+
+![Credit_4.png](./assets/credit_4.png)
+
+>Burada dikkat edilmesi gereken bir nokta var. Gantt Chart için yazılmış olan kütüphane standart olarak Task ve Link tipleri ile çalışırken REST API çağrılarını kullanmaktadır. Yeni bir öğe eklerken POST, bir öğeyi güncellerken PUT ve son olarak silme işlemlerinde DELETE operasyonlarına başvurulur. Eğer örnek senaryomuzda TaskController ve LinkController tiplerinin POST, PUT, DELETE ve GET karşılıklarını yazmassak arabirimdeki değişiklikler sunucu tarafına aktarılamayacak ve aşağıdaki ekran görüntüsündekine benzer hatalar alınacaktır.
+
+![Credit_5.png](./assets/credit_5.png)
+
 ## Neler Öğrendim?
 
 - Gantt Chart'ları xdhtmlGantt asset'leri ile nasıl kolayca kullanabileceğimi
 - IWebHost türevli bir tipe extension method yardımıyla yeni bir işlevselliği nasıl kazandırabileceğimi
 - Bu işlevsellik içerisinde servis sağlayıcısı üzerinde Entity Context'ini nasıl yakalayabileceğimi
+- Gantt Chart'ın ön yüzde kullandığı task ve link tipleri ile Model sınıfları arasındaki dönüşümlerde DTO tiplerinden yararlanmam gerektiğini
+- DTO'lar içerisinde dönüştürme(cast) operatörlerinin nasıl aşırı yüklenebileceğini
+- Gantt Chart kütüphanesinin backend tarafı ile REST tipinden Web API çağırıları ile konuştuğunu

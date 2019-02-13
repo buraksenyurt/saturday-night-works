@@ -36,6 +36,7 @@ namespace ProjectManagerOZ
             // Artık modellerimiz SQLite veritabanı ile çalışacak
             // Bu işlemler runtime'de gerçekleşecek
             services.AddDbContext<ApolloDataContext>(options => options.UseSqlite(conStr));
+            services.AddMvc(); // Web API Controller'ının çalışabilmesi için ekledik
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
@@ -49,6 +50,7 @@ namespace ProjectManagerOZ
             app.UseDefaultFiles();
             // ayrıca wwwroot altındaki css, image gibi asset'lerinde kullanılacağı ifade edildi
             app.UseStaticFiles();
+            app.UseMvc(); // Web API Controller'ının çalışabilmesi için ekledik
         }
     }
 }
