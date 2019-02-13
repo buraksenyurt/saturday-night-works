@@ -6,11 +6,11 @@ Kod yazmamızı hızlandıran editör bazlı kolaylaştırıcılardan birisi de 
 
 Öncelikle Visual Studio Code açılır. Ardından Ctrl+Shift+P veya File->Preferences->User Snippets ile devam edilir
 
-![credit_1](credit_1.png)
+![credit_1](./assets/credit_1.png)
 
 "Configure User Snippets" kısmına geçilir.
 
-![credit_2](credit_2.png)
+![credit_2](./assets/credit_2.png)
 
 "New global snippet file" seçimi yapılır ve snippet için bir dosya adı verilir. Örneğin for-training gibi. İlgili dosya genellikle Code\User\snippets altında oluşur. Uzantısı code-snippets şeklindedir.
 
@@ -60,13 +60,15 @@ Snippet dosyası kaydedildikten sonra örnek bir javascript dosyası açılır. 
 players-json
 ```
 
+![credit_3](./assets/credit_3.png)
+
 yazılır ve tab'lar ile ilerlenerek kod tamamlanır. Çalışma zamanı sonuçlarına bakıp snippet'ı işe yaradığından emin olmak için uygulama aşağıdaki terminal komutu ile başlatılır.
 
 ```
 node index.js
 ```
 
-![credit_4](credit_4.png)
+![credit_4](./assets/credit_4.png)
 
 Biraz daha detay için [şu](https://scotch.io/bar-talk/write-less-code-by-creating-snippets-in-visual-studio-code) adrese uğrayabilirsiniz.
 
