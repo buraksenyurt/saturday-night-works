@@ -52,7 +52,7 @@ curl -d '{"id":-1,"name":"Book","count":35}' -H "Content-Type: application/json"
 
 rest-plus'ın hazır gelen davranışlarından birisi de Swagger dokümantasyonunu otomatik olarak hazırlaması. _http://localhost:4446/_ adresine ikinci örnek için gidildiğinde bunu görebiliriz.
 
-![credit_1.png](credit_1.png)
+![credit_1.png](./assets/credit_1.png)
 
 İkinci örnekte kullandığım curl komutları ise şöyle;
 
@@ -77,7 +77,7 @@ Ama bunları kullanmak şart değil. Pekala Swagger arayüzü de kullanılabilir
 
 >POST için gerekli olan payload model bildirimi sonrası Swagger Try Out kısmı aşağıdaki gibi olur.
 
-![credit_2.png](credit_2.png)
+![credit_2.png](./assets/credit_2.png)
 
 ### 3ncü Örneği Çalışırken (restplus_2.py)
 
@@ -93,7 +93,7 @@ Tabii URL adresimiz aşağıdaki gibi değişmiş durumda.
 
 http://localhost:4446/api/v1/docs 
 
-![credit_3.png](credit_3.png)
+![credit_3.png](./assets/credit_3.png)
 
 Birden fazla versiyonun ve n sayıda Resource'un kullanıldığı senaryolarda klasör yapısını da doğru uygulamak gerekmekte. Mesela aşağıdaki gibi bir ağaç yapısı kurgulanabilir.
 
