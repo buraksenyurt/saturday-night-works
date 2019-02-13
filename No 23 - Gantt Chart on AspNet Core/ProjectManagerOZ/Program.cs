@@ -7,6 +7,7 @@ using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
+using ProjectManagerOZ.Initializers;
 
 namespace ProjectManagerOZ
 {
@@ -14,7 +15,10 @@ namespace ProjectManagerOZ
     {
         public static void Main(string[] args)
         {
-            CreateWebHostBuilder(args).Build().Run();
+            CreateWebHostBuilder(args)
+            .Build()
+            .InitializeDb() // IWebHost için yazdığımız genişletme metodu.
+            .Run();
         }
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>

@@ -17,7 +17,10 @@ dotnet new web -o ProjectManagerOZ
 - wwwroot klasörüne index.html eklendi _(dhtmlxGantt'ın öngördüğü varsayılan index.html kullanıldı)_
 - Program.cs ve Startup.cs içeriklerinde değişiklik yapıldı.
 - SQLite veritabanını tutmak için db klasörü oluşturuldu.
-- Models klasörü açıldı ve içerisine ilgili sınıflar eklendi.
+- Models klasörü açıldı ve içerisine ApolloDataContext, Link, Task sınıfları eklendi.
+- Initializers klasörü açıldı ve içerisine DataFiller, DataFillerExtension sınıfları eklendi.
+
+>Sınıfların ne işe yaradığı içlerindeki yorum satırlarında mevcuttur.
 
 ## SQLite Kullanabilmek için
 
@@ -36,8 +39,12 @@ dotnet ef database update
 
 sayesinde DataContext türevli sınıf baz alınarak migration planları çıkartılır. Planlar hazırlandıktan sonra ikinci komut ile update planı yürütülür ve ilgili tablolar SQLite veritabanı içerisine ilave edilir.
 
-![Cover_1.png](Cover_1.png)
+![Cover_1.png](./assets/Cover_1.png)
 
 ## Çalışma Zamanı
 
 ## Neler Öğrendim?
+
+- Gantt Chart'ları xdhtmlGantt asset'leri ile nasıl kolayca kullanabileceğimi
+- IWebHost türevli bir tipe extension method yardımıyla yeni bir işlevselliği nasıl kazandırabileceğimi
+- Bu işlevsellik içerisinde servis sağlayıcısı üzerinde Entity Context'ini nasıl yakalayabileceğimi

@@ -16,12 +16,17 @@ namespace ProjectManagerOZ
 {
     public class Startup
     {
+        /*
+        Configuration özelliği ve Startup'ın overload edilmiş Constructor metodu varsayılan olarak gelmiyor.
+        ApolloDbContext için gerekli connection string bilgisine ulaşacağımız Configuration nesnesine
+        erişebilmek amacıyla eklendiler 
+         */
+        public IConfiguration Configuration { get; }
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
         }
-
-        public IConfiguration Configuration { get; }
 
         public void ConfigureServices(IServiceCollection services)
         {
@@ -29,6 +34,7 @@ namespace ProjectManagerOZ
             var conStr = Configuration.GetConnectionString("ApolloDataContext");
             // ardından SQLite için gerekli DB Context'i servislere ekledik
             // Artık modellerimiz SQLite veritabanı ile çalışacak
+            // Bu işlemler runtime'de gerçekleşecek
             services.AddDbContext<ApolloDataContext>(options => options.UseSqlite(conStr));
         }
 
