@@ -28,7 +28,7 @@ Uygulamayı başlatmak için terminalden aşağıdaki komutu vermemiz yeterlidir
 dotnet run
 ```
 
-![cover_1.png](cover_1.png)
+![cover_1.png](./assets/cover_1.png)
 
 Kodların çalışma sırasına dikkat edelim. Konfigurasyon dosyasındaki değerelere göre belli bir zaman aşımı noktasına gelindiğinde gerekli Task metodu icra ediliyor. Örnek uydurulmuş bir Cache temizleme işlemini icra etmekte.
 
@@ -53,7 +53,7 @@ touch CommonHostedService.cs
 dotnet run
 ```
 
-![cover_2.png](cover_2.png)
+![cover_2.png](./assets/cover_2.png)
 
 ## Neler Öğrendim?
 
