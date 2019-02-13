@@ -90,9 +90,9 @@ ile geliştiricinin üzerinde yoğun olarak çalışacağı ortamı ayağa kald�
 
 >West-World'de uygulamanın açılması biraz zaman aldı. Sebat edip panik yapmadan beklemeniz gerekebilir.
 
-![credit_1.png](credit_1.png)
+![credit_1.png](./assets/credit_1.png)
 
-![credit_2.png](credit_2.png)
+![credit_2.png](./assets/credit_2.png)
 
 ## Geldik uygulamanın Heroku'ya alınmasına
 
@@ -104,13 +104,13 @@ heroku create
 
 Bana proje adı olarak _frozen-hamlet-75426_ ismi geldi. Bunu Heroku otomatik olarak kendisi veriyor. Ayrıca uygulama kodlarını atabilmem için de github adresi ve uygulamaya ait web adreslerini iletti.
 
-![credit_3.png](credit_3.png)
+![credit_3.png](./assets/credit_3.png)
 
 >Uygulamanın web adresi https://frozen-hamlet-75426.herokuapp.com/ şeklinde olacak. github adresi ise https://git.heroku.com/frozen-hamlet-75426.git
 
 Hatta sonuçları Heroku Dashboard'unda da görebildim _(Tabii siz örneği denerken güncel hali Heroku üzerinde olmayabilir. Kendiniz için bir tane yapsanız daha iyi olur)_
 
-![credit_4.png](credit_4.png)
+![credit_4.png](./assets/credit_4.png)
 
 >Uygulama klasöründeki json dosyasında yer alan heroku-postbuild script'i önemli.
 
@@ -132,7 +132,7 @@ Yani kısaca
 
 Sonrasında yapmam gereken tek şey https://frozen-hamlet-75426.herokuapp.com/ adresine gitmek oldu.
 
-![credit_5.png](credit_5.png)
+![credit_5.png](./assets/credit_5.png)
 
 ## Yaptığım Hatalar
 
