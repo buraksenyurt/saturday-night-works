@@ -23,6 +23,12 @@ namespace ProjectManagerOZ.Controllers
         {
             // Task ve Link veri setlerini TaskDTO ve LinkDTO tipinden nesnelere dönüştürdüğümüz dikkatinizden kaçmamıştır.
             // Bunun sebebi Gantt'ın beklediği veri tipini sunan DTO sınıfı ile backend tarafında kullandığımız sınıfların farklı olmasıdır.
+
+            // Dönüş olarak kullandığımız nesne data ve links isimli iki özellik tutuyor.
+            // data özelliğinde Task bilgilerini
+            // links özelliğinde de tasklar arasındaki bağlantı bilgilerini dönüyoruz
+            // bu format özelleştirilmediği sürece Gantt Chart'ın beklediği tiptedir
+            
             return new
             {
                 data = _context.Tasks
