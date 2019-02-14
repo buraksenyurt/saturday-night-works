@@ -61,6 +61,16 @@ Index.html sayfasına geldiğimizde ise bizi bir proje yönetim sayfası karşı
 
 ![Credit_5.png](./assets/credit_5.png)
 
+HTTP çağrıları LinkController ve TaskController sınıflarınca ele alındıktan sonra ise grafik üzerindeki CRUD operasyonlarının SQLite tarafına da başarılı bir şekilde aktarıldığı görülebilir.
+
+![Credit_6.png](./assets/credit_6.png)
+
+![Credit_7.png](./assets/credit_7.png)
+
+![Credit_8.png](./assets/credit_8.png)
+
+>Copy-Paste yasağı nedeniyle yazılması uzun süren bir örnekti ama öğrenmek için tatbik etmek en güzel yöntem. Üstelik bu şekilde hatalar da yaptırıp neyin ne için kullanıldığını ve nasıl olması gerektiğini de anlamış oluyoruz. Sizde böyle deneyin.
+
 ## Neler Öğrendim?
 
 - Gantt Chart'ları xdhtmlGantt asset'leri ile nasıl kolayca kullanabileceğimi
@@ -69,3 +79,4 @@ Index.html sayfasına geldiğimizde ise bizi bir proje yönetim sayfası karşı
 - Gantt Chart'ın ön yüzde kullandığı task ve link tipleri ile Model sınıfları arasındaki dönüşümlerde DTO tiplerinden yararlanmam gerektiğini
 - DTO'lar içerisinde dönüştürme(cast) operatörlerinin nasıl aşırı yüklenebileceğini
 - Gantt Chart kütüphanesinin backend tarafı ile REST tipinden Web API çağırıları ile konuştuğunu
+- Gantt Chart için kullanılan API Controller'larda HTTP Post için tid'nin önemini

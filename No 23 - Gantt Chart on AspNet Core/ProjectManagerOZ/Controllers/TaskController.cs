@@ -102,7 +102,7 @@ namespace ProjectManagerOZ.Controllers
         // HTTP Get ile ID bazlı çalışan metodumuz
         // Belli bir ID'ye ait Task bilgisini verir
         [HttpGet("{id}")]
-        public TaskDTO Get(int id)
+        public TaskDTO GetById(int id)
         {
             return (TaskDTO)_context
                 .Tasks
