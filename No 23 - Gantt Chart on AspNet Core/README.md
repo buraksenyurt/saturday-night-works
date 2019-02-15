@@ -63,13 +63,19 @@ Index.html sayfasına geldiğimizde ise bizi bir proje yönetim sayfası karşı
 
 HTTP çağrıları LinkController ve TaskController sınıflarınca ele alındıktan sonra ise grafik üzerindeki CRUD operasyonlarının SQLite tarafına da başarılı bir şekilde aktarıldığı görülebilir.
 
+Örnekte 3ncü bir Parent task ve alt task'ları girilmiş, bir takım task'larda güncellemeler yapılmış ve aralarda bağlantılar kurgulanmıştır. Ön yüz tarafındaki oluşum kabaca aşağıdaki gibidir.
+
 ![Credit_6.png](./assets/credit_6.png)
+
+Bu oluşumun sonuçları SQLite veritabanına da yansır.
 
 ![Credit_7.png](./assets/credit_7.png)
 
+Tüm CRUD operasyonları aşağıdaki ekran görüntüsüne benzer olacak şekilde HTTP çağrıları üzerinden gerçeklenir.
+
 ![Credit_8.png](./assets/credit_8.png)
 
->Copy-Paste yasağı nedeniyle yazılması uzun süren bir örnekti ama öğrenmek için tatbik etmek en güzel yöntem. Üstelik bu şekilde hatalar da yaptırıp neyin ne için kullanıldığını ve nasıl olması gerektiğini de anlamış oluyoruz. Sizde böyle deneyin.
+>Copy-Paste yasağı nedeniyle yazılması uzun süren bir örnekti ama öğrenmek için tatbik etmek en güzel yöntemdir. Üstelik bu şekilde hatalar yaptırıp neyin ne için kullanıldığını ve nasıl olması gerektiğini de anlamış oluruz. Söz gelimi POST metodlarından üretilen task veya link id değerlerini döndürmezseniz bazı şeylerin ters gittiğini görebilirsiniz.
 
 ## Neler Öğrendim?
 
