@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: random-names-api-netcore
+spec:
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: random-names-api-netcore
+    spec:
+      containers:
+        - name: random-names-api-netcore
+          imagePullPolicy: Never
+          image: random-names-api-netcore
+          ports:
+          - containerPort: 80
