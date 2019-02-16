@@ -32,7 +32,7 @@ Burası işlenecek konu başlıklarının olduğu havuzdur.
 
 ## Üzerinde Çalışılıyor
 
-- Asp.Net Core Tarafında Gantt Chart'lar oluşturmak
+- Bir Asp.Net Core Web API uygulamasını Minikube üzerinde koşturmak
 
 ## Tamamlananlar
 
@@ -60,5 +60,6 @@ Burası işlenecek konu başlıklarının olduğu havuzdur.
 20. Python log'ları için ELK Kullanımı
 21. Asp.Net Core'da Razor Pages kullanımı
 22. Bir WebAPI servisinde SQLite ile birlikte Dapper Micro ORM kütüphanesini kullanmak
+23. Asp.Net Core Tarafında Gantt Chart'lar oluşturmak
 
 > MD dosyasını formatlarken [şu adresten](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) yararlanıyorum.
