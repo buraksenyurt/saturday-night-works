@@ -22,17 +22,17 @@ Readme dosyalarından yararlanarak kendi başlangıçlarınızı yapabilir, örn
 
 Burası işlenecek konu başlıklarının olduğu havuzdur.
 
-- Harici paketler olmadan basit bir NodeJS Web sunucusu yazmak _(Express siz gibi)_
-- Material UI kullanarak MERN tipinde uygulama oluşturmak
-- AWS Lambda deneyimini Ruby ile gerçekleştirmek
-- MERN tipinde bir uygulamayı Heroku'ya Deploy etmek
-- Jets ile bir Ruby uygulamasını AWS'e ye Deploy etmek
+- AlaSQL veritabanını Node.Js ile kullanmak
+- Angular ile bir PWA uygulaması geliştirmek
+- Socket.io ile bağlı istemcilere bildiri yayınlamak
+- Azure üzerinde bir .Net Core uygulaması yayınlamak
+- Microsoft Custom Vision Python SDK'sı ile imaj sınıflandırması yapmak
+- Javascript ile offline çalışabilen uygulamalar yazmak
 
 > Planlanan yazılarda konu başlıkları değişiklik gösterebilir ve örnekler kronolojik sırada işlenmemektedir.
 
 ## Üzerinde Çalışılıyor
 
-- Bir Asp.Net Core Web API uygulamasını Minikube üzerinde koşturmak
 
 ## Tamamlananlar
 
@@ -61,5 +61,6 @@ Burası işlenecek konu başlıklarının olduğu havuzdur.
 21. Asp.Net Core'da Razor Pages kullanımı
 22. Bir WebAPI servisinde SQLite ile birlikte Dapper Micro ORM kütüphanesini kullanmak
 23. Asp.Net Core Tarafında Gantt Chart'lar oluşturmak
+24. Bir Asp.Net Core Web API uygulamasını Minikube üzerinde koşturmak
 
 > MD dosyasını formatlarken [şu adresten](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) yararlanıyorum.
