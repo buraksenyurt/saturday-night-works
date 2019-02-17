@@ -75,6 +75,7 @@ Servis sadece rastgele isim dönen bir metod sunmakta ki servisin ne iş yaptı�
 - ValuesController, NamesController olarak değiştirildi
 - Web API uygulamasını Dockerize etmek için Dockerfile eklendi
 - Minikube içerisine neyin deploy edileceğini belirtmek için deployment.yaml eklendi
+- Son bölümde servisin minikube içerisinde 80 portundan hizmet verebilmesi için Services.yaml dosyası eklendi _([Buraya geldiğinizde uygulayın](#80-Numaralı-Port))_
 
 ## Docker Hazırlıkları
 
@@ -120,3 +121,31 @@ kubectl get pods
 ![assets/credit_3.png](assets/credit_3.png)
 
 ## Çalışma Zamanı
+
+Minikube tarafına alınan servisi dışarıya açmak için nodePort servis tipinden yararlanılır. Aşağıdaki iki terminal komutu işimizi görür.
+
+```
+kubectl expose deployment random-names-api-netcore --type=NodePort
+minikube service random-names-api-netcore --url
+```
+
+İlk komut ile dağıtımı yapılmış servisi dışarıya açarız. İkinci terminal komutu ile de hangi adresten açıldığını öğrenebiliriz. WestWorld'de 192.168.99.100 adresinden 30046 nolu porttan hizmet verilmektedir. Sonuç olarak servise erişip rastgele bir isim çekebiliriz.
+
+>minikube aksini belirtmezsek 30000 ile 32767 port aralığını kullandırtmaktadır.
+
+![assets/credit_4.png](assets/credit_4.png)
+
+## 80 Numaralı Port
+
+Öncelikle uygulamaya services.yaml dosyası eklenmelidir. Bu dosya içerisinde NodePort için 80 portunun kullanılacağı ifade edilir. Sonrasında sırasıyla dağıtımı yapılan varlıklar silinir, minikube 80 ile 30000 aralığını baz alacak şekilde yeniden başlatılır ve servis tekrardan oluşturulur.
+
+```
+kubectl delete service random-names-api-netcore
+kubectl delete deployment random-names-api-netcore
+minikube start --extra-config=apiserver.service-node-port-range=80-30000
+kubectl create -f services.yaml
+```
+
+![assets/credit_5.png](assets/credit_5.png)
+
+>Tabii evden çıkmadan önce _minikube stop_ komutunu vermek yararlı olabilir
