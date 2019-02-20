@@ -149,3 +149,11 @@ kubectl create -f services.yaml
 ![assets/credit_5.png](assets/credit_5.png)
 
 >Tabii evden çıkmadan önce _minikube stop_ komutunu vermek yararlı olabilir
+
+## Neler Öğrendim
+
+- Kubernetes kurulumları ile uğraşmak yerine development amaçlı olarak Minikube'ün nasıl kullanılabileceğini
+- Temel kubectl komutlarını
+- .Net Core Web API uygulamasının basitçe Dockerize edilmesini
+- Minkube ortamının sunduğu port numarasının 80e nasıl çekileceğini
+- Dockerfile, deployment.yaml ve services.yaml içeriklerindeki kavramların ne anlama geldiklerini
