@@ -22,7 +22,6 @@ Readme dosyalarından yararlanarak kendi başlangıçlarınızı yapabilir, örn
 
 Burası işlenecek konu başlıklarının olduğu havuzdur.
 
-- AlaSQL veritabanını Node.Js ile kullanmak
 - Angular ile bir PWA uygulaması geliştirmek
 - Socket.io ile bağlı istemcilere bildiri yayınlamak
 - Azure üzerinde bir .Net Core uygulaması yayınlamak
@@ -33,6 +32,7 @@ Burası işlenecek konu başlıklarının olduğu havuzdur.
 
 ## Üzerinde Çalışılıyor
 
+- AlaSQL veritabanını Node.Js ile kullanmak
 
 ## Tamamlananlar
 
