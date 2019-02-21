@@ -23,6 +23,7 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "alasql": "^0.4.11"
+    "alasql": "^0.4.11",
+    "bootstrap": "^4.3.1"
   }
 }
