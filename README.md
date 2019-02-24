@@ -27,12 +27,11 @@ Burası işlenecek konu başlıklarının olduğu havuzdur.
 - Azure üzerinde bir .Net Core uygulaması yayınlamak
 - Microsoft Custom Vision Python SDK'sı ile imaj sınıflandırması yapmak
 - Javascript ile offline çalışabilen uygulamalar yazmak
+- IoC/DI Container'ları yeniden hatırlamak
 
 > Planlanan yazılarda konu başlıkları değişiklik gösterebilir ve örnekler kronolojik sırada işlenmemektedir.
 
 ## Üzerinde Çalışılıyor
-
-- AlaSQL veritabanını Node.Js ile kullanmak
 
 ## Tamamlananlar
 
@@ -62,5 +61,6 @@ Burası işlenecek konu başlıklarının olduğu havuzdur.
 22. Bir WebAPI servisinde SQLite ile birlikte Dapper Micro ORM kütüphanesini kullanmak
 23. Asp.Net Core Tarafında Gantt Chart'lar oluşturmak
 24. Bir Asp.Net Core Web API uygulamasını Minikube üzerinde koşturmak
+25. AlaSQL veritabanını Node.Js ile kullanmak
 
 > MD dosyasını formatlarken [şu adresten](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) yararlanıyorum.
