@@ -32,7 +32,6 @@ Burası işlenecek konu başlıklarının olduğu havuzdur.
 
 ## Üzerinde Çalışılıyor
 
-- Microsoft Custom Vision Python SDK'sı ile imaj sınıflandırması yapmak
 
 ## Tamamlananlar
 
@@ -63,5 +62,6 @@ Burası işlenecek konu başlıklarının olduğu havuzdur.
 23. Asp.Net Core Tarafında Gantt Chart'lar oluşturmak
 24. Bir Asp.Net Core Web API uygulamasını Minikube üzerinde koşturmak
 25. AlaSQL veritabanını Node.Js ile kullanmak
+26. Microsoft Custom Vision Python SDK'sı ile imaj sınıflandırması yapmak
 
 > MD dosyasını formatlarken [şu adresten](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) yararlanıyorum.
