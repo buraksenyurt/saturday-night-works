@@ -93,7 +93,7 @@ python client.py
 
 Test klasöründeki imajlar için aşağıdaki sonuçlar elde edildi.
 
-![assets/credit_10.jpg](assets/credit_10.jpg)
+![assets/credit_10.png](assets/credit_10.png)
 
 Einstein ve havadaki uçak için çok başarılı tahminlemeler yapılmadığını görebiliriz. Bunun sebebi eğitmeni sadece 10 imajla yetiştirmiş olmamızdır. Örnek kümeyi ve tag yapısını ne kadar geniş tutarsak tahminleme oranlarında o kadar isabetli sonuçlar elde ederiz.
 
