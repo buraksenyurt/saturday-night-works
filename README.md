@@ -25,13 +25,14 @@ Burası işlenecek konu başlıklarının olduğu havuzdur.
 - Angular ile bir PWA uygulaması geliştirmek
 - Socket.io ile bağlı istemcilere bildiri yayınlamak
 - Azure üzerinde bir .Net Core uygulaması yayınlamak
-- Microsoft Custom Vision Python SDK'sı ile imaj sınıflandırması yapmak
 - Javascript ile offline çalışabilen uygulamalar yazmak
 - IoC/DI Container'ları yeniden hatırlamak
 
 > Planlanan yazılarda konu başlıkları değişiklik gösterebilir ve örnekler kronolojik sırada işlenmemektedir.
 
 ## Üzerinde Çalışılıyor
+
+- Microsoft Custom Vision Python SDK'sı ile imaj sınıflandırması yapmak
 
 ## Tamamlananlar
 
