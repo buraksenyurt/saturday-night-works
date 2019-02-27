@@ -32,6 +32,7 @@ Burası işlenecek konu başlıklarının olduğu havuzdur.
 
 ## Üzerinde Çalışılıyor
 
+- Firebase ile Google Cloud Functions kullanımı
 
 ## Tamamlananlar
 
