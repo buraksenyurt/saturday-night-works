@@ -32,8 +32,6 @@ Burası işlenecek konu başlıklarının olduğu havuzdur.
 
 ## Üzerinde Çalışılıyor
 
-- Firebase ile Google Cloud Functions kullanımı
-
 ## Tamamlananlar
 
 Şu ana kadar tamamlayabildiğim örnekler.
@@ -64,5 +62,6 @@ Burası işlenecek konu başlıklarının olduğu havuzdur.
 24. Bir Asp.Net Core Web API uygulamasını Minikube üzerinde koşturmak
 25. AlaSQL veritabanını Node.Js ile kullanmak
 26. Microsoft Custom Vision Python SDK'sı ile imaj sınıflandırması yapmak
+27. Firebase ile Google Cloud Functions kullanımı
 
 > MD dosyasını formatlarken [şu adresten](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) yararlanıyorum.
