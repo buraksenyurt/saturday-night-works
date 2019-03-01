@@ -10,7 +10,18 @@ Bakalım boş bir uygulama için bu durumu değiştirebilecek miyiz?
 
 ## Ön Hazırlıklar
 
+Angular'ı CLI yardımıyla kurabiliriz. Angular CLI komut satırı bir çok konuda yardımcı olacaktır. Projenin oluşturulması, angular için yazılmış paketlerin kolayca eklenmesi vb... İlk komut ile CLI aracını yükledik. İkinci komutla  projeyi hazır şablonla oluşturuyoruz. UI tarafında Material Design kullanmayı öğrenmeye çalışacağım. Bu nedenle proje klasörüne girdikten sonra ng add komutu ile material'ın angular sürümünü de projeye ilave ettim _(Prebuilt tema seçimini Indigo/Pink olarak bıraktım)_
+
+```
+sudo npm install -g @angular/cli
+ng new quotesify
+cd quotesify
+ng add @angular/material
+```
+
 ## Yapılan Değişiklikler
+
+
 
 ## Çalışma Zamanı
 
