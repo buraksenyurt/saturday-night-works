@@ -29,6 +29,42 @@ ng add @angular/material
 - src/app/app.component.ts dosyasında DummyService'in kullanılması için gerekli değişiklikler yapıldı.
 - src/app/app.component.html içeriği tamamen değiştirildi. Material bileşenlerine yer verildi. Toolbar tipinde bir Navigation kontrolü, Post bilgilerini göstermek içinse Card bileşeninden yararlanıldı. Arayüz, bağlı olduğu AppComponent içerisindeki posts dizisini kullanıyor. Tüm dizi elemanlarında gezmek için *ngFor komutundan yararlanılmakta. Bir özellik değerini arayüzde göstermek içinse {{post.title}} benzeri notasyonlar kullanıldı.
 
-## Çalışma Zamanı
+## PWA Uyumluluğu için Hazırlıklar
+
+Amacımız uygulamanın PWA uygunluğunu kontrol etmek olduğu için öncelikle onu canlı ortam için hazırlamalıyız _(Yani Production Build gerekiyor)_ Nitekim PWA özelliklerin bir çoğu geliştirme ortamına ilave edilmez. Build işlemi için ng CLI aracını aşağıdaki gibi kullanabiliriz.
+
+```
+ng build --prod
+```
+
+![assets/credit_2.png](assets/credit_2.png)
+
+Uygulama dist klasörüne build edilmiş olur. Hizmete sunmak için http-server gibi bir araçtan yararlanılabilir. Eğer sistemde yüklü değilse npm ile kurmamız gerekebilir. İlk komutla bunu yapıyoruz. İkinci komutsa uygulamamızı localhost üzerinden ayağa kaldırmak için.
+
+```
+sudo npm install -g http-server
+cd dist
+cd quotesify
+http-server -o
+```
+
+Bunun sonucu olarak 127.0.0.1:8080 veya 8081 portundan yayın yapılır ve uygulama açılır.
+
+![assets/credit_3.png](assets/credit_3.png)
+
+Uygulama çalıştıktan sonra F12 ile Audits kısmına gidilir ve 'Run Audit' ile PWA testi yapılırsa, Lighthouse bize aşağıdaki sonuçlar verir.
+
+![assets/credit_4.png](assets/credit_4.png)
+
+PWA uyumluluğu oldukça düşük çıktı. PWA uyumlu hale getirmek için neler yapılabilir bakalım.
+
+## PWA Uyumluluğu için Yapılan Değişiklikler
+
 
 ## Neler Öğrendim?
+
+- Angular CLI'ın temel komutlarını
+- Bir Component'e bir servisin nasıl enjekte edilebileceğini
+- Çok basit anlamda Material bileşenlerini arayüzde nasıl kullanabileceğimi
+- PWA tipindeki uygulamaların genel karakteristiklerini ve avantajlarını
+- 
