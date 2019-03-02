@@ -21,6 +21,8 @@ import { MatButtonModule } from '@angular/material/button';
  servisine Get çağrısı yapmak için kullanacağız.
  */
 import { HttpClientModule } from '@angular/common/http';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,9 @@ import { HttpClientModule } from '@angular/common/http';
     // Aşağıdakilerde Material modülleri için yapılan ilaveler
     MatToolbarModule,
     MatCardModule,
-    MatButtonModule],
+    MatButtonModule,
+    // PWA güncellemesi sonrası eklenen Worker Service kaydının yapılması
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })],
   providers: [],
   bootstrap: [AppComponent]
 })

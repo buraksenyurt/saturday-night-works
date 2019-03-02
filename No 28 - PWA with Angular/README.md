@@ -58,8 +58,34 @@ Uygulama çalıştıktan sonra F12 ile Audits kısmına gidilir ve 'Run Audit' i
 
 PWA uyumluluğu oldukça düşük çıktı. PWA uyumlu hale getirmek için neler yapılabilir bakalım.
 
-## PWA Uyumluluğu için Yapılan Değişiklikler
+## İhlal Edilen PWA Kriterleri
 
+- Uygulamanın HTTPS desteği olmazsa olmazlardandır. Development tarafında sıkıntı olmasa da uygulamayı production'a aldığımızda sertifika tabanlı iletişim sağlanmalıdır.
+- Service Worker olmaması sebebiyle offline çalışma ve cache kabiliyetlerinin yanı sıra push notification kabiliyletleri de ortada yoktur. Service Worker, ağ proxy'si gibi bir görev üstlenir ve uygulamanın çektiği asset'ler ile veriyi Request'lerden yakalayıp önbelleğe alma operasyonlarında işe yarar.
+- Manifesto dosyasının bulunmayışı ki bu dosyada uygulama adı, kısa açıklaması, icon'lar ve diğer gerekli bilgiler yer alır. Ayrıca manifesto dosyası sayesinde add-to-home-screen ve splash screen özellikleri de etkinleşir.
+- Progressive Enhancment desteğinin olmaması da bir PWA ihlalidir. Uygulamanın çağırıldığı tarayıcıya göre ileri seviye özelliklerin kullanılabileceğinin ifade edilmesi beklenmektedir.
+
+## PWA Uyumluluğu için Yapılanlar
+
+Angular tarafında uygulamayı PWA uyumlu hale getirmek için aşağıdaki terminal komutu çalıştırmak yeterlidir. _(Proje klasöründe çalıştırmak lazım)_
+
+```
+ng add @angular/pwa
+```
+
+Komut çalıştırıldığında eksik olan manifesto ve service worker dosyaları eklenir. Ayrıca assets altındaki icon'ların form factor desteği açısından farklı boyutları oluşur. 
+
+![assets/credit_5.png](assets/credit_5.png)
+
+Yeni bir dağıtım paketi çıktığımızda PWA için eklenen Service Worker ve manifesto dosyalarını da görebiliriz. 
+
+![assets/credit_6.png](assets/credit_6.png)
+
+Tekrardan Lighthouse raporunu çektiğimizde aşağıdaki sonuçlarla karşılaşırız.
+
+![assets/credit_7.png](assets/credit_7.png)
+
+>Peki ya kalan HTTPS ihlalini development ortamında nasıl aşabiliriz? Aşabilir miyiz? Eğer buraya kadar gelebildiysen bir adım daha ilerleyebilirsin sevgili okur ;)
 
 ## Neler Öğrendim?
 
@@ -67,4 +93,4 @@ PWA uyumluluğu oldukça düşük çıktı. PWA uyumlu hale getirmek için neler
 - Bir Component'e bir servisin nasıl enjekte edilebileceğini
 - Çok basit anlamda Material bileşenlerini arayüzde nasıl kullanabileceğimi
 - PWA tipindeki uygulamaların genel karakteristiklerini ve avantajlarını
-- 
+- PWA ihlallerinin kısaca ne anlama geldiklerini ve tespitinde Lighthouse'un nasıl kullanılabileceğini
