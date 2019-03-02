@@ -9,6 +9,7 @@ UI tasarımında kullanacağımız Material bileşenlerine ait modül bildirimle
 */
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
 
 /* 
  HttpClientModule'ü burada import ettik.
@@ -31,8 +32,8 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule, //Buraya da eklemeyi unutmamak lazım
     // Aşağıdakilerde Material modülleri için yapılan ilaveler
     MatToolbarModule,
-    MatCardModule
-  ],
+    MatCardModule,
+    MatButtonModule],
   providers: [],
   bootstrap: [AppComponent]
 })
