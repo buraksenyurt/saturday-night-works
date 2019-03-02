@@ -24,8 +24,10 @@ ng add @angular/material
 >Değişikliklerin yapıldığı kod parçaları mümkün mertebe açıklamalarla desteklenmiş ve ne olduğu anlatılmaya çalışılmıştır.
 
 - src/app/app.module.ts dosyasında HTTP çağrılarını yapmamızı sağlayan HttpClientModule modülünü tanımladık. Böylece HttpClient, ana modüle bağlı tüm bileşen ve servislere enjekte edilebilir _(Evet burada da Dependency Injection var. O her yerde :P )_
+- Yine src/app/app.module.ts dosyasına UI tarafı kontrolleri için ilgili Material modülleri eklendi
 - _ng g service dummy_ terminal komutu ile DummyService isimli servis sınıfı eklendi. [Şuradaki](https://jsonplaceholder.typicode.com/posts) dummy servis adresinden veri çekip sunmakla görevli. 
 - src/app/app.component.ts dosyasında DummyService'in kullanılması için gerekli değişiklikler yapıldı.
+- src/app/app.component.html içeriği tamamen değiştirildi. Material bileşenlerine yer verildi. Toolbar tipinde bir Navigation kontrolü, Post bilgilerini göstermek içinse Card bileşeninden yararlanıldı. Arayüz, bağlı olduğu AppComponent içerisindeki posts dizisini kullanıyor. Tüm dizi elemanlarında gezmek için *ngFor komutundan yararlanılmakta. Bir özellik değerini arayüzde göstermek içinse {{post.title}} benzeri notasyonlar kullanıldı.
 
 ## Çalışma Zamanı
 
