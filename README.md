@@ -22,7 +22,6 @@ Readme dosyalarından yararlanarak kendi başlangıçlarınızı yapabilir, örn
 
 Burası işlenecek konu başlıklarının olduğu havuzdur.
 
-- Angular ile bir PWA uygulaması geliştirmek
 - Socket.io ile bağlı istemcilere bildiri yayınlamak
 - Azure üzerinde bir .Net Core uygulaması yayınlamak
 - Javascript ile offline çalışabilen uygulamalar yazmak
@@ -63,5 +62,6 @@ Burası işlenecek konu başlıklarının olduğu havuzdur.
 25. AlaSQL veritabanını Node.Js ile kullanmak
 26. Microsoft Custom Vision Python SDK'sı ile imaj sınıflandırması yapmak
 27. Firebase ile Google Cloud Functions kullanımı
+28. Angular ile bir PWA uygulaması geliştirmek
 
 > MD dosyasını formatlarken [şu adresten](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) yararlanıyorum.
