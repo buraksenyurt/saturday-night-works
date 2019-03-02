@@ -1,8 +1,10 @@
 # Angular ile Bir Web Uygulamasını PWA Uyumlu Hale Getirmek
 
-PWA tipindeki web uygulamaları özellikle mobil cihazlarda kullanılırken sanki AppStore veya PlayStore'dan indirilmiş native uygulamalarmış gibi görünürler. Ancak native uygulamalar gibi dükkandan indirilmezler ve bir web sunucusundan talep edilirler. Https desteği sunduklarından hat güvenlidir. Bağlı olan istemcilere push notification ile bildirimde bulunabilirler. Cihaz bağımsız olarak her tür form-factor'ü desteklerler. Service Worker'lar bu uygulama modelinde iş başındadır ve sürekli taze kalınmasını sağlarlar. Düşük internet bağlantılarında veya internet olmayan ortamlarda offline da çalışabilirler. URL üzerinden erişilen uygulamalar olduklarından kurulum ihtiyaçları yoktur. Benim amacım çok yabancısı olduğum Angular ile basit bir web uygulaması yazmak ve bunu PWA uyumlu hale getirmek. 
+PWA tipindeki web uygulamaları özellikle mobil cihazlarda kullanılırken sanki AppStore veya PlayStore'dan indirilmiş native uygulamalarmış gibi görünürler. Ancak native uygulamalar gibi dükkandan indirilmezler ve bir web sunucusundan talep edilirler. Https desteği sunduklarından hat güvenlidir. Bağlı olan istemcilere push notification ile bildirimde bulunabilirler. Cihaz bağımsız olarak her tür form-factor'ü desteklerler. Service Worker'lar bu uygulama modelinde iş başındadır ve sürekli taze kalınmasını sağlarlar. Düşük internet bağlantılarında veya internet olmayan ortamlarda offline da çalışabilirler. URL üzerinden erişilen uygulamalar olduklarından kurulum ihtiyaçları yoktur.
 
-Peki bir web sayfasından gelen içeriğin PWA uyumluluğunu nasıl test edebiliriz? Bunun için Google'ın geliştirdiği ve Chrome üzerinde bulunan Lighthouse isimli uygulama kullanılır. F12 ile açılan Developer Tools'tan kolayca erişilebilen Lighthouse ile o anki sayfa için uyumluluk testleri yapabiliriz. Örneğin kendi bloğum için bunu yaptığımda mobile cihazlardaki PWA uyumluluğunun %50 olarak çıktığını gördüm.
+Benim amacım çok yabancısı olduğum Angular ile basit bir web uygulaması yazmak ve bunu PWA uyumlu hale getirmek. 
+
+Peki bir web sayfasından gelen içeriğin PWA uyumluluğunu nasıl test edebiliriz? Bunun için Google'ın geliştirdiği ve Chrome üzerinde bulunan Lighthouse isimli uygulama kullanılabilir. F12 ile açılan Developer Tools'tan kolayca erişilebilen Lighthouse ile o anki sayfa için uyumluluk testleri yapabiliriz. Örneğin kendi bloğum için bunu yaptığımda mobile cihazlardaki PWA uyumluluğunun %50 olarak çıktığını gördüm :/
 
 ![assets/credit_1.png](assets/credit_1.png)
 
@@ -24,14 +26,14 @@ ng add @angular/material
 >Değişikliklerin yapıldığı kod parçaları mümkün mertebe açıklamalarla desteklenmiş ve ne olduğu anlatılmaya çalışılmıştır.
 
 - src/app/app.module.ts dosyasında HTTP çağrılarını yapmamızı sağlayan HttpClientModule modülünü tanımladık. Böylece HttpClient, ana modüle bağlı tüm bileşen ve servislere enjekte edilebilir _(Evet burada da Dependency Injection var. O her yerde :P )_
-- Yine src/app/app.module.ts dosyasına UI tarafı kontrolleri için ilgili Material modülleri eklendi
-- _ng g service dummy_ terminal komutu ile DummyService isimli servis sınıfı eklendi. [Şuradaki](https://jsonplaceholder.typicode.com/posts) dummy servis adresinden veri çekip sunmakla görevli. 
+- Yine src/app/app.module.ts dosyasına UI tarafı kontrolleri için ilgili Material modülleri eklendi.
+- _ng g service dummy_ terminal komutu ile DummyService isimli servis sınıfı eklendi. [Şuradaki](https://jsonplaceholder.typicode.com/posts) dummy servis adresinden veri çekip sunmakla görevli. Sunmak derken uygulama arayüzündeki bileşeni besleyecek.
 - src/app/app.component.ts dosyasında DummyService'in kullanılması için gerekli değişiklikler yapıldı.
-- src/app/app.component.html içeriği tamamen değiştirildi. Material bileşenlerine yer verildi. Toolbar tipinde bir Navigation kontrolü, Post bilgilerini göstermek içinse Card bileşeninden yararlanıldı. Arayüz, bağlı olduğu AppComponent içerisindeki posts dizisini kullanıyor. Tüm dizi elemanlarında gezmek için *ngFor komutundan yararlanılmakta. Bir özellik değerini arayüzde göstermek içinse {{post.title}} benzeri notasyonlar kullanıldı.
+- src/app/app.component.html içeriği tamamen değiştirildi. Material bileşenlerine yer verildi. Toolbar tipinde bir Navigation kontrolü, Post bilgilerini göstermek içinse Card bileşeninden yararlanıldı. UI, bağlı olduğu AppComponent içerisindeki posts dizisini kullanıyor. Tüm dizi elemanlarında gezmek için *ngFor komutundan yararlanılmakta. Bir özellik değerini arayüzde göstermek içinse {{post.title}} benzeri notasyonlar kullanılıyor.
 
 ## PWA Uyumluluğu için Hazırlıklar
 
-Amacımız uygulamanın PWA uygunluğunu kontrol etmek olduğu için öncelikle onu canlı ortam için hazırlamalıyız _(Yani Production Build gerekiyor)_ Nitekim PWA özelliklerin bir çoğu geliştirme ortamına ilave edilmez. Build işlemi için ng CLI aracını aşağıdaki gibi kullanabiliriz.
+Amacımız uygulamanın PWA uygunluğunu kontrol etmek olduğu için öncelikle onu canlı ortam için hazırlamalıyız _(Yani Production Build gerekiyor)_ Nitekim PWA özelliklerinin bir çoğu geliştirme ortamına ilave edilmez. Build işlemi için ng CLI aracını aşağıdaki gibi kullanabiliriz.
 
 ```
 ng build --prod
@@ -39,7 +41,7 @@ ng build --prod
 
 ![assets/credit_2.png](assets/credit_2.png)
 
-Uygulama dist klasörüne build edilmiş olur. Hizmete sunmak için http-server gibi bir araçtan yararlanılabilir. Eğer sistemde yüklü değilse npm ile kurmamız gerekebilir. İlk komutla bunu yapıyoruz. İkinci komutsa uygulamamızı localhost üzerinden ayağa kaldırmak için.
+Uygulama dist klasörüne build edilmiş olur. Hizmete sunmak için http-server gibi bir araçtan yararlanılabilir. Eğer sistemde yüklü değilse npm ile kurmamız gerekebilir. İlk komutla bunu yapıyoruz. İkinci terminal komutuysa uygulamayı localhost üzerinden ayağa kaldırmak için.
 
 ```
 sudo npm install -g http-server
@@ -52,7 +54,7 @@ Bunun sonucu olarak 127.0.0.1:8080 veya 8081 portundan yayın yapılır ve uygul
 
 ![assets/credit_3.png](assets/credit_3.png)
 
-Uygulama çalıştıktan sonra F12 ile Audits kısmına gidilir ve 'Run Audit' ile PWA testi yapılırsa, Lighthouse bize aşağıdaki sonuçlar verir.
+Uygulama çalıştıktan sonra F12 ile Audits kısmına gidilir ve 'Run Audit' ile PWA testi başlatılırsa, Lighthouse bize aşağıdakine benzer sonuçları verir.
 
 ![assets/credit_4.png](assets/credit_4.png)
 
@@ -67,7 +69,7 @@ PWA uyumluluğu oldukça düşük çıktı. PWA uyumlu hale getirmek için neler
 
 ## PWA Uyumluluğu için Yapılanlar
 
-Angular tarafında uygulamayı PWA uyumlu hale getirmek için aşağıdaki terminal komutu çalıştırmak yeterlidir. _(Proje klasöründe çalıştırmak lazım)_
+Angular tarafında uygulamayı PWA uyumlu hale getirmek için aşağıdaki terminal komutunu çalıştırmak yeterlidir. _(Proje klasöründe çalıştırdığımıza dikkat edelim)_
 
 ```
 ng add @angular/pwa
@@ -81,7 +83,7 @@ Yeni bir dağıtım paketi çıktığımızda PWA için eklenen Service Worker v
 
 ![assets/credit_6.png](assets/credit_6.png)
 
-Tekrardan Lighthouse raporunu çektiğimizde aşağıdaki sonuçlarla karşılaşırız.
+Tekrardan Lighthouse raporunu çektiğimizde aşağıdaki gibi %92lik karşılama oranıyla  karşılaşırız. Fena değil ama eksik. Çünkü HTTPS desteğini göremedi.
 
 ![assets/credit_7.png](assets/credit_7.png)
 
