@@ -1,0 +1,17 @@
+{
+  "name": "docserver",
+  "version": "1.0.0",
+  "description": "socket server for realtime doc sharing system",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/app.js"
+  },
+  "author": "burak selim şenyurt",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/socket.io": "^2.1.2",
+    "express": "^4.16.4",
+    "socket.io": "^2.2.0"
+  }
+}
