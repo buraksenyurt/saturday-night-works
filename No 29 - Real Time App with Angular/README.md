@@ -46,7 +46,7 @@ ng g service article
 
 - app.module.ts dosyasında SocketIoModule bildirimleri yapıldı ve konfigurasyon bazlı url değeri ile ilişkilendirildi. _(Hangi sunucu ile web socket haberleşmesi yapılacağı tüm modüller için ayarlanmış oldu)_
 - article.ts sınıfı yazıldı. Odalardaki makaleleri temsil eden basit bir entity tipi gibi düşünebiliriz.
-
+- article.service.ts sınıfı değiştirildi. Bu servis, Socket sunucusu ile haberleşen proxy servisimiz olarak düşünülebilir. Bu servisi arayüz tarafında ele alacağız.
 
 ## Çalışma Zamanı
 
