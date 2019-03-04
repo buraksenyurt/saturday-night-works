@@ -6,7 +6,7 @@ const app = require('express')();
 const http = require('http').Server(app);
 const io = require('socket.io')(http);
 
-const templates = {}; // Üzerinde çalışılacak belgelerin tutulacağı repo. Canlı ortamlar için fiziki alan ele alınmalı.
+const articles = {}; // Üzerinde çalışılacak yazıların tutulacağı repo. Canlı ortamlar için fiziki alan ele alınmalı.
 
 /* 
 on metodları birer event listener'dır. İlk parametre olayın adı,
@@ -42,7 +42,7 @@ io.on("connection", socket => {
     */
     socket.on("get", id => {
         updateRoom(id);
-        socket.emit("ready", templates[id]);
+        socket.emit("ready", articles[id]);
     });
 
     /*
@@ -60,11 +60,11 @@ io.on("connection", socket => {
     io.emit bağlı olan tüm istmecileri ilgilendirirken, socket.emit o anki olayın
     sahibi bağlı olan istemciyi ilgilendirir.
     */
-    socket.on("add", t => {
-        templates[t.id] = t;
-        updateRoom(t.id);
-        io.emit("warnEveryone", Object.keys(templates));
-        socket.emit("ready", t);
+    socket.on("add", payload => {
+        articles[payload.id] = payload;
+        updateRoom(payload.id);
+        io.emit("warnEveryone", Object.keys(articles));
+        socket.emit("ready", payload);
     });
 
 
@@ -74,14 +74,14 @@ io.on("connection", socket => {
     Payload içeriğine göre odadaki doküman güncellenir ve
     sadece bu doküman üzerinde çalışanların bilgilendirimesi sağlanır.
     */
-    socket.on("update", t => {
-        templates[t.id] = t;
-        socket.to(t.id).emit("ready", t);
+    socket.on("update",payload => {
+        articles[payload.id] = payload;
+        socket.to(payload.id).emit("ready", payload);
     });
 
     // Tüm bağlı istemcileri template dizisindeki key değerleri için bilgilendir
-    io.emit("warnEveryone", Object.keys(templates));
+    io.emit("warnEveryone", Object.keys(articles));
 });
 
 http.listen(5004);
-console.log("Doküman sunucusu dinlemede...");
+console.log("Ortak makale yazma platformu :P 5004 nolu porttan dinlemede...");
