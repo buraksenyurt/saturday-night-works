@@ -8,9 +8,11 @@ import { Article } from '../app/article'; //Article tipini kullanacağımız iç
 export class ArticleService {
 
   /*
-   Socket sunucusundan yayınlanacak ready ve warnEveryOne isimli olaylar için kullanacağımız özellikler
-   Sunucu warnEveryOne ile tüm istemcilere makale listesini string array olarak gönderiyordu.
-   Doküman ekleme, güncelleme ve tek birisini çekme işlemlerinde de web sunucusu ready olayını tetikliyordu.
+   Socket sunucusundan yayınlanan ready ve warnEveryOne isimli olaylar için kullanacağımız özellikleri tanımlıyoruz.
+   
+   Sunucu tüm istemcilere makale listesini string array olarak gönderirken warnEveryOne olayını yayınlamakta.
+   Doküman ekleme, güncelleme ve tek birisini çekme işlemlerine karşılık olarak da ready olayını yayınlıyordu.
+   
    fromEvent dönüşleri Observable tiptedir. Yani değişiklikler otomatik olarak abonelerine yansıyacaktır. 
 */
   currentArticle = this.socket.fromEvent<Article>('ready');
@@ -20,8 +22,10 @@ export class ArticleService {
 
   /*
   Boş bir doküman üretmek için kullanılıyor.
-  emit metodu add olayını tetiklemekte. Sunucuya ikinci parametrede belirtilen içerik gönderiliyor.
+  emit metodu add olayını tetiklemekte. 
+  Sunucuya ikinci parametrede belirtilen içerik gönderiliyor.
 
+  emit metodlarındaki ilk parametrelerdeki olaylar sunucunun dinlediği olaylardır.
   */
   add() {
     let randomArticleName = Math.floor(Math.random() * 1000 + 1).toString();
