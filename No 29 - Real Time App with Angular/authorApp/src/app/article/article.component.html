@@ -1,1 +1,5 @@
 <textarea [(ngModel)]='article.content' (keyup)='updateArticle()' placeholder='Haydi bir şeyler yazalım...'></textarea>
+<!--textarea'yo ngModel niteliği ile arka plandaki article sınıfının content özelliğine bağlıyoruz
+    keyup olayı parmağımızı her tuştan çektiğimizde çalışacak ve bileşenin typescript tarafındaki updateArticle
+    metodunu çağıracak.
+-->
