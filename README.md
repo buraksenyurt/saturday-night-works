@@ -22,7 +22,9 @@ Readme dosyalarından yararlanarak kendi başlangıçlarınızı yapabilir, örn
 
 Burası işlenecek konu başlıklarının olduğu havuzdur.
 
-- Socket.io ile bağlı istemcilere bildiri yayınlamak
+- .Net Core tarafında bir BDD test framework'ünü deneyimlemek
+- PWA'larda Push Notification denemek
+- Biraz daha Angular deneyimi kazanmak için basit bir oyun _(Çok çok basit :) )_ yazmaya çalışmak
 - Azure üzerinde bir .Net Core uygulaması yayınlamak
 - Javascript ile offline çalışabilen uygulamalar yazmak
 - IoC/DI Container'ları yeniden hatırlamak
@@ -63,5 +65,6 @@ Burası işlenecek konu başlıklarının olduğu havuzdur.
 26. Microsoft Custom Vision Python SDK'sı ile imaj sınıflandırması yapmak
 27. Firebase ile Google Cloud Functions kullanımı
 28. Angular ile bir PWA uygulaması geliştirmek
+29. Angular ön yüzü ve Node sunucusu arasında Socket.IO yardımıyla soket haberleşmesi gerçekleştirmek
 
 > MD dosyasını formatlarken [şu adresten](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) yararlanıyorum.
