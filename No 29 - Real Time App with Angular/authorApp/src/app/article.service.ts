@@ -16,7 +16,7 @@ export class ArticleService {
    fromEvent dönüşleri Observable tiptedir. Yani değişiklikler otomatik olarak abonelerine yansıyacaktır. 
 */
   currentArticle = this.socket.fromEvent<Article>('ready');
-  allOfThem = this.socket.fromEvent<string[]>('warnEveryOne');
+  allOfThem = this.socket.fromEvent<string[]>('warnEveryone');
 
   constructor(private socket: Socket) { } //Constructor injection ile Socket modülünü yükledik
 
@@ -30,6 +30,7 @@ export class ArticleService {
   add() {
     let randomArticleName = Math.floor(Math.random() * 1000 + 1).toString();
     this.socket.emit('add', {id: randomArticleName,content:'' });
+    // console.log(this.allOfThem.forEach(a=>console.log(a)));
   }
 
   /*

@@ -41,6 +41,7 @@ io.on("connection", socket => {
     Bunun için ready isimli bir olay yayınlar ki istemci de bu olayı dinlemektedir.
     */
     socket.on("get", id => {
+        console.log("get event id: " + id);
         updateRoom(id);
         socket.emit("ready", articles[id]);
     });
@@ -63,8 +64,10 @@ io.on("connection", socket => {
     socket.on("add", payload => {
         articles[payload.id] = payload;
         updateRoom(payload.id);
+        console.log("add event " + payload.id);
         io.emit("warnEveryone", Object.keys(articles));
         socket.emit("ready", payload);
+        console.log(articles);
     });
 
 
@@ -74,7 +77,8 @@ io.on("connection", socket => {
     Payload içeriğine göre odadaki doküman güncellenir ve
     sadece bu doküman üzerinde çalışanların bilgilendirimesi sağlanır.
     */
-    socket.on("update",payload => {
+    socket.on("update", payload => {
+        //console.log("update event");
         articles[payload.id] = payload;
         socket.to(payload.id).emit("ready", payload);
     });

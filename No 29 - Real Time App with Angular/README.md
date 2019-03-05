@@ -1,4 +1,4 @@
-# Socket.IO Yardımıyla RealTime Çalışan Bir Angular Uygulaması Geliştirmek
+# Socket-IO Yardımıyla RealTime Çalışan Bir Angular Uygulaması Geliştirmek
 
 Bilindiği üzere istemci-sunucu geliştirme modelinde gerçek zamanlı ve çift yönlü iletişim için WebSocket yaygın olarak kullanılan protokollerden birisi. Klasik HTTP request/response modelinden farklı olarak WebSocket protokolünde sunucu, istemcinin talep göndermesine gerek kalmadan istemciye mesaj gönderebiliyor. Chat uygulamaları, eş zamanlı oyunlar, finansal bildirim yapan ticari programlar, online doküman yönetim sistemleri ve benzerleri WebSocket protokolünün kullanıldığı ideal ortamlar. Benim amacım ise Socket.IO'dan yararlanan bir Node sunucusu ile Angular'da yazılmış web uygulamasını WebSocket protokolü eşliğinden deneyimlemek. Bulduğum örnek bir doküman üzerinden istemcilerin eş zamanlı olarak çalışabilmesini sağlıyor. İlgimi çekince WestWorld _(Ubuntu 18.04, 64bit)_ üzerinden denemeye karar verdim.
 
@@ -47,6 +47,7 @@ ng g service article
 - app.module.ts dosyasında SocketIoModule bildirimleri yapıldı ve konfigurasyon bazlı url değeri ile ilişkilendirildi. _(Hangi sunucu ile web socket haberleşmesi yapılacağı tüm modüller için ayarlanmış oldu)_
 - article.ts sınıfı yazıldı. Odalardaki makaleleri temsil eden basit bir entity tipi gibi düşünebiliriz.
 - article.service.ts sınıfı değiştirildi. Bu servis, Socket sunucusu ile haberleşen proxy servisimiz olarak düşünülebilir. Bu servisi arayüz tarafında ele alacağız.
+- app.component.html, article-list.component.ts, article-list.component.html, article-component.html ve article-component.ts dosyalarının içerikleri değiştirildi.
 
 ## Çalışma Zamanı
 
@@ -56,9 +57,17 @@ Sunucuyu çalıştırmak için
 npm run start
 ```
 
-komutu verilebilir. İstemciden en az iki tane açıp çalışmakta yarar var.
+komutu verilebilir. İstemci tarafını çalıştırmak için
 
+```
+ng serve
+```
 
+terminal komutundan yararlanılabilir. Servis localhost'ta 4200 nolu port'tan ayağa kalkar. Örneği daha iyi anlamak için iki veya daha fazla istemci çalıştırmakta yarar var. Bir istemcide yeni bir yazı açıp üzerinde yazarken diğer istemcide de aynı dosya numarası görünür ve değişiklikler karşılıklı olarak görünür.
+
+![assets/credit_2.png](assets/credit_2.png)
+
+>Tasarım gerçekten çok kötü ancak amaç Socket.IO'nun Angular tarafında nasıl kullanılabileceğini anlamak. Siz yine de tasarım konusunda bir şeyler yapmaya çalışın.
 
 ## Neler Öğrendim?
 

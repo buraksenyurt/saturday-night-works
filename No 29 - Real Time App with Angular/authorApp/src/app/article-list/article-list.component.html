@@ -1,3 +1,9 @@
-<p>
-  article-list works!
-</p>
+<div>
+  <button (click)='newArticle()'>Yeni makale başlat</button>
+</div>
+<div style="height: 100%;">
+  <span *ngFor='let a of articles | async' (click)='getArticle(a)'>
+      <b>{{a}}</b>  
+      <br/>
+  </span>
+</div>
