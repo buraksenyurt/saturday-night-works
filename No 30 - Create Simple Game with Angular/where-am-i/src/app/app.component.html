@@ -1,0 +1,30 @@
+<!--
+  bootstrap css stilleri ile donattığımız basit bir arayüzümüz var.
+
+  app.component sınıfındaki property'lere erişmek için {{propertyName}} notasyonu kullanılıyor.
+  Yine bileşen üzerinde bir metod çağrısı yapmak ve bunu bir kontrol olayı ile ilişkilendirmek için 
+  (eventName)="method name" şeklinde bir notasyon kullanılıyor.  
+-->
+<div class="container">
+  <h2>Bil bakalım hangi şehre gittim? :)</h2>
+
+  <div class="card bg-light mb-3">
+    <div class="card-body">
+      <p class="card-text">Bugün hava <b>{{currentWeather}}</b> ve ben ... şehrine gittim.</p>
+    </div>
+  </div>
+  <div>
+    <p>
+      <button class="btn btn-primary btn-sm" (click)="fullThrottle()">Hey Scothy. Beni yeniden
+        ışınla</button>
+    </p>
+  </div>
+  <div>
+    <label>Tahminin nedir?</label>
+    <input type="text" />
+    <button class="btn btn-primary btn-sm">Dene</button>
+  </div>
+  <div>
+    <p class="text-info">Sonuçlar buraya gelecek</p>
+  </div>
+</div>
