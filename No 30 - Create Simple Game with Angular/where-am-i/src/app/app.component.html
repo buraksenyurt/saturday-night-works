@@ -3,7 +3,9 @@
 
   app.component sınıfındaki property'lere erişmek için {{propertyName}} notasyonu kullanılıyor.
   Yine bileşen üzerinde bir metod çağrısı yapmak ve bunu bir kontrol olayı ile ilişkilendirmek için 
-  (eventName)="method name" şeklinde bir notasyon kullanılıyor.  
+  (eventName)="method name" şeklinde bir notasyon kullanılıyor.
+  
+  Angular direktiflerinde *ngIf komutunu kullanarak tahmine göre bir HTML elementinin gösterilmesi sağlanıyor.
 -->
 <div class="container">
   <h2>Bil bakalım hangi şehre gittim? :)</h2>
@@ -15,16 +17,18 @@
   </div>
   <div>
     <p>
-      <button class="btn btn-primary btn-sm" (click)="fullThrottle()">Hey Scothy. Beni yeniden
+      <button class="btn btn-primary btn-sm" (click)="fullThrottle()">Hey Scotty. Beni yeniden
         ışınla</button>
     </p>
   </div>
   <div>
     <label>Tahminin nedir?</label>
-    <input type="text" />
-    <button class="btn btn-primary btn-sm">Dene</button>
+    <input (input)="playersGuess=$event.target.value" type="text" />
+    <button class="btn btn-primary btn-sm" (click)="checkMyGuess()">Dene</button>
   </div>
   <div>
-    <p class="text-info">Sonuçlar buraya gelecek</p>
+    <p *ngIf="guessIsCorrect" class="alert alert-success">Bravo! Yakaladın beni</p>
+    <p *ngIf="!guessIsCorrect" class="alert alert-warning">Tüh. Tekrar dener misin?</p>
+    <p class="text-info">İşte sana bir ipucu. {{hint}}</p>
   </div>
 </div>

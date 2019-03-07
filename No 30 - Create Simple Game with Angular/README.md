@@ -27,4 +27,24 @@ npm install bootstrap --save
 
 ## Çalışma Zamanı
 
+Uygulamayı çalıştırmak için terminalden aşağıdaki komutu vermek yeterlidir.
+
+```
+ng serve
+```
+
+Uygulamanın çalışma zamanına ait örnek ekran görüntüleri.
+
+Bir tahmin yaptık ve sonucu bulamadıysak şuna benzer bir sonuçla karşılaşırız.
+
+![assets/credit_1.png](assets/credit_1.png)
+
+Ama sonucu bilirsek de şöyle bir ekranla karşılaşırız.
+
+![assets/credit_2.png](assets/credit_2.png)
+
 ## Neler Öğrendim
+
+- Component bileşeni ile HTML arayüzünü sınıf özellikleri üzerinden nasıl konuşturabileceğimi
+- Bootstrap temel elementlerini Angular bileşenlerinden nasıl kullanabileceğimi
+- ng serve komutu ile uygulamayı çalıştırdıktan sonra, bileşen ve arayüzde yapılan değişikliklerin save işlemi sonrası uygulamayı tekrardan çalıştırmaya gerek kalmadan çalışma zamanın yansıtıldığını

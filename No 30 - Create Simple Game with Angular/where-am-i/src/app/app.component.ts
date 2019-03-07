@@ -11,8 +11,8 @@ export class AppComponent {
   currentWeather: string; // Güncel hava durumu bilgisini tutan property
   computersLocation: string; //Bilgisayarın yerini tutacak property
   playersGuess: string; // Oyuncunun tahminini tutacak property
-  tryCount: number; // Oyuncunun deneme sayısını tuttuğumuz property
-  guessIsCorrect:boolean; // Tahminin doğru olup olmadığını tuttuğumuz property
+  guessIsCorrect: boolean; // Tahminin doğru olup olmadığını tuttuğumuz property
+  hint:string; // Tahmini kolaylaştırmak için verdiğimiz ipucunu tutan property
 
   // Örnek veri dizileri. 
   // TODO: Daha uygun bir key-value dizisi bulunabilir mi?
@@ -29,6 +29,9 @@ export class AppComponent {
   Uygulama button bağımsız ilk başlatıldığında da hava tahmini yapılsın ve şehir tutulsun.
   */
   constructor() {
+    this.hint = "";
+    this.computersLocation="";
+    this.currentWeather="";
     this.fullThrottle();
   }
   /*
@@ -49,13 +52,19 @@ export class AppComponent {
     // üretilen rastgele sayıya göre diziden bir şehir adı aldık
     this.computersLocation = this.cities[rnd1][rnd2];
 
+    this.hint="Baş harfi "+this.computersLocation[0];
+
     console.log(this.computersLocation); // Şşşşttt. Kimseye söylemeyin. F12'ye basınca ışınlanan şehri görebilirsiniz.
   }
 
   /*
   Oyuncunun tahminini kontrol eden fonksiyon
   */
-  checkGuess() {
-    this.tryCount++; // Oyuncunun tahmin sayısını bir arttırdık
+  checkMyGuess() {
+
+    if (this.playersGuess == this.computersLocation)
+      this.guessIsCorrect = true;
+    else
+      this.guessIsCorrect = false;
   }
 }
