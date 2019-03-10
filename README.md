@@ -22,6 +22,7 @@ Readme dosyalarından yararlanarak kendi başlangıçlarınızı yapabilir, örn
 
 Burası işlenecek konu başlıklarının olduğu havuzdur.
 
+- Firebase Cloud Messaging ile bir PWA üzerinde Push Notification uygulamak
 - .Net Core tarafında bir BDD test framework'ünü deneyimlemek
 - PWA'larda Push Notification denemek
 - Azure üzerinde bir .Net Core uygulaması yayınlamak
@@ -31,6 +32,8 @@ Burası işlenecek konu başlıklarının olduğu havuzdur.
 > Planlanan yazılarda konu başlıkları değişiklik gösterebilir ve örnekler kronolojik sırada işlenmemektedir.
 
 ## Üzerinde Çalışılıyor
+
+- Firebase Cloud Messaging ile bir PWA üzerinde Push Notification uygulamak
 
 ## Tamamlananlar
 
