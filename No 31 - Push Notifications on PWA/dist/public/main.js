@@ -106,11 +106,9 @@ function unsubscribe() {
         })
 }
 
-// Sunucuya Subscription ID bilgisini göndermek için kullanıyoruz
-// Bunun için yazdığımız PusherAPI node servisini kullanıyoruz
 function sendSubsID(subscription) {
     var id = subscription.endpoint.split('gcm/send/')[1];
-    fetch('http://localhost:8080/subscribers', {
+    fetch('https://basketin-cepte-project.firebaseapp.com/subscribers', {
         method: 'post',
         headers: {
             'Accept': 'application/json',
@@ -122,7 +120,7 @@ function sendSubsID(subscription) {
 
 function deleteSubsID(subscription) {
     var id = subscription.endpoint.split('gcm/send/')[1];
-    fetch('http://localhost:8080/subscribers/' +
+    fetch('https://basketin-cepte-project.firebaseapp.com/subscribers/' +
         id, {
             method: 'delete',
             headers: {

@@ -68,7 +68,7 @@ touch server.js
 sudo npm install express body-parser fcm-node morgan
 ```
 
-## Çalışma Zamanı
+## Çalışma Zamanı _(Development Ortamı)_
 
 Uygulamanın çalışma dinamiklerini anlamak oldukça önemli. index.html olarak düşündüğümüz web uygulamamız çalıştırıldığında iki aksiyonumuz var. Basketbol topuna basıp bir abonelik başlatmak veya tekrar basarak aboneliği durdurmak.
 
@@ -98,7 +98,7 @@ Bildirim kutusunda tıklarsak statik olarak belirlediğimiz sayfa açılacaktır
 
 ## PWA ve Service Uygulamalarının Firebase Hosting'e Alınması
 
-Her iki uygulamada local development ortamında gayet güzel çalışıyor gibi. Ancak bunu anlamlı hale getirmek için her iki ürünü de Firebase üzerine dağıtıp barındırmamız gerekiyor. Web uygulamasını Firebase Hosting ile REST servisini de Firebase Function ile yayınlamamız gerekiyor. Bu işlemler için firebase-tools paketine ihtiyacımız olacak. Terminalden aşağıdaki komutu kullanarak yükleyebiliriz.
+Her iki uygulamada local development ortamında gayet güzel çalışıyor gibi. Ancak bunu anlamlı hale getirmek için her iki ürünü de Firebase üzerine dağıtıp barındırmamız gerekiyor. Web uygulamasını Firebase Hosting ile REST servisini de Firebase Function ile yayınlamalıyız. Bu işlemler için firebase-tools aracına ihtiyacımız olacak. Terminalden aşağıdaki komutu kullanarak yükleyebiliriz.
 
 ```
 sudo npm install -g firebase-tools
@@ -106,10 +106,60 @@ sudo npm install -g firebase-tools
 
 ### Basketkolik'in Dağıtımı
 
+Yeni bir dağıtım klasörü oluşturmalı, initializion işlemini gerçekleştirip basketkolik uygulama kodlarını oluşan public klasörü içerisine atmalıyız. Ardından üzerinde çalışacağımız projeyi seçip deploy işlemini yapabiliriz.
 
+```
+mkdir dist
+cd dist
+firebase init
+cp -a ../basketkolik/. ./public/
+firebase use --add basketin-cepte-project
+firebase deploy
+```
+
+firebase init işleminde aşağıdaki görüntüde yer alan seçimlerle ilerleyebiliriz.
+
+![assets/credit_6.png](assets/credit_6.png)
+
+deploy işlemi başarılı olursa aşağıdaki ekran görüntüsündekine benzer sonuçlar elde edilir.
+
+![assets/credit_7.png](assets/credit_7.png)
 
 ### PusherAPI servisinin Dağıtımı
 
+Hatırlanacağı üzere web uygulaması bir REST Servisi yardımıyla FCM sistemini kullanıyordu. PusherAPI isimli uygulama, Fireabase tarafı için bir Function anlamına gelmektedir _( 'Serverless App' olarak düşünelim)_ Ölçeklenebilirliği, HTTPS güvenliği, otomatik olarak ayağa kalkması gibi bir çok iş Google Cloud ortamınca halledilir. Şimdi aşağıdaki terminal komutu ile fonksiyon klasörünü oluşturalım _(dist klasörü içerisinde çalıştığımıza dikkat edelim)_
+
+```
+firebase init functions
+```
+
+Sorulara şöyle cevaplar verebiliriz;
+
+- Dil olarak Javascript seçelim.
+- ESLint kullanımına Yes.
+- npm dependency'lerin kurulmasına Yes.
+
+Devam eden adımda functions klasöründeki index.js dosyasının içeriğini PusherAPI'deki server.js ile değiştirmeliyiz. Ancak bu kez express'in firebase-functions ile kullanılması gerekiyor. İhtiyacımız olan express, body-parser ve fcm-node paketlerini üzerinde çalıştığımız functions klasörü içinde de yüklemeliyiz. Son olarak dist klasöründeki firebase.json'a rewrites bölümünü ekleyip fonksiyonumuzu deploy edebiliriz.
+
+```
+cd functions
+sudo npm install express body-parser fcm-node
+firebase deploy
+```
+
+Şimdi web uygulamasının kullandığı main.js içeriğini, eklediğimiz google functions'a uyumlu hale getirmemiz gerekiyor. Tahmin edileceği üzere gidilen servis adreslerini oluşturulan firebase proje adresleri ile değiştirmeliyiz _(dist/public/main.js içeriğini kontrol edin)_
+
+Web uygulamasındaki bu değişikliği Cloud ortamına taşımak içinse public klasöründe yeniden deploy işlemi yapmalıyız.
+
+```
+firebase deploy
+```
+
+## Çalışma Zamanı _(Production Ortamı)_
+
+Uygulama artık https://basketin-cepte-project.firebaseapp.com/ adresinden yayında olacaktır.
+
+![assets/credit_8.png](assets/credit_8.png)
 
 
 ## Neler Öğrendim
@@ -119,3 +169,7 @@ sudo npm install -g firebase-tools
 - Abone olan istemciye bildirimlerin nasıl gönderilebileceğini
 - Service Worker üzerindeki push ve notificationclick olaylarının ne anlama geldiğini
 - serve paketinin kullanımını
+- firebase terminal aracı ile deployment işlemlerinin nasıl yapıldığını
+- Web uygulaması ve Functions'ın Google Cloud tarafından bakıldığında farklılıklarını
+
+>Proje bir süre sonra Google platformundan kaldırılmış olabilir. O nedenle kendiniz başarmaya çalışırsanız daha kıymetli olacaktır.
