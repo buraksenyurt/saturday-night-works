@@ -22,18 +22,17 @@ Readme dosyalarından yararlanarak kendi başlangıçlarınızı yapabilir, örn
 
 Burası işlenecek konu başlıklarının olduğu havuzdur.
 
-- Firebase Cloud Messaging ile bir PWA üzerinde Push Notification uygulamak
 - .Net Core tarafında bir BDD test framework'ünü deneyimlemek
-- PWA'larda Push Notification denemek
-- Azure üzerinde bir .Net Core uygulaması yayınlamak
-- Javascript ile offline çalışabilen uygulamalar yazmak
+- Local ortamdaki kodları Azure Cloud'a almak _(git,push,commit vs)_
 - IoC/DI Container'ları yeniden hatırlamak
+- KONG Api Gateway aracını kurcalamak
+- Azure ve SignalR ile eş zamanlı resim yapmak
 
 > Planlanan yazılarda konu başlıkları değişiklik gösterebilir ve örnekler kronolojik sırada işlenmemektedir.
 
 ## Üzerinde Çalışılıyor
 
-- Firebase Cloud Messaging ile bir PWA üzerinde Push Notification uygulamak
+- Angular, Firebase Firestore ve CRUD işlemleri
 
 ## Tamamlananlar
 
@@ -69,5 +68,6 @@ Burası işlenecek konu başlıklarının olduğu havuzdur.
 28. Angular ile bir PWA uygulaması geliştirmek
 29. Angular ön yüzü ve Node sunucusu arasında Socket.IO yardımıyla soket haberleşmesi gerçekleştirmek
 30. Biraz daha Angular deneyimi kazanmak için basit bir oyun _(Çok çok basit :) )_ yazmaya çalışmak
+31. Firebase Cloud Messaging ile bir PWA üzerinde Push Notification uygulamak
 
 > MD dosyasını formatlarken [şu adresten](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) yararlanıyorum.
