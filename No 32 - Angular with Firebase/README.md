@@ -1,4 +1,4 @@
-# Firebase Firestore ile Angular Kullanımı
+# Cloud Firestore ile Angular Kullanımı
 
 Angular tarafına yavaş yavaş alışmaya başladım. Yine de fazladan idmandan ve tekrardan zarar gelmez. Bu sefer temel CRUD _(Create Read Update Delete)_ operasyonlarını Firebase Firestore üzerinden icra ederken Angular'da koşmaya çalışacağım. Amaçlarımdan birisi de servis tarafında Form kontrolü kullanabilmek. Örneği her zaman olduğu gibi WestWorld _(Ubuntu 18.04, 64bit)_ üzerinde yazacağım _(Mustafar sistemine geçmeden önce oradaki son örneklerim diyebilirim)_
 
