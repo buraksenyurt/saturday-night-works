@@ -1,0 +1,21 @@
+<!-- 
+  Uygulama hizmete alındığında render edilecek olan ana bileşenimiz.
+  ng g c komutları ile oluşturduğumuz products ve product-list bileşenlerini bootstrap grid sistemini kullanarak ekrana yerleştiriyoruz.
+  class niteliklerinde kullandığımzı değerler ile ortamı biraz renklendirmeye çalıştım
+
+-->
+<div class="container px-lg-5">
+  <div class="row">
+    <h1>Hızlı Açık Artırma</h1>
+  </div>
+  <div class="row border border-primary rounded">
+    <div class="col py-3 px-lg-3 col-md-12">
+      <app-products></app-products>
+    </div>
+  </div>
+  <div class="row border border-dark rounded">
+    <div class="col py-3 px-lg-3 col-md-12">
+      <app-product-list></app-product-list>
+    </div>
+  </div>
+</div>

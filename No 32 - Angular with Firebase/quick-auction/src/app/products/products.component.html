@@ -1,0 +1,25 @@
+<form [formGroup]="this.productsService.productForm">
+  <div class="form-group">
+    <label for="lblTitle">Tanıtım başlığı</label>
+    <input type="text" formControlName="title" class="form-control" id="txtTitle" placeholder="Tanıtım başlığını giriniz">
+  </div>
+  <div class="form-group">
+    <label for="lblSummary">Açıklaması</label>
+    <input type="text" formControlName="summary" class="form-control" id="txtSummary" placeholder="Ne satıyorsunuz az biraz bilgi...">
+  </div>
+  <div class="form-group">
+    <label for="lblPrice">Fiyat</label>
+    <input type="text" formControlName="price" class="form-control" id="txtPrice" placeholder="10">
+  </div>
+  <div class="form-group form-check">
+    <input type="checkbox" formControlName="online" class="form-check-input" id="chkOnline">
+    <label class="form-check-label" for="chkOnline">Satışta mı?</label>
+  </div>
+  <button class="btn btn-primary" (click)="onSubmit()">Yolla</button>
+</form>
+<!--
+  form elementindeki [formGroup] niteliğine dikkat edelim. Buraya atanan değer,
+  bileşene enjekte edilen ProductsService nesnesine ait form özelliğidir.
+  Servis tipinin productForm değişkenindeki alanlar bu bileşen üzerindeki kontrollere
+  formControlName niteliği yardımıyla bağlanırlar.
+-->
