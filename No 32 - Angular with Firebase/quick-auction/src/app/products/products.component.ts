@@ -17,7 +17,10 @@ export class ProductsComponent implements OnInit {
 
   // Bileşendeki button'a basıldığında (click) niteliğine atanan olay bildirimi nedeniyle bu metod çalışacaktır
   onSubmit() {
-    let data=this.productsService.productForm.value; // aslında servis tarafındaki form kontrolü bileşenle ilişkilendirildiğinden girilen değerler oraya da yansır
-    console.log(data); // F12 ile tarayıcı Console penceresinden bu çıktıya bakabiliriz
+    let formData = this.productsService.productForm.value; // aslında servis tarafındaki form kontrolü bileşenle ilişkilendirildiğinden girilen değerler oraya da yansır
+    console.log(formData); // F12 ile tarayıcı Console penceresinden bu çıktıya bakabiliriz
+    this.productsService.addProduct(formData).then(res => { 
+      //TODO Buradan alert çıkartabilir miyiz bakalım.
+    });
   }
 }

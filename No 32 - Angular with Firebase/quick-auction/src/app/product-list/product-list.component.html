@@ -1,3 +1,36 @@
-<p>
-  product-list works!
-</p>
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Açıklama</th>
+      <th scope="col">Başlık</th>
+      <th scope="col">Fiyat</th>
+      <th scope="col">Pazarlık ?</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let product of allProducts">
+      <td>{{product.payload.doc.data().summary}}</td>
+      <td>{{product.payload.doc.data().title}}</td>
+      <td>{{product.payload.doc.data().price}}</td>
+      <td>
+        {{product.payload.doc.data().bargain?'Var':'Yok'}}
+      </td>
+      <td>
+        <button class="primary btn-danger" (click)="delete(product)">Sil</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<!--
+  Klasik bir Grid tasarımı söz konusu.
+  *ngFor ile bileşenin init metodunda doldurulan allProducts dizisini dönüyoruz.
+  Firestore'dan gelen her bir dokümanın elemanlarına ulaşmak için,
+  payload.doc.data().[özellik adı] notasyonunu kullandık.
+
+  Sil başlıklı button'a basıldığında bileşendeki delete metodunu çağrılmış oluyor.
+
+  Checkbox kontrolünün click olayında bileşendeki güncelleme metodunu ve dolayısıyla
+  servis tarafındaki versiyonunu çağırmış oluyoruz.
+-->
