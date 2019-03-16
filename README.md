@@ -25,14 +25,13 @@ Burası işlenecek konu başlıklarının olduğu havuzdur.
 - .Net Core tarafında bir BDD test framework'ünü deneyimlemek
 - Local ortamdaki kodları Azure Cloud'a almak _(git,push,commit vs)_
 - IoC/DI Container'ları yeniden hatırlamak
-- KONG Api Gateway aracını kurcalamak
 - Azure ve SignalR ile eş zamanlı resim yapmak
 
 > Planlanan yazılarda konu başlıkları değişiklik gösterebilir ve örnekler kronolojik sırada işlenmemektedir.
 
 ## Üzerinde Çalışılıyor
 
-- Angular, Firebase Firestore ve CRUD işlemleri
+- KONG Api Gateway aracını kurcalamak. Nedir bu KONG?
 
 ## Tamamlananlar
 
@@ -69,5 +68,6 @@ Burası işlenecek konu başlıklarının olduğu havuzdur.
 29. Angular ön yüzü ve Node sunucusu arasında Socket.IO yardımıyla soket haberleşmesi gerçekleştirmek
 30. Biraz daha Angular deneyimi kazanmak için basit bir oyun _(Çok çok basit :) )_ yazmaya çalışmak
 31. Firebase Cloud Messaging ile bir PWA üzerinde Push Notification uygulamak
+32. Angular, Firebase Firestore ve CRUD işlemleri
 
 > MD dosyasını formatlarken [şu adresten](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) yararlanıyorum.
