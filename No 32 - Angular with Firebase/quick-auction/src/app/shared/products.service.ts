@@ -18,7 +18,7 @@ export class ProductsService {
   productForm = new FormGroup({
     title: new FormControl(''),
     summary: new FormControl(''),
-    price: new FormControl(0),
+    price: new FormControl(100),
     bargain: new FormControl(false),
   })
 
@@ -52,13 +52,20 @@ export class ProductsService {
       .delete();
   }
 
-  // Güncelleme operasyonu. Sadece bargain bilgisini güncelliyoruz.
-  updateProduct(p,status) {
-    console.log(p);
+  // Güncelleme operasyonu. rate değişkenine gelen değere göre price değerini değiştiriyoruz
+  updateProduct(p, rate) {
+    // Önce üzerinde çalışılan veriyi alalım.
+    var prd=p.payload.doc.data();
+    if(prd.price==10 && rate<0) // fiyatı sıfırın altına indirmek istemeyiz çünkü
+      return;    
+    // Üst limit kontrolü de konulabilir belki
+
+    // fiyat arttırımı veya azaltımı uygunsa yeni değeri alıyoruz ve firestore üzerinden güncelleme yapıyoruz
+    var newPrice=prd.price+rate;
     return this.firestore
       .collection("products")
       .doc(p.payload.doc.id)
-      .set({ bargain: status }, { merge: true });
-      // merge özelliğine atanan true değeri, tüm entity değerlerinin güncellenmesi yerine sadece metoda ilk parametre ile gelenlerin ele alınmasını söyler.
+      .set({ price: newPrice }, { merge: true });
+    // merge özelliğine atanan true değeri, tüm entity değerlerinin güncellenmesi yerine sadece metoda ilk parametre ile gelenlerin ele alınmasını söyler.
   }
 }

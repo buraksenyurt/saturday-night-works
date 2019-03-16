@@ -28,13 +28,19 @@ export class ProductListComponent implements OnInit {
     Servis tarafındaki deleteProduct çağrılıyor.
     Parametre olarak o anki product içeriği gönderilmekte
   */
-  delete = p => this.productService.deleteProduct(p);
+  delete = p => this.productService.deleteProduct(p).then(r => {
+    //alert('silindi');
+  });
 
   /*
     Ürünün sadece bargain özelliğini update eden bir metod 
     olarak düşünelim. Senaryoda pazarlık payı olup olmadığını belirten
     checkbox'ın durumunu güncelletiyoruz
   */
-  
-  //TODO: Güncelleme metodu gelecek
+
+  // Güncelleme örneği (fiyatı 10 birim arttırıyoruz)
+  increasePrice = p => this.productService.updateProduct(p, 10);
+
+  // Güncelleme örneği (fiyatı 10 birim düşürüyoruz)
+  decreasePrice = p => this.productService.updateProduct(p, -10);
 }

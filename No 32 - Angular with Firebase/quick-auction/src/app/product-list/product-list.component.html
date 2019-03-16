@@ -1,11 +1,11 @@
 <table class="table">
   <thead class="thead-dark">
     <tr>
-      <th scope="col">Açıklama</th>
-      <th scope="col">Başlık</th>
-      <th scope="col">Fiyat</th>
-      <th scope="col">Pazarlık ?</th>
-      <th scope="col"></th>
+      <th>Açıklama</th>
+      <th>Başlık</th>
+      <th>Fiyat</th>
+      <th>Pazarlık?</th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
@@ -17,7 +17,11 @@
         {{product.payload.doc.data().bargain?'Var':'Yok'}}
       </td>
       <td>
-        <button class="primary btn-danger" (click)="delete(product)">Sil</button>
+        <div class="btn-group-sm">
+          <button class="primary btn-default btn-block" (click)="increasePrice(product)">+</button>
+          <button class="primary btn-default btn-block" (click)="decreasePrice(product)">-</button>
+          <button class="primary btn-danger btn-block" (click)="delete(product)">Sil</button>
+        </div>
       </td>
     </tr>
   </tbody>

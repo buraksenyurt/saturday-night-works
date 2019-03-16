@@ -19,8 +19,6 @@ export class ProductsComponent implements OnInit {
   onSubmit() {
     let formData = this.productsService.productForm.value; // aslında servis tarafındaki form kontrolü bileşenle ilişkilendirildiğinden girilen değerler oraya da yansır
     console.log(formData); // F12 ile tarayıcı Console penceresinden bu çıktıya bakabiliriz
-    this.productsService.addProduct(formData).then(res => { 
-      //TODO Buradan alert çıkartabilir miyiz bakalım.
-    });
+    this.productsService.addProduct(formData);
   }
 }
