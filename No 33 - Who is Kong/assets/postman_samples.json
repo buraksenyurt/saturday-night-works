@@ -1,0 +1,203 @@
+{
+	"info": {
+		"name": "SNW",
+		"_postman_id": "4bdfd9d1-8571-4bed-a78c-dcf8210554b6",
+		"description": "Saturday-Night-Works işleri",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "FabrikamApi",
+			"description": "",
+			"item": [
+				{
+					"name": "Get Players",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:65001/api/v1/players",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "65001",
+							"path": [
+								"api",
+								"v1",
+								"players"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Add new player",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{Id:1001,Nickname:\"Mataramsuko\",Level:200}"
+						},
+						"url": {
+							"raw": "http://localhost:65001/api/v1/players",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "65001",
+							"path": [
+								"api",
+								"v1",
+								"players"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Update player",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{Nickname:\"Matarama Su Ko\",Level:215}"
+						},
+						"url": {
+							"raw": "http://localhost:65001/api/v1/players/1001",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "65001",
+							"path": [
+								"api",
+								"v1",
+								"players",
+								"1001"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Player",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:65001/api/v1/players/1001",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "65001",
+							"path": [
+								"api",
+								"v1",
+								"players",
+								"1001"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Get Player by Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:65001/api/v1/players/1001",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "65001",
+							"path": [
+								"api",
+								"v1",
+								"players",
+								"1001"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "GameCenterApi",
+			"description": "",
+			"item": [
+				{
+					"name": "Get all games",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:65002/api/v1/games",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "65002",
+							"path": [
+								"api",
+								"v1",
+								"games"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Get game by Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:65002/api/v1/games/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "65002",
+							"path": [
+								"api",
+								"v1",
+								"games",
+								"2"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
