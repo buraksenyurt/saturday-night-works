@@ -31,7 +31,6 @@ Burası işlenecek konu başlıklarının olduğu havuzdur.
 
 ## Üzerinde Çalışılıyor
 
-- KONG Api Gateway aracını kurcalamak. Nedir bu KONG?
 
 ## Tamamlananlar
 
@@ -69,5 +68,6 @@ Burası işlenecek konu başlıklarının olduğu havuzdur.
 30. Biraz daha Angular deneyimi kazanmak için basit bir oyun _(Çok çok basit :) )_ yazmaya çalışmak
 31. Firebase Cloud Messaging ile bir PWA üzerinde Push Notification uygulamak
 32. Angular, Firebase Firestore ve CRUD işlemleri
+33. KONG Api Gateway aracını kurcalamak. Nedir bu KONG? _(Sadece Proxy olarak ele alındı)_
 
 > MD dosyasını formatlarken [şu adresten](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) yararlanıyorum.
