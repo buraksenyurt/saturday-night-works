@@ -17,10 +17,13 @@
 						"header": [],
 						"body": {},
 						"url": {
-							"raw": "http://localhost:65001/api/v1/players",
+							"raw": "http://172.19.0.5:65001/api/v1/players",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"172",
+								"19",
+								"0",
+								"5"
 							],
 							"port": "65001",
 							"path": [
@@ -48,10 +51,13 @@
 							"raw": "{Id:1001,Nickname:\"Mataramsuko\",Level:200}"
 						},
 						"url": {
-							"raw": "http://localhost:65001/api/v1/players",
+							"raw": "http://172.19.0.5:65001/api/v1/players",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"172",
+								"19",
+								"0",
+								"5"
 							],
 							"port": "65001",
 							"path": [
@@ -79,10 +85,13 @@
 							"raw": "{Nickname:\"Matarama Su Ko\",Level:215}"
 						},
 						"url": {
-							"raw": "http://localhost:65001/api/v1/players/1001",
+							"raw": "http://172.19.0.5:65001/api/v1/players/1001",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"172",
+								"19",
+								"0",
+								"5"
 							],
 							"port": "65001",
 							"path": [
@@ -103,10 +112,13 @@
 						"header": [],
 						"body": {},
 						"url": {
-							"raw": "http://localhost:65001/api/v1/players/1001",
+							"raw": "http://172.19.0.5:65001/api/v1/players/1001",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"172",
+								"19",
+								"0",
+								"5"
 							],
 							"port": "65001",
 							"path": [
@@ -127,10 +139,13 @@
 						"header": [],
 						"body": {},
 						"url": {
-							"raw": "http://localhost:65001/api/v1/players/1001",
+							"raw": "http://172.19.0.5:65001/api/v1/players/1001",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"172",
+								"19",
+								"0",
+								"5"
 							],
 							"port": "65001",
 							"path": [
@@ -157,10 +172,13 @@
 						"header": [],
 						"body": {},
 						"url": {
-							"raw": "http://localhost:65002/api/v1/games",
+							"raw": "http://172.19.0.4:65002/api/v1/games",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"172",
+								"19",
+								"0",
+								"4"
 							],
 							"port": "65002",
 							"path": [
@@ -180,10 +198,13 @@
 						"header": [],
 						"body": {},
 						"url": {
-							"raw": "http://localhost:65002/api/v1/games/2",
+							"raw": "http://172.19.0.4:65002/api/v1/games/2",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"172",
+								"19",
+								"0",
+								"4"
 							],
 							"port": "65002",
 							"path": [
@@ -191,6 +212,149 @@
 								"v1",
 								"games",
 								"2"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "KONG",
+			"description": "",
+			"item": [
+				{
+					"name": "Add Service",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"api-v1-players\",\n    \"url\":\"http://172.19.0.5:65001/api/v1/players\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:9001/services",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9001",
+							"path": [
+								"services"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Add Routes for Players",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"hosts\":[\"api.ct.id\"],\n    \"paths\":[\"/api/v1/players\"]\n}"
+						},
+						"url": {
+							"raw": "http://localhost:9001/services/api-v1-players/routes/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9001",
+							"path": [
+								"services",
+								"api-v1-players",
+								"routes",
+								""
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Add routes for games",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"hosts\":[\"api.ct.id\"],\n    \"paths\":[\"/api/v1/games\"]\n}"
+						},
+						"url": {
+							"raw": "http://localhost:9001/services/api-v1-games/routes/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9001",
+							"path": [
+								"services",
+								"api-v1-games",
+								"routes",
+								""
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Routes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:9001/routes/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9001",
+							"path": [
+								"routes",
+								""
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Services",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"url": {
+							"raw": "http://localhost:9001/services/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9001",
+							"path": [
+								"services",
+								""
 							]
 						},
 						"description": ""
