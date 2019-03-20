@@ -31,6 +31,7 @@ Burası işlenecek konu başlıklarının olduğu havuzdur.
 
 ## Üzerinde Çalışılıyor
 
+- Azure SignalR servisini denemek istiyorum
 
 ## Tamamlananlar
 

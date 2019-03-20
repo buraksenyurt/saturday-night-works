@@ -10,6 +10,7 @@ package-lock.json
 *.user
 *.userosscache
 *.sln.docstates
+*.gpg
 
 # Build results
 [Dd]ebug/
