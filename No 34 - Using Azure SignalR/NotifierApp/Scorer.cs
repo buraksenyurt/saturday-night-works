@@ -29,9 +29,9 @@ namespace Basketcini.Function
             log.LogInformation($"{timelineEvent.Who} için {timelineEvent.WhatHappend} olayı");
 
             /* HTTP Post metodu ile gelen timeline bilgilerini de kullanarak bir Action nesnesi 
-            oluşturuyor ve bunu Table Storage'e atıyoruz
-            Amaç meydana gelen olaylarla ilgili gelen bilgileri bir tabloda kalıcı olarak saklamak
-            Pek tabii bunun yerine farklı repository'ler de tercih edilebilir. Cosmos Db örneğin.
+            oluşturuyor ve bunu Table Storage'e atıyoruz.
+            Amaç meydana gelen olaylarla ilgili gelen bilgileri bir tabloda kalıcı olarak saklamak.
+            Pek tabii bunun yerine farklı repository'ler de tercih edilebilir. Cosmos Db gibi örneğin.
             */
             await actions.AddAsync(new Action
             {
@@ -42,8 +42,8 @@ namespace Basketcini.Function
             });
 
             /* 
-                Kuyruğa da gerçelen olay bilgilerini atıyoruz.
-                Bu istemci tarafından dinlenecek SignalR olayları için gerekli.
+                Kuyruğa da gerçekleşen olay bilgilerini atıyoruz.
+                İstemci tarafını bu kuyruk içeriği ile besleyebiliriz.
             */
             await actionNotifications.AddAsync(timelineEvent);
 
@@ -51,12 +51,11 @@ namespace Basketcini.Function
         }
 
         /*
-        İstemcinin kendisini Azure SignalR servisine bağlayabilmesi
-        için kullanacağı metot. HTTP Post ile tetiklenir.
+        Azure SignalR servisine bağlanmak için kullanılan metodumuz. 
+        HTTP Post ile tetiklenir.
         Fonksiyon bir SignalRConnectionInfo nesnesini döndürür.
-        Bu nesne istemcinin Azure SignalR'a bağlanabilmesi için gerekli Connection 
-        ve access token bilgisini içerir.
-        SignalR Hub-Name olarak competition-timeline ismi kullanılmaktadır.
+        Bu nesne Azure SignalR'a bağlanabilmek için gerekli Connection ve access token bilgisini içerir.
+        SignalR Hub-Name olarak competition-timeline ismi kullanılmıştır.
          */
         [FunctionName("NegotiateWithHub")]
         public static SignalRConnectionInfo GetNotificationSignal(
@@ -68,11 +67,12 @@ namespace Basketcini.Function
         }
 
         /*
-        İstemciye veri göndermek (push) için kullanılan fonksiyondur.
+        Abone olan tarafa veri göndermek (push) için kullanılan fonksiyondur.
         QueueTrigger niteliğindeki isimlendirme ve tipin Scorer fonksiyonundaki ile aynı olduğuna dikkat edelim.
-        Ayrıca HubName istemcinin el sıkıştığı metot içerisinde verilenle aynıdır.
-        İstemciye mesaj taşıyan tipmiz SignalRMessage nesnesidir. Bu nesnenin
-        Arguments özelliğinde timeline içeriğini (yani gerçekleşen maç olaylarını) taşımaktayız.
+        İstemciye mesaj taşıyan nesne bir SignalRMessage örneğinir. 
+        Bu nesnenin Arguments özelliğinde timeline içeriği (yani gerçekleşen maç olayları) taşınır.
+        Peki web istemcisi buradaki olayları nasıl dinleyecek dersiniz? Bunun içinde Target özelliğine atanan içerik önem kazanır. 
+        Örneğimizideki web istemcisinin dinlediği olay adı bu olacaktır.
          */
         [FunctionName("PushTimelineNotification")]
         public static async Task PushNofitication(
@@ -86,7 +86,7 @@ namespace Basketcini.Function
             await message.AddAsync(
                 new SignalRMessage
                 {
-                    Target = "actionHappend",
+                    Target = "actionHappend", //İstemci web uygulaması tarafında bağlantı açılırken kullanılacak olay adıdır.
                     Arguments = new[] { timeline }
                 }
             );

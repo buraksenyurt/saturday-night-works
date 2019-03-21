@@ -71,6 +71,8 @@ dotnet add package Microsoft.Azure.WebJobs.Extensions.Storage
 
 ## Çalışma Zamanı _(NotifierApp Uygulaması)_
 
+Öncelikle senaryodan bahsetmem lazım. WestWorld üzerinde NotifierApp isimli Azure Function uygulaması ayağa kaldırılır. Bu Azure SignalR servisi ile haberleşen uygulamamızdır. Postman ile oynanan basketbol maçındaki anlık olaya ait bilgiler gönderilir. Bu bilgiler SignalR servisi tarafından karşılanır, Table Storage'e ve kuyruğa yazılır. Yine WestWorld üzerinde çalışan bir Web uygulaması _(basit bir HTML sayfası olarak düşünelim. Lakin HTTP Post gönderme kabiliyetlerine sahip olsun)_ local ortamda çalışan Azure Function servisine bağlanır ve 'actionHappend' olaylarını dinlemeye başlar. Postman üzerinden yeni bir basketbol olayı paylaştıkça bu bilgilerin tamamının yer aldığı kuyruk içeriği abone olan istemcilere otomatik olarak basılır. Sonuçta canlı bir maç oynanırken gerçekleşen anlık olayların, bu haber kanalını dinleyen web istemcilerine eş zamanlı olarak basılması sağlanır _(en azından senaryonun bu şekilde çalışmasını bekliyorum)_
+
 Yazılan Azure Function uygulamasını çalıştırmak için terminalden aşağıdaki komutu vermek yeterlidir. Tabii bu komutu Azure Function projesinin olduğu klasörde çalıştırmalıyız ;)
 
 ```
