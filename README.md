@@ -23,9 +23,13 @@ Readme dosyalarından yararlanarak kendi başlangıçlarınızı yapabilir, örn
 Burası işlenecek konu başlıklarının olduğu havuzdur.
 
 - .Net Core tarafında bir BDD test framework'ünü deneyimlemek
-- Local ortamdaki kodları Azure Cloud'a almak _(git,push,commit vs)_
-- IoC/DI Container'ları yeniden hatırlamak
-- Azure ve SignalR ile eş zamanlı resim yapmak
+- Vue'yu başlangıç seviyesinde yeniden ele almak
+- Cloud Firestore CRUD operasyonlarını bir Blazor projesinde icra etmek
+- Django ile basit bir blog hazırlamak
+- Postgresql ile çalışan, Flask tabanlı bir Python uygulaması geliştirmek
+- DI tekrarı. Neden Dependency Injection mekanizmalarına ihtiyaç duyuyoruz?
+- MongoDb'den GraphQL çıktıları sağlamak
+- Planlı ve uzun süreli arka plan işleri için .Net Core tarafında Hangfire kullanımı
 
 > Planlanan yazılarda konu başlıkları değişiklik gösterebilir ve örnekler kronolojik sırada işlenmemektedir.
 
