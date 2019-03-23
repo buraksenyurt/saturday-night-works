@@ -31,7 +31,6 @@ Burası işlenecek konu başlıklarının olduğu havuzdur.
 
 ## Üzerinde Çalışılıyor
 
-- Azure SignalR servisini denemek istiyorum
 
 ## Tamamlananlar
 
@@ -70,5 +69,6 @@ Burası işlenecek konu başlıklarının olduğu havuzdur.
 31. Firebase Cloud Messaging ile bir PWA üzerinde Push Notification uygulamak
 32. Angular, Firebase Firestore ve CRUD işlemleri
 33. KONG Api Gateway aracını kurcalamak. Nedir bu KONG? _(Sadece Proxy olarak ele alındı)_
+34. Azure SignalR servisini bir Azure Function ile kullanarak abonelere bildirimde bulunmak
 
 > MD dosyasını formatlarken [şu adresten](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) yararlanıyorum.
