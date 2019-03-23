@@ -28,11 +28,39 @@ dotnet new --help
 
 Görüldüğü gibi 'new' şablonlarına Blazor eklentileri geldi.
 
-## Server Side Blazor Uygulamasının İnşası
-
->throw new NotImplementedException();
-
 ## Cloud Firestore Tarafının Hazırlanması
+
+Öncelikle [Firebase Console'a](https://console.firebase.google.com/) gidilir ve yeni bir proje oluşturulur. Ben aşağıdaki özelliklere sahip enbiey _(NBA)_ isimli bir proje oluşturdum.
+
+![assets/credit_2.png](assets/credit_2.png)
+
+Ardından database sekmesinden 'Create Database' seçeneğini kullanarak ilerledim. Security rules penceresinde 'Start in locked mode' seçeneğini işaretli bıraktım.
+
+![assets/credit_3.png](assets/credit_3.png)
+
+Varsayılan olarak 'Cloud Firestore' tipinden bir veri tabanı oluşturulur _(Realtime Database tipinide kullanabilirdik)_
+
+Sonrasında bir koleksiyon _(collection)_ ve örnek bir doküman _(document)_ ile ilk veri girişimi yaptım.
+
+![assets/credit_4.png](assets/credit_4.png)
+
+![assets/credit_5.png](assets/credit_5.png)
+
+![assets/credit_6.png](assets/credit_6.png)
+
+Yazılacak Blazor uygulamasının _(başka uygulamalar içinde benzer durum söz konusu aslında)_ Firestore veri tabanını kullanabilmesi için Credential ayarlamalarının da yapılması gerekiyor. Yeni açılan projenin Service Account'u için bir key üretmemiz lazım. Öncelikle [Google IAM adresine]( https://console.cloud.google.com/iam-admin/) gidip projeyi seçtim ve ardından istediğim service account'u işaretleyip üç nokta düğmesini kullanarak Create Key dedim.
+
+![assets/credit_7.png](assets/credit_7.png)
+
+Gelen penceredeki varsayılan JSON seçimini olduğu gibi bıraktım.
+
+![assets/credit_8.png](assets/credit_8.png)
+
+![assets/credit_9.png](assets/credit_9.png)
+
+İndirilen json uzantılı dosya içeriği Blazor uygulaması için gerekli olacak.
+
+## Server Side Blazor Uygulamasının İnşası
 
 >throw new NotImplementedException();
 
