@@ -24,7 +24,6 @@ Burası işlenecek konu başlıklarının olduğu havuzdur.
 
 - .Net Core tarafında bir BDD test framework'ünü deneyimlemek
 - Vue'yu başlangıç seviyesinde yeniden ele almak
-- Cloud Firestore CRUD operasyonlarını bir Blazor projesinde icra etmek
 - Django ile basit bir blog hazırlamak
 - Postgresql ile çalışan, Flask tabanlı bir Python uygulaması geliştirmek
 - DI tekrarı. Neden Dependency Injection mekanizmalarına ihtiyaç duyuyoruz?
@@ -35,6 +34,7 @@ Burası işlenecek konu başlıklarının olduğu havuzdur.
 
 ## Üzerinde Çalışılıyor
 
+Cloud Firestore CRUD operasyonlarını Server Side çalışan bir Blazor uygulamasında icra etmek
 
 ## Tamamlananlar
 
