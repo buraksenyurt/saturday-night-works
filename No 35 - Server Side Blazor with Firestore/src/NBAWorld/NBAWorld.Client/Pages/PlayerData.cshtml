@@ -1,0 +1,43 @@
+<!--
+    Razor sayfamızın adı playerspage. Navigasyonda bu ismi kullanıyoruz.
+    Kullandığı model PlayerDataModel isimli BlazorComponent türevli bileşen.
+    playerList, component sınıfı içerisindeki bir özellik.
+-->
+
+@page "/playerspage"
+@inherits PlayerDataModel
+
+<h1>Efsane Oyuncularımın Listesi</h1>
+
+@if (playerList == null)
+{
+    <p><em>Yükleniyor...</em></p>
+}
+else
+{
+<table class='table'>
+        <thead>
+            <tr>
+                <th>Adı</th>
+                <th>Boyu</th>
+                <th>Mevkisi</th>
+                <th>Hakkında</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!--
+                Eğer playerList hazırsa tüm içeriğini dolaşıyoruz.
+                Ve özelliklerini TD hücrelerine yazdırıyoruz
+                -->
+            @foreach (var p in playerList)
+            {
+                <tr>
+                    <td>@p.Fullname</td>
+                    <td>@p.Length</td>
+                    <td>@p.Position</td>
+                    <td>@p.SomeInfo</td>                    
+                </tr>
+            }
+        </tbody>
+    </table>
+}

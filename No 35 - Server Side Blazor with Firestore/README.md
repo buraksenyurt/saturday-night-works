@@ -64,16 +64,62 @@ Gelen penceredeki varsayılan JSON seçimini olduğu gibi bıraktım.
 
 ## Server Side Blazor Uygulamasının İnşası
 
->throw new NotImplementedException();
+Terminalden aşağıdaki komutu vererek Hosted in ASP.NET server tipindeki blazor çözümünü inşa ettim.
 
-## Kodda Yapılan Değişiklikler
+```
+dotnet new blazorhosted -o NBAWorld
+```
 
->throw new NotImplementedException();
+Üç adet proje oluşturulacaktır. Shared kütüphanesi, Client ve Server projeleri tarafından ortaklaşa kullanılır. Client projesi Server tarafına da referans edilmiştir _(csproj dosyalarını kontrol ediniz)_ Client projesi tarayıcıda gösterilecek bileşenleri içerir. Firestore'a erişeceğimiz API Controller tarafı Server projesinde bulunur. Model sınıfları gibi paylaşılacak tiplerse Shared projesinde yer alacaklardır.
+
+Shared ve Server projeleri Google Cloud Firestore ile çalışacaklar. Bu nedenle her iki projeye de 'Google.Cloud.Firestore' paketini eklememiz gerekiyor.
+
+```
+dotnet add package Google.Cloud.Firestore --version 1.0.0-beta19
+```
+
+>Örneği çalıştığım tarihte bu paket sürümü mevcuttu. Siz denerken güncel paket sürümüne bir bakın.
+
+## Solution Kodlarında Yapılan Değişiklikler
+
+### NBAWorld.Shared Projesi
+
+- Models isimli bir klasör açıldı ve içerisine Player isimli Entity sınıf eklendi.
+
+### NBAWorld.Server Projesi
+
+- Data isimli bir klasör açıldı ve players koleksiyonu için Data Access Layer görevini üstlenecek PlayerDAL sınıfı eklendi.
+- Controller klasörüne API Controller görevini üstlenen PlayersController sınıfı eklendi.
+
+### NBAWorld.Client Projesi
+
+- Pages klasöründeki Counter ve Fetch Data Razor sayfaları silindi.
+- PlayerData.cshtml isimli Razor Page ile PlayerData.cshtml.cs kod dosyaları eklendi.
+- NavMenu.cshtml dosyasına yeni razor sayfası için link eklendi ve diğer parçalar kaldırıldı.
+- index.cshtml düzenlendi
+
+>throw new ToBeContinuedException("Add, Delete, Update operasyonları eklenmeli.");
 
 ## Çalışma Zamanı
 
->throw new NotImplementedException();
+Uygulamayı WestWorld'de yazmaya çalıştığım için Visual Studio Code ve bir Solution ile karşı karşıyayım. Visual Studio Code'da NBAWorld klasörünü ayrıca açıp F5 tuşuna bastım. Bana çözümü hangi derleyici ile debug etmek istediğim soruldu. '.Net Core' seçeneğini işaretlediğimde ilgili Debug ayarları JSON dosyasına eklendi ve Build işlemi başladı. Ardından uygulama ayağa kalkıp _(ki oraya gelene kadar aldığım hataları düzelttim)_ http://localhost:5888/ adresinden yayına başladı.
+
+![assets/credit_11.png](assets/credit_11.png)
+
+![assets/credit_12.png](assets/credit_12.png)
+
+>throw new ToBeContinuedException();
 
 ## Neler Öğrendim
 
->throw new NotImplementedException();
+- Blazor proje şablonlarını Ubuntu gibi bir platformda .Net Core için nasıl kullanabileceğimi
+- Google Cloud üzerinde Firestore veri tabanı oluşturmayı
+- Credential dosyasının ne işe yaradığını
+- Ön yüz sayfalarının bir API Controller ile nasıl haberleşebileceğini
+- Basit Blazor bileşeni oluşturmayı
+- Blazor bileşeni ile Razor sayfasının nasıl etkileştiğini
+- FirestoreData ve FirestoreProperty niteliklerinin kullanımını
+- Ortak kütüphanede model oluşturmayı
+- Server Side tarafında Firestore ile haberleşen bir Data Access nesnesi yazmayı
+
+>throw new ToBeContinuedException();
