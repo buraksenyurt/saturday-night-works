@@ -94,11 +94,12 @@ dotnet add package Google.Cloud.Firestore --version 1.0.0-beta19
 ### NBAWorld.Client Projesi
 
 - Pages klasöründeki Counter ve Fetch Data Razor sayfaları silindi.
-- PlayerData.cshtml isimli Razor Page ile PlayerData.cshtml.cs kod dosyaları eklendi.
-- NavMenu.cshtml dosyasına yeni razor sayfası için link eklendi ve diğer parçalar kaldırıldı.
+- Pages klasörüne PlayerData.cshtml isimli Razor Page ile PlayerData.cshtml.cs kod dosyaları eklendi. _(Tüm oyuncu listesini gösteren bileşen)_
 - index.cshtml düzenlendi
+- Pages klasörüne NewPlayer.cshtml sayfası ve NewPlayer.cshtml.cs bileşeni eklendi. _(Yeni oyuncu ekleme işini üstlenen bileşen)_
+- NavMenu.cshtml dosyasına yeni razor sayfaları için linkler eklendi ve diğer parçalar kaldırıldı.
 
->throw new ToBeContinuedException("Add, Delete, Update operasyonları eklenmeli.");
+>throw new ToBeContinuedException("Delete, Update operasyonları eklenmeli.");
 
 ## Çalışma Zamanı
 
@@ -107,6 +108,10 @@ Uygulamayı WestWorld'de yazmaya çalıştığım için Visual Studio Code ve bi
 ![assets/credit_11.png](assets/credit_11.png)
 
 ![assets/credit_12.png](assets/credit_12.png)
+
+Yeni bir efsane eklemek için NewPlayer sayfasını kullanabiliriz.
+
+![assets/credit_13.png](assets/credit_13.png)
 
 >throw new ToBeContinuedException();
 

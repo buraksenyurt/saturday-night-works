@@ -22,5 +22,16 @@ namespace NBAWorld.Server.Controllers
         {
             return playerDAL.GetPlayers();
         }
+
+        /*
+        HTTP Post çağrısı ile yeni bir oyuncuyu Firestore'a eklemek için kullandığımız servis metodu.
+        Mesaj gövdesinden JSON formatında gelen oyuncu içeriğini kullanır.
+        DAL'daki ilgili metodu çağırır. Firestore'a asıl ekleme işini PlayerDAL içindeki metod gerçekleştirir.
+         */
+        [HttpPost]
+        public void Post([FromBody]Player player)
+        {
+            playerDAL.NewPlayer(player);
+        }
     }
 }

@@ -1,0 +1,35 @@
+<!--Razor sayfamızın adı newplayer. Navigasyonda bu ismi kullanıyoruz.
+    Kullandığı model NewPlayerModel isimli BlazorComponent türevli bileşen.
+    Kontrolleri, bileşendeki player isimli değişkene player.Özellike Adı 
+    notasyonu ile bağlıyoruz.Button kontrolüne basıldığında onclick niteliği ile belirttiğimiz 
+    kod parçası çalışıyor ve bileşendeki AddPlayer metodu tetikleniyor.
+-->
+
+@page "/newplayer"
+@inherits NewPlayerModel
+
+<h1>Yeni bir efsane eklemek istersen doldur, gönder...</h1>
+
+<table class='table'>
+    <tbody>
+        <tr>
+            <td><p>Adı</p></td>
+            <td><input class="form-control" bind="@player.Fullname" /></td>
+        </tr>
+        <tr>
+            <td><p>Boyu</p></td>
+            <td><input class="form-control" bind="@player.Length" /></td>
+        </tr>
+        <tr>
+            <td><p>Mevkisi</p></td>
+            <td><input class="form-control" bind="@player.Position" /></td>
+        </tr>
+        <tr>
+            <td><p>Hakkında</p></td>
+            <td><textarea class="form-control" rows="4" cols="30" bind="@player.SomeInfo" /></td>
+        </tr>
+        <tr>
+            <td colspan="2"><button class="btn btn-primary" onclick="@(async () => await AddPlayer())">Ekle</button></td>
+        </tr>
+    </tbody>
+</table>

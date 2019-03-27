@@ -13,6 +13,7 @@ namespace NBAWorld.Shared.Models
 {
     [FirestoreData]
     public class Player{
+        public string DocumentId{get;set;}
         [FirestoreProperty]
         public string Fullname { get; set; }
         [FirestoreProperty]

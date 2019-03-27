@@ -26,7 +26,7 @@ namespace NBAWorld.Server.Data
         {
             // Client iletişimi için gerekli Credential bilgisini taşıyan dosya. Firebase'den indirmiştik hatırlayın.
             // Siz tabii dosyayı hangi adrese koyduysanız orayı ele almalısınız
-            string credentialFile = "/home/burakselyum/enbiey.json"; 
+            string credentialFile = "/home/burakselyum/enbiey.json";
             // Environment parametrelerine GOOGLE_APPLICATION_CREDENTIALS bilgisini ekliyoruz
             Environment.SetEnvironmentVariable("GOOGLE_APPLICATION_CREDENTIALS", credentialFile);
             // FirebaseDb nesnesini projeId ile oluşturuyoruz
@@ -56,6 +56,7 @@ namespace NBAWorld.Server.Data
                     string json = JsonConvert.SerializeObject(playerDoc);
                     // gelen JSON içeriğini player örneğine çevir
                     Player player = JsonConvert.DeserializeObject<Player>(json);
+                    player.DocumentId = doc.Id; //Delete ve Update işlemlerinde Firestore tarafındaki Document ID değerine ihtiyacımız olacak
                     // List koleksiyonuna ekle
                     players.Add(player);
                 }
@@ -63,6 +64,17 @@ namespace NBAWorld.Server.Data
 
             // Listeyi döndür
             return players;
+        }
+
+        /*
+        Firestore'a doküman olarak yeni bir oyuncu ekleyen fonksiyonumuz
+         */
+        public async void NewPlayer(Player player)
+        {
+            // players koleksiyonuna ait referansı al
+            CollectionReference collRef = db.Collection("players");
+            // awaitable AddAsync metodu ile ekle
+            await collRef.AddAsync(player);
         }
     }
 }
