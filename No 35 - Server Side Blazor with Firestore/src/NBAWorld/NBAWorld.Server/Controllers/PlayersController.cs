@@ -33,5 +33,16 @@ namespace NBAWorld.Server.Controllers
         {
             playerDAL.NewPlayer(player);
         }
+
+        /*
+        Silme işlemini üstlenen metodumuz.
+        Querystring ile gelen id değerini kullanır.
+        Data Access Layer nesnesindeki DeletePlayer metodunu çağırır.
+         */
+        [HttpDelete("{documentId}")]
+        public void Delete(string documentId)
+        {
+            playerDAL.DeletePlayer(documentId);
+        }
     }
 }

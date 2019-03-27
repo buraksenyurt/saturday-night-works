@@ -103,9 +103,11 @@ dotnet add package Google.Cloud.Firestore --version 1.0.0-beta19
 
 ## Çalışma Zamanı
 
-Uygulamayı WestWorld'de yazmaya çalıştığım için Visual Studio Code ve bir Solution ile karşı karşıyayım. Visual Studio Code'da NBAWorld klasörünü ayrıca açıp F5 tuşuna bastım. Bana çözümü hangi derleyici ile debug etmek istediğim soruldu. '.Net Core' seçeneğini işaretlediğimde ilgili Debug ayarları JSON dosyasına eklendi ve Build işlemi başladı. Ardından uygulama ayağa kalkıp _(ki oraya gelene kadar aldığım hataları düzelttim)_ http://localhost:5888/ adresinden yayına başladı.
+Uygulamayı WestWorld'de yazmaya çalıştığım için Visual Studio Code ve bir Solution ile karşı karşıyayım. Visual Studio Code'da NBAWorld klasörünü ayrıca açıp F5 tuşuna bastım. Bana çözümü hangi derleyici ile debug etmek istediğim soruldu. '.Net Core' seçeneğini işaretlediğimde ilgili Debug ayarları JSON dosyasına eklendi ve Build işlemi başladı. Ardından uygulama ayağa kalkıp _(ki oraya gelene kadar aldığım hataları düzelttim)_ http://localhost:5888/ adresinden yayına başladı. 
 
 ![assets/credit_11.png](assets/credit_11.png)
+
+Oyuncular linkine basıldığında oluşan örnek ekran görüntülerinden birisi şöyle.
 
 ![assets/credit_12.png](assets/credit_12.png)
 
@@ -126,5 +128,6 @@ Yeni bir efsane eklemek için NewPlayer sayfasını kullanabiliriz.
 - FirestoreData ve FirestoreProperty niteliklerinin kullanımını
 - Ortak kütüphanede model oluşturmayı
 - Server Side tarafında Firestore ile haberleşen bir Data Access nesnesi yazmayı
+- Firestore tarafındaki asıl CRUD operasyonlarını yapan DAL nesnesine önyüzden, API Controller yardımıyla nasıl gelinebileceğini
 
 >throw new ToBeContinuedException();

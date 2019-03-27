@@ -22,12 +22,17 @@ else
                 <th>Boyu</th>
                 <th>Mevkisi</th>
                 <th>Hakkında</th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
             <!--
                 Eğer playerList hazırsa tüm içeriğini dolaşıyoruz.
-                Ve özelliklerini TD hücrelerine yazdırıyoruz
+                Ve özelliklerini TD hücrelerine yazdırıyoruz.
+                Sağ tarafa yer alan ve silme işlemini üstlenen bir button kontrolü de var.
+                onclick olay metodunda bileşendeki DeletePlayer fonksiyonu çağırılıyor ve
+                döngü ile kontroller bağlanırken güncel p değişkeninin sahip olduğu
+                DocumentId bilgisi yollanıyor.
                 -->
             @foreach (var p in playerList)
             {
@@ -35,7 +40,11 @@ else
                     <td>@p.Fullname</td>
                     <td>@p.Length</td>
                     <td>@p.Position</td>
-                    <td>@p.SomeInfo</td>                    
+                    <td>@p.SomeInfo</td>  
+                    <td><button class="btn btn-outline-danger" onclick="@(async () => await DeletePlayer(@p.DocumentId))">
+                            <i class="fa fa-trash-o"></i>
+                            Sil</button>
+                    </td>                  
                 </tr>
             }
         </tbody>

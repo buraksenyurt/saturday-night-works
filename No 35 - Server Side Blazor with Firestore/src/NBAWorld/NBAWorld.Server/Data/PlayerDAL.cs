@@ -76,5 +76,17 @@ namespace NBAWorld.Server.Data
             // awaitable AddAsync metodu ile ekle
             await collRef.AddAsync(player);
         }
+
+        /*
+        Firestore'dan doküman silme işlemini üstlenen metodumuz
+         */
+        public async void DeletePlayer(string documentId)
+        {
+            // documentId bilgisini kullanarak players koleksiyonda ilgili dokümanı bul
+            DocumentReference document = db.Collection("players").Document(documentId);
+            // bulunan dokümanı sil
+            // TODO: Buraya bir null check konulmalı.
+            await document.DeleteAsync();
+        }
     }
 }

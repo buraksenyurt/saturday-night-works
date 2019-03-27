@@ -13,7 +13,7 @@ namespace NBAWorld.Client.Pages
     Razor sayfamız tarafından kullanılan Blazor bileşeni.
     Doğrudan PlayersController APIsi ile konuşur.
      */
-    public class PlayerDataModel 
+    public class PlayerDataModel
     : BlazorComponent
     {
         /*
@@ -32,6 +32,18 @@ namespace NBAWorld.Client.Pages
         {
             // api/Players tahmin edileceği üzere PlayersController'a yapılan bir çağrıdır
             playerList = await Http.GetJsonAsync<List<Player>>("api/Players");
+        }
+
+        /*
+            bir dokümanı (yani oyuncuyu) silmek için kullandığımız fonksiyon
+         */
+        protected async Task DeletePlayer(string documentId)
+        {
+            // Doğrudan HTTP delete tipinden bir çağrı yapıyoruz
+            // QueryString parametresi olarak arayüzden gelen doküman Id bilgisini kullanıyoruz
+            await Http.DeleteAsync($"/api/Players/{documentId}");
+            // Silme işlemi sonrası listeyi tekrar güncellemekte yarar var.
+            await GetAllPlayers();
         }
     }
 }
