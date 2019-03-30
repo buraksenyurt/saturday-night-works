@@ -44,5 +44,26 @@ namespace NBAWorld.Server.Controllers
         {
             playerDAL.DeletePlayer(documentId);
         }
+
+        /*
+        Güncelleme işlemini üstlenen API metodumuz.
+        HTTP Put ile çalışır.
+        Request Body ile gelen içerik kullanılır.
+         */
+        [HttpPut]
+        public void Upate([FromBody]Player player)
+        {
+            playerDAL.UpdatePlayer(player);
+        }
+
+        /*
+        Tek bir dokümanı almak için kullanılan metodumuz.
+        Bunu var olan oyuncu bilgilerini güncelleme akışında kullanıyoruz.
+         */
+        [HttpGet("{documentId}")]
+        public Task<Player> Get(string documentId)
+        {
+            return playerDAL.GetPlayerById(documentId);
+        }
     }
 }

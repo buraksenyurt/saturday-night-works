@@ -85,8 +85,48 @@ namespace NBAWorld.Server.Data
             // documentId bilgisini kullanarak players koleksiyonda ilgili dokümanı bul
             DocumentReference document = db.Collection("players").Document(documentId);
             // bulunan dokümanı sil
-            // TODO: Buraya bir null check konulmalı.
-            await document.DeleteAsync();
+            if (document != null)
+            {
+                await document.DeleteAsync();
+            }
+        }
+
+        /*
+        Firestore'dan bir dokümanı güncellemek için kullanılan metodumuz
+         */
+        public async void UpdatePlayer(Player player)
+        {
+            // Önce parametre olarak gelen oyuncunun referansını bulmaya çalış
+            DocumentReference document = db.Collection("players").Document(player.DocumentId);
+            if (document != null) //eğer bulduysan
+            {
+                // Overwite seçeneği ile üstüne yaz
+                await document.SetAsync(player, SetOptions.Overwrite);
+            }
+        }
+
+        /*
+        Tek bir oyuncu bilgisini dokümand ıd değerine göre çeken fonksiyonumuz
+         */
+        public async Task<Player> GetPlayerById(string documentId)
+        {
+            // Doküman referansını bulup
+            DocumentReference document = db.Collection("players").Document(documentId);
+            // bir görüntüsünü çekiyoruz
+            DocumentSnapshot snapshot = await document.GetSnapshotAsync();
+            Player player = new Player();
+
+            if (snapshot.Exists) // Eğer snapshot içeriği mevcutsa
+            {
+                player.DocumentId = snapshot.Id;
+                // oyuncu bilgilerini dokümandan GetValue ile alıyoruz
+                player.Fullname=snapshot.GetValue<string>("Fullname");
+                player.Position=snapshot.GetValue<string>("Position");
+                player.SomeInfo=snapshot.GetValue<string>("SomeInfo");
+                player.Length=snapshot.GetValue<string>("Length");
+            }
+
+            return player;
         }
     }
 }

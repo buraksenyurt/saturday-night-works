@@ -93,11 +93,9 @@ dotnet add package Google.Cloud.Firestore --version 1.0.0-beta19
 
 - Proje oluşturulduğunda varsayılan olarak gelen bazı dosyalar _(Counter, Fetch Data vb)_ silindi.
 - Pages klasörüne PlayerData.cshtml isimli Razor Page ile PlayerData.cshtml.cs kod dosyaları eklendi. _(Tüm oyuncu listesini gösteren bileşen)_
-- index.cshtml düzenlendi
+- index.cshtml düzenlendi _(Dikkat edilmesi gereken hususlardan birisi de bootstrap modal popup için eklenen js kütüphaneleri)_
 - Pages klasörüne NewPlayer.cshtml sayfası ve NewPlayer.cshtml.cs bileşeni eklendi. _(Yeni oyuncu ekleme işini üstlenen bileşen)_
 - NavMenu.cshtml dosyasına yeni razor sayfaları için linkler eklendi ve diğer parçalar kaldırıldı.
-
->throw new ToBeContinuedException("Update operasyonları eklenmeli.");
 
 ## Çalışma Zamanı
 
@@ -113,7 +111,9 @@ Yeni bir efsane eklemek için NewPlayer sayfasını kullanabiliriz.
 
 ![assets/credit_13.png](assets/credit_13.png)
 
->throw new ToBeContinuedException();
+Güncelleme fonksiyonelliğini ekledikten sonraki durum da şu şekilde.
+
+![assets/credit_14.png](assets/credit_14.png)
 
 ## Neler Öğrendim
 
@@ -126,5 +126,4 @@ Yeni bir efsane eklemek için NewPlayer sayfasını kullanabiliriz.
 - Ortak kütüphanede model sınıfı _(Entity tipi olarak da düşünebiliriz)_ oluşturmayı
 - Server Side tarafında Firestore ile haberleşen bir Data Access nesnesi yazmayı
 - Firestore tarafındaki asıl CRUD operasyonlarını yapan DAL nesnesine önyüzden, API Controller yardımıyla nasıl gelinebileceğini
-
->throw new ToBeContinuedException();
+- Bir Bootstrap Modal Popup bileşeninin nasıl tasarlanabileceğini _(jquery.min.js ve bootstrap.min.js ler olmadan işletemediğimi)_

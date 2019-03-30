@@ -23,6 +23,7 @@ namespace NBAWorld.Client.Pages
         [Inject]
         protected HttpClient Http { get; set; }
         protected List<Player> playerList = new List<Player>();
+        protected Player currentPlayer = new Player();
 
         protected override async Task OnInitAsync()
         {
@@ -43,6 +44,31 @@ namespace NBAWorld.Client.Pages
             // QueryString parametresi olarak arayüzden gelen doküman Id bilgisini kullanıyoruz
             await Http.DeleteAsync($"/api/Players/{documentId}");
             // Silme işlemi sonrası listeyi tekrar güncellemekte yarar var.
+            await GetAllPlayers();
+        }
+
+        /*
+        Güncelleme işleminden önce documentId ile oyuncu bilgilerini
+        bulmaya çalıştığımız metod.
+         */
+        protected async Task GetPlayerForEdit(string documentId)
+        {
+            // Web API tarafına bir HTTP Get çağrısı yapıyoruz.
+            // adresin son kısmında doküman id bilgisi bulunuyor.
+            currentPlayer = await Http.GetJsonAsync<Player>("/api/Players/" + documentId);
+        }
+
+        /*
+        Oyuncu bilgilerini güncellemek için kullanılan metodumuz.
+        Parametre almadığına bakmayın. Razor sayfasındaki bileşenlere bağlanan
+        currentPlayer içeriği kullanılıyor. Bu değişken güncelleme için
+        açılan Modal Popup tarafından değiştirilebilmekte.
+         */
+        protected async Task UpdatePlayer()
+        {
+            // Web API tarafına HTTP Put metodu ile bir çağrı yapıyoruz
+            // Request Body'de currentPlayer içeriği yollanıyor.
+            await Http.SendJsonAsync(HttpMethod.Put, "api/players/", currentPlayer);
             await GetAllPlayers();
         }
     }

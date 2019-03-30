@@ -23,16 +23,21 @@ else
                 <th>Mevkisi</th>
                 <th>Hakkında</th>
                 <th></th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
             <!--
                 Eğer playerList hazırsa tüm içeriğini dolaşıyoruz.
                 Ve özelliklerini TD hücrelerine yazdırıyoruz.
-                Sağ tarafa yer alan ve silme işlemini üstlenen bir button kontrolü de var.
+                Sağ tarafa yer alan ve silme işlemini üstlenen bir button kontrolü var.
                 onclick olay metodunda bileşendeki DeletePlayer fonksiyonu çağırılıyor ve
                 döngü ile kontroller bağlanırken güncel p değişkeninin sahip olduğu
                 DocumentId bilgisi yollanıyor.
+                Güncelleme operasyonları için modal popup kullanılmakta.
+                Bu popup'a ulaşırken GetPlayerForEdit metodu kullanılarak güncel değerleri de çekiliyor.
+                Modal Popup, yine bu sayfa içerisinde tanımlı bir div elementi. data-toggle ve data-target niteliklerine 
+                atanan değerlerle, button kontrolü arasında ilişki kuruluyor.
                 -->
             @foreach (var p in playerList)
             {
@@ -41,12 +46,69 @@ else
                     <td>@p.Length</td>
                     <td>@p.Position</td>
                     <td>@p.SomeInfo</td>  
-                    <td><button class="btn btn-outline-danger" onclick="@(async () => await DeletePlayer(@p.DocumentId))">
-                            <i class="fa fa-trash-o"></i>
-                            Sil</button>
-                    </td>                  
+                    <td><button class="btn btn-outline-danger" 
+                        onclick="@(async () => await DeletePlayer(@p.DocumentId))">
+                        Sil</button>
+                    </td>   
+                    <td>
+                        <button class="btn btn-outline-primary" data-toggle="modal" data-target="#EditPlayerModal" 
+                        onclick="@(async()=>await GetPlayerForEdit(@p.DocumentId))">
+                        Güncelle</button>
+                    </td>               
                 </tr>
             }
         </tbody>
     </table>
 }
+
+<!--
+Modal popup bileşenimiz.
+ID bilgisini button kontrolü kullanmakta.
+Bir bootstrap modal penceresi genelde üç ana kısımdan oluşuyor.
+Başlık ve X işareti gibi bilgileri içeren modal-header,
+Asıl içeriği bulunduran modal-body
+ve kaydet, vazgeç gibi button kontrollerini veya özet bilgileri bulunduran modal-footer.
+Edit işlemi yapılırken documentId bilgisi ile elde edilen oyuncu verisi,
+Razor bileşenindeki currentPlayer değişkeninde yer almakta. Dolayısıyla modal
+kontrollerini bu değişkene bind ediyoruz.
+
+Modal popup kullanabilmek için jquery ve bootstrap javascript kütüphanelerine ihtiyacımız var.
+Bunları index.js içerisinde bildirdik.
+-->
+<div class="modal fade" id="EditPlayerModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Bilgileri güncelleyebilirsin</h3>
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">X</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label class="control-label">Adı</label>
+                        <input class="form-control" bind="@currentPlayer.Fullname"/>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">Boyu</label>
+                        <input class="form-control" bind="@currentPlayer.Length"/>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">Mevkisi</label>
+                        <input class="form-control" bind="@currentPlayer.Position"/>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">Hakkında</label>
+                        <textarea class="form-control" rows="4" cols="30" bind="@currentPlayer.SomeInfo" />
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" 
+                onclick="@(async ()=> await UpdatePlayer())" 
+                data-dismiss="modal">Kaydet</button>
+            </div>
+        </div>
+    </div>
+</div>
