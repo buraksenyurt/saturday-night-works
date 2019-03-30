@@ -34,7 +34,7 @@ Burası işlenecek konu başlıklarının olduğu havuzdur.
 
 ## Üzerinde Çalışılıyor
 
-Cloud Firestore CRUD operasyonlarını Server Side çalışan bir Blazor uygulamasında icra etmek
+
 
 ## Tamamlananlar
 
@@ -74,5 +74,6 @@ Cloud Firestore CRUD operasyonlarını Server Side çalışan bir Blazor uygulam
 32. Angular, Firebase Firestore ve CRUD işlemleri
 33. KONG Api Gateway aracını kurcalamak. Nedir bu KONG? _(Sadece Proxy olarak ele alındı)_
 34. Azure SignalR servisini bir Azure Function ile kullanarak abonelere bildirimde bulunmak
+35. Cloud Firestore CRUD operasyonlarını Server Side çalışan bir Blazor uygulamasında icra etmek
 
 > MD dosyasını formatlarken [şu adresten](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) yararlanıyorum.
