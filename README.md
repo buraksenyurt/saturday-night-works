@@ -25,7 +25,6 @@ Burası işlenecek konu başlıklarının olduğu havuzdur.
 - .Net Core tarafında bir BDD test framework'ünü deneyimlemek
 - Vue'yu başlangıç seviyesinde yeniden ele almak
 - Django ile basit bir blog hazırlamak
-- Postgresql ile çalışan, Flask tabanlı bir Python uygulaması geliştirmek
 - DI tekrarı. Neden Dependency Injection mekanizmalarına ihtiyaç duyuyoruz?
 - MongoDb'den GraphQL çıktıları sağlamak
 - Planlı ve uzun süreli arka plan işleri için .Net Core tarafında Hangfire kullanımı
@@ -34,7 +33,7 @@ Burası işlenecek konu başlıklarının olduğu havuzdur.
 
 ## Üzerinde Çalışılıyor
 
-
+- SQLite ile çalışan, Flask tabanlı bir Python uygulaması geliştirmek
 
 ## Tamamlananlar
 
