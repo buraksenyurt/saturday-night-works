@@ -49,7 +49,7 @@ def home():
 
     todoList = todo.query.all()
     # index.html sayfasındaki todos içeriğini model üzerinde yapılan select all sorgusu ile dolan todolist ile dolduruyoruz
-    # index.html'in templates altında olduğunu söylemediğimize dikkat edelim. 
+    # index.html'in templates altında olduğunu söylemediğimize dikkat edelim.
     # render_template otomatik olarak templates klasörünü taramaktadır.
     return render_template("index.html", todos=todoList)
 
@@ -57,7 +57,7 @@ def home():
 # Bunu da POST çağrısı ile ele alıyoruz (Aslında DELETE talebi daha uygun olurdu. Araştır Burak)
 @app.route("/delete", methods=["POST"])
 def delete():
-    # önce form içeriğinden currentTitle değerini alıyoruz. 
+    # önce form içeriğinden currentTitle değerini alıyoruz.
     # title bilgisini todo tablosunda benzersiz nitelikli belirlediğimizden kullanabiliriz
     title = request.form.get("currentTitle")
     # veri tabanından title bilgisini buluyoruz
@@ -67,6 +67,33 @@ def delete():
     # ve değişikliği commit ediyoruz
     db.session.commit()
     # son olarak tekrar anasayfaya yönlendirme yapıyoruz
+    return redirect("/")
+
+
+# Form üzerinden get rotasına yaptığımız çağrı sonucu çalışan metodumuz
+@app.route("/get", methods=["POST"])
+def get():
+    # form'dan gelen currentTitle içeriğini yakalıyoruz
+    title = request.form.get("currentTitle")
+    # veri tabanından title bilgisini buluyoruz
+    currentTodo = todo.query.filter_by(title=title).first()
+    # güncelleme işini üstlenen edit.html sayfasına yönlendirme yapıyoruz
+    return render_template("edit.html", todo=currentTodo)
+
+# Veri güncellemesini yapan metodumuz
+@app.route("/update", methods=["POST"])
+def update():
+    # önce form'dan eski title bilgisini alalım (hidden field'da saklamıştık)
+    title = request.form.get("currentTitle")
+    # bundan yararlanarak veri tabanındaki todo satırını bulalım
+    oldTodo = todo.query.filter_by(title=title).first()
+    # tüm değerleri yenileri ile değiştirelim
+    oldTodo.title = request.form.get("title")
+    oldTodo.description=request.form.get("description")
+    oldTodo.level=request.form.get("level")
+    # ve bu değişiklikleri commit edip
+    db.session.commit()
+    # ana sayfa dönelim
     return redirect("/")
 
 

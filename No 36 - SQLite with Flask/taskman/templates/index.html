@@ -61,7 +61,16 @@
                         -->
                         <form action="/delete" method="POST">
                             <input type="hidden" value="{{t.title}}" name="currentTitle">
-                            <input type="submit" value="Sil" class="btn btn-danger" />
+                            <input type="submit" value="Sil" class="btn btn-danger btn-block" />
+                        </form>
+                        <!--
+                            Bir HTTP çağrısını da güncelleme operasyonu için kullanıyoruz.
+                            Düğmeye basıldığında HTTP Post çağrımız get isimli metoda ulaşacak.
+                            title bilgisini form gövdesinde yolluyoruz.
+                        -->
+                        <form action="/get" method="POST">
+                            <input type="hidden" value="{{t.title}}" name="currentTitle">
+                            <input type="submit" value="Güncelle" class="btn btn-primary btn-block" />
                         </form>
                 </tr>
                 {%endfor%}
