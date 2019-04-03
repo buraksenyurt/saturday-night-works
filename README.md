@@ -33,7 +33,7 @@ Burası işlenecek konu başlıklarının olduğu havuzdur.
 
 ## Üzerinde Çalışılıyor
 
-- SQLite ile çalışan, Flask tabanlı bir Python uygulaması geliştirmek
+>throw new IamThinkingException("");
 
 ## Tamamlananlar
 
@@ -74,5 +74,6 @@ Burası işlenecek konu başlıklarının olduğu havuzdur.
 33. KONG Api Gateway aracını kurcalamak. Nedir bu KONG? _(Sadece Proxy olarak ele alındı)_
 34. Azure SignalR servisini bir Azure Function ile kullanarak abonelere bildirimde bulunmak
 35. Cloud Firestore CRUD operasyonlarını Server Side çalışan bir Blazor uygulamasında icra etmek
+36. SQLite ile çalışan, Flask tabanlı bir Python uygulaması geliştirmek
 
 > MD dosyasını formatlarken [şu adresten](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) yararlanıyorum.
