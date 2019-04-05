@@ -118,6 +118,56 @@ mutation {
 ```
 ![assets/credit_20.png](assets/credit_20.png)
 
+Hasura, GraphQL API’si arkasında PostgreSQL veri tabanını kullanırken SQLden aşina olduğumuz bir çok sorgulama metodunu da hazır olarak sunar. Örneğin fiyatı 300 birimin üstünde olan ürünleri aşağıdaki sorgu ile çekebiliriz.
+
+```
+{
+  products(where: {listPrice: {_gt: 300}}) {
+    description
+    listPrice
+    category {
+      title
+    }
+  }
+}
+```
+
+![assets/credit_21.png](assets/credit_21.png)
+
+Where metodu sorgu şemasına otomatik olarak eklenmiştir. _gt tahmin edileceği üzere greater than anlamındadır. Yukarıdaki sorguya fiyata göre tersten sıralamada koyabiliriz. Sadece where koşulu arkasından order_by çağrısı yapmamız yeterli olacaktır.
+
+```
+{
+  products(where: {listPrice: {_gt: 300}}, order_by: {listPrice: desc}) {
+    description
+    listPrice
+    category {
+      title
+    }
+  }
+}
+```
+
+![assets/credit_22.png](assets/credit_22.png)
+
+Çok büyük veri setleri düşünüldüğünde önyüzler için sayfalamada önemlidir. Bunun için limit ve offset değerlerini kullanabiliriz. 5nci üründen itibaren 5 ürünün getirilmesi için aşağıdaki sorgu kullanılabilir.
+
+```
+{
+  products(limit: 5, offset: 5) {
+    description
+    listPrice
+    category {
+      title
+    }
+  }
+}
+```
+
+![assets/credit_23.png](assets/credit_23.png)
+
+Hasura Query Engine’in sorgu seçenekleri ile ilgili olarak [buradaki dokümanı](https://docs.hasura.io/1.0/graphql/manual/queries/index.html) takip edebiliriz.
+
 ## İstemci _(vue.js)_ Tarafı
 
 >throw new NotImplementedException();
