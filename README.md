@@ -22,18 +22,15 @@ Readme dosyalarından yararlanarak kendi başlangıçlarınızı yapabilir, örn
 
 Burası işlenecek konu başlıklarının olduğu havuzdur.
 
-- .Net Core tarafında bir BDD test framework'ünü deneyimlemek
-- Vue'yu başlangıç seviyesinde yeniden ele almak
-- Django ile basit bir blog hazırlamak
-- DI tekrarı. Neden Dependency Injection mekanizmalarına ihtiyaç duyuyoruz?
-- MongoDb'den GraphQL çıktıları sağlamak
-- Planlı ve uzun süreli arka plan işleri için .Net Core tarafında Hangfire kullanımı
+- Microsoft .Net Core tarafında bir BDD test framework'ünü deneyimlemek
+- Appollo Server ile bir GraphQL servisi geliştirmek
+- Nedir bu Travis-CI
 
 > Planlanan yazılarda konu başlıkları değişiklik gösterebilir ve örnekler kronolojik sırada işlenmemektedir.
 
 ## Üzerinde Çalışılıyor
 
->throw new IamThinkingException("");
+- Heroku üzerinde bir Hasura GraphQL Engine geliştirmek ve Vue.js tabanlı bir istemciden kullanmak
 
 ## Tamamlananlar
 
