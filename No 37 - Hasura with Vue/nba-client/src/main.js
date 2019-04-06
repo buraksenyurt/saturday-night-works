@@ -1,11 +1,10 @@
 import Vue from 'vue';
 import App from './App.vue';
-//import { createProvider } from './vue-apollo'
 import { ApolloClient } from 'apollo-client';
 import { HttpLink } from 'apollo-link-http';
 import { InMemoryCache } from 'apollo-cache-inmemory';
-
-import VueApollo, { ApolloProvider } from 'vue-apollo';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import VueApollo from 'vue-apollo';
 
 Vue.config.productionTip = false;
 

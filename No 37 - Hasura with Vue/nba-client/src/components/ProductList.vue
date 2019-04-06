@@ -1,5 +1,9 @@
 <template>
   <div>
+    <!--
+      products dizisindeki her bir ürün için product-item öğesi ekliyoruz.
+      Bu öğe bir ProductItem bileşeni esasında
+      -->
     <product-item v-for="product in products" :key="product.productId" :product="product"></product-item>
   </div>
 </template>

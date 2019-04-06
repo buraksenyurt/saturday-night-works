@@ -172,9 +172,11 @@ Hasura Query Engine’in sorgu seçenekleri ile ilgili olarak [buradaki doküman
 
 İstemci tarafını basit bir Vue uygulaması olarak geliştirmeye karar vermiştim. Aşağıdaki terminal komutunu kullanıp varsayılan ayarları ile projeyi oluşturdum. Ayrıca GraphQL tarafı ile konuşabilmek için gerekli npm paketlerini de yükledim. Apollo, GraphQL servisimiz ile kolay bir şekilde iletişim kurmamızı sağlayacak.
 
+>Görsel taraf için bootstrap kullanmayı tercih ettim.
+
 ```
 sudo vue create nba-client
-sudo npm install vue-apollo apollo-client apollo-cache-inmemory apollo-link-http graphql-tag graphql --save
+sudo npm install vue-apollo apollo-client apollo-cache-inmemory apollo-link-http graphql-tag graphql bootstrap --save
 ```
 
 ## Yapılanlar
@@ -186,7 +188,17 @@ sudo npm install vue-apollo apollo-client apollo-cache-inmemory apollo-link-http
 
 ## Çalışma Zamanı
 
->throw new NotImplementedException();
+Uygulamayı çalıştırmak için
+
+```
+npm run serve
+```
+
+terminal komutunu kullanabiliriz. Sonrasında http://localhost:8080 adresine gitmemiz yeterli.
+
+![assets/credit_24.png](assets/credit_24.png)
+
+>throw new ToBeContinuedException("Yeni ürün ekleme sayfası konulmalı");
 
 ## Neler Öğrendim
 

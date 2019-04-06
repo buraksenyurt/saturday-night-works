@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <h2 class="text-left">Basketbol Ürünleri</h2>
     <product-list/>
   </div>
 </template>
