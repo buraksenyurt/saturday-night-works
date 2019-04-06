@@ -186,11 +186,9 @@ sudo npm install vue-apollo apollo-client apollo-cache-inmemory apollo-link-http
 - ürünlerin listesini gösterebilmek için components klasörüne ProductList bileşeni eklendi
 - app.vue içeriği eklenen bileşenleri kullanacak şekilde düzenlendi
 
-## Hasura GraphQL Servisini Güvenli Hale Getirmek (Auth0 ile )
+## TODO
 
-Tasarlanan GraphQL servisi ilk başta public olarak herkese açıktır. Genellikle Auth0 servisini araya sokarak bir JWT Authentication sistemi kullanılmaktadır. Buradaki adımlar biraz uzun ve karmaşık görünse de yapmaya çalışacağım.
-
->throw new WorkInProgress("üzerinde çalışmaya devam ediyorum");
+><span style="color:red">Bu servisi JWT Authentication bünyesine almak lazım. İşte size güzel bir araştırma konusu. Başlangıç noktası olarak [Auto0'ın şu dokümanına bakılabilir](https://auth0.com/docs/quickstart/spa/vuejs).</span>
 
 ## Çalışma Zamanı
 
@@ -214,6 +212,5 @@ terminal komutunu kullanabiliriz. Sonrasında http://localhost:8080 adresine git
 - Vue tarafında GraphQL sorgularının nasıl gönderilebileceği
 - Component içinde Component kullanımlarını
 - Temel component tasarlama adımlarını
-- 
 
 >throw new ToBeContinuedException();
