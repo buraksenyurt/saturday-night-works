@@ -182,9 +182,15 @@ sudo npm install vue-apollo apollo-client apollo-cache-inmemory apollo-link-http
 ## Yapılanlar
 
 - components klasörüne tek ürün için kullanılabilecek Product isimli bileşen eklendi
-- main.js içeriği Harusa'yı ve GraphQL'i kullanabilir hale getirildi
+- main.js içeriği Hasura'yı ve GraphQL'i kullanabilir hale getirildi
 - ürünlerin listesini gösterebilmek için components klasörüne ProductList bileşeni eklendi
 - app.vue içeriği eklenen bileşenleri kullanacak şekilde düzenlendi
+
+## Hasura GraphQL Servisini Güvenli Hale Getirmek (Auth0 ile )
+
+Tasarlanan GraphQL servisi ilk başta public olarak herkese açıktır. Genellikle Auth0 servisini araya sokarak bir JWT Authentication sistemi kullanılmaktadır. Buradaki adımlar biraz uzun ve karmaşık görünse de yapmaya çalışacağım.
+
+>throw new WorkInProgress("üzerinde çalışmaya devam ediyorum");
 
 ## Çalışma Zamanı
 
