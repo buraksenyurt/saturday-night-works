@@ -168,9 +168,21 @@ Where metodu sorgu şemasına otomatik olarak eklenmiştir. _gt tahmin edileceğ
 
 Hasura Query Engine’in sorgu seçenekleri ile ilgili olarak [buradaki dokümanı](https://docs.hasura.io/1.0/graphql/manual/queries/index.html) takip edebiliriz.
 
-## İstemci _(vue.js)_ Tarafı
+## İstemci _(Vue)_ Tarafı
 
->throw new NotImplementedException();
+İstemci tarafını basit bir Vue uygulaması olarak geliştirmeye karar vermiştim. Aşağıdaki terminal komutunu kullanıp varsayılan ayarları ile projeyi oluşturdum. Ayrıca GraphQL tarafı ile konuşabilmek için gerekli npm paketlerini de yükledim. Apollo, GraphQL servisimiz ile kolay bir şekilde iletişim kurmamızı sağlayacak.
+
+```
+sudo vue create nba-client
+sudo npm install vue-apollo apollo-client apollo-cache-inmemory apollo-link-http graphql-tag graphql --save
+```
+
+## Yapılanlar
+
+- components klasörüne tek ürün için kullanılabilecek Product isimli bileşen eklendi
+- main.js içeriği Harusa'yı ve GraphQL'i kullanabilir hale getirildi
+- ürünlerin listesini gösterebilmek için components klasörüne ProductList bileşeni eklendi
+- app.vue içeriği eklenen bileşenleri kullanacak şekilde düzenlendi
 
 ## Çalışma Zamanı
 
@@ -181,5 +193,9 @@ Hasura Query Engine’in sorgu seçenekleri ile ilgili olarak [buradaki doküman
 - Heroku'da Docker Container içerisinde çalışan ve PostgreSQL verileri GraphQL ile sorgulanabilir olarak sunan Hasura isimli bir motor olduğunu
 - Hasura arabirimden ilişkili tabloları nasıl oluşturabileceğimi
 - Bir kaç basit GraphQL sorgusunu
+- Vue tarafında GraphQL sorgularının nasıl gönderilebileceği
+- Component içinde Component kullanımlarını
+- Temel component tasarlama adımlarını
+- 
 
 >throw new ToBeContinuedException();
