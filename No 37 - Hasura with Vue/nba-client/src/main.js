@@ -8,8 +8,8 @@ import VueApollo from 'vue-apollo';
 
 Vue.config.productionTip = false;
 
-// Harusa GraphQL Api adresimiz
-const harusaLink = new HttpLink({ uri: 'https://basketin-cepte.herokuapp.com/v1alpha1/graphql' });
+// Hasura GraphQL Api adresimiz
+const hasuraLink = new HttpLink({ uri: 'https://basketin-cepte.herokuapp.com/v1alpha1/graphql' });
 
 /* 
   Servis iletişimini sağlayan nesne
@@ -18,7 +18,7 @@ const harusaLink = new HttpLink({ uri: 'https://basketin-cepte.herokuapp.com/v1a
   Performans ve network trafiğini azaltmış oluruz bu şekilde.
 */
 const apolloClient = new ApolloClient({
-  link: harusaLink, // Kullanacağı servis adresini veriyoruz
+  link: hasuraLink, // Kullanacağı servis adresini veriyoruz
   connectToDevTools: true, // Chrome'da dev tools üzerinde Apollo tab'ının çıkmasını sağlar. Debug işlerimiz kolaylaşır
   cache: new InMemoryCache() // ApolloClient'ın varsayılan Cache uyarlaması için InMemoryCache kullanılıyor. 
 });
