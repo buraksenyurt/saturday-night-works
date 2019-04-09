@@ -184,6 +184,7 @@ sudo npm install vue-apollo apollo-client apollo-cache-inmemory apollo-link-http
 - components klasörüne tek ürün için kullanılabilecek Product isimli bileşen eklendi
 - main.js içeriği Hasura'yı ve GraphQL'i kullanabilir hale getirildi
 - ürünlerin listesini gösterebilmek için components klasörüne ProductList bileşeni eklendi
+- yeni bir ürün ekleyebilmek için ProductAdd isimli bileşen eklendi
 - app.vue içeriği eklenen bileşenleri kullanacak şekilde düzenlendi
 
 ## TODO
@@ -202,7 +203,15 @@ terminal komutunu kullanabiliriz. Sonrasında http://localhost:8080 adresine git
 
 ![assets/credit_24.png](assets/credit_24.png)
 
->throw new ToBeContinuedException("Yeni ürün ekleme sayfası konulmalı");
+Yeni ürün ekleme bileşeni konulduktan sonrasına ait örnek bir ekran görüntüsü.
+
+![assets/credit_25.png](assets/credit_25.png)
+
+Hatta yeni bir forma eklediğimizde gönderilen Graphql Mutation sorgusundan dönen değeri de görebiliriz.
+
+![assets/credit_26.png](assets/credit_26.png)
+
+>throw new ToBeContinuedException("Yeni ürün ekleme sayfasında kategori seçiminde combobox kullanımı yapılmalı");
 
 ## Neler Öğrendim
 
