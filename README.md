@@ -23,14 +23,13 @@ Readme dosyalarından yararlanarak kendi başlangıçlarınızı yapabilir, örn
 Burası işlenecek konu başlıklarının olduğu havuzdur.
 
 - Microsoft .Net Core tarafında bir BDD test framework'ünü deneyimlemek
-- Appollo Server ile bir GraphQL servisi geliştirmek
 - Nedir bu Travis-CI
 
 > Planlanan yazılarda konu başlıkları değişiklik gösterebilir ve örnekler kronolojik sırada işlenmemektedir.
 
 ## Üzerinde Çalışılıyor
 
-- Heroku üzerinde bir Hasura GraphQL Engine geliştirmek ve Vue.js tabanlı bir istemciden kullanmak
+- Appollo Server ile bir GraphQL servisi geliştirmek
 
 ## Tamamlananlar
 
@@ -72,5 +71,6 @@ Burası işlenecek konu başlıklarının olduğu havuzdur.
 34. Azure SignalR servisini bir Azure Function ile kullanarak abonelere bildirimde bulunmak
 35. Cloud Firestore CRUD operasyonlarını Server Side çalışan bir Blazor uygulamasında icra etmek
 36. SQLite ile çalışan, Flask tabanlı bir Python uygulaması geliştirmek
+37. Heroku üzerinde bir Hasura GraphQL Engine geliştirmek ve Vue.js tabanlı bir istemciden kullanmak
 
 > MD dosyasını formatlarken [şu adresten](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) yararlanıyorum.
