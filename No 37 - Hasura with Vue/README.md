@@ -1,6 +1,6 @@
 # Hasura GraphQL Engine ile geliştirilmiş bir API Servisini Vue.js ile Kullanmak
 
-API'ler için türlendirilmiş _(typed)_ sorgulama dillerinden birisi olarak öne çıkan GraphQL'e bir süredir uğramıyordum. Daha doğrusu GraphQL sorgusu çalıştırılabilecek şekilde API servis hazırlıklarını yapmaya üşeniyordum. Bu nedenle işi kolaylaştıran ve Heroku üzerinden sunulan Hasura GraphQL Engine hizmetine bakmaya karar verdim. Hasura, veriyi PostgreSQL kullanarak saklıyor ve ayrıca API'yi bir Docker Container içerisinden sunuyor. Amacım Hasura tarafında hazırlayacağım iki kobay veri setini, Vue.js tabanlı bir istemcisinden tüketmek. 
+API'ler için türlendirilmiş _(typed)_ sorgulama dillerinden birisi olarak öne çıkan GraphQL'e bir süredir uğramıyordum. Daha doğrusu GraphQL sorgusu çalıştırılabilecek şekilde API servis hazırlıklarını yapmaya üşeniyordum. Bu nedenle işi kolaylaştıran ve Heroku üzerinden sunulan Hasura GraphQL Engine hizmetine bakmaya karar verdim. Hasura, veriyi PostgreSQL kullanarak saklıyor ve ayrıca API'yi bir Docker Container içerisinden sunuyor. Amacım Hasura tarafında hazırlayacağım iki kobay veri setini, Vue.js tabanlı bir istemcisinden tüketmek. Basitçe listeleme yapıp, veri ekleme işini yapabilsem başlangıç aşamasında yeterli olur. İşe Hasura servisini hazırlayarak başlamak lazım.
 
 ## Hasura GraphQL Engine Tarafının Geliştirilmesi
 
@@ -16,7 +16,7 @@ Ben aşağıdaki bilgileri kullanarak bir proje oluşturdum.
 
 ![assets/credit_3.png](assets/credit_3.png)
 
-Deploy başarılı bir şekilde tamamlandıktan sonra 
+Deploy başarılı bir şekilde tamamlandıktan sonra, 
 
 ![assets/credit_4.png](assets/credit_4.png)
 
@@ -24,7 +24,7 @@ _View_ seçeneği ile yönetim paneline geçebiliriz.
 
 ![assets/credit_5.png](assets/credit_5.png) 
 
-Dikkat edileceği üzere GrapQL sorgularını çalıştırabileceğimiz hazır bir arayüz bulunuyor. Ancak öncesinde örnek veri setleri hazırlamalıyız. Bunun için Data sekmesinden yararlanabiliriz.
+Dikkat edileceği üzere GraphQL sorgularını çalıştırabileceğimiz hazır bir arayüz sunuluyor. Ancak öncesinde örnek veri setleri hazırlamalıyız. Bunun için Data sekmesinden yararlanabiliriz.
 
 ![assets/credit_6.png](assets/credit_6.png)
 
@@ -32,17 +32,17 @@ Arabirimin kullanımı oldukça kolay. Ben aşağıdaki özelliklere sahip tablo
 
 ![assets/credit_7.png](assets/credit_7.png)
 
-categories isimli tablomuzda unique tipte, get_random_uuid() fonksiyonu ile eklenen satır için rastgele üretilen categoryId ve text tipinde title isimli alanlar bulunuyor. categoryId, aynı zamanda primary key tipinden bir alan.
+categories isimli tablomuzda unique tipte, get_random_uuid() fonksiyonu ile eklenen satır için rastgele üretilen categoryId ve text tipinde title isimli alanlar bulunuyor. categoryId, aynı zamanda primary key türünden bir alan.
 
 ![assets/credit_8.png](assets/credit_8.png)
 
-products tablosunda da UUID tipinde productId, text tipinde description, number tipinde listPrice ve yine UUID tipinde categoryId isimli alanlar mevcut. categoryId alanını, ürünleri kategoriye bağlamak için _(foreign key relations)_ kullanıyoruz. Ama bu alanı foreign key yapmak için _Modify_ pencersine girmeliyiz.
+products tablosunda da UUID tipinde productId, text tipinde description, number tipinde listPrice ve yine UUID tipinde categoryId isimli alanlar mevcut. categoryId alanını, ürünleri kategoriye bağlamak için _(foreign key relations)_ kullanıyoruz. Ama bu alanı foreign key yapmak için _Modify_ pencersine geçmeliyiz.
 
 ![assets/credit_9.png](assets/credit_9.png)
 
 ![assets/credit_10.png](assets/credit_10.png)
 
-İlişkinin geçerlilik kazanaması içinde, categories tablosunun _Relationships_ penceresine gidip önerilen bağlantıyı eklemek iyi olabilir.
+İlişkinin geçerlilik kazanması içinse, categories tablosunun _Relationships_ penceresine gidip önerilen bağlantıyı eklemek gerekir.
 
 ![assets/credit_14.png](assets/credit_14.png)
 
@@ -50,9 +50,9 @@ products tablosunda da UUID tipinde productId, text tipinde description, number 
 
 ![assets/credit_16.png](assets/credit_16.png)
 
->Bu durumda categories üzerinden products'a gidebiliyor olacağız. Ters ilişkiyi de kurabiliriz ve bir ürünle birlikte bağlı olduğu kategorinin bilgisini de yansıtabiliriz. Bunu deneyin.
+>Bu durumda categories üzerinden products'a gidebiliriz. Ters ilişkiyi de kurabiliriz ve bir ürünle birlikte bağlı olduğu kategorinin bilgisini de yansıtabiliriz ki ürünleri çektiğimizde hangi kategoride olduğunu da göstermek güzel olur. Bunu nasıl yapabileceğinizi bir deneyin isterim.
 
-Hasura'nın Postgresql tarafındaki örnek tablolarımız hazır. İstersek _Insert Row_ pencersinden tablolara örnek veri girişleri yapabilir ve GraphiQL pencresinden sorgular çalıştırabiliriz. Ben yaptığım denemelerle alakalı bir kaç örnek ekran görüntüsü paylaşayım.
+Hasura'nın Postgresql tarafındaki örnek tablolarımız hazır. İstersek _Insert Row_ pencersinden tablolara örnek veri girişleri yapabilir ve GraphiQL pencresinden sorgular çalıştırabiliriz. Ben yaptığım denemelerle alakalı bir kaç örnek ekran görüntüsü paylaşayım. Arabirimin sağ tarafında yer alan Docs menüsüne de bakabilirsiniz. Burada query ve mutation örnekleri, hazırladığımız veri setleri için otomatik olarak oluşturuluyorlar.
 
 ![assets/credit_11.png](assets/credit_11.png)
 
@@ -60,7 +60,9 @@ Hasura'nın Postgresql tarafındaki örnek tablolarımız hazır. İstersek _Ins
 
 ### Örnek Sorgular
 
-Kategoriler
+İşte arabirim üzerinden denediğim bir kaç örnek sorgu.
+
+Kategorilerin başlıkları,
 
 ```
 query{
@@ -88,7 +90,7 @@ query{
 
 ![assets/credit_18.png](assets/credit_18.png)
 
-Ürünler tamamın ve bağlı olduğu kategori bilgileri
+Ürünlerin tam listesi ve bağlı olduğu kategori adları
 
 ```
 query{
@@ -134,7 +136,7 @@ Hasura, GraphQL API’si arkasında PostgreSQL veri tabanını kullanırken SQLd
 
 ![assets/credit_21.png](assets/credit_21.png)
 
-Where metodu sorgu şemasına otomatik olarak eklenmiştir. _gt tahmin edileceği üzere greater than anlamındadır. Yukarıdaki sorguya fiyata göre tersten sıralamada koyabiliriz. Sadece where koşulu arkasından order_by çağrısı yapmamız yeterli olacaktır.
+Where metodu sorgu şemasına otomatik olarak eklenmiştir. _gt tahmin edileceği üzere greater than anlamındadır. Yukarıdaki sorguya fiyata göre tersten sıralama seçeneği de koyabiliriz. Sadece where koşulu arkasından order_by çağrısı yapmamız yeterlidir.
 
 ```
 {
@@ -150,7 +152,7 @@ Where metodu sorgu şemasına otomatik olarak eklenmiştir. _gt tahmin edileceğ
 
 ![assets/credit_22.png](assets/credit_22.png)
 
-Çok büyük veri setleri düşünüldüğünde önyüzler için sayfalamada önemlidir. Bunun için limit ve offset değerlerini kullanabiliriz. 5nci üründen itibaren 5 ürünün getirilmesi için aşağıdaki sorgu kullanılabilir.
+Çok büyük veri setleri düşünüldüğünde önyüzler için sayfalama önemlidir. Bunun için limit ve offset değerlerini kullanabiliriz. 5nci üründen itibaren 5 ürünün getirilmesi için aşağıdaki sorgu kullanılabilir.
 
 ```
 {
@@ -170,7 +172,7 @@ Hasura Query Engine’in sorgu seçenekleri ile ilgili olarak [buradaki doküman
 
 ## İstemci _(Vue)_ Tarafı
 
-İstemci tarafını basit bir Vue uygulaması olarak geliştirmeye karar vermiştim. Aşağıdaki terminal komutunu kullanıp varsayılan ayarları ile projeyi oluşturdum. Ayrıca GraphQL tarafı ile konuşabilmek için gerekli npm paketlerini de yükledim. Apollo, GraphQL servisimiz ile kolay bir şekilde iletişim kurmamızı sağlayacak.
+İstemci tarafını basit bir Vue uygulaması olarak geliştirmeye karar vermiştim. Aşağıdaki terminal komutunu kullanıp varsayılan ayarları ile projeyi oluşturdum. Ayrıca GraphQL tarafı ile konuşabilmek için gerekli npm paketlerini de yükledim. Apollo _(ilerleyen ünitelerde ondan bir GraphQL Server yazmayı deneyeceğim)_, GraphQL servisimiz ile kolay bir şekilde iletişim kurmamızı sağlayacak.
 
 >Görsel taraf için bootstrap kullanmayı tercih ettim.
 
@@ -181,19 +183,21 @@ sudo npm install vue-apollo apollo-client apollo-cache-inmemory apollo-link-http
 
 ## Yapılanlar
 
-- components klasörüne tek ürün için kullanılabilecek Product isimli bileşen eklendi
-- main.js içeriği Hasura'yı ve GraphQL'i kullanabilir hale getirildi
-- ürünlerin listesini gösterebilmek için components klasörüne ProductList bileşeni eklendi
-- yeni bir ürün ekleyebilmek için ProductAdd isimli bileşen eklendi
-- app.vue içeriği eklenen bileşenleri kullanacak şekilde düzenlendi
+Vue uygulaması tarafından yaptıklarım kısaca şöyle _(Kod dosyalarındaki yorum bloklarında daha detaylı bilgiler mevcut)_
 
-## TODO
+- Components klasörüne tek ürün için kullanılabilecek Product isimli bir bileşen eklendi _(anasayfa listelemesinde tekrarlanacak türden bir bileşen)_
+- Main.js içeriği Hasura'yı ve GraphQL'i kullanabilir hale getirildi
+- Ürünlerin listesini gösterebilmek için components klasörüne ProductList bileşeni eklendi
+- Yeni bir ürün ekleyebilmek için ProductAdd isimli bileşen geliştirildi
+- App.vue içeriği eklenen bileşenleri kullanacak şekilde düzenlendi
 
-><span style="color:red">Bu servisi JWT Authentication bünyesine almak lazım. İşte size güzel bir araştırma konusu. Başlangıç noktası olarak [Auto0'ın şu dokümanına bakılabilir](https://auth0.com/docs/quickstart/spa/vuejs).</span>
+## TODO _(Benim tembelliğimden size düşen)_
+
+><span style="color:red">Bu servisi JWT Authentication bünyesine almak lazım. İşte size güzel bir araştırma konusu. Başlangıç noktası olarak [Auto0'ın şu dokümanına bakılabilir](https://auth0.com/docs/quickstart/spa/vuejs). Ben şu an için sadece HASURA_GRAPHQL_ADMIN_SECRET kullanarak servis adresine erişimi kısıtladım. </span>
 
 ## Çalışma Zamanı
 
-Uygulamayı çalıştırmak için
+Uygulamayı çalıştırmak için,
 
 ```
 npm run serve
@@ -207,7 +211,7 @@ Yeni ürün ekleme bileşeni konulduktan sonrasına ait örnek bir ekran görün
 
 ![assets/credit_25.png](assets/credit_25.png)
 
-Hatta yeni bir forma eklediğimizde gönderilen Graphql Mutation sorgusundan dönen değeri de görebiliriz.
+Hatta yeni bir forma eklediğimizde gönderilen Graphql Mutation sorgusundan dönen değeri de F12 sonrası Network sekmesinden yakalayabiliriz.
 
 ![assets/credit_26.png](assets/credit_26.png)
 
@@ -217,7 +221,7 @@ Hatta yeni bir forma eklediğimizde gönderilen Graphql Mutation sorgusundan dö
 
 - Heroku'da Docker Container içerisinde çalışan ve PostgreSQL verileri GraphQL ile sorgulanabilir olarak sunan Hasura isimli bir motor olduğunu
 - Hasura arabirimden ilişkili tabloları nasıl oluşturabileceğimi
-- Bir kaç basit GraphQL sorgusunu
+- Bir kaç basit GraphQL sorgusunu _(sorgularda sayfalama yapmak, ilişkili veri getirmek, where koşulları kullanmak)_
 - Vue tarafında GraphQL sorgularının nasıl gönderilebileceği
 - Component içinde Component kullanımlarını
 - Temel component tasarlama adımlarını
