@@ -221,5 +221,4 @@ Hatta yeni bir forma eklediğimizde gönderilen Graphql Mutation sorgusundan dö
 - Vue tarafında GraphQL sorgularının nasıl gönderilebileceği
 - Component içinde Component kullanımlarını
 - Temel component tasarlama adımlarını
-
->throw new ToBeContinuedException();
+- Vue tarafından bir Mutation sorgusunun nasıl gönderilebileceğini ve schema veri tiplerine dikkat etmem gerektiğini
