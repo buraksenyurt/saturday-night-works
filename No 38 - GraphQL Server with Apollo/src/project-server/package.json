@@ -1,0 +1,19 @@
+{
+  "name": "project-server",
+  "version": "1.0.0",
+  "description": "Basit bir Apollo GraphQL server",
+  "main": "server.js",
+  "scripts": {
+    "serve": "node server.js"
+  },
+  "keywords": [
+    "graphql",
+    "apollo"
+  ],
+  "author": "burak selim şenyurt",
+  "license": "ISC",
+  "dependencies": {
+    "apollo-server": "^2.4.8",
+    "graphql": "^14.2.1"
+  }
+}
