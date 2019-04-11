@@ -110,9 +110,56 @@ mutation {
 
 ## İKinci Sürüm
 
-İkinci sürümde amaç veri kaynağı olarak PostgreSQL kullanmak.
+İkinci sürümde amaç veri kaynağı olarak PostgreSQL kullanmak. WestWorld üzerinde PostgreSQL ile ilgili olarak aşağıdaki terminal komutlarını işlettim.
 
->throw new NotImplementedException("WestWorld üzerinde PostgreSQL yok gibi?");
+```
+sudo apt-get install postgresql
+
+sudo su - postgres
+psql
+
+\l
+\du
+\conninfo
+
+CREATE ROLE Scott WITH LOGIN PASSWORD 'Tiger';
+ALTER ROLE Scott CREATEDB;
+
+\q
+```
+
+İlk komut ile postgresql'i Linux ortamına kuruyoruz. Kurma işlemi sonrası ikinci ve üçüncü komutları kullanarak varsayılan kullanıcı bilgisi ile Postgresql ortmına giriyoruz. \l ile var olan veri tabanlarının listesini, \du ile kullanıcıları _(rolleri ile birlikte)_ , \conninfo ile de hangi veri tabanına hangi kullanıcı ile hangi porttan bağlandığımıza dair bilgileri elde ediyoruz. CREATE ROLE ile başlayan satırda Scott isimli yeni bir rol tanımladık. Sonrasında takip eden komutla bu role veri tabanı oluşturma yetkisi verdik. \q ile o an aktif olan oturumu kapatıyoruz. Şimdi scott rolünü kullanarak örnek veri tabanımızı ve tablolarını oluşturmaya çalışacağız.
+
+![assets/credit_6.png](assets/credit_6.png)
+
+```
+psql -d postgres -U scott
+CREATE DATABASE ThoughtWorld;
+
+\list
+\c thoughtworld
+
+CREATE TABLE tasks (
+  ID SERIAL PRIMARY KEY,
+  title VARCHAR(50),
+  description VARCHAR(250),
+  size VARCHAR(2)
+);
+
+INSERT INTO tasks (title,description,size) VALUES ('Birinci Görev','Her sabah saat 06:00da kalk','L');
+
+SELECT * FROM tasks;
+```
+
+İlk komut ile scott rolüne oturum açıyoruz. Sonrasında ThoughtWorld isimli bir veri tabanı oluşturuyoruz. \list ile var olan veri tabanlarına bakıyoruz ve \c komutuyla ThoughtWorld'e bağlanıyoruz. Ardından tasks isimli bir tablo oluşturuyoruz ve içerisine deneme amaçlı bir satır ekliyoruz. Son olarak basit bir Select işlemi icra etmekteyiz.
+
+![assets/credit_7.png](assets/credit_7.png)
+
+PostgreSQL tarafı hazır. Artık veri tabanını Apollo suncusunda kullanabiliriz. Ancak öncesinde gerekli npm modülünü yüklemek lazım.
+
+```
+
+```
 
 >throw new NotImplementedException("PostgreSQL in Mutation içerisindeki kodlamaları eksik");
 
@@ -124,5 +171,6 @@ mutation {
 - CRUD operasyonlarına ait iş mekaniklerinin resolvers içindeki Query ve Mutation segmentlerinde yürütüldüğünü
 - Veri kaynağı olarak farklı ortamların kullanılabileceğini _(micro service, NoSQL, RDBMS, File System, REST API)_
 - Int? ile Int tiplerinin yerine göre doğru kullanılmaları gerektiğini _(bir kaç çalışma zamanı hatası sonrası fark ettim)_
+- Ubuntu platformuna PostgreSQL'in kurulmasını, yeni rol oluşturulmasını, rol altında veri tabanı ve tablo açılmasını
 
 >throw new ToBeContinuedException();
