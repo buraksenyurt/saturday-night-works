@@ -165,6 +165,10 @@ Birinci senaryodaki GraphQL sorguları benzer şekilde ikinci senaryo için de d
 
 ![assets/credit_8.png](assets/credit_8.png)
 
+## İstemci
+
+>throw new NotImplemetedException("Sorguları çalıştıracak basit bir istemci uygulama");
+
 ## TODO _(Eklenebilecek şeyler)
 
 - Dependency Injection kurgusu ile Apollo Server'ın istenen veri sağlayıcısını enjekte ederek çalıştırılmasına çalışılabilir. Örneğin tasks tablosunu SQlite ile tutmak ya da bir NoSQL sistemi üzerinden getirmek isteyebiliriz.
