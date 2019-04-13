@@ -4,7 +4,7 @@
   "description": "Basit bir Apollo GraphQL server",
   "main": "server.js",
   "scripts": {
-    "serve": "node server.js"
+    "serve": "node pg-server.js"
   },
   "keywords": [
     "graphql",

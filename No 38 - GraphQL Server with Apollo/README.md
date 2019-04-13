@@ -108,7 +108,7 @@ mutation {
 
 İlk sürüm önceden de belirttiğimiz üzere Apollo Server'ı basitçe işin içerisine katmak ve nasıl çalıştığını anlamak içindi. Array kullanıldığında uygulama sonlandırıldığında tüm içerik kaybolacaktır. Kalıcı bir depolama alanı için farklı bir alternatif düşünmeliyiz. CRUD operasyonlarını başka bir servise atayabilir veya bir veri tabanı kullanabiliriz.
 
-## İKinci Sürüm
+## İkinci Sürüm
 
 İkinci sürümde amaç veri kaynağı olarak PostgreSQL kullanmak. WestWorld üzerinde PostgreSQL ile ilgili olarak aşağıdaki terminal komutlarını işlettim.
 
@@ -155,13 +155,20 @@ SELECT * FROM tasks;
 
 ![assets/credit_7.png](assets/credit_7.png)
 
-PostgreSQL tarafı hazır. Artık veri tabanını Apollo suncusunda kullanabiliriz. Ancak öncesinde gerekli npm modülünü yüklemek lazım.
+PostgreSQL tarafı hazır. Artık veri tabanını Apollo suncusunda kullanabiliriz. Ancak öncesinde gerekli npm modülünü yüklemek lazım. _(Bir önceki senaryo ile kodların karışmaması içinse pg-server.js isimli yeni bir dosya üzerinde çalışmaya karar verdim)_
 
 ```
-
+sudo npm install pg
 ```
 
->throw new NotImplementedException("PostgreSQL in Mutation içerisindeki kodlamaları eksik");
+Birinci senaryodaki GraphQL sorguları benzer şekilde ikinci senaryo için de denenebilir. Visual Studio Code üzerinde PostgreSQL tarafını kolayca görüntülemek için Chris Kolkman'nın PostgreSQL eklentisini _(ckolkman.vscode-postgres isimli)_ kullandım.
+
+![assets/credit_8.png](assets/credit_8.png)
+
+## TODO _(Eklenebilecek şeyler)
+
+- Dependency Injection kurgusu ile Apollo Server'ın istenen veri sağlayıcısını enjekte ederek çalıştırılmasına çalışılabilir. Örneğin tasks tablosunu SQlite ile tutmak ya da bir NoSQL sistemi üzerinden getirmek isteyebiliriz.
+- apollo-server-express modülünü kullanarak HTTPS desteğinin nasıl sağlanabileceğine bakabiliriz.
 
 ## Neler Öğrendim
 
@@ -172,5 +179,4 @@ PostgreSQL tarafı hazır. Artık veri tabanını Apollo suncusunda kullanabilir
 - Veri kaynağı olarak farklı ortamların kullanılabileceğini _(micro service, NoSQL, RDBMS, File System, REST API)_
 - Int? ile Int tiplerinin yerine göre doğru kullanılmaları gerektiğini _(bir kaç çalışma zamanı hatası sonrası fark ettim)_
 - Ubuntu platformuna PostgreSQL'in kurulmasını, yeni rol oluşturulmasını, rol altında veri tabanı ve tablo açılmasını
-
->throw new ToBeContinuedException();
+- Apollo metodlarında pg'nin query çağrısına ait sonuçları yakalayabilmek için async-await kullanılmasını
