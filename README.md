@@ -22,14 +22,18 @@ Readme dosyalarından yararlanarak kendi başlangıçlarınızı yapabilir, örn
 
 Burası işlenecek konu başlıklarının olduğu havuzdur.
 
+- Blazor tarafında MVVM uygulaması
+- React üzerinde bir başka Socket.io Örneği
 - Microsoft .Net Core tarafında bir BDD test framework'ünü deneyimlemek
+- Angular'da kendi Modal pencerelerimizi nasıl oluşturuyoruz?
+- Microsoft Azure'da git tabanlı proje kullanımı
+- Ruby'de backgroud process'lerin çalıştırılması
+- Bir Node.js uygulamasında Azure Cosmos DB kullanmak
 
 > Planlanan yazılarda konu başlıkları değişiklik gösterebilir ve örnekler kronolojik sırada işlenmemektedir.
 
 ## Üzerinde Çalışılıyor
 
-- Appollo Server ile bir GraphQL servisi geliştirmek
-- Nedir bu Travis-CI
 
 ## Tamamlananlar
 
@@ -72,5 +76,7 @@ Burası işlenecek konu başlıklarının olduğu havuzdur.
 35. Cloud Firestore CRUD operasyonlarını Server Side çalışan bir Blazor uygulamasında icra etmek
 36. SQLite ile çalışan, Flask tabanlı bir Python uygulaması geliştirmek
 37. Heroku üzerinde bir Hasura GraphQL Engine geliştirmek ve Vue.js tabanlı bir istemciden kullanmak
+38. Appollo Server ile bir GraphQL servisi geliştirmek
+39. Nedir bu Travis-CI?
 
 > MD dosyasını formatlarken [şu adresten](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) yararlanıyorum.
