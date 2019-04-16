@@ -23,13 +23,13 @@ Readme dosyalarından yararlanarak kendi başlangıçlarınızı yapabilir, örn
 Burası işlenecek konu başlıklarının olduğu havuzdur.
 
 - Microsoft .Net Core tarafında bir BDD test framework'ünü deneyimlemek
-- Nedir bu Travis-CI
 
 > Planlanan yazılarda konu başlıkları değişiklik gösterebilir ve örnekler kronolojik sırada işlenmemektedir.
 
 ## Üzerinde Çalışılıyor
 
 - Appollo Server ile bir GraphQL servisi geliştirmek
+- Nedir bu Travis-CI
 
 ## Tamamlananlar
 

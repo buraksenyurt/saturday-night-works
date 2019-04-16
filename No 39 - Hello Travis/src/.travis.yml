@@ -1,0 +1,8 @@
+language: csharp
+solution: hello-travis.sln
+mono: none
+dotnet: 2.1.502
+ 
+script:
+  - dotnet build
+  - dotnet test MathService.Tests/MathService.Tests.csproj
