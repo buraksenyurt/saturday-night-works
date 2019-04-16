@@ -167,7 +167,7 @@ Birinci senaryodaki GraphQL sorguları benzer şekilde ikinci senaryo için de d
 
 ## İstemci
 
->throw new NotImplemetedException("Sorguları çalıştıracak basit bir istemci uygulama");
+>throw new ToDoForYouException("Bu uygulamayı size bırakıyorum. Çünkü sonraki konuya geçmek istiyorum :|");
 
 ## TODO _(Eklenebilecek şeyler)
 
