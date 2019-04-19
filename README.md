@@ -22,8 +22,6 @@ Readme dosyalarından yararlanarak kendi başlangıçlarınızı yapabilir, örn
 
 Burası işlenecek konu başlıklarının olduğu havuzdur.
 
-- Blazor tarafında MVVM uygulaması
-- React üzerinde bir başka Socket.io Örneği
 - Microsoft .Net Core tarafında bir BDD test framework'ünü deneyimlemek
 - Angular'da kendi Modal pencerelerimizi nasıl oluşturuyoruz?
 - Microsoft Azure'da git tabanlı proje kullanımı
@@ -34,6 +32,7 @@ Burası işlenecek konu başlıklarının olduğu havuzdur.
 
 ## Üzerinde Çalışılıyor
 
+- React üzerinde bir başka Socket.io Örneği
 
 ## Tamamlananlar
 
