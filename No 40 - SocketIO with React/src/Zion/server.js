@@ -20,10 +20,10 @@ const port = process.env.PORT || 5555;
 channel.on("connection", socket => {
     console.log(`${Date(Date.now()).toLocaleString()}: yeni bir istemci bağlandı`);
     // TODO: İstemci hakkında daha fazla bilgiyi nasıl alabilirim? IP adresi gibi.
-    
+
     // gelen veriyi dinleyeceğimiz bir olay metodu olarak düşünebiliriz.
     // bir publisher sokete veri yolladığında devreye giriyor
-    // İstemci, "input road" isimli namespace'den yararlanarak veri gönderebiliyor
+    // Yayıncı, "input road" isimli namespace'den yararlanarak veri gönderebiliyor
     socket.on("input road", (data) => {
 
         console.log(`${Date(Date.now()).toLocaleString()}:Gelen veriler\n\tHız:${data.speed}\n\tDevir:${data.rpm}\n\tMotor sıcaklığı:${data.heat}`);
@@ -40,8 +40,8 @@ channel.on("connection", socket => {
     socket.on("disconnect", () => {
         /* 
         Burada çeşitli temizleme operasyonları yapılabilir.
-        Mesela istemcinin gitme, gelme hareketlerini takip ediyorsak,
-        burada state değişikliği yapılabilir.
+        Mesela istemcinin geliş gidiş hareketlerini takip ediyorsak,
+        burada state değişikliği yaptırtabiliriz.
         */
         console.log(`${Date(Date.now()).toLocaleString()}istemci bağlantıyı kapattı`);
     });
