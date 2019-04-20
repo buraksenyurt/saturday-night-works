@@ -32,7 +32,7 @@ Burası işlenecek konu başlıklarının olduğu havuzdur.
 
 ## Üzerinde Çalışılıyor
 
-- React üzerinde bir başka Socket.io Örneği
+>throw new CantSelectAnyTopicException("kararsızım");
 
 ## Tamamlananlar
 
@@ -77,5 +77,6 @@ Burası işlenecek konu başlıklarının olduğu havuzdur.
 37. Heroku üzerinde bir Hasura GraphQL Engine geliştirmek ve Vue.js tabanlı bir istemciden kullanmak
 38. Appollo Server ile bir GraphQL servisi geliştirmek
 39. Nedir bu Travis-CI?
+40. React üzerinde bir başka Socket.io Örneği _(Araç hız, rpm, sıcaklık bilgilerini web socket ile yayınlayıp göstermek)_
 
 > MD dosyasını formatlarken [şu adresten](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) yararlanıyorum.
