@@ -55,9 +55,9 @@ npm run start
 
 WestWorld üzerinde yakaladığım çalışma zamanına ait iki ekran görüntüsü aşağıdaki gibidir. Arayüzdeki göstergeler her 5 saniyede bir yenilenir.
 
-![assets/credit_2.png](assets/credit_2.png)
+![assets/credit_2.jpg](assets/credit_2.jpg)
 
-![assets/credit_3.png](assets/credit_3.png)
+![assets/credit_3.jpg](assets/credit_3.jpg)
 
 ## TODO
 
