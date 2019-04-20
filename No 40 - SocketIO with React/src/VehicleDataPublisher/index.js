@@ -16,9 +16,9 @@ let engineData = {
 // Her 5 saniyede bir çalışacak bir fonksiyon.
 setInterval(function () {
     // Rastgele veriler üretiyoruz.
-    engineData.speed = Math.floor(Math.random() * 180) + 70;
-    engineData.rpm = Math.floor(Math.random() * 10000) + 1000;
-    engineData.heat = Math.floor(Math.random() * 100) + 300;
+    engineData.speed = getRandomValue(70, 180);
+    engineData.rpm = getRandomValue(1000, 10000);
+    engineData.heat = getRandomValue(100, 500);
 
     console.log(`Üretilen veri\nHız:${engineData.speed}\nDevir:${engineData.rpm}\nMotor sıcaklığı:${engineData.heat}`);
     /* 
@@ -28,3 +28,11 @@ setInterval(function () {
     */
     socket.emit("input road", engineData);
 }, 5000);
+
+/* 
+    Rastgele veri üertmek için kullandığımız basit fonksiyon.
+    İki değer aralığında veri üretiyor.
+*/
+function getRandomValue(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) + min);
+}
