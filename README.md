@@ -14,6 +14,10 @@ Sonunda aklıma bir fikir geldi. Makaleye dökemediğim ama kısa kısa notlar a
 
 Burası takip ettiğim kaynaklardaki örneklere ait çalışmaların bulunduğu kod deposudur. Genellikle Cumartesi geceleri beslenir _**(Konunun uzunluğu veya içimdeki isteğe göre farklı günlerde olabilir ama ilk tercihim Cumartesi geceleridir. Haftaiçi konuyu oku, öğren, araştır, motivasyonunu sağla ve Cumartesi gecesi uygula)**_ Monitor ortadan ikiye bölünmüş haldedir _(İkinci bir monitör daha alıp Bilgem Çakır'ın yaptığı gibi dikine kullanım moduna geçmekte isteklerim arasında)_ Sol tarafta takip edilen yazı, sağ tarafta çoğunlukla Visual Studio Code açıktır. Örnekler ağırlıklı olarak WestWorld'de _(Ubuntu 18.04 sistemimde)_ icra edilir. Duruma göre MacOS veya Windows geçişleri de olabilir. Denemeler sırasında Copy-Paste yapmam kesinlikle yasaktır ve mutlak suretle örnekleri yorumlayıp anın getirdiği ruh haline göre özelleştirmem gerekmektedir.
 
+>Özellikle 41nci örnekle birlikte ahch-to üzerinde geliştirmeler yapmaya başladım.
+
+![ahch-to.png](ahch-to.png)
+
 ## Takipçi Ne Yapabilir?
 
 Readme dosyalarından yararlanarak kendi başlangıçlarınızı yapabilir, örnek kodları sağa sola çekiştirip iyileştirebilir ya da farklılaştırabilirsiniz. Ama en nihayetinde keşfetme ve farklı örnekleri anlamaya çalışma kaslarınızı geliştirirsiniz. Hata yapmaktan korkmayın.
@@ -23,12 +27,13 @@ Readme dosyalarından yararlanarak kendi başlangıçlarınızı yapabilir, örn
 Burası işlenecek konu başlıklarının olduğu havuzdur.
 
 - Angular'da kendi Modal pencerelerimizi nasıl oluşturuyoruz?
-- Microsoft Azure'da git tabanlı proje kullanımı
 - Bir Node.js uygulamasında Azure Cosmos DB kullanmak
 
 > Planlanan yazılarda konu başlıkları değişiklik gösterebilir ve örnekler kronolojik sırada işlenmemektedir.
 
 ## Üzerinde Çalışılıyor
+
+- Microsoft Azure'da git tabanlı proje kullanımı
 
 ## Tamamlananlar
 
