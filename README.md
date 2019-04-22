@@ -22,7 +22,6 @@ Readme dosyalarından yararlanarak kendi başlangıçlarınızı yapabilir, örn
 
 Burası işlenecek konu başlıklarının olduğu havuzdur.
 
-- Microsoft .Net Core tarafında bir BDD test framework'ünü deneyimlemek
 - Angular'da kendi Modal pencerelerimizi nasıl oluşturuyoruz?
 - Microsoft Azure'da git tabanlı proje kullanımı
 - Ruby'de backgroud process'lerin çalıştırılması
@@ -32,50 +31,49 @@ Burası işlenecek konu başlıklarının olduğu havuzdur.
 
 ## Üzerinde Çalışılıyor
 
-- React üzerinde bir başka Socket.io Örneği
-
 ## Tamamlananlar
 
 Şu ana kadar tamamlayabildiğim örnekler.
 
-01. Bootstrap Grid sistemini anlamak _(Bir heyecanla Cumartesi gecesi dışında tamamlandı
-02. Asp.Net Core ile MongoDB kullanmak
-03. Go ve Vue.js kullanarak haber akışı yapmak
-04. Visual Studio Code için Snippet yazmak _(Bir öğle vakti deneyimlendi)_
-05. Web sayfasında Bootstrap Modal Popup kullanmak
-06. Bir NodeJS sunucusunu ölçeklendirmek
-07. Node.js, MongoDB, Fastify ve Swagger kullanılan bir uygulama yazmak
-08. Express kullanan bir React uygulamasını Heroku'da yayınlamak
-09. Angular ile basit bir Todo uygulaması yazmak
-10. Single-File Components ile Vue.js uygulaması geliştirmek
-11. GraphQL'i NodeJS ile kullanmaya çalışmak
-12. Flask-RESTPlus ile Python'da REST Api geliştirmek
-13. MEVN _(MongoDb, Express, Vue.Js, NodeJS)_ deneyimini yaşatacak bir Hello World yazmak
-14. Typescript ile REST Api geliştirmek _(FortJs ile)_
-15. Briaz daha GraphQL _(Graphpack kullanımı, Mutations)_
-16. Vue ile Desktop uygulaması oluşturmak _(Electron benzeri)_
-17. Python tarafında Concurrency kullanımı
-18. Asp.Net Core'da arka plan görevleri
-19. Blazor ile tanışma
-20. Python log'ları için ELK Kullanımı
-21. Asp.Net Core'da Razor Pages kullanımı
-22. Bir WebAPI servisinde SQLite ile birlikte Dapper Micro ORM kütüphanesini kullanmak
-23. Asp.Net Core Tarafında Gantt Chart'lar oluşturmak
-24. Bir Asp.Net Core Web API uygulamasını Minikube üzerinde koşturmak
-25. AlaSQL veritabanını Node.Js ile kullanmak
-26. Microsoft Custom Vision Python SDK'sı ile imaj sınıflandırması yapmak
-27. Firebase ile Google Cloud Functions kullanımı
-28. Angular ile bir PWA uygulaması geliştirmek
-29. Angular ön yüzü ve Node sunucusu arasında Socket.IO yardımıyla soket haberleşmesi gerçekleştirmek
-30. Biraz daha Angular deneyimi kazanmak için basit bir oyun _(Çok çok basit :) )_ yazmaya çalışmak
-31. Firebase Cloud Messaging ile bir PWA üzerinde Push Notification uygulamak
-32. Angular, Firebase Firestore ve CRUD işlemleri
-33. KONG Api Gateway aracını kurcalamak. Nedir bu KONG? _(Sadece Proxy olarak ele alındı)_
-34. Azure SignalR servisini bir Azure Function ile kullanarak abonelere bildirimde bulunmak
-35. Cloud Firestore CRUD operasyonlarını Server Side çalışan bir Blazor uygulamasında icra etmek
-36. SQLite ile çalışan, Flask tabanlı bir Python uygulaması geliştirmek
-37. Heroku üzerinde bir Hasura GraphQL Engine geliştirmek ve Vue.js tabanlı bir istemciden kullanmak
-38. Appollo Server ile bir GraphQL servisi geliştirmek
+40. Socket.IO kullanılan bir React uygulaması yazmak
 39. Nedir bu Travis-CI?
+38. Appollo Server ile bir GraphQL servisi geliştirmek
+37. Heroku üzerinde bir Hasura GraphQL Engine geliştirmek ve Vue.js tabanlı bir istemciden kullanmak
+36. SQLite ile çalışan, Flask tabanlı bir Python uygulaması geliştirmek
+35. Cloud Firestore CRUD operasyonlarını Server Side çalışan bir Blazor uygulamasında icra etmek
+34. Azure SignalR servisini bir Azure Function ile kullanarak abonelere bildirimde bulunmak
+33. KONG Api Gateway aracını kurcalamak. Nedir bu KONG? _(Sadece Proxy olarak ele alındı)_
+32. Angular, Firebase Firestore ve CRUD işlemleri
+31. Firebase Cloud Messaging ile bir PWA üzerinde Push Notification uygulamak
+30. Biraz daha Angular deneyimi kazanmak için basit bir oyun _(Çok çok basit :) )_ yazmaya çalışmak
+29. Angular ön yüzü ve Node sunucusu arasında Socket.IO yardımıyla soket haberleşmesi gerçekleştirmek
+28. Angular ile bir PWA uygulaması geliştirmek
+27. Firebase ile Google Cloud Functions kullanımı
+26. Microsoft Custom Vision Python SDK'sı ile imaj sınıflandırması yapmak
+25. AlaSQL veritabanını Node.Js ile kullanmak
+24. Bir Asp.Net Core Web API uygulamasını Minikube üzerinde koşturmak
+23. Asp.Net Core Tarafında Gantt Chart'lar oluşturmak
+22. Bir WebAPI servisinde SQLite ile birlikte Dapper Micro ORM kütüphanesini kullanmak
+21. Asp.Net Core'da Razor Pages kullanımı
+20. Python log'ları için ELK Kullanımı
+19. Blazor ile tanışma
+18. Asp.Net Core'da arka plan görevleri
+17. Python tarafında Concurrency kullanımı
+16. Vue ile Desktop uygulaması oluşturmak _(Electron benzeri)_
+15. Briaz daha GraphQL _(Graphpack kullanımı, Mutations)_
+14. Typescript ile REST Api geliştirmek _(FortJs ile)_
+13. MEVN _(MongoDb, Express, Vue.Js, NodeJS)_ deneyimini yaşatacak bir Hello World yazmak
+12. Flask-RESTPlus ile Python'da REST Api geliştirmek
+11. GraphQL'i NodeJS ile kullanmaya çalışmak
+10. Single-File Components ile Vue.js uygulaması geliştirmek
+09. Angular ile basit bir Todo uygulaması yazmak
+08. Express kullanan bir React uygulamasını Heroku'da yayınlamak
+07. Node.js, MongoDB, Fastify ve Swagger kullanılan bir uygulama yazmak
+06. Bir NodeJS sunucusunu ölçeklendirmek
+05. Web sayfasında Bootstrap Modal Popup kullanmak
+04. Visual Studio Code için Snippet yazmak _(Bir öğle vakti deneyimlendi)_
+03. Go ve Vue.js kullanarak haber akışı yapmak
+02. Asp.Net Core ile MongoDB kullanmak
+01. Bootstrap Grid sistemini anlamak _(Bir heyecanla Cumartesi gecesi dışında tamamlandı
 
 > MD dosyasını formatlarken [şu adresten](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) yararlanıyorum.
