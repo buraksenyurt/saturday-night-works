@@ -33,12 +33,13 @@ Burası işlenecek konu başlıklarının olduğu havuzdur.
 
 ## Üzerinde Çalışılıyor
 
-- Microsoft Azure'da git tabanlı proje kullanımı
+>throw new IamThinkingException();
 
 ## Tamamlananlar
 
 Şu ana kadar tamamlayabildiğim örnekler.
 
+- Bir Python web uygulamasını git deploy yöntemi ile Azure'da yayınlamak
 - Socket.IO kullanılan bir React uygulaması yazmak
 - Nedir bu Travis-CI?
 - Appollo Server ile bir GraphQL servisi geliştirmek
