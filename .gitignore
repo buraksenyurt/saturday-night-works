@@ -3,6 +3,7 @@ node_modules/
 bower_components/
 build/
 .vscode/
+.DS_Store
 
 package-lock.json
 
