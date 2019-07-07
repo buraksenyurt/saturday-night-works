@@ -86,10 +86,10 @@
 /************************************************************************/
 /******/ ({
 
-/***/ "./src/app.ts":
-/*!********************!*\
-  !*** ./src/app.ts ***!
-  \********************/
+/***/ "./app.ts":
+/*!****************!*\
+  !*** ./app.ts ***!
+  \****************/
 /*! exports provided: App */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -98,11 +98,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "App", function() { return App; });
 /* harmony import */ var fortjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! fortjs */ "fortjs");
 /* harmony import */ var fortjs__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(fortjs__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _routes__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./routes */ "./src/routes.ts");
-/* harmony import */ var eshtml__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! eshtml */ "eshtml");
-/* harmony import */ var eshtml__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(eshtml__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var path__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! path */ "path");
-/* harmony import */ var path__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(path__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _routes__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./routes */ "./routes.ts");
 var __extends = (undefined && undefined.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
@@ -118,36 +114,24 @@ var __extends = (undefined && undefined.__extends) || (function () {
 })();
 
 
-
-
 var App = /** @class */ (function (_super) {
     __extends(App, _super);
     function App() {
         var _this = _super.call(this) || this;
         _this.routes = _routes__WEBPACK_IMPORTED_MODULE_1__["routes"];
-        _this.viewEngine = eshtml__WEBPACK_IMPORTED_MODULE_2__["FortViewEngine"];
         return _this;
     }
     return App;
 }(fortjs__WEBPACK_IMPORTED_MODULE_0__["Fort"]));
 
-new App().create({
-    defaultPath: "default",
-    folders: [{
-            alias: "/",
-            path: path__WEBPACK_IMPORTED_MODULE_3__["join"](__dirname, "../static")
-        }]
-}).then(function () {
-    console.log("Your fort is located at address - localhost:4000");
-});
 
 
 /***/ }),
 
-/***/ "./src/controllers/default_controller.ts":
-/*!***********************************************!*\
-  !*** ./src/controllers/default_controller.ts ***!
-  \***********************************************/
+/***/ "./controllers/default_controller.ts":
+/*!*******************************************!*\
+  !*** ./controllers/default_controller.ts ***!
+  \*******************************************/
 /*! exports provided: DefaultController */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -218,21 +202,20 @@ var DefaultController = /** @class */ (function (_super) {
     }
     DefaultController.prototype.default = function () {
         return __awaiter(this, void 0, void 0, function () {
-            var model, result, ex_1, result;
+            var data, result, ex_1, result;
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
                         _a.trys.push([0, 2, , 4]);
-                        model = {
+                        data = {
                             title: 'FortJs'
                         };
-                        return [4 /*yield*/, Object(fortjs__WEBPACK_IMPORTED_MODULE_0__["viewResult"])('controller:default,action:default', model)];
+                        return [4 /*yield*/, Object(fortjs__WEBPACK_IMPORTED_MODULE_0__["viewResult"])('default/index.html', data)];
                     case 1:
                         result = _a.sent();
                         return [2 /*return*/, result];
                     case 2:
                         ex_1 = _a.sent();
-                        console.log(ex_1);
                         return [4 /*yield*/, Object(fortjs__WEBPACK_IMPORTED_MODULE_0__["textResult"])("Our server is busy right now. Please try later.")];
                     case 3:
                         result = _a.sent();
@@ -252,10 +235,10 @@ var DefaultController = /** @class */ (function (_super) {
 
 /***/ }),
 
-/***/ "./src/controllers/quote_controller.ts":
-/*!*********************************************!*\
-  !*** ./src/controllers/quote_controller.ts ***!
-  \*********************************************/
+/***/ "./controllers/quote_controller.ts":
+/*!*****************************************!*\
+  !*** ./controllers/quote_controller.ts ***!
+  \*****************************************/
 /*! exports provided: QuoteController */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -264,8 +247,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "QuoteController", function() { return QuoteController; });
 /* harmony import */ var fortjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! fortjs */ "fortjs");
 /* harmony import */ var fortjs__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(fortjs__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _services_quote_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../services/quote_service */ "./src/services/quote_service.ts");
-/* harmony import */ var _guards_dataValidatorGuard__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../guards/dataValidatorGuard */ "./src/guards/dataValidatorGuard.ts");
+/* harmony import */ var _services_quote_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../services/quote_service */ "./services/quote_service.ts");
+/* harmony import */ var _guards_dataValidatorGuard__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../guards/dataValidatorGuard */ "./guards/dataValidatorGuard.ts");
 var __extends = (undefined && undefined.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
@@ -448,10 +431,10 @@ var QuoteController = /** @class */ (function (_super) {
 
 /***/ }),
 
-/***/ "./src/guards/dataValidatorGuard.ts":
-/*!******************************************!*\
-  !*** ./src/guards/dataValidatorGuard.ts ***!
-  \******************************************/
+/***/ "./guards/dataValidatorGuard.ts":
+/*!**************************************!*\
+  !*** ./guards/dataValidatorGuard.ts ***!
+  \**************************************/
 /*! exports provided: DataValidatorGuard */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -460,7 +443,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DataValidatorGuard", function() { return DataValidatorGuard; });
 /* harmony import */ var fortjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! fortjs */ "fortjs");
 /* harmony import */ var fortjs__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(fortjs__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _models_quote__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../models/quote */ "./src/models/quote.ts");
+/* harmony import */ var _models_quote__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../models/quote */ "./models/quote.ts");
 var __extends = (undefined && undefined.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
@@ -540,10 +523,37 @@ var DataValidatorGuard = /** @class */ (function (_super) {
 
 /***/ }),
 
-/***/ "./src/models/quote.ts":
-/*!*****************************!*\
-  !*** ./src/models/quote.ts ***!
-  \*****************************/
+/***/ "./index.ts":
+/*!******************!*\
+  !*** ./index.ts ***!
+  \******************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _app__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./app */ "./app.ts");
+/* harmony import */ var path__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! path */ "path");
+/* harmony import */ var path__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(path__WEBPACK_IMPORTED_MODULE_1__);
+
+
+var app = new _app__WEBPACK_IMPORTED_MODULE_0__["App"]();
+app.create({
+    folders: [{
+            alias: "/",
+            path: path__WEBPACK_IMPORTED_MODULE_1__["join"](__dirname, "../static")
+        }]
+}).then(function () {
+    console.log("Your fort is located at address - localhost:4000");
+});
+
+
+/***/ }),
+
+/***/ "./models/quote.ts":
+/*!*************************!*\
+  !*** ./models/quote.ts ***!
+  \*************************/
 /*! exports provided: Quote */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -582,22 +592,22 @@ var Quote = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/routes.ts":
-/*!***********************!*\
-  !*** ./src/routes.ts ***!
-  \***********************/
+/***/ "./routes.ts":
+/*!*******************!*\
+  !*** ./routes.ts ***!
+  \*******************/
 /*! exports provided: routes */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "routes", function() { return routes; });
-/* harmony import */ var _controllers_default_controller__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./controllers/default_controller */ "./src/controllers/default_controller.ts");
-/* harmony import */ var _controllers_quote_controller__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./controllers/quote_controller */ "./src/controllers/quote_controller.ts");
+/* harmony import */ var _controllers_default_controller__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./controllers/default_controller */ "./controllers/default_controller.ts");
+/* harmony import */ var _controllers_quote_controller__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./controllers/quote_controller */ "./controllers/quote_controller.ts");
 
 
 var routes = [{
-        path: "/default",
+        path: "*",
         controller: _controllers_default_controller__WEBPACK_IMPORTED_MODULE_0__["DefaultController"]
     }, {
         path: "/quote",
@@ -607,10 +617,10 @@ var routes = [{
 
 /***/ }),
 
-/***/ "./src/services/quote_service.ts":
-/*!***************************************!*\
-  !*** ./src/services/quote_service.ts ***!
-  \***************************************/
+/***/ "./services/quote_service.ts":
+/*!***********************************!*\
+  !*** ./services/quote_service.ts ***!
+  \***********************************/
 /*! exports provided: QuoteService */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -664,100 +674,14 @@ var QuoteService = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "./src/views/default/default.ts":
-/*!**************************************!*\
-  !*** ./src/views/default/default.ts ***!
-  \**************************************/
-/*! exports provided: DefaultView */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DefaultView", function() { return DefaultView; });
-/* harmony import */ var eshtml__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! eshtml */ "eshtml");
-/* harmony import */ var eshtml__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(eshtml__WEBPACK_IMPORTED_MODULE_0__);
-var __extends = (undefined && undefined.__extends) || (function () {
-    var extendStatics = function (d, b) {
-        extendStatics = Object.setPrototypeOf ||
-            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
-        return extendStatics(d, b);
-    };
-    return function (d, b) {
-        extendStatics(d, b);
-        function __() { this.constructor = d; }
-        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-    };
-})();
-var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-
-// you can give any name but make sure its unique among all other views.
-var DefaultView = /** @class */ (function (_super) {
-    __extends(DefaultView, _super);
-    function DefaultView() {
-        return _super !== null && _super.apply(this, arguments) || this;
-    }
-    DefaultView.prototype.render = function (model) {
-        return "<!doctype html>\n        <html>\n        <head>\n        <title>" + model.title + "</title>\n        </head>\n        <body>\n        <div class=\"text-center\" style=\"margin-top:50px;\">\n        <img src=\"/fort_js_logo_200_137.png\"/>\n        <span class=\"app-name\">FortJs</span>\n        </div>\n        <div class=\"text-center\">\n        Congrats ! You Own A Fort Now.\n        </div>\n        <div class=\"text-center\" style=\"margin-top:50px;font-size:40px;\">\n        Fill up your fort with <a target=\"_blank\" href=\"http://fortjs.info/tutorial/guard/\">guards</a>, \n        <a target=\"_blank\" href=\"http://fortjs.info/tutorial/shield/\">shields</a> and \n        <a href=\"http://fortjs.info/tutorial/wall/\" target=\"_blank\">walls</a>.\n        </div>\n        <div>\n        <ul>\n        <li><i class=\"fas fa-globe\"></i> Docs - http://fortjs.info/ </li>\n        <li><i class=\"fab fa-medium-m\"></i> Medium - https://medium.com/fortjs</li>\n        </ul>\n        </div>\n        <style>\n        body{\n            background-color:#000000;\n            color:white;\n        }\n        .text-center{\n            text-align:center;\n        }\n        .app-name{\n            font-size:200px;\n        }\n        a{\n            color:#8fff35;\n        }\n        ul{\n            margin-top:100px;\n            font-size:30px;\n            text-align:center;\n            padding-left:30%;\n        }\n        ul li {\n            text-align:left;\n            padding-top:20px;   \n        }\n        </style>\n        <link rel=\"stylesheet\" href=\"https://use.fontawesome.com/releases/v5.6.1/css/all.css\" integrity=\"sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP\" crossorigin=\"anonymous\">\n        </body>\n        </html>\n        ";
-    };
-    DefaultView = __decorate([
-        Object(eshtml__WEBPACK_IMPORTED_MODULE_0__["declareView"])('controller:default,action:default')
-    ], DefaultView);
-    return DefaultView;
-}(eshtml__WEBPACK_IMPORTED_MODULE_0__["View"]));
-
-
-
-/***/ }),
-
-/***/ "./src/views/default/index.ts":
-/*!************************************!*\
-  !*** ./src/views/default/index.ts ***!
-  \************************************/
-/*! exports provided: DefaultView */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _default__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./default */ "./src/views/default/default.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "DefaultView", function() { return _default__WEBPACK_IMPORTED_MODULE_0__["DefaultView"]; });
-
-
-
-
-/***/ }),
-
-/***/ "./src/views/index.ts":
-/*!****************************!*\
-  !*** ./src/views/index.ts ***!
-  \****************************/
-/*! exports provided: DefaultView */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _default_index__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./default/index */ "./src/views/default/index.ts");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "DefaultView", function() { return _default_index__WEBPACK_IMPORTED_MODULE_0__["DefaultView"]; });
-
-
-
-
-/***/ }),
-
 /***/ 0:
-/*!***********************************************!*\
-  !*** multi ./src/app.ts ./src/views/index.ts ***!
-  \***********************************************/
+/*!************************!*\
+  !*** multi ./index.ts ***!
+  \************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /home/burakselyum/Development/saturday-night-works/No 14 - REST with Typescript/starter-project/src/app.ts */"./src/app.ts");
-module.exports = __webpack_require__(/*! /home/burakselyum/Development/saturday-night-works/No 14 - REST with Typescript/starter-project/src/views/index.ts */"./src/views/index.ts");
+module.exports = __webpack_require__(/*! /home/ujjwal/projects/private/saturday-night-works/No 14 - REST with Typescript/starter-project/index.ts */"./index.ts");
 
 
 /***/ }),
@@ -770,17 +694,6 @@ module.exports = __webpack_require__(/*! /home/burakselyum/Development/saturday-
 /***/ (function(module, exports) {
 
 module.exports = require("class-validator");
-
-/***/ }),
-
-/***/ "eshtml":
-/*!*************************!*\
-  !*** external "eshtml" ***!
-  \*************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = require("eshtml");
 
 /***/ }),
 
