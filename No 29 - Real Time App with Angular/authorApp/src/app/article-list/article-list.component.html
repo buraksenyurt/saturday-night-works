@@ -1,10 +1,11 @@
 <div>
   <button (click)='newArticle()'>Yeni makale başlat</button>
 </div>
-<div style="height: 100%;">
+<div style="height: 100%;cursor: pointer">
   <span *ngFor='let a of articles | async' (click)='getArticle(a)'>
-      <b>{{a}}</b>  
-      <br/>
+    <b *ngIf="currentArticle!=a">{{a}}</b>
+    <b *ngIf="currentArticle==a" style="text-decoration: underline">{{a}}</b>
+    <br />
   </span>
 </div>
 <!--
