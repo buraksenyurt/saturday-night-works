@@ -27,7 +27,7 @@
     "bootstrap": "^4.2.1",
     "express": "^4.16.4",
     "method-override": "^3.0.0",
-    "mongoose": "^5.4.1",
+    "mongoose": ">=5.7.5",
     "morgan": "^1.9.1",
     "vue-loader": "^15.4.2",
     "vue-template-compiler": "^2.5.21",
