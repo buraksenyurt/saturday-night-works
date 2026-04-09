@@ -1,5 +1,5 @@
 //gerekli modüller yüklenir
-const fastify = require('fastify')({ logger: true })
+const fastify = require('fastify')({ logger: true, trustProxy: false })
 const routes = require('./routes') //route modüllerinin yeri söylendi
 const swagger = require('./config/swagger') //swager konfigurasyonunun yeri söylendi
 fastify.register(require('fastify-swagger'), swagger.options) // swagger, fastify için kayıt edildi
