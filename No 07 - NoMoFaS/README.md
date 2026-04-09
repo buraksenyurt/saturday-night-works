@@ -2,13 +2,13 @@
 
 Amacım başlıktaki konuları kullanarak komple bir Web API uygulaması geliştirmek. WestWorld'de _(Ubuntu 18.04 64bit)_ Node.js, npm ve MongoDB yüklü durumda. Yazmaya çalışacağımız örnek sayesinde javascript, node.js, mongodb ve REST API bilgilerimi de tazelemiş _(geliştirmiş)_ olacağım.
 
->MongoDB'yi Ubuntu'ya kurmak için [https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/](adresinden) yararlanabiliriz. Ama isterseniz MongoDB'nin konu ile ilgili [docker imajını da kullanabilirsiniz](https://hub.docker.com/_/mongo)
+> MongoDB'yi Ubuntu'ya kurmak için [https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/](adresinden) yararlanabiliriz. Ama isterseniz MongoDB'nin konu ile ilgili [docker imajını da kullanabilirsiniz](https://hub.docker.com/_/mongo)
 
 ## Klasör Ağacı ve Paketler
 
 Uygulamanın iskelet klasör ve temel dosya yapısı aşağıdaki gibi kurgulanabilir.
 
-```
+```bash
 mkdir Minion-API
 cd Minion-API
 mkdir src
@@ -23,7 +23,7 @@ npm init
 
 Gerekli paketleri kurmak içinse aşağıdaki terminal komutundan yararlanabiliriz.
 
-```
+```bash
 npm i nodemon mongoose fastify fastify-swagger boom
 ```
 
@@ -43,7 +43,7 @@ Swagger ile ilgili ayarlamalar için config klasöründeki swagger.js dosyası k
 
 Önce mongodb'yi çalıştırmak lazım. Ardından node uygulaması başlatılmalı. Malum uygulamamız mongodb ile çalışıyor. mongodb sunucusunun önceden çalışır durumda olması gerekiyor. İki ayrı terminal penceresi açılarak ilerlenebilir ki ben öyle yaptım.
 
-```
+```bash
 mongod
 npm start
 ```
@@ -52,29 +52,31 @@ npm start
 
 Sonrasında aşağıdaki testler yapılabilir _(Testler için Postman gibi bir araçtan yararlanılabilir)_
 
-Yeni bir mini eklemek için http://localhost:4005/api/minions adresine json formatında body içeren aşağıdaki içeriği göndermemiz yeterli.
+Yeni bir mini eklemek için `http://localhost:4005/api/minions` adresine json formatında body içeren aşağıdaki içeriği göndermemiz yeterli.
 
-```
+```json
 {
-	"nickname":"Agnes Gru",
-	"age":5,
-	"gender":"Female"
+   "nickname":"Agnes Gru",
+   "age":5,
+   "gender":"Female"
 }
 ```
 
->id değerleri tahmin edileceği üzere MongoDB tarafından otomatik olarak üretilmiştir. Silme ve güncelleme işlemleri için kullanabiliriz.
+> id değerleri tahmin edileceği üzere MongoDB tarafından otomatik olarak üretilmiştir. Silme ve güncelleme işlemleri için kullanabiliriz.
 
 ![credit_3.png](./assets/credit_3.png)
 
-Bir kaç minion daha ekledikten sonra bunların güncel listesini elde etmek için http://localhost:4005/api/minions adresine gidebiliriz.
+Bir kaç minion daha ekledikten sonra bunların güncel listesini elde etmek için `http://localhost:4005/api/minions` adresine gidebiliriz.
 
 Belli bir minion'u elde etmek içinse MongoDb'nin verdiği ID değerinden yararlanabiliriz.
 
-http://localhost:4005/api/minions/5c1581e579140d6969b5951f talebi için şöyle bir sonuç döndü mesela.
+`http://localhost:4005/api/minions/5c1581e579140d6969b5951f` talebi için şöyle bir sonuç döndü mesela.
 
 ![credit_4.png](./assets/credit_4.png)
 
 Benzer şekilde aynı adresi PUT metodu ile kullanıp BODY kısmında mini bilgisini JSON formatında göndererek güncelleme işlemini de gerçekleştirebiliriz.
+
+Swagger adresi -> `http://localhost:4005/help/json`
 
 ## Neler Öğrendim?
 
@@ -82,3 +84,5 @@ Benzer şekilde aynı adresi PUT metodu ile kullanıp BODY kısmında mini bilgi
 - mongodb'de temel veri işlemlerini web api üzerinden nasıl karşılayabileceğimi,
 - Swagger ile API arayüzünü nasıl kullanıcı dostu okunabilir hale getireceğimi,
 - Postman ile basit REST testlerini nasıl yapabileceğimi,
+
+[Güncellemeler için](./CHANGELOG.md)

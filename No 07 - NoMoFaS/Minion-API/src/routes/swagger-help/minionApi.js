@@ -33,13 +33,16 @@ exports.getAllMinionSchema = {
     response: {
         200: {
             description: 'Liste başarılı bir şekilde çekilir',
-            type: 'object',
-            properties: {
-                _id: { type: 'string' },
-                nickname: { type: 'string' },
-                age: { type: 'number' },
-                gender: { type: 'string' },
-                __v: { type: 'number' }
+            type: 'array',
+            items: {
+                type: 'object',
+                properties: {
+                    _id: { type: 'string' },
+                    nickname: { type: 'string' },
+                    age: { type: 'number' },
+                    gender: { type: 'string' },
+                    __v: { type: 'number' }
+                }
             }
         }
     }

@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "./node_modules/nodemon/bin/nodemon.js ./src/index.js"
+    "start": "nodemon ./src/index.js"
   },
   "keywords": [
     "node.js",
@@ -20,9 +20,9 @@
   "license": "ISC",
   "dependencies": {
     "boom": "^7.3.0",
-    "fastify": "^3.1.1",
-    "fastify-swagger": "^0.16.2",
+    "fastify": "^3.29.5",
+    "fastify-swagger": "^5.1.1",
     "mongoose": "^6.13.6",
-    "nodemon": "^1.18.9"
+    "nodemon": "^3.1.14"
   }
 }

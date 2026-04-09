@@ -20,7 +20,7 @@ mongoose.connect('mongodb://localhost/animation', { useNewUrlParser: true })
 // asenkron çalışır
 const online = async () => {
     try {
-        await fastify.listen(4005)
+        await fastify.listen({ port: 4005, host: '127.0.0.1' })
         fastify.swagger()
         fastify.log.info(`Sunucu ${fastify.server.address().port} adresi üzerinden dinlemede`)
     } catch (err) {
