@@ -19,32 +19,31 @@
   "author": "burak selim şenyurt",
   "license": "ISC",
   "devDependencies": {
-    "babel-core": "^6.26.3",
-    "babel-loader": "^7.1.5",
-    "babel-preset-env": "^1.7.0",
-    "babel-preset-stage-3": "^6.24.1",
+    "babel-core": "^5.8.38",
+    "babel-loader": "^10.1.1",
+    "babel-preset-env": "^0.0.0",
+    "babel-preset-stage-3": "^6.16.0",
     "body-parser": "^1.18.3",
     "bootstrap": "^4.2.1",
-    "express": "^4.16.4",
+    "express": "^4.21.2",
     "method-override": "^3.0.0",
     "mongoose": "^6.13.6",
     "morgan": "^1.9.1",
-    "vue-loader": "^15.4.2",
-    "vue-template-compiler": "^2.5.21",
-    "webpack": "^4.28.3",
+    "vue-loader": "^17.4.2",
+    "vue-template-compiler": "^0.1.0",
+    "webpack": "^5.106.0",
     "webpack-cli": "^3.1.2",
-    "webpack-dev-server": "^3.1.14"
+    "webpack-dev-server": "^5.2.3"
   },
   "dependencies": {
     "axios": "^1.6.0",
     "body-parser": "^1.18.3",
     "bootstrap": "^4.2.1",
-    "css-loader": "^2.1.0",
-    "express": "~4.16.4",
+    "css-loader": "^7.1.4",
     "jquery": "^3.3.1",
     "method-override": "~3.0.0",
     "mongoose": "^6.13.6",
-    "vue": "^2.5.21",
+    "vue": "^3.5.32",
     "vue-axios": "^2.1.4"
   }
 }
