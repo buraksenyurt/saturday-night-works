@@ -22,7 +22,7 @@
     "boom": "^7.3.0",
     "fastify": "^3.1.1",
     "fastify-swagger": "^0.16.2",
-    "mongoose": "^5.4.0",
+    "mongoose": "^6.13.6",
     "nodemon": "^1.18.9"
   }
 }

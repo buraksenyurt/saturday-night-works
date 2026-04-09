@@ -4,6 +4,7 @@ const routes = require('./routes') //route modüllerinin yeri söylendi
 const swagger = require('./config/swagger') //swager konfigurasyonunun yeri söylendi
 fastify.register(require('fastify-swagger'), swagger.options) // swagger, fastify için kayıt edildi
 const mongoose = require('mongoose')
+mongoose.set('sanitizeFilter', true)
 
 // routes klasöründeki tüm modülleri fastify ile ilişkilendiriyoruz
 routes.forEach((route, index) => {

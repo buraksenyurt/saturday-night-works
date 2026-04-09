@@ -11,7 +11,7 @@
     "start": "npm run webpack:watch && opn http://localhost:4000"
   },
   "dependencies": {
-    "class-validator": "^0.9.1",
+    "class-validator": "^0.14.0",
     "fortjs": "^1.6.0"
   },
   "devDependencies": {

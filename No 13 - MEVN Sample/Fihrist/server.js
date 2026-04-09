@@ -7,6 +7,7 @@ var bodyParser = require('body-parser')
 var config = require('./app/config')
 var router = require('./app/router')
 
+mongoose.set('sanitizeFilter', true)
 mongoose.connect(config.conn, { useNewUrlParser: true }) // konfigurasyon dosyasındaki bilgi kullanılarak mongoDb bağlantısı tesis edilir
 
 // static dosyaların public klasöründen karşılanacağı belirtilir
