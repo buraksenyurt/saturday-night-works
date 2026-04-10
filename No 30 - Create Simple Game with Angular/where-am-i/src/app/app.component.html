@@ -1,12 +1,3 @@
-<!--
-  bootstrap css stilleri ile donattığımız basit bir arayüzümüz var.
-
-  app.component sınıfındaki property'lere erişmek için {{propertyName}} notasyonu kullanılıyor.
-  Yine bileşen üzerinde bir metod çağrısı yapmak ve bunu bir kontrol olayı ile ilişkilendirmek için 
-  (eventName)="method name" şeklinde bir notasyon kullanılıyor.
-  
-  Angular direktiflerinde *ngIf komutunu kullanarak tahmine göre bir HTML elementinin gösterilmesi sağlanıyor.
--->
 <div class="container">
   <h2>Bil bakalım hangi şehre gittim? :)</h2>
 
@@ -23,12 +14,17 @@
   </div>
   <div>
     <label>Tahminin nedir?</label>
-    <input (input)="playersGuess=$event.target.value" type="text" />
+    <input [(ngModel)]="playersGuess" type="text" />
     <button class="btn btn-primary btn-sm" (click)="checkMyGuess()">Dene</button>
   </div>
   <div>
-    <p *ngIf="guessIsCorrect" class="alert alert-success">Bravo! Yakaladın beni</p>
-    <p *ngIf="!guessIsCorrect" class="alert alert-warning">Tüh. Tekrar dener misin?</p>
+    @if (hasGuessed) {
+      @if (guessIsCorrect) {
+        <p class="alert alert-success">Bravo! Yakaladın beni</p>
+      } @else {
+        <p class="alert alert-warning">Tüh. Tekrar dener misin?</p>
+      }
+    }
     <p class="text-info">İşte sana bir ipucu. {{hint}}</p>
   </div>
 </div>

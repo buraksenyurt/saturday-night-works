@@ -1,31 +1,48 @@
-import { TestBed, async } from '@angular/core/testing';
+import { TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 
 describe('AppComponent', () => {
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [
-        AppComponent
-      ],
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      imports: [AppComponent],
     }).compileComponents();
-  }));
+  });
 
   it('should create the app', () => {
     const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
+    const app = fixture.componentInstance;
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'where-am-i'`, () => {
+  it('should initialize with a random city and weather', () => {
     const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('where-am-i');
+    const app = fixture.componentInstance;
+    expect(app.currentWeather.length).toBeGreaterThan(0);
+    expect(app.computersLocation.length).toBeGreaterThan(0);
   });
 
-  it('should render title in a h1 tag', () => {
+  it('should set guessIsCorrect to true when guess matches city', () => {
     const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('Welcome to where-am-i!');
+    const app = fixture.componentInstance;
+    app.playersGuess = app.computersLocation;
+    app.checkMyGuess();
+    expect(app.guessIsCorrect).toBeTrue();
+  });
+
+  it('should set guessIsCorrect to false when guess is wrong', () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    const app = fixture.componentInstance;
+    app.playersGuess = 'Yanlış Şehir';
+    app.checkMyGuess();
+    expect(app.guessIsCorrect).toBeFalse();
+  });
+
+  it('should reset state when fullThrottle is called', () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    const app = fixture.componentInstance;
+    app.guessIsCorrect = true;
+    app.fullThrottle();
+    expect(app.guessIsCorrect).toBeFalse();
+    expect(app.playersGuess).toBe('');
   });
 });
