@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Socket } from 'ngx-socket-io';  // Socket sunucusuna event fırlatıp yakalayacağımız için
-import { Article } from '../app/article'; //Article tipini kullanacağımız için
+import { Article } from './article'; //Article tipini kullanacağımız için
 
 @Injectable({
   providedIn: 'root'

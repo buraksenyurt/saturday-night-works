@@ -35,12 +35,12 @@ export class DummyService {
     get metodu Observable tipte bir koleksiyon döndürür 
   */
   get(): Observable<Post[]> {
-    var url = "https://jsonplaceholder.typicode.com/posts";
+    const url = 'https://jsonplaceholder.typicode.com/posts';
     /*
       url ile belirtilen adrese get talebi gönderiyor
       ve içeriğini Post dizisi olarak alıp
       Observable nesnesiyle geriye dönüyoruz
     */
-    return <Observable<Post[]>>this.httpClient.get(url);
+    return this.httpClient.get<Post[]>(url);
   }
 }

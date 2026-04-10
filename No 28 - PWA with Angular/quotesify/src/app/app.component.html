@@ -4,12 +4,16 @@
   </mat-toolbar-row>
 </mat-toolbar>
 <main>
-  <mat-card *ngFor="let post of posts">
-    <mat-card-header>
-      <mat-card-title>{{post.title}}</mat-card-title>
-    </mat-card-header>
-    <mat-card-content>
-      {{post.body}}
-    </mat-card-content>
-  </mat-card>
+  @if (posts$ | async; as posts) {
+    @for (post of posts; track post.id) {
+      <mat-card>
+        <mat-card-header>
+          <mat-card-title>{{ post.title }}</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          {{ post.body }}
+        </mat-card-content>
+      </mat-card>
+    }
+  }
 </main>
