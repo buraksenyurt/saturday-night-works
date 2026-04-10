@@ -19,9 +19,10 @@
   "author": "burak selim şenyurt",
   "license": "ISC",
   "dependencies": {
-    "boom": "^7.3.0",
-    "fastify": "^3.29.5",
-    "fastify-swagger": "^5.1.1",
+    "@fastify/swagger": "^9.0.0",
+    "@fastify/swagger-ui": "^5.0.0",
+    "@hapi/boom": "^10.0.0",
+    "fastify": "^5.0.0",
     "mongoose": "^6.13.6",
     "nodemon": "^3.1.14"
   }

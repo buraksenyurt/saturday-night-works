@@ -1,4 +1,4 @@
-const boom = require('boom') //bomba gibi bir hata mesajı yöneticisi
+const Boom = require('@hapi/boom') //bomba gibi bir hata mesajı yöneticisi
 const Minion = require('../models/minion')
 
 // yeni bir Minion karakteri eklemek için

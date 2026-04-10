@@ -2,7 +2,8 @@
 const fastify = require('fastify')({ logger: true, trustProxy: false })
 const routes = require('./routes') //route modüllerinin yeri söylendi
 const swagger = require('./config/swagger') //swager konfigurasyonunun yeri söylendi
-fastify.register(require('fastify-swagger'), swagger.options) // swagger, fastify için kayıt edildi
+fastify.register(require('@fastify/swagger'), swagger.swaggerOptions)           // @fastify/swagger (OpenAPI 3.0)
+fastify.register(require('@fastify/swagger-ui'), swagger.swaggerUiOptions)      // arayüz /help üzerinden sunulur
 const mongoose = require('mongoose')
 mongoose.set('sanitizeFilter', true)
 
@@ -12,7 +13,7 @@ routes.forEach((route, index) => {
 })
 
 // mongodb'ye bağlanılıyor. minions isimli veritabanı yoksa oluşturulacaktır
-mongoose.connect('mongodb://localhost/animation', { useNewUrlParser: true })
+mongoose.connect('mongodb://localhost/animation')
     .then(() => console.log('MongoDB ile iletişim kuruldu'))
     .catch(err => console.log(err))
 
@@ -21,7 +22,6 @@ mongoose.connect('mongodb://localhost/animation', { useNewUrlParser: true })
 const online = async () => {
     try {
         await fastify.listen({ port: 4005, host: '127.0.0.1' })
-        fastify.swagger()
         fastify.log.info(`Sunucu ${fastify.server.address().port} adresi üzerinden dinlemede`)
     } catch (err) {
         fastify.log.error(err)

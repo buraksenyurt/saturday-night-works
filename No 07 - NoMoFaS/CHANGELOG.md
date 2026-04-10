@@ -1,5 +1,20 @@
 # Güncellemeler
 
+## 10 Nisan 2026 (Güvenlik Açıkları)
+
+- **Problemler:**
+  - Fastify's Content-Type header tab character allows body validation bypass
+  - fastify: request.protocol and request.host Spoofable via X-Forwarded-Proto/Host from Untrusted Connections
+  - Fastify Vulnerable to DoS via Unbounded Memory Allocation in sendWebStream
+
+- **Çözüm ve Kod Değişiklikleri:**
+  - `boom` kaldırılıp yerine aktif geliştirilen `@hapi/boom@^10` paketi eklendi. `minionController.js` içindeki `require('boom')` → `require('@hapi/boom')` olarak güncellendi. API (`Boom.boomify`) aynı kalmaktadır.
+  - `fastify-swagger` (deprecated) kaldırılıp yerine `@fastify/swagger@^9` + `@fastify/swagger-ui@^5` eklendi. Swagger 2.0 yapılandırması OpenAPI 3.0 formatına (`openapi: {}`) dönüştürüldü; `host`/`schemes`/`consumes`/`produces` → `servers: [{url}]` olarak taşındı. `routePrefix` ve `exposeRoute` seçenekleri `@fastify/swagger-ui` tarafına alındı. `config/swagger.js` içindeki export isimleri `options` → `swaggerOptions` / `swaggerUiOptions` olarak bölündü.
+  - `fastify` v3 → v5'e yükseltildi. Artık swagger belgesi `fastify.swagger()` başlangıç çağrısına gerek kalmadan otomatik üretildiğinden ilgili satır `index.js`'den kaldırıldı.
+  - `mongoose.connect()` çağrısındaki kullanımdan kalkmış `useNewUrlParser` seçeneği kaldırıldı.
+  - `npm audit` → **0 zafiyet**.
+- **Yapay Zeka Asistanı:** Claude Sonnet 4.6
+
 ## 9 Nisan 2026
 
 > MongoDb ile daha rahat çalışmak için docker-compose dosyası ekledim. Artık `docker-compose up -d` komutu ile MongoDb'yi ayağa kaldırabilirsiniz.

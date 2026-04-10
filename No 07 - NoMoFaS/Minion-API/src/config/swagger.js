@@ -1,7 +1,5 @@
-exports.options = {
-    routePrefix: '/help',
-    exposeRoute: true,
-    swagger: {
+exports.swaggerOptions = {
+    openapi: {
       info: {
         title: 'Minions API',
         description: 'Minion ailesi ile ilgili yönetsel işlemler...',
@@ -11,9 +9,10 @@ exports.options = {
         url: 'https://swagger.io',
         description: 'Daha fazla bilgi için buraya gidin'
       },
-      host: 'localhost',
-      schemes: ['http'],
-      consumes: ['application/json'],
-      produces: ['application/json']
+      servers: [{ url: 'http://localhost:4005' }]
     }
+  }
+
+exports.swaggerUiOptions = {
+    routePrefix: '/help'
   }
