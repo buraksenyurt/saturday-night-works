@@ -7,29 +7,23 @@
         <div class="card-body">
           <input type="text" #job class="form-control" placeholder="Salı günü 100 faul atışı çalışacağım..." name="job"
             ngModel>
-          <!-- addJob metodundaki job nesnesi üst kontroldeki #job niteliğidir. 
-              value özelliğine giderek girilen bilgiyi addJob metoduna göndermiş oluyoruz. -->
-          <input type="button" class="btn btn-info" (click)="addJob(job.value)" value="Ekle" />
+          <input type="button" class="btn btn-info" (click)="addJob(job.value); job.value = ''" value="Ekle" />
         </div>
       </div>
-      <!-- ngFor ile jobs dizisinde dolaşıyoruz ve her bir eleman için 
-        card stilinde birer div oluşturulmasını sağlıyoruz
-      -->
-      <div *ngFor="let job of jobs" class="card">
-        <div class="card-body">
-          <div class="row">
-            <div class="col-sm-10">
-              {{job}} <!-- dizideki görevin bilgisini yazdırıyoruz-->
-            </div>
-            <div class="col-sm-2">
-              <!-- Silme işlemi için removeJob fonksiyonu çağrılıyor. 
-                Parametre ise dizinin o anki elemanı-->
-              <input type="button" class="btn btn-primary" (click)="removeJob(job)" value="Çıkart" />
+      @for (job of jobs; track $index) {
+        <div class="card">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-sm-10">
+                {{ job }}
+              </div>
+              <div class="col-sm-2">
+                <input type="button" class="btn btn-primary" (click)="removeJob(job)" value="Çıkart" />
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      }
     </div>
   </form>
 </div>
-<!-- addJob, removeJob metodları ile jos dizisi app.component.ts dosyası içerisinde yer alıyor -->

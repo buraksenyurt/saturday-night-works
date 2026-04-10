@@ -1,30 +1,28 @@
 import { Component } from '@angular/core';
-import { isJsObject } from '@angular/core/src/change_detection/change_detection_util';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html', //Bu Typescript dosyasının hangi html ile ilişkili olduğu belirtiliyor
+  standalone: true,
+  imports: [FormsModule],
+  templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  jobs = []; //görev listesinin tutulacağı dizi
+  jobs: string[] = [];
 
-  // yeni bir job eklemek için
-  addJob(value) {
-    if (value !== "") {
-      this.jobs.push(value)
-      // console.log(this.jobs)  // Tarayıcı console penceresine log düşürebiliriz
+  addJob(value: string): void {
+    if (value !== '') {
+      this.jobs.push(value);
     } else {
-      alert('Bir görev girmelisin... ;)')
+      alert('Bir görev girmelisin... ;)');
     }
   }
 
-  // bir görevi listeden çıkartmak için
-  removeJob(job) {
-    for (let i = 0; i <= this.jobs.length; i++) {
-      if (job == this.jobs[i]) {
-        this.jobs.splice(i, 1)
-      }
+  removeJob(job: string): void {
+    const index = this.jobs.indexOf(job);
+    if (index !== -1) {
+      this.jobs.splice(index, 1);
     }
   }
 }

@@ -1,35 +1,52 @@
-import { TestBed, async } from '@angular/core/testing';
-import { RouterTestingModule } from '@angular/router/testing';
+import { TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
 
 describe('AppComponent', () => {
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      imports: [
-        RouterTestingModule
-      ],
-      declarations: [
-        AppComponent
-      ],
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      imports: [AppComponent],
     }).compileComponents();
-  }));
+  });
 
   it('should create the app', () => {
     const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
+    const app = fixture.componentInstance;
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'life-pbi-app'`, () => {
+  it('should start with an empty job list', () => {
     const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('life-pbi-app');
+    const app = fixture.componentInstance;
+    expect(app.jobs.length).toBe(0);
   });
 
-  it('should render title in a h1 tag', () => {
+  it('should add a job', () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    const app = fixture.componentInstance;
+    app.addJob('Test görevi');
+    expect(app.jobs).toContain('Test görevi');
+  });
+
+  it('should not add an empty job', () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    const app = fixture.componentInstance;
+    spyOn(window, 'alert');
+    app.addJob('');
+    expect(app.jobs.length).toBe(0);
+  });
+
+  it('should remove a job', () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    const app = fixture.componentInstance;
+    app.addJob('Silinecek görev');
+    app.removeJob('Silinecek görev');
+    expect(app.jobs).not.toContain('Silinecek görev');
+  });
+
+  it('should render the page heading', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
-    const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('Welcome to life-pbi-app!');
+    const compiled = fixture.nativeElement as HTMLElement;
+    expect(compiled.querySelector('h1')?.textContent).toContain('Çalışma Planım');
   });
 });

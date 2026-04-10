@@ -4,33 +4,33 @@ Amacım Angular için basit bir Hello World uygulaması oluşturmak. Güncel Ang
 
 Uygulamayı çalıştırmak için aşağıdaki terminal komutunu vermemiz yeterlir.
 
-```
+```bash
 ng server
 ```
 
-Buna göre http://localhost:4200 adresinden çalışabiliriz.
+Buna göre `http://localhost:4200` adresinden çalışabiliriz.
 
 ## Ön Gereklilikler
 
 Makinede node ve npm yüklü durumda. Ayrıca Angular için Command Line Interface(CLI) aracına ihtiyaç var. Kurmak için gerekli terminal komutu ise şöyle.
 
-```
+```bash
 sudo npm install -g @angular/cli
 ```
 
 Ayrıca önyüz tarafında Bootstrap kullanılıyor. Onu da bower yardımıyla sisteme dahil edebiliriz.
 
-```
+```bash
 bower i bootstrap
 ```
 
->Ben bootstrap'i indirdikten sonra gerekli css dosyalarını assets/css altına alıp orayı referans göstermeyi tercih ettim. _(index.html sayfasına bakın)_
+> Ben bootstrap'i indirdikten sonra gerekli css dosyalarını assets/css altına alıp orayı referans göstermeyi tercih ettim. _(index.html sayfasına bakın)_
 
 ## Angular Uygulamasını Oluşturmak
 
-Angular uygulamasını hazır şablonundan üretmek oldukça kolay. Tek yapmamız gereken aşağıdaki terminal komunutunu çalıştırmak. new sonrası gelen parametre tahmin edileceği üzere uygulamamızın adı.
+Angular uygulamasını hazır şablonundan üretmek oldukça kolay. Tek yapmamız gereken aşağıdaki terminal komutunu çalıştırmak. new sonrası gelen parametre tahmin edileceği üzere uygulamamızın adı.
 
-```
+```bash
 ng new life-pbi-app
 ```
 
@@ -52,3 +52,5 @@ Uygulamanın çalışma zamanına ait örnek bir görüntü.
 
 - Typescript ile HTML tarafındaki Angular yapılarının nasıl anlaştığını,
 - Bootstrap'i bir Angular projesinde nasıl kullanabileceğimi,
+
+[Güncellemeler](./CHANGELOG.md)
