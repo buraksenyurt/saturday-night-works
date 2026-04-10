@@ -6,7 +6,7 @@ Angular tarafına yavaş yavaş alışmaya başladım. Yine de fazladan idman ya
 
 Sistemimizde Angular CLI yüklü olmalı. Değilse aşağıdaki ilk terminal komutu ile yükleyebiliriz.
 
-```
+```bash
 sudo npm install -g @angular/cli
 ng new quick-auction
 npm i --save bootstrap firebase @angular/fire
@@ -28,7 +28,7 @@ Sonrasında Database menüsünden veya kocaman turuncu kutucuk içerisindeki Clo
 
 ![assets/credit_2.png](assets/credit_2.png)
 
-Şimdi Angular uygulamamız ile Firebase tarafını tanıştırmalıyız. Project Overview kısmından hareket ederek 
+Şimdi Angular uygulamamız ile Firebase tarafını tanıştırmalıyız. Project Overview kısmından hareket ederek,
 
 ![assets/credit_3.png](assets/credit_3.png)
 
@@ -48,7 +48,7 @@ kırmızı kutucuktaki düğmeye basalım. Karşımıza gelen ekrandaki config i
 
 Uygulamayı çalıştırmak için terminalden
 
-```
+```bash
 ng serve
 ```
 
@@ -66,3 +66,5 @@ komutunu vermemiz yeterlidir. WestWorld testlerinde ortaya çıkan ekran görün
 - Firestore ve önyüzün birbirlerinin değişikliklerini anında görebildiklerini
 - Bileşenlerdeki kontrollere olay metodlarını nasıl bağlayabileceğimizi
 - firestore paketinin temel CRUD komutlarını
+
+[Güncellemeler](CHANGELOG.md)

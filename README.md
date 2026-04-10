@@ -60,7 +60,7 @@ Burası işlenecek konu başlıklarının olduğu havuzdur.
 | **35** | Cloud Firestore CRUD operasyonlarını Server Side çalışan bir Blazor uygulamasında icra etmek | Ok | - |
 | **34** | Azure SignalR servisini bir Azure Function ile kullanarak abonelere bildirimde bulunmak | Ok | - |
 | **33** | KONG Api Gateway aracını kurcalamak. Nedir bu KONG? *(Sadece Proxy olarak ele alındı)* | Ok | - |
-| **32** | Angular, Firebase Firestore ve CRUD işlemleri | Ok | - |
+| **32** | Angular, Firebase Firestore ve CRUD işlemleri | Ok | Ok |
 | **31** | Firebase Cloud Messaging ile bir PWA üzerinde Push Notification uygulamak | Ok | - |
 | **30** | Biraz daha Angular deneyimi kazanmak için basit bir oyun *(Çok çok basit :) )* yazmaya çalışmak | Ok | Ok |
 | **29** | Angular ön yüzü ve Node sunucusu arasında Socket.IO yardımıyla soket haberleşmesi gerçekleştirmek | Ok | - |

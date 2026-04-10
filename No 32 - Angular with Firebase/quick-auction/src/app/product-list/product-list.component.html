@@ -9,23 +9,24 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let product of allProducts">
-      <td>{{product.payload.doc.data().summary}}</td>
-      <td>{{product.payload.doc.data().title}}</td>
-      <td>{{product.payload.doc.data().price}}</td>
-      <td>
-        {{product.payload.doc.data().bargain?'Var':'Yok'}}
-      </td>
-      <td>
-        <div class="btn-group-sm">
-          <button class="primary btn-default btn-block" (click)="increasePrice(product)">+</button>
-          <button class="primary btn-default btn-block" (click)="decreasePrice(product)">-</button>
-          <button class="primary btn-danger btn-block" (click)="delete(product)">Sil</button>
-        </div>
-      </td>
-    </tr>
+    @for (product of allProducts; track product.id) {
+      <tr>
+        <td>{{product.summary}}</td>
+        <td>{{product.title}}</td>
+        <td>{{product.price}}</td>
+        <td>{{product.bargain ? 'Var' : 'Yok'}}</td>
+        <td>
+          <div class="btn-group-sm">
+            <button class="primary btn-default btn-block" (click)="increasePrice(product)">+</button>
+            <button class="primary btn-default btn-block" (click)="decreasePrice(product)">-</button>
+            <button class="primary btn-danger btn-block" (click)="delete(product)">Sil</button>
+          </div>
+        </td>
+      </tr>
+    }
   </tbody>
 </table>
+
 
 <!--
   Klasik bir Grid tasarımı söz konusu.

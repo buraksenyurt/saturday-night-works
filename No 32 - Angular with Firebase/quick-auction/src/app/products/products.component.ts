@@ -1,24 +1,19 @@
-import { Component, OnInit } from '@angular/core';
-import { ProductsService } from '../shared/products.service'; // ProductsService modülünü bildiriyoruz
+import { Component } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
+import { ProductsService } from '../shared/products.service';
 
 @Component({
   selector: 'app-products',
+  standalone: true,
+  imports: [ReactiveFormsModule],
   templateUrl: './products.component.html',
   styleUrls: ['./products.component.css']
 })
-export class ProductsComponent implements OnInit {
+export class ProductsComponent {
+  constructor(public productsService: ProductsService) { }
 
-  constructor(private productsService: ProductsService) { } // Constructor injection ile ProductsService tipini içeriye alıyoruz
-
-  auctions = []; // açık artırma verilerini tutacağımız array
-
-  ngOnInit() {
-  }
-
-  // Bileşendeki button'a basıldığında (click) niteliğine atanan olay bildirimi nedeniyle bu metod çalışacaktır
   onSubmit() {
-    let formData = this.productsService.productForm.value; // aslında servis tarafındaki form kontrolü bileşenle ilişkilendirildiğinden girilen değerler oraya da yansır
-    console.log(formData); // F12 ile tarayıcı Console penceresinden bu çıktıya bakabiliriz
-    this.productsService.addProduct(formData);
+    const formData = this.productsService.productForm.value;
+    this.productsService.addProduct(formData as Parameters<typeof this.productsService.addProduct>[0]);
   }
 }
