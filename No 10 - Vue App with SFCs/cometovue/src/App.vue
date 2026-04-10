@@ -3,7 +3,7 @@
       <h1>Yapmam gerekenler</h1>
     <ol>
       <!-- missions data() metodundan dönen dizimiz. Her bir elemanını v-for ile geziyoruz ve value değerlerini listItem olarak ekrana bastırıyoruz -->
-      <li v-for='mission in missions'>{{ mission.value }}</li>
+      <li v-for='mission in missions' :key='mission.value'>{{ mission.value }}</li>
     </ol>
   </div>
 </template>

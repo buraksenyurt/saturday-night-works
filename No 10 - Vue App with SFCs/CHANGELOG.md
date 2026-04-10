@@ -1,10 +1,37 @@
 # Güncellemeler
 
+## 10 Nisan 2026 (Güvenlik Açığı — Vue 2 -> 3 Migrasyonu)
+
+**Problem:** `vue-template-compiler@2.x` paketi istemci taraflı XSS açığına (GHSA-g3ch-rx76-35fx) sahipti. Bu paket yalnızca Vue 2 için gereklidir; Vue 3 ile tamamen kaldırılmıştır.  
+**Çözüm:** Uygulama Vue 2'den Vue 3'e taşındı. `vue-template-compiler` kaldırılıp `@vue/compiler-sfc` ile değiştirildi.  
+**`npm audit` -> 0 zafiyet.**  
+**Yapay Zeka Asistanı:** Claude Sonnet 4.6
+
+### Paket Değişiklikleri
+
+| **Paket** | **Eski** | **Yeni** | **Açıklama** |
+| --- | --- | --- | --- |
+| `vue` | `^2.7.16` | `^3.5.0` | Vue 3 Composition API desteği |
+| `vue-template-compiler` | `^2.7.16` | **kaldırıldı** | Vue 3'te kullanılmıyor — XSS açığının kaynağı |
+| `@vue/compiler-sfc` | — | `^3.5.0` | Vue 3 SFC derleyicisi |
+| `vue-loader` | `^15.11.1` | `^17.4.2` | Vue 3 uyumlu sürüm |
+
+### Kod Değişiklikleri
+
+- **`src/main.js`**
+  - `new Vue({ el, render })` -> `createApp(App).mount('#firstApp')` (Vue 3 bootstrap API)
+- **`webpack.config.js`**
+  - `require('vue-loader/lib/plugin')` -> `require('vue-loader')` ile destructured `{ VueLoaderPlugin }` (vue-loader v17 yeni export yolu)
+- **`src/App.vue`**
+  - `v-for` döngüsüne `:key='mission.value'` eklendi (Vue 3 zorunlu kılar)
+
+---
+
 ## 10 Nisan 2026 (Güvenlik Açığı Düzeltmesi)
 
 **Problem:** webpack-dev-server kaynak kod hırsızlığı güvenlik açığı (Dependabot Alert #49)  
 **Güvenlik Açığı:** GHSA-4v9v-hfq4-rm2v ve GHSA-9jgg-88mc-972h — webpack-dev-server ≤5.2.0 tüm sürümleri etkileniyor. Kötü niyetli bir web sitesine giren geliştirici, kaynak kodunun çalınmasına maruz kalabiliyordu.  
-**Çözüm:** webpack ekosistemi webpack 4'ten webpack 5'e yükseltildi. webpack-dev-server v4 → v5.2.3 güncellemesiyle açık kapatıldı.
+**Çözüm:** webpack ekosistemi webpack 4'ten webpack 5'e yükseltildi. webpack-dev-server v4 -> v5.2.3 güncellemesiyle açık kapatıldı.
 **Yapay Zeka Asistanı:** Claude Sonnet 4.6
 
 ---
@@ -31,16 +58,6 @@
 **`.npmrc`**
 
 - `legacy-peer-deps=true` kaldırıldı — webpack 5 uyumlu paket versiyonları ile artık gerekli değil
-
-### Bilinen Kısıtlamalar
-
-Aşağıdaki güvenlik açıkları yalnızca Vue 3'e geçiş ile çözülebilir ve bu projenin kapsamı dışındadır:
-
-| **Paket** | **Açık** | **Durum** |
-| --- | --- | --- |
-| `vue-template-compiler ≥2.0.0` | GHSA-g3ch-rx76-35fx (XSS) | Vue 2 → 3 migrasyonu gerektirir |
-| `vue 2.x` | GHSA-5j4c-8p2g-v4jx (ReDoS) | Vue 2 → 3 migrasyonu gerektirir |
-| `postcss <8.4.31` | GHSA-7fh5-64p2-3v2j | vue-loader 17 (Vue 3) ile çözülür |
 
 ---
 
@@ -89,6 +106,10 @@ Aşağıdaki güvenlik açıkları yalnızca Vue 3'e geçiş ile çözülebilir 
 **`.npmrc` dosyası eklendi** Burada **legacy-peer-deps** değeri **true** yapıldı. npm 7 ve sonrasın sürümlerde peer dependency çatışmalarını göz ardı etmek için bu şekilde kullanıldı. Tabii bu, webpack 4'ün bazı eski bağımlılıklarıyla uyumluluğu sağlamak için geçici bir çözüm. Sorun çıkartırsa diğer bağımlılıkları da güncelleyebiliriz.
 
 ## Çalışma Zamanı Testleri
+
+```rust
+npm run serve
+```
 
 ![Credit 5](./assets/credit_5.png)
 
