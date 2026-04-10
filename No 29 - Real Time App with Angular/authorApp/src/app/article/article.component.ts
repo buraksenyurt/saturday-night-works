@@ -2,7 +2,6 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ArticleService } from '../article.service';
 import { Subscription } from 'rxjs';
-import { startWith } from 'rxjs';
 import { Article } from '../article';
 
 @Component({
@@ -28,9 +27,7 @@ export class ArticleComponent implements OnInit, OnDestroy {
   gerek diğerlerinin değişiklikleri aynı makalede çalışan herkese yansır.
   */
   ngOnInit() {
-    this._subscription = this.ArticleService.currentArticle.pipe(
-      startWith({ id: '', content: 'Var olan bir makaleyi seç ya da yeni bir tane oluştur' })
-    ).subscribe(a => this.article = a);
+    this._subscription = this.ArticleService.currentArticle.subscribe(a => this.article = a);
   }
 
   // Bileşen ölürken üzerinde çalışan makalenin aboneliğinden çıkılır
@@ -44,6 +41,10 @@ export class ArticleComponent implements OnInit, OnDestroy {
   ki bu tüm abonelerce alınır.
   */
   updateArticle() {
+    if (!this.article.id) {
+      return;
+    }
+
     this.ArticleService.update(this.article);
   }
 }

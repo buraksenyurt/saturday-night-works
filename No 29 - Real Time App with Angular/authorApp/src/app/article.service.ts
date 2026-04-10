@@ -1,6 +1,7 @@
-import { Injectable } from '@angular/core';
+import { Injectable, NgZone } from '@angular/core';
 import { Socket } from 'ngx-socket-io';  // Socket sunucusuna event fırlatıp yakalayacağımız için
 import { Article } from './article'; //Article tipini kullanacağımız için
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -15,10 +16,32 @@ export class ArticleService {
    
    fromEvent dönüşleri Observable tiptedir. Yani değişiklikler otomatik olarak abonelerine yansıyacaktır. 
 */
-  currentArticle = this.socket.fromEvent<Article>('ready');
-  allOfThem = this.socket.fromEvent<string[]>('warnEveryone');
+  private readonly _currentArticle = new BehaviorSubject<Article>({
+    id: '',
+    content: 'Var olan bir makaleyi seç ya da yeni bir tane oluştur'
+  });
+  private readonly _allOfThem = new BehaviorSubject<string[]>([]);
 
-  constructor(private socket: Socket) { } //Constructor injection ile Socket modülünü yükledik
+  currentArticle = this._currentArticle.asObservable();
+  allOfThem = this._allOfThem.asObservable();
+
+  constructor(private socket: Socket, private ngZone: NgZone) {
+    this.socket.fromEvent<Article>('ready').subscribe(article => {
+      if (!article) {
+        return;
+      }
+
+      this.ngZone.run(() => {
+        this._currentArticle.next(article);
+      });
+    });
+
+    this.socket.fromEvent<string[]>('warnEveryone').subscribe(articleIds => {
+      this.ngZone.run(() => {
+        this._allOfThem.next(articleIds ?? []);
+      });
+    });
+  } //Constructor injection ile Socket modülünü yükledik
 
   /*
   Boş bir doküman üretmek için kullanılıyor.

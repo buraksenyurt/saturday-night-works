@@ -2,9 +2,18 @@
     sunucu özelliklerini kolayca kazandırmak için express modülünü kullanıyoruz.
     WebSocket kullanımı içinse socket.io paketi dahil ediliyor
 */
-const app = require('express')();
-const http = require('http').Server(app);
-const io = require('socket.io')(http);
+const express = require('express');
+const httpModule = require('http');
+const { Server } = require('socket.io');
+
+const app = express();
+const http = httpModule.createServer(app);
+const io = new Server(http, {
+    cors: {
+        origin: ['http://localhost:4200'],
+        methods: ['GET', 'POST']
+    }
+});
 
 const articles = {}; // Üzerinde çalışılacak yazıların tutulacağı repo. Canlı ortamlar için fiziki alan ele alınmalı.
 
@@ -78,7 +87,10 @@ io.on("connection", socket => {
     sadece bu doküman üzerinde çalışanların bilgilendirimesi sağlanır.
     */
     socket.on("update", payload => {
-        //console.log("update event");
+        if (!payload || !payload.id) {
+            return;
+        }
+
         articles[payload.id] = payload;
         socket.to(payload.id).emit("ready", payload);
     });

@@ -9,9 +9,8 @@
   },
   "author": "burak selim şenyurt",
   "license": "ISC",
-  "devDependencies": {
-    "@types/socket.io": "^2.1.2",
+  "dependencies": {
     "express": "^4.16.4",
-    "socket.io": "^2.2.0"
+    "socket.io": "^4.8.1"
   }
 }
