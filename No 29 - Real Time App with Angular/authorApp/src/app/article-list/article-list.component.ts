@@ -1,9 +1,12 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Observable, Subscription } from 'rxjs';
-import { ArticleService } from 'src/app/article.service';
+import { AsyncPipe, NgFor, NgIf } from '@angular/common';
+import { ArticleService } from '../article.service';
 
 @Component({
   selector: 'app-article-list',
+  standalone: true,
+  imports: [AsyncPipe, NgFor, NgIf],
   templateUrl: './article-list.component.html',
   styleUrls: ['./article-list.component.css']
 })
@@ -23,9 +26,9 @@ Observable değişkenin güncel kalmasını sağlayacaktır.
 */
 export class ArticleListComponent implements OnInit, OnDestroy {
 
-  articles: Observable<string[]>;
-  currentArticle: string;
-  private _subscription: Subscription;
+  articles: Observable<string[]> | undefined;
+  currentArticle: string = '';
+  private _subscription: Subscription | undefined;
 
   constructor(private articleService: ArticleService) { }
 
@@ -35,7 +38,7 @@ export class ArticleListComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    this._subscription.unsubscribe();
+    this._subscription?.unsubscribe();
   }
 
   // id değerine göre makale çekilmesi için gerekli sunucu olayını tetikler

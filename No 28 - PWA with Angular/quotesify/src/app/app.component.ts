@@ -1,19 +1,24 @@
 import { Component, OnInit } from '@angular/core';
-import {DummyService} from './dummy.service'; // yeni eklediğimiz servisi kullanacağımızı belirtiyoruz
-import {Post} from './dummy.service'; //ki Post arayüz tipinide oradan export etmiştik
+import { NgFor } from '@angular/common';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
+import { DummyService } from './dummy.service';
+import { Post } from './dummy.service';
 
 @Component({
   selector: 'app-root',
+  standalone: true,
+  imports: [NgFor, MatToolbarModule, MatCardModule, MatButtonModule],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
 
-// AppComponent, OnInit metodunu uygulamalı
 export class AppComponent implements OnInit {
   title = 'Dummy Posts';
-  posts: Array<Post>; // çekilen Post verilerini saklamak için kullanacağımız dizi
+  posts: Array<Post> = [];
 
-  constructor(private dummyService:DummyService){
+  constructor(private dummyService: DummyService) {
 
   }
 

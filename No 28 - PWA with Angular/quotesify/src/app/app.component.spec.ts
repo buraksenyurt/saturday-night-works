@@ -1,31 +1,38 @@
-import { TestBed, async } from '@angular/core/testing';
+import { TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { DummyService } from './dummy.service';
+import { Post } from './dummy.service';
+import { of } from 'rxjs';
 
 describe('AppComponent', () => {
-  beforeEach(async(() => {
-    TestBed.configureTestingModule({
-      declarations: [
-        AppComponent
+  const mockPost: Post = { userId: 1, id: 1, title: 'Test Title', body: 'Test Body' };
+  const mockDummyService = { get: () => of([mockPost]) };
+
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      imports: [AppComponent],
+      providers: [
+        { provide: DummyService, useValue: mockDummyService },
       ],
     }).compileComponents();
-  }));
+  });
 
   it('should create the app', () => {
     const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
+    const app = fixture.componentInstance;
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'quotesify'`, () => {
+  it(`should have as title 'Dummy Posts'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('quotesify');
+    const app = fixture.componentInstance;
+    expect(app.title).toEqual('Dummy Posts');
   });
 
-  it('should render title in a h1 tag', () => {
+  it('should load posts on init', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
-    const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('Welcome to quotesify!');
+    const app = fixture.componentInstance;
+    expect(app.posts.length).toBe(1);
   });
 });

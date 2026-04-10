@@ -1,18 +1,21 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { ArticleService } from 'src/app/article.service';
+import { FormsModule } from '@angular/forms';
+import { ArticleService } from '../article.service';
 import { Subscription } from 'rxjs';
-import { Article } from 'src/app/article';
-import { startWith } from 'rxjs/operators';
+import { startWith } from 'rxjs';
+import { Article } from '../article';
 
 @Component({
   selector: 'app-article',
+  standalone: true,
+  imports: [FormsModule],
   templateUrl: './article.component.html',
   styleUrls: ['./article.component.css']
 })
 
 export class ArticleComponent implements OnInit, OnDestroy {
-  article: Article;
-  private _subscription: Subscription;
+  article: Article = { id: '', content: '' };
+  private _subscription: Subscription | undefined;
 
   /*
   ArticleService, Constructor Injection ile içeriye alınır.
@@ -32,7 +35,7 @@ export class ArticleComponent implements OnInit, OnDestroy {
 
   // Bileşen ölürken üzerinde çalışan makalenin aboneliğinden çıkılır
   ngOnDestroy() {
-    this._subscription.unsubscribe();
+    this._subscription?.unsubscribe();
   }
 
   /*

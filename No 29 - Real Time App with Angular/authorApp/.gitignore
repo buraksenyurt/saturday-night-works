@@ -41,6 +41,21 @@ yarn-error.log
 testem.log
 /typings
 
+# Angular cache
+/.angular
+
+# Obsolete Angular 11 files (kept on disk for reference)
+/e2e
+/tslint.json
+/src/app/app.module.ts
+/src/browserslist
+/src/karma.conf.js
+/src/polyfills.ts
+/src/test.ts
+/src/tsconfig.app.json
+/src/tsconfig.spec.json
+/src/tslint.json
+
 # System Files
 .DS_Store
 Thumbs.db
