@@ -2,13 +2,13 @@
 
 Amacım Single-File Components kavramını anlamak ve Webpack'ten yararlanarak bir Vue.js uygulaması yazıp onu paketlemek. Vue halen daha oldukça yabancı olduğum bir alan. Webpack ortamlara göre dağıtım işini de ele alıp ürünleri daha az parçada ve merkezileştirerek paketlememize yarayan bir araç olarak düşünülebilir.
 
->Platform olarak WestWorld _(Ubuntu 18.04, 64bit)_ üzerinde çalıştım.
+> Platform olarak WestWorld _(Ubuntu 18.04, 64bit)_ üzerinde çalıştım.
 
 ## Ön Gereklilikler
 
 İşe proje iskeletini oluşturarak başlayabiliriz.
 
-```
+```bash
 mkdir cometovue
 cd cometovue
 npm init
@@ -22,7 +22,7 @@ Sonrasında aşağıdaki ilaveleri yaparak ilerleyebiliriz.
 
 Projenin diğer bağımlılıklarını yüklemek içinse npm aracından yararlanıyoruz. _(Epey bir bağımlılık yüklemem gerekti)_
 
-```
+```bash
 npm install vue vue-loader vue-template-compiler webpack webpack-cli webpack-dev-server babel-loader @babel/core babel-preset-env css-loader vue-style-loader html-webpack-plugin rimraf -D
 ```
 
@@ -40,7 +40,7 @@ npm install vue vue-loader vue-template-compiler webpack webpack-cli webpack-dev
 
 package.json'a eklenen serve script'i sayesinde uygulama aşağıdaki gibi çalıştırılabilir.
 
-```
+```bash
 npm run serve
 ```
 
@@ -50,7 +50,7 @@ webpack.config.js'teki open:true ataması sayesinde tarayıcı otomatik olarak a
 
 package.json'a eklenen build betiği ile uygulamanın önceki dağıtımlarının silinmesi ve ardından yeni bir dağıtım paketinin oluşturulması sağlanır. Bu dağıtım paketi hazırlanırken build işlemi de gerçekleştirilir. Sonuç olarak _npm run serve_ komutunu çalıştırmadan direkt index.html dosyasını tıklayarak uygulamayı açabiliriz. Tabii öncesinde build etmek lazım :)
 
-```
+```bash
 npm run build
 ```
 
@@ -62,10 +62,12 @@ Sonrasında _npm run serve_ demeden index.html'i fiziki lokasyonundan tarayıcı
 
 ![credit_4.png](./assets/credit_4.png)
 
->Tabii asıl farkı görebilmek için serve edilen ve fiziki klasörde çalıştırılan index.html dosyalarının source kısımlarına bakıp karşılaştırmak lazım. Sizde böyle yapın ;)
+> Tabii asıl farkı görebilmek için serve edilen ve fiziki klasörde çalıştırılan index.html dosyalarının source kısımlarına bakıp karşılaştırmak lazım. Sizde böyle yapın ;)
 
 ## Neler Öğrendim?
 
 - Bir Vue.js uygulamasının genel anatomisini
 - Webpack'in ne işe yaradığını, ona ne yapması gerektiğini nasıl söyleyeceğimi ve nasıl çalıştıracağımı
 - package.json'a eklenen betikler ile build ve deploy işlemlerinin nasıl gerçekleştirilebileceğini
+
+[Güncellemeler](./CHANGELOG.md)

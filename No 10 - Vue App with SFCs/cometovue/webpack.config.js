@@ -1,12 +1,12 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
-const webpack = require('webpack');
 
 module.exports = {
   devServer: {
-    open: true, // uygulama servis edilince browser'da otomatik olarak açılır.
+    open: true,
     hot: true,
-    disableHostCheck: true // Bunu koymayınca development sunucusunda 'Invalid Host Header [WDS] Disconnected!' şeklinde sürekli hata aldım.
+    // allowedHosts: 'auto' is the secure default in webpack-dev-server v4.
+    // disableHostCheck was removed — it enabled CVE-2018-14732 DNS rebinding attacks.
   },
   entry: './src/main.js',
   module: {
@@ -21,6 +21,5 @@ module.exports = {
       template: './src/index.html',
     }),
     new VueLoaderPlugin(),
-    new webpack.HotModuleReplacementPlugin(),
   ]
 };

@@ -6,7 +6,7 @@
 
 Örnek python flask paketini kullanan basit bir web uygulaması. ahch-to sisteminde python'un 2.7 sürümü mevcut lakin ben 3 üzeri bir versiyon kullanmak istiyorum. Bu nedenle homebrew'den yararlanarak yeni bir kurulum gerçekleştirdim. _(Tabii homebrew de sistemde yoktu. Nasıl kurulduğunun araştırmasını size bırakıyorum)_
 
-```
+```bash
 brew update
 brew install python
 ```
@@ -15,7 +15,7 @@ brew install python
 
 Azure tarafındaki işlemler için CLI aracından yararlanacağım. Onu kurmak için ilk terminal komutunu kullandım. İkinci komutla da azure'a login oldum.
 
-```
+```bash
 brew install azure-cli
 az login
 ```
@@ -26,8 +26,8 @@ az login
 
 Uygulamayı Azure tarafına deploy edebilmek için yapılması gerekenler var. Sırasıyla _deployment user_, _resource group_ ,  _service plan_ ve son olarak _web app_ oluşturmalıyız. Bunlar için aşağıdaki terminal komutlarını kullanarak ilerledim.
 
-```
-as webapp deployment user set --user-name dpyl-usr-buraks --password <azure kurallarına uyan bir şifre>
+```bash
+az webapp deployment user set --user-name dpyl-usr-buraks --password <azure kurallarına uyan bir şifre>
 
 az group create --name rg-todoshero --location westeurope
 
@@ -42,7 +42,7 @@ Terminalden çalıştırdığım komutlar başarılı olunca aşağıdaki sonuç
 
 ![assets/credit_3.png](assets/credit_3.png)
 
-Uygulamanın web adresi todosherowebapp.azurewebsites.net şeklinde oluşturulurken, github repository adresi de https://dply-usr-buraks@todosherowebapp.scm.azurewebsites.net/todosherowebapp.git şeklinde oluştu.
+Uygulamanın web adresi todosherowebapp.azurewebsites.net şeklinde oluşturulurken, github repository adresi de `https://dply-usr-buraks@todosherowebapp.scm.azurewebsites.net/todosherowebapp.git` şeklinde oluştu.
 
 ![assets/credit_4.png](assets/credit_4.png)
 
@@ -50,7 +50,7 @@ Uygulamanın web adresi todosherowebapp.azurewebsites.net şeklinde oluşturulur
 
 Klasör ve dosya ağacı aşağıdaki gibidir.
 
-```
+```bash
 cd src
 mkdir todayshero
 touch todayshero/app.py
@@ -58,19 +58,19 @@ touch todayshero/requirements.txt
 touch todayshero/.gitignore
 ```
 
->requirements.txt, Azure platformunun Python ortamlı deploy işlemi için kullanacağı bir doküman. Bu dosya içerisine yazılan paketler, azure deploy işlemi sırasında pip ile uzak sunucu ortamına yüklenmeye çalışılır.
+> requirements.txt, Azure platformunun Python ortamlı deploy işlemi için kullanacağı bir doküman. Bu dosya içerisine yazılan paketler, azure deploy işlemi sırasında pip ile uzak sunucu ortamına yüklenmeye çalışılır.
 
-Tabii ahch-to üzerindeki denemeler için flask paketini öncelikle geliştirme ortamına yüklemem gerekiyordu. 
+Tabii ahch-to üzerindeki denemeler için flask paketini öncelikle geliştirme ortamına yüklemem gerekiyordu.
 
-```
+```bash
 pip3 install flask
 ```
 
-## Çalışma Zamanı _(Local ortamda)_ 
+## Çalışma Zamanı _(Local ortamda)_
 
 Bu işlemin ardından web uygulamasını önce local ortamda çalıştırmayı denedim.
 
-```
+```bash
 FLASK_APP=app.py flask run
 ```
 
@@ -82,7 +82,7 @@ Bu basit uygulama kodu list içeriğinden seçtiği rastgele bir karakterin adı
 
 Uygulamayı local ortamdan git aracılığıyla Azure'a almak içinse aşağıdaki adımları izledim. _(todoshero klasörü altında)_
 
-```
+```bash
 git init
 git remote add azure https://dply-usr-buraks@todosherowebapp.scm.azurewebsites.net/todosherowebapp.git
 git add .
@@ -90,7 +90,7 @@ git commit -m "Application has been added"
 git push azure master
 ```
 
-Standart git komutları ile uygulamayı azure reposuna deploy ettik. İlk olarak initialize işlemi var. Sonra uzak repo adresini ekliyoruz. Tüm kod dosyalarını . ile alıp commit ettikten sonra push çağrısı ile değişikliklerimizi yolluyoruz. 
+Standart git komutları ile uygulamayı azure reposuna deploy ettik. İlk olarak initialize işlemi var. Sonra uzak repo adresini ekliyoruz. Tüm kod dosyalarını . ile alıp commit ettikten sonra push çağrısı ile değişikliklerimizi yolluyoruz.
 
 push işlemini takiben azure sitesine tekrar gittiğimde python uygulamasının etkinleştiğini gördüm.
 

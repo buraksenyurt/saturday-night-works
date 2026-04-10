@@ -42,7 +42,7 @@
 
 ---
 
-## Paket Değişiklikleri
+### Paket Değişiklikleri
 
 | **Paket** | **Eski** | **Yeni** |
 | --- | --- | --- |
@@ -86,7 +86,7 @@
 
 ---
 
-## Çalışma Zamanı
+### Çalışma Zamanı Testleri
 
 Windows 11 sisteminde çalışabilmek için `.npmrc` dosyası eklendi. İçeriği şu şekilde;
 
@@ -99,8 +99,6 @@ npm start
 ```
 
 ![Win Runtime](./assets/credit_2.png)
-
-## Testler
 
 - [x] Windows 11 testleri
 - [ ] Ubuntu testleri
