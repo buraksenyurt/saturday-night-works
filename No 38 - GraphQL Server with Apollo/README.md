@@ -4,7 +4,7 @@ Apollo Server, web, mobile gibi istemciler için GraphQL servisi sunan bir ürü
 
 ![assets/credit_1.png](assets/credit_1.png)
 
-İstemciler kendilerine uygun Apollo Client paketlerini kullanarak sunucu tarafı ile kolayca haberleşebilirler. 
+İstemciler kendilerine uygun Apollo Client paketlerini kullanarak sunucu tarafı ile kolayca haberleşebilirler.
 
 Benim amacım stand alone çalışan bir Apollo sunucusu yazmak ve arka tarafta bir veri tabanını kullanarak veriyi GraphQL üzerinden istemcilere açmak.
 
@@ -12,9 +12,9 @@ Benim amacım stand alone çalışan bir Apollo sunucusu yazmak ve arka tarafta 
 
 Proje iskeletini aşağıdaki gibi oluşturabilir ve Node.js tarafı için gerekli paketleri yükleyebiliriz.
 
->Örneği her zaman olduğu gibi WestWorld _(Ubuntu 18.04, 64bit)_ üzerinde deniyorum.
+> Örneği her zaman olduğu gibi WestWorld _(Ubuntu 18.04, 64bit)_ üzerinde deniyorum.
 
-```
+```bash
 mkdir project-server
 cd project-server
 npm init
@@ -24,21 +24,21 @@ touch server.js
 
 ## Birinci Sürüm
 
-İlk sürümde veriyi bir diziyle besledim. Temel amaç Apollo Server'ın meziyetlerini ortaya koymaktı. 
+İlk sürümde veriyi bir diziyle besledim. Temel amaç Apollo Server'ın meziyetlerini ortaya koymaktı.
 
 - server.js içeriği yazıldı _(kod dosyasındaki açıklamalardan yardım alabilirsiniz)_
 
-Her iki sürümü çalıştırmak için terminalden 
+Her iki sürümü çalıştırmak için terminalden
 
-```
+```bash
 npm run serve
 ```
 
-yazmak yeterli. _(Tahmin edileceği üzere package.json içerisine eklediğimiz bir run komutu var)_ Bunun sonucu olarak http://localhost:4444 adresine gidebilir ve otomatik olarak açılan Playground arabirimi üzerinden denemelerimizi yapabiliriz. 
+yazmak yeterli. _(Tahmin edileceği üzere package.json içerisine eklediğimiz bir run komutu var)_ Bunun sonucu olarak `http://localhost:4444` adresine gidebilir ve otomatik olarak açılan Playground arabirimi üzerinden denemelerimizi yapabiliriz.
 
 Array kullanan bu ilk sürümün çalışma zamanına ait bir kaç ekran görüntüsüyse şöyle.
 
-```
+```graphql
 # Yeni bir görev eklemek
 mutation {
   Insert(
@@ -59,7 +59,7 @@ mutation {
 
 ![assets/credit_2.png](assets/credit_2.png)
 
-```
+```graphql
 # Tüm görevlerin listesi
 {
   AllTasks {
@@ -73,7 +73,7 @@ mutation {
 
 ![assets/credit_3.png](assets/credit_3.png)
 
-```
+```graphql
 # Var olan bir satırı güncelleme
 mutation {
   Update(
@@ -94,7 +94,7 @@ mutation {
 
 ![assets/credit_4.png](assets/credit_4.png)
 
-```
+```graphql
 # Id değerine göre görev silinmesi
 mutation {
   Delete(id: 1) {
@@ -112,7 +112,7 @@ mutation {
 
 İkinci sürümde amaç veri kaynağı olarak PostgreSQL kullanmak. WestWorld üzerinde PostgreSQL ile ilgili olarak aşağıdaki terminal komutlarını işlettim.
 
-```
+```bash
 sudo apt-get install postgresql
 
 sudo su - postgres
@@ -132,7 +132,7 @@ ALTER ROLE Scott CREATEDB;
 
 ![assets/credit_6.png](assets/credit_6.png)
 
-```
+```bash
 psql -d postgres -U scott
 CREATE DATABASE ThoughtWorld;
 
@@ -157,7 +157,7 @@ SELECT * FROM tasks;
 
 PostgreSQL tarafı hazır. Artık veri tabanını Apollo suncusunda kullanabiliriz. Ancak öncesinde gerekli npm modülünü yüklemek lazım. _(Bir önceki senaryo ile kodların karışmaması adına pg-server.js isimli yeni bir dosya üzerinde çalışmaya karar verdim)_
 
-```
+```bash
 sudo npm install pg
 ```
 
@@ -167,7 +167,7 @@ Birinci senaryodaki GraphQL sorguları benzer şekilde ikinci senaryo için de d
 
 ## İstemci
 
->throw new ToDoForYouException("Bu uygulamayı size bırakıyorum. Çünkü sonraki konuya geçmek istiyorum :|");
+> throw new ToDoForYouException("Bu uygulamayı size bırakıyorum. Çünkü sonraki konuya geçmek istiyorum :|");
 
 ## TODO _(Eklenebilecek şeyler)
 
@@ -185,3 +185,5 @@ Birinci senaryodaki GraphQL sorguları benzer şekilde ikinci senaryo için de d
 - Ubuntu platformuna PostgreSQL'in kurulmasını, yeni rol oluşturulmasını, rol altında veri tabanı ve tablo açılmasını
 - Apollo metodlarında pg'nin query çağrısına ait sonuçları yakalayabilmek için async-await kullanılmasını
 - Visual Studio Code tarafında PostgreSQL için eklenti kullanımını
+
+[Güncellemeler](CHANGELOG.md)

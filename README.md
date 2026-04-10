@@ -4,9 +4,9 @@
 
 Pandemi öncesi zamanlardan kalma bu reponun üzerinden yıllar geçti. Zamanla, deneysel çalışmalarda yer alan birçok kütüphane güncellendi hatta kaldırıldı. Sevgili **github dependbot** açıklar içeren paketleri yükseltmem için sürekli uyarılarda bulundu. Artık güvenlik zafiyetlerini temizleme ve uygulamaları güncelleme zamanı. Ancak sorun şu ki paketler güncellenince geriye uyumluluk sorunları *(backward compatibility)* ortaya çıkabilir. Dolayısıyla karşımda yeni bir meydan okuma var; her çalışmayı bugünün şartlarında tekrar değerlendirmek *(Özellikle **dependebot** alarmına düşen bulguların yer aldığı örnekleri)*
 
-Bu amaçla yeni bir branch *(fSWEUpdates)* açıp ilerlemeye karar verdim. Değişiklikler **CHANGELOG.md** dosyalarında yer alacak. Ne yazık ki bazı bulgular köklü değişiklikler gerektiriyor. Örneğin **Angular 11**'den **Angular 21**'e geçiş yapmak gibi. Bu birçok paketi ve kodu da etkiliyor. Çok zorlayacı noktalarda yoğun mesai harcamam gerekecekse doğrundan yapay zeka asistanlarından yardım almayı planlıyorum. Uygulamaların çalıştığını görmek, tüm testlerden ve güvenli kod taramasından geçmesini sağlamak yeterli diye düşünüyorum.
+Bu amaçla yeni bir branch *(fSWEUpdates)* açıp ilerlemeye karar verdim. Değişiklikler **CHANGELOG.md** dosyalarında yer alacak. Ne yazık ki bazı bulgular köklü değişiklikler gerektiriyor. Örneğin **Angular 11**'den **Angular 21**'e geçiş yapmak gibi. Bu birçok paketi ve kodu da etkiliyor. Çok zorlayacı noktalarda yoğun mesai harcamaktansa doğrundan yapay zeka asistanlarından yardım almayı planlıyorum *(ki ağırlıkla öyle oldu)*. Uygulamaların çalıştığını görmek, tüm testlerden ve güvenli kod taramasından geçmesini sağlamak yeterli diye düşünüyorum.
 
-**README** içeriklerindeki orjinal anlatımları koruyacağım, belki yazım hatalarını düzeltirim. Ancak günümüz şartlarında ayağa kaldırmak için ne gibi değişiklikler yapıldığını **CHANGELOG.md** dosyalarında özetleyeceğim.
+**README** içeriklerindeki orjinal anlatımları koruyacağım, belki yazım hatalarını düzeltirim. Ancak günümüz şartlarında ayağa kaldırmak için ne gibi değişiklikler yapıldığını **CHANGELOG.md** dosyalarında tutabiliriz.
 
 ---
 
@@ -54,8 +54,8 @@ Burası işlenecek konu başlıklarının olduğu havuzdur.
 | **41** | Bir Python web uygulamasını git deploy yöntemi ile Azure'da yayınlamak | Ok | - |
 | **40** | Socket.IO kullanılan bir React uygulaması yazmak | Ok | - |
 | **39** | Nedir bu Travis-CI? | Ok | - |
-| **38** | Appollo Server ile bir GraphQL servisi geliştirmek | Ok | - |
-| **37** | Heroku üzerinde bir Hasura GraphQL Engine geliştirmek ve Vue.js tabanlı bir istemciden kullanmak | Ok | - |
+| **38** | Appollo Server ile bir GraphQL servisi geliştirmek | Ok | Ok |
+| **37** | Heroku üzerinde bir Hasura GraphQL Engine geliştirmek ve Vue.js tabanlı bir istemciden kullanmak | Ok | Ok |
 | **36** | SQLite ile çalışan, Flask tabanlı bir Python uygulaması geliştirmek | Ok | - |
 | **35** | Cloud Firestore CRUD operasyonlarını Server Side çalışan bir Blazor uygulamasında icra etmek | Ok | - |
 | **34** | Azure SignalR servisini bir Azure Function ile kullanarak abonelere bildirimde bulunmak | Ok | - |
@@ -76,7 +76,7 @@ Burası işlenecek konu başlıklarının olduğu havuzdur.
 | **19** | Blazor ile tanışma | Ok | - |
 | **18** | Asp.Net Core'da arka plan görevleri | Ok | - |
 | **17** | Python tarafında Concurrency kullanımı | Ok | - |
-| **16** | Vue ile Desktop uygulaması oluşturmak *(Electron benzeri)* | Ok | - |
+| **16** | Vue ile Desktop uygulaması oluşturmak *(Electron benzeri)* | Ok | Ok |
 | **15** | Briaz daha GraphQL *(Graphpack kullanımı, Mutations)* | Ok | - |
 | **14** | Typescript ile REST Api geliştirmek *(FortJs ile)* | Ok | - |
 | **13** | MEVN *(MongoDb, Express, Vue.Js, NodeJS)* deneyimini yaşatacak bir Hello World yazmak | Ok | Ok |

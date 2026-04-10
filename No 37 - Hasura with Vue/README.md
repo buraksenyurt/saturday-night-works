@@ -4,7 +4,7 @@ API'ler için türlendirilmiş _(typed)_ sorgulama dillerinden birisi olarak ön
 
 ## Hasura GraphQL Engine Tarafının Geliştirilmesi
 
-Pek tabii Heroku üzerinde bir hesabımızın olması gerekiyor. Sonrasında [şu](https://elements.heroku.com/) adrese gidip elements kısmından Hasura GraphQL Engine'i seçmek yeterli. 
+Pek tabii Heroku üzerinde bir hesabımızın olması gerekiyor. Sonrasında [şu](https://elements.heroku.com/) adrese gidip elements kısmından Hasura GraphQL Engine'i seçmek yeterli.
 
 ![assets/credit_1.png](assets/credit_1.png)
 
@@ -16,13 +16,13 @@ Ben aşağıdaki bilgileri kullanarak bir proje oluşturdum.
 
 ![assets/credit_3.png](assets/credit_3.png)
 
-Deploy başarılı bir şekilde tamamlandıktan sonra, 
+Deploy başarılı bir şekilde tamamlandıktan sonra,
 
 ![assets/credit_4.png](assets/credit_4.png)
 
 _View_ seçeneği ile yönetim paneline geçebiliriz.
 
-![assets/credit_5.png](assets/credit_5.png) 
+![assets/credit_5.png](assets/credit_5.png)
 
 Dikkat edileceği üzere GraphQL sorgularını çalıştırabileceğimiz hazır bir arayüz sunuluyor. Ancak öncesinde örnek veri setleri hazırlamalıyız. Bunun için Data sekmesinden yararlanabiliriz.
 
@@ -50,7 +50,7 @@ products tablosunda da UUID tipinde productId, text tipinde description, number 
 
 ![assets/credit_16.png](assets/credit_16.png)
 
->Bu durumda categories üzerinden products'a gidebiliriz. Ters ilişkiyi de kurabiliriz ve bir ürünle birlikte bağlı olduğu kategorinin bilgisini de yansıtabiliriz ki ürünleri çektiğimizde hangi kategoride olduğunu da göstermek güzel olur. Bunu nasıl yapabileceğinizi bir deneyin isterim.
+> Bu durumda categories üzerinden products'a gidebiliriz. Ters ilişkiyi de kurabiliriz ve bir ürünle birlikte bağlı olduğu kategorinin bilgisini de yansıtabiliriz ki ürünleri çektiğimizde hangi kategoride olduğunu da göstermek güzel olur. Bunu nasıl yapabileceğinizi bir deneyin isterim.
 
 Hasura'nın Postgresql tarafındaki örnek tablolarımız hazır. İstersek _Insert Row_ pencersinden tablolara örnek veri girişleri yapabilir ve GraphiQL pencresinden sorgular çalıştırabiliriz. Ben yaptığım denemelerle alakalı bir kaç örnek ekran görüntüsü paylaşayım. Arabirimin sağ tarafında yer alan Docs menüsüne de bakabilirsiniz. Burada query ve mutation örnekleri, hazırladığımız veri setleri için otomatik olarak oluşturuluyorlar.
 
@@ -64,7 +64,7 @@ Hasura'nın Postgresql tarafındaki örnek tablolarımız hazır. İstersek _Ins
 
 Kategorilerin başlıkları,
 
-```
+```graphql
 query{
   categories{
     title
@@ -76,7 +76,7 @@ query{
 
 Kategorilere bağlı ürünler
 
-```
+```graphql
 query{
   categories{
     title
@@ -92,7 +92,7 @@ query{
 
 Ürünlerin tam listesi ve bağlı olduğu kategori adları
 
-```
+```graphql
 query{
   products{
     description
@@ -108,7 +108,7 @@ query{
 
 Veri girişi de yapabiliriz. Bunun için mutation kullanıldığını daha önceden öğrenmiştim. Örneğin yeni bir kategoriyi aşağıdaki gibi ekleyebiliriz.
 
-```
+```graphql
 mutation {
   insert_categories(objects: [{
     title: "Çorap",
@@ -118,11 +118,12 @@ mutation {
     }
   }
 ```
+
 ![assets/credit_20.png](assets/credit_20.png)
 
 Hasura, GraphQL API’si arkasında PostgreSQL veri tabanını kullanırken SQLden aşina olduğumuz bir çok sorgulama metodunu da hazır olarak sunar. Örneğin fiyatı 300 birimin üstünde olan ürünleri aşağıdaki sorgu ile çekebiliriz.
 
-```
+```graphql
 {
   products(where: {listPrice: {_gt: 300}}) {
     description
@@ -138,7 +139,7 @@ Hasura, GraphQL API’si arkasında PostgreSQL veri tabanını kullanırken SQLd
 
 Where metodu sorgu şemasına otomatik olarak eklenmiştir. _gt tahmin edileceği üzere greater than anlamındadır. Yukarıdaki sorguya fiyata göre tersten sıralama seçeneği de koyabiliriz. Sadece where koşulu arkasından order_by çağrısı yapmamız yeterlidir.
 
-```
+```graphql
 {
   products(where: {listPrice: {_gt: 300}}, order_by: {listPrice: desc}) {
     description
@@ -154,7 +155,7 @@ Where metodu sorgu şemasına otomatik olarak eklenmiştir. _gt tahmin edileceğ
 
 Çok büyük veri setleri düşünüldüğünde önyüzler için sayfalama önemlidir. Bunun için limit ve offset değerlerini kullanabiliriz. 5nci üründen itibaren 5 ürünün getirilmesi için aşağıdaki sorgu kullanılabilir.
 
-```
+```graphql
 {
   products(limit: 5, offset: 5) {
     description
@@ -174,9 +175,9 @@ Hasura Query Engine’in sorgu seçenekleri ile ilgili olarak [buradaki doküman
 
 İstemci tarafını basit bir Vue uygulaması olarak geliştirmeye karar vermiştim. Aşağıdaki terminal komutunu kullanıp varsayılan ayarları ile projeyi oluşturdum. Ayrıca GraphQL tarafı ile konuşabilmek için gerekli npm paketlerini de yükledim. Apollo _(ilerleyen ünitelerde ondan bir GraphQL Server yazmayı deneyeceğim)_, GraphQL servisimiz ile kolay bir şekilde iletişim kurmamızı sağlayacak.
 
->Görsel taraf için bootstrap kullanmayı tercih ettim.
+> Görsel taraf için bootstrap kullanmayı tercih ettim.
 
-```
+```bash
 sudo vue create nba-client
 sudo npm install vue-apollo apollo-client apollo-cache-inmemory apollo-link-http graphql-tag graphql bootstrap --save
 ```
@@ -193,17 +194,17 @@ Vue uygulaması tarafından yaptıklarım kısaca şöyle _(Kod dosyalarındaki 
 
 ## TODO _(Benim tembelliğimden size düşen)_
 
-><span style="color:red">Bu servisi JWT Authentication bünyesine almak lazım. İşte size güzel bir araştırma konusu. Başlangıç noktası olarak [Auto0'ın şu dokümanına bakılabilir](https://auth0.com/docs/quickstart/spa/vuejs). Ben şu an için sadece HASURA_GRAPHQL_ADMIN_SECRET kullanarak servis adresine erişimi kısıtladım. </span>
+> <span style="color:red">Bu servisi JWT Authentication bünyesine almak lazım. İşte size güzel bir araştırma konusu. Başlangıç noktası olarak [Auto0'ın şu dokümanına bakılabilir](https://auth0.com/docs/quickstart/spa/vuejs). Ben şu an için sadece HASURA_GRAPHQL_ADMIN_SECRET kullanarak servis adresine erişimi kısıtladım. </span>
 
 ## Çalışma Zamanı
 
 Uygulamayı çalıştırmak için,
 
-```
+```bash
 npm run serve
 ```
 
-terminal komutunu kullanabiliriz. Sonrasında http://localhost:8080 adresine gitmemiz yeterli.
+terminal komutunu kullanabiliriz. Sonrasında `http://localhost:8080` adresine gitmemiz yeterli.
 
 ![assets/credit_24.png](assets/credit_24.png)
 
@@ -215,7 +216,7 @@ Hatta yeni bir forma eklediğimizde gönderilen Graphql Mutation sorgusundan dö
 
 ![assets/credit_26.png](assets/credit_26.png)
 
->throw new ToBeContinuedException("Yeni ürün ekleme sayfasında kategori seçiminde combobox kullanımı yapılmalı");
+> throw new ToBeContinuedException("Yeni ürün ekleme sayfasında kategori seçiminde combobox kullanımı yapılmalı");
 
 ## Neler Öğrendim
 
@@ -226,3 +227,5 @@ Hatta yeni bir forma eklediğimizde gönderilen Graphql Mutation sorgusundan dö
 - Component içinde Component kullanımlarını
 - Temel component tasarlama adımlarını
 - Vue tarafından bir Mutation sorgusunun nasıl gönderilebileceğini ve schema veri tiplerine dikkat etmem gerektiğini
+
+[Güncellemeler](CHANGELOG.md)

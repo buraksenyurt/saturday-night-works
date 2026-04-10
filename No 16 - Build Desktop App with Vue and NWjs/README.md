@@ -8,7 +8,7 @@ Uygulama çok basit bir arayüze sahip olacak. Textbox'a bir bölüm adı girile
 
 WestWorld'de _(Ubuntu 18.04 64bit)_ bu örnek için Vue CLI'a ihtiyaç var. Önce versiyonu kontrol edip yoksa yüklemek lazım. Ayrıca projeyi oluşturduktan sonra NW paketini de eklemek gerekiyor. axios'u servis haberleşmesi için kullanacağız.
 
-```
+```bash
 vue --version
 sudo npm install -g @vue/cli
 vue create bbtheory
@@ -17,7 +17,7 @@ sudo npm install --save-dev nwjs-builder-phoenix nw@sdk
 sudo npm install axios
 ```
 
->Vue projesi varsayılan kurulum ayarları ile oluşturulmuştur.
+> Vue projesi varsayılan kurulum ayarları ile oluşturulmuştur.
 
 ## Bazı Notlar
 
@@ -25,17 +25,17 @@ Uygulamanın giriş noktasını belirtmek için package.json dosyasında main ö
 
 Normalde desktop uygulamasını çalıştırmak için proje klasöründeyken birinci terminalden
 
-```
+```bash
 npm run serve
 ```
 
 ile sunucuyu etkinleştirmek ve ardından ikinci bir terminal penceresinden 
 
-```
+```bash
 ./node_modules/.bin/run .
 ```
 
-yazmak gerekiyor. Lakin bu durumda NW.js'in ilgili SDK'sı indirilip development ortamı ayağa kalkıyor. Bunu otomatikleştirmek için nw@sdk isimli paketi yükledik ve package.json'a _desktop_ betiğini dahil ettik. 
+yazmak gerekiyor. Lakin bu durumda NW.js'in ilgili SDK'sı indirilip development ortamı ayağa kalkıyor. Bunu otomatikleştirmek için nw@sdk isimli paketi yükledik ve package.json'a _desktop_ betiğini dahil ettik.
 
 Desktop uygulaması çalıştıktan sonra tarayıcının Development Tools'unu kullanarak debug yapılabiliyor. API çağrısı yapabilmek içinse axios paketinden yararlanıyoruz.
 
@@ -49,7 +49,7 @@ Desktop uygulaması çalıştıktan sonra tarayıcının Development Tools'unu k
 
 Öncelikle web api servisi çalıştırılır. Ardından Node.js server ve desktop uygulaması. Bunları 3 ayrı terminal penceresinden yürütebiliriz.
 
-```
+```bash
 dotnet run
 npm run serve
 npm run desktop
@@ -63,13 +63,13 @@ Big Bang Theory'den örnek bir bölüm girip aratabiliriz.
 
 Uygulamayı paketlemek için packages.json içerisine build kısmı eklenir. Burada nw'nin versiyonu belirtlilir. bbtheory isimli uygulamanın root klasöründe aşağıdaki komut ile 64bit linux platformu için gerekli paketin üretilmesi sağlanır.
 
-```
+```bash
 ./node_modules/.bin/build --tasks linux-x64 .
 ```
 
 ![cover_2.png](./assets/cover_2.png)
 
->Paket boyutu oldukça yüksek! Ancak küçültmek için çeşitli yollar varmış. _(Araştırmak lazım)_
+> Paket boyutu oldukça yüksek! Ancak küçültmek için çeşitli yollar varmış. _(Araştırmak lazım)_
 
 ![cover_3.png](./assets/cover_3.png)
 
@@ -79,3 +79,5 @@ Uygulamayı paketlemek için packages.json içerisine build kısmı eklenir. Bur
 - axios ile nasıl servis talebi gönderilir
 - newtonsoft.json ile bir json dizisinde nasıl linq sorgusu çalıştırılır
 - CORS ne işe yarar
+
+[Güncellemeler](CHANGELOG.md)
