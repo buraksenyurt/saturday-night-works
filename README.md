@@ -51,46 +51,46 @@ Burası işlenecek konu başlıklarının olduğu havuzdur.
 
 | **Sıra** | **Konu Başlığı** | **Tamamlandı mı?** | **2026 Upgrade Durumu** |
 | --- | --- | --- | --- |
-| **41** | Bir Python web uygulamasını git deploy yöntemi ile Azure'da yayınlamak | [x] | [ ] |
-| **40** | Socket.IO kullanılan bir React uygulaması yazmak | [x] | [ ] |
-| **39** | Nedir bu Travis-CI? | [x] | [ ] |
-| **38** | Appollo Server ile bir GraphQL servisi geliştirmek | [x] | [ ] |
-| **37** | Heroku üzerinde bir Hasura GraphQL Engine geliştirmek ve Vue.js tabanlı bir istemciden kullanmak | [x] | [ ] |
-| **36** | SQLite ile çalışan, Flask tabanlı bir Python uygulaması geliştirmek | [x] | [ ] |
-| **35** | Cloud Firestore CRUD operasyonlarını Server Side çalışan bir Blazor uygulamasında icra etmek | [x] | [ ] |
-| **34** | Azure SignalR servisini bir Azure Function ile kullanarak abonelere bildirimde bulunmak | [x] | [ ] |
-| **33** | KONG Api Gateway aracını kurcalamak. Nedir bu KONG? *(Sadece Proxy olarak ele alındı)* | [x] | [ ] |
-| **32** | Angular, Firebase Firestore ve CRUD işlemleri | [x] | [ ] |
-| **31** | Firebase Cloud Messaging ile bir PWA üzerinde Push Notification uygulamak | [x] | [ ] |
-| **30** | Biraz daha Angular deneyimi kazanmak için basit bir oyun *(Çok çok basit :) )* yazmaya çalışmak | [x] | [ ] |
-| **29** | Angular ön yüzü ve Node sunucusu arasında Socket.IO yardımıyla soket haberleşmesi gerçekleştirmek | [x] | [ ] |
-| **28** | Angular ile bir PWA uygulaması geliştirmek | [x] | [ ] |
-| **27** | Firebase ile Google Cloud Functions kullanımı | [x] | [ ] |
-| **26** | Microsoft Custom Vision Python SDK'sı ile imaj sınıflandırması yapmak | [x] | [ ] |
-| **25** | AlaSQL veritabanını Node.Js ile kullanmak | [x] | [ ] |
-| **24** | Bir Asp.Net Core Web API uygulamasını Minikube üzerinde koşturmak | [x] | [ ] |
-| **23** | Asp.Net Core Tarafında Gantt Chart'lar oluşturmak | [x] | [ ] |
-| **22** | Bir WebAPI servisinde SQLite ile birlikte Dapper Micro ORM kütüphanesini kullanmak | [x] | [ ] |
-| **21** | Asp.Net Core'da Razor Pages kullanımı | [x] | [ ] |
-| **20** | Python log'ları için ELK Kullanımı | [x] | [ ] |
-| **19** | Blazor ile tanışma | [x] | [ ] |
-| **18** | Asp.Net Core'da arka plan görevleri | [x] | [ ] |
-| **17** | Python tarafında Concurrency kullanımı | [x] | [ ] |
-| **16** | Vue ile Desktop uygulaması oluşturmak *(Electron benzeri)* | [x] | [ ] |
-| **15** | Briaz daha GraphQL *(Graphpack kullanımı, Mutations)* | [x] | [ ] |
-| **14** | Typescript ile REST Api geliştirmek *(FortJs ile)* | [x] | [ ] |
-| **13** | MEVN *(MongoDb, Express, Vue.Js, NodeJS)* deneyimini yaşatacak bir Hello World yazmak | [x] | [x] |
-| **12** | Flask-RESTPlus ile Python'da REST Api geliştirmek | [x] | [ ] |
-| **11** | GraphQL'i NodeJS ile kullanmaya çalışmak | [x] | [ ] |
-| **10** | Single-File Components ile Vue.js uygulaması geliştirmek | [x] | [ ] |
-| **09** | Angular ile basit bir Todo uygulaması yazmak | [x] | [x] |
-| **08** | Express kullanan bir React uygulamasını Heroku'da yayınlamak | [x] | [ ] |
-| **07** | Node.js, MongoDB, Fastify ve Swagger kullanılan bir uygulama yazmak | [x] | [x] |
-| **06** | Bir NodeJS sunucusunu ölçeklendirmek | [x] | [ ] |
-| **05** | Web sayfasında Bootstrap Modal Popup kullanmak | [x] | [ ] |
-| **04** | Visual Studio Code için Snippet yazmak *(Bir öğle vakti deneyimlendi)* | [x] | [ ] |
-| **03** | Go ve Vue.js kullanarak haber akışı yapmak | [x] | [ ] |
-| **02** | Asp.Net Core ile MongoDB kullanmak | [x] | [ ] |
-| **01** | Bootstrap Grid sistemini anlamak | [x] | [ ] |
+| **41** | Bir Python web uygulamasını git deploy yöntemi ile Azure'da yayınlamak | Ok | - |
+| **40** | Socket.IO kullanılan bir React uygulaması yazmak | Ok | - |
+| **39** | Nedir bu Travis-CI? | Ok | - |
+| **38** | Appollo Server ile bir GraphQL servisi geliştirmek | Ok | - |
+| **37** | Heroku üzerinde bir Hasura GraphQL Engine geliştirmek ve Vue.js tabanlı bir istemciden kullanmak | Ok | - |
+| **36** | SQLite ile çalışan, Flask tabanlı bir Python uygulaması geliştirmek | Ok | - |
+| **35** | Cloud Firestore CRUD operasyonlarını Server Side çalışan bir Blazor uygulamasında icra etmek | Ok | - |
+| **34** | Azure SignalR servisini bir Azure Function ile kullanarak abonelere bildirimde bulunmak | Ok | - |
+| **33** | KONG Api Gateway aracını kurcalamak. Nedir bu KONG? *(Sadece Proxy olarak ele alındı)* | Ok | - |
+| **32** | Angular, Firebase Firestore ve CRUD işlemleri | Ok | - |
+| **31** | Firebase Cloud Messaging ile bir PWA üzerinde Push Notification uygulamak | Ok | - |
+| **30** | Biraz daha Angular deneyimi kazanmak için basit bir oyun *(Çok çok basit :) )* yazmaya çalışmak | Ok | - |
+| **29** | Angular ön yüzü ve Node sunucusu arasında Socket.IO yardımıyla soket haberleşmesi gerçekleştirmek | Ok | - |
+| **28** | Angular ile bir PWA uygulaması geliştirmek | Ok | - |
+| **27** | Firebase ile Google Cloud Functions kullanımı | Ok | - |
+| **26** | Microsoft Custom Vision Python SDK'sı ile imaj sınıflandırması yapmak | Ok | - |
+| **25** | AlaSQL veritabanını Node.Js ile kullanmak | Ok | - |
+| **24** | Bir Asp.Net Core Web API uygulamasını Minikube üzerinde koşturmak | Ok | - |
+| **23** | Asp.Net Core Tarafında Gantt Chart'lar oluşturmak | Ok | - |
+| **22** | Bir WebAPI servisinde SQLite ile birlikte Dapper Micro ORM kütüphanesini kullanmak | Ok | - |
+| **21** | Asp.Net Core'da Razor Pages kullanımı | Ok | - |
+| **20** | Python log'ları için ELK Kullanımı | Ok | - |
+| **19** | Blazor ile tanışma | Ok | - |
+| **18** | Asp.Net Core'da arka plan görevleri | Ok | - |
+| **17** | Python tarafında Concurrency kullanımı | Ok | - |
+| **16** | Vue ile Desktop uygulaması oluşturmak *(Electron benzeri)* | Ok | - |
+| **15** | Briaz daha GraphQL *(Graphpack kullanımı, Mutations)* | Ok | - |
+| **14** | Typescript ile REST Api geliştirmek *(FortJs ile)* | Ok | - |
+| **13** | MEVN *(MongoDb, Express, Vue.Js, NodeJS)* deneyimini yaşatacak bir Hello World yazmak | Ok | Ok |
+| **12** | Flask-RESTPlus ile Python'da REST Api geliştirmek | Ok | - |
+| **11** | GraphQL'i NodeJS ile kullanmaya çalışmak | Ok | - |
+| **10** | Single-File Components ile Vue.js uygulaması geliştirmek | Ok | - |
+| **09** | Angular ile basit bir Todo uygulaması yazmak | Ok | Ok |
+| **08** | Express kullanan bir React uygulamasını Heroku'da yayınlamak | Ok | - |
+| **07** | Node.js, MongoDB, Fastify ve Swagger kullanılan bir uygulama yazmak | Ok | Ok |
+| **06** | Bir NodeJS sunucusunu ölçeklendirmek | Ok | - |
+| **05** | Web sayfasında Bootstrap Modal Popup kullanmak | Ok | - |
+| **04** | Visual Studio Code için Snippet yazmak *(Bir öğle vakti deneyimlendi)* | Ok | - |
+| **03** | Go ve Vue.js kullanarak haber akışı yapmak | Ok | - |
+| **02** | Asp.Net Core ile MongoDB kullanmak | Ok | - |
+| **01** | Bootstrap Grid sistemini anlamak | Ok | - |
 
 > MD dosyasını formatlarken [şu adresten](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) yararlanıyorum.
