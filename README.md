@@ -63,8 +63,8 @@ Burası işlenecek konu başlıklarının olduğu havuzdur.
 | **32** | Angular, Firebase Firestore ve CRUD işlemleri | Ok | Ok |
 | **31** | Firebase Cloud Messaging ile bir PWA üzerinde Push Notification uygulamak | Ok | - |
 | **30** | Biraz daha Angular deneyimi kazanmak için basit bir oyun *(Çok çok basit :) )* yazmaya çalışmak | Ok | Ok |
-| **29** | Angular ön yüzü ve Node sunucusu arasında Socket.IO yardımıyla soket haberleşmesi gerçekleştirmek | Ok | - |
-| **28** | Angular ile bir PWA uygulaması geliştirmek | Ok | - |
+| **29** | Angular ön yüzü ve Node sunucusu arasında Socket.IO yardımıyla soket haberleşmesi gerçekleştirmek | Ok | Ok |
+| **28** | Angular ile bir PWA uygulaması geliştirmek | Ok | Ok |
 | **27** | Firebase ile Google Cloud Functions kullanımı | Ok | - |
 | **26** | Microsoft Custom Vision Python SDK'sı ile imaj sınıflandırması yapmak | Ok | - |
 | **25** | AlaSQL veritabanını Node.Js ile kullanmak | Ok | - |

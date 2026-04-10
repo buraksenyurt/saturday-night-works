@@ -1,22 +1,22 @@
 # Socket-IO Yardımıyla RealTime Çalışan Bir Angular Uygulaması Geliştirmek
 
-Bilindiği üzere istemci-sunucu geliştirme modelinde gerçek zamanlı ve çift yönlü iletişim için WebSocket yaygın olarak kullanılan protokollerden birisi. Klasik HTTP request/response modelinden farklı olarak WebSocket protokolünde sunucu, istemcinin talep göndermesine gerek kalmadan mesaj gönderebiliyor. Chat uygulamaları, eş zamanlı oyunlar, finansal bildirim yapan ticari programlar, online doküman yönetim sistemleri ve benzerleri WebSocket protokolünün kullanıldığı ideal ortamlar. 
+Bilindiği üzere istemci-sunucu geliştirme modelinde gerçek zamanlı ve çift yönlü iletişim için WebSocket yaygın olarak kullanılan protokollerden birisi. Klasik HTTP request/response modelinden farklı olarak WebSocket protokolünde sunucu, istemcinin talep göndermesine gerek kalmadan mesaj gönderebiliyor. Chat uygulamaları, eş zamanlı oyunlar, finansal bildirim yapan ticari programlar, online doküman yönetim sistemleri ve benzerleri WebSocket protokolünün kullanıldığı ideal ortamlar.
 
-Benim amacım Socket.IO kütüphanesinden yararlanan bir Node sunucusu ile Angular'da yazılmış web uygulamasını WebSocket protokolü tabanında deneyimlemek. 
+Benim amacım Socket.IO kütüphanesinden yararlanan bir Node sunucusu ile Angular'da yazılmış web uygulamasını WebSocket protokolü tabanında deneyimlemek.
 
 Bulduğum örnek, ortak dokümanlar üzerinden istemcilerin eş zamanlı olarak çalışabilmeleriniz sağlıyor. İstemciler yeni dokümanlar başlatabiliyor. Her kullanıcı açılan yeni dokümanı sayfasında görebiliyor ve isterse bir tanesine dahil olup bir şeyler yazmaya başlayabiliyor. Yazılanlar o doküman üzerinde çalışan her istemcinin penceresine de yansıyor _(Bazen sinir bozucu bir durum da olabilir)_ Örneği her zaman olduğu gibi WestWorld _(Ubuntu 18.04, 64bit)_ üzerinden denemeye karar verdim.
 
->Makinenizde node, npm, angular CLI'ın yüklü olduğu varsayılmıştır.
+> Makinenizde node, npm, angular CLI'ın yüklü olduğu varsayılmıştır.
 
 ## Uygulamanın İnşası
 
 Uygulama iki önemli parçadan oluşuyor. Soket mesajlaşmasını yönetecek olan sunucu _(node.js tarafı) ve istemci _(Angular tarafı)_
 
->Mekanizmaların işleyişi ile ilgili olarak kod dosyalarındaki yorum satırlarına bakmanızı öneririm.
+> Mekanizmaların işleyişi ile ilgili olarak kod dosyalarındaki yorum satırlarına bakmanızı öneririm.
 
 ### Sunucun(node.js) İnşası
 
-```
+```bash
 mkdir docserver
 cd docserver
 mkdir src
@@ -32,9 +32,9 @@ Soket yöneticisi ile konuşacak olan istemciyi bir Angular uygulaması olarak g
 
 İlk komutla authorApp isimli Angular uygulaması oluşturulur. Socket.IO ile Angular tarafında konuşmamızı sağlayacak ngx-socket-io paketi proje klasörü içinde yüklenir. Yine aynı klasörde article isimli sınıf, article-list ve article isimli bileşenler ve soket sunucusu ile iletişimde kullanacağımız article isimli servis oluşturulur.
 
->g sonrasında gelen 'component' ve 'service' için 'c' ve 's' kısaltmaları da kullanılabilir 
+> g sonrasında gelen 'component' ve 'service' için 'c' ve 's' kısaltmaları da kullanılabilir
 
-```
+```bash
 ng new authorApp --routing=false --style=css
 cd authorApp
 sudo npm install --save-dev ngx-socket-io
@@ -57,21 +57,21 @@ ng g service article
 
 Sunucuyu çalıştırmak için
 
-```
+```bash
 npm run start
 ```
 
 komutu verilebilir. İstemci tarafını çalıştırmak içinse,
 
-```
+```bash
 ng serve
 ```
 
-terminal komutundan yararlanılabilir. 
+terminal komutundan yararlanılabilir.
 
 Servis localhost:4200 nolu port'tan ayağa kalkar. Bu zorunlu değildir isterseniz geliştirme ortamı için angular.json dosyasındaki serve kısmına yeni bir options elementi olarak port bilgisi ekleyebilirsiniz veya ng komutu ile --port anahtarını kullanabilirsiniz.
 
-```
+```bash
 ng serve --port 4003
 ```
 
@@ -81,7 +81,7 @@ gibi.
 
 ![assets/credit_2.png](assets/credit_2.png)
 
->Tasarım gerçekten çok kötü ancak amaç Socket.IO'nun Angular tarafında nasıl kullanılabileceğini anlamak.
+> Tasarım gerçekten çok kötü ancak amaç Socket.IO'nun Angular tarafında nasıl kullanılabileceğini anlamak.
 
 ## Neler Öğrendim?
 
@@ -91,3 +91,5 @@ gibi.
 - ng komutları ile proje oluşturulmasını, class, component ve service öğelerinin eklenmesini
 - Angular component'lerinin bir üst component içerisinde nasıl kullanılabileceğini
 - Bileşenlerin HTML tabanlı ön yüzünden, Typescript tarafındaki enstrümanlara _(metod, property vb)_ nasıl ulaşılabileceğini
+
+[Güncellemeler](CHANGELOG.md)
