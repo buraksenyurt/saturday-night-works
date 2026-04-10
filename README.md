@@ -82,7 +82,7 @@ Burası işlenecek konu başlıklarının olduğu havuzdur.
 | **13** | MEVN *(MongoDb, Express, Vue.Js, NodeJS)* deneyimini yaşatacak bir Hello World yazmak | Ok | Ok |
 | **12** | Flask-RESTPlus ile Python'da REST Api geliştirmek | Ok | - |
 | **11** | GraphQL'i NodeJS ile kullanmaya çalışmak | Ok | - |
-| **10** | Single-File Components ile Vue.js uygulaması geliştirmek | Ok | - |
+| **10** | Single-File Components ile Vue.js uygulaması geliştirmek | Ok | Ok |
 | **09** | Angular ile basit bir Todo uygulaması yazmak | Ok | Ok |
 | **08** | Express kullanan bir React uygulamasını Heroku'da yayınlamak | Ok | - |
 | **07** | Node.js, MongoDB, Fastify ve Swagger kullanılan bir uygulama yazmak | Ok | Ok |

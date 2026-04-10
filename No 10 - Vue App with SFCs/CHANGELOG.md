@@ -1,5 +1,49 @@
 # Güncellemeler
 
+## 10 Nisan 2026 (Güvenlik Açığı Düzeltmesi)
+
+**Problem:** webpack-dev-server kaynak kod hırsızlığı güvenlik açığı (Dependabot Alert #49)  
+**Güvenlik Açığı:** GHSA-4v9v-hfq4-rm2v ve GHSA-9jgg-88mc-972h — webpack-dev-server ≤5.2.0 tüm sürümleri etkileniyor. Kötü niyetli bir web sitesine giren geliştirici, kaynak kodunun çalınmasına maruz kalabiliyordu.  
+**Çözüm:** webpack ekosistemi webpack 4'ten webpack 5'e yükseltildi. webpack-dev-server v4 → v5.2.3 güncellemesiyle açık kapatıldı.
+**Yapay Zeka Asistanı:** Claude Sonnet 4.6
+
+---
+
+### Paket Güncellemeleri
+
+| **Paket** | **Eski** | **Yeni** | **Açıklama** |
+| --- | --- | --- | --- |
+| `webpack-dev-server` | `^4.15.2` | `^5.2.3` | **Temel güvenlik düzeltmesi** — GHSA-4v9v-hfq4-rm2v ve GHSA-9jgg-88mc-972h kapatıldı |
+| `webpack` | `^4.47.0` | `^5.106.1` | webpack-dev-server v5 için gerekli; serialize-javascript RCE, micromatch ReDoS ve watchpack açıklarını da kapattı |
+| `webpack-cli` | `^4.10.0` | `^5.1.4` | webpack 5 uyumlu sürüm |
+| `css-loader` | `^5.2.7` | `^6.11.0` | webpack 5 için native destek |
+| `html-webpack-plugin` | `^4.5.2` | `^5.6.6` | webpack 5 için native destek |
+| `babel-loader` | `^8.4.1` | `^9.2.1` | webpack 5 desteği için gerekli |
+
+### Kod Değişiklikleri
+
+**`webpack.config.js`**
+
+- `const path = require('path')` eklendi
+- `output.path` zorunlu hale geldi: `path.resolve(__dirname, 'dist')` ile mutlak `dist/` dizini tanımlandı
+- `output.clean: true` eklendi — her build'de eski dosyalar temizleniyor
+
+**`.npmrc`**
+
+- `legacy-peer-deps=true` kaldırıldı — webpack 5 uyumlu paket versiyonları ile artık gerekli değil
+
+### Bilinen Kısıtlamalar
+
+Aşağıdaki güvenlik açıkları yalnızca Vue 3'e geçiş ile çözülebilir ve bu projenin kapsamı dışındadır:
+
+| **Paket** | **Açık** | **Durum** |
+| --- | --- | --- |
+| `vue-template-compiler ≥2.0.0` | GHSA-g3ch-rx76-35fx (XSS) | Vue 2 → 3 migrasyonu gerektirir |
+| `vue 2.x` | GHSA-5j4c-8p2g-v4jx (ReDoS) | Vue 2 → 3 migrasyonu gerektirir |
+| `postcss <8.4.31` | GHSA-7fh5-64p2-3v2j | vue-loader 17 (Vue 3) ile çözülür |
+
+---
+
 ## 10 Nisan 2026
 
 **Problem:** webpack-dev-server users' source code may be stolen when they access a malicious web site  
@@ -44,7 +88,7 @@
 
 **`.npmrc` dosyası eklendi** Burada **legacy-peer-deps** değeri **true** yapıldı. npm 7 ve sonrasın sürümlerde peer dependency çatışmalarını göz ardı etmek için bu şekilde kullanıldı. Tabii bu, webpack 4'ün bazı eski bağımlılıklarıyla uyumluluğu sağlamak için geçici bir çözüm. Sorun çıkartırsa diğer bağımlılıkları da güncelleyebiliriz.
 
-### Çalışma Zamanı Testleri
+## Çalışma Zamanı Testleri
 
 ![Credit 5](./assets/credit_5.png)
 
