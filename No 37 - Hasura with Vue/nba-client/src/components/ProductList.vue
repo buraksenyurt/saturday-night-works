@@ -13,7 +13,7 @@
   div içerisinde kullandığımız product-item elementi için ProductItem bileşenini eklememi gerekiyor.
   gql ise GraphQL sorgularını çalıştırabilmemiz için gerekli
 */
-import ProductItem from "./ProductItem";
+import ProductItem from "./ProductItem.vue";
 import gql from "graphql-tag";
 
 /*

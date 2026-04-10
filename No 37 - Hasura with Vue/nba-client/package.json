@@ -3,31 +3,24 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "serve": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
   "dependencies": {
-    "apollo-cache-inmemory": "^1.5.1",
-    "apollo-client": "^2.5.1",
-    "apollo-link-context": "^1.0.17",
-    "apollo-link-http": "^1.5.14",
+    "@apollo/client": "^3.13.0",
+    "@vue/apollo-option": "^4.0.0",
     "bootstrap": "^4.3.1",
-    "bootstrap-vue": "^2.0.0-rc.16",
-    "core-js": "^2.6.5",
-    "graphql": "^14.2.1",
-    "graphql-tag": "^2.10.1",
-    "vue": "^2.6.6",
-    "vue-apollo": "^3.0.0-beta.28"
+    "graphql": "^16.10.0",
+    "graphql-tag": "^2.12.6",
+    "vue": "^3.5.0"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "^3.5.0",
-    "@vue/cli-plugin-eslint": "^3.5.0",
-    "@vue/cli-service": "^3.5.0",
-    "babel-eslint": "^10.0.1",
-    "eslint": "^5.8.0",
-    "eslint-plugin-vue": "^5.0.0",
-    "vue-template-compiler": "^2.5.21"
+    "@vitejs/plugin-vue": "^5.2.3",
+    "vite": "^6.0.0"
+  },
+  "optionalDependencies": {
+    "@rollup/rollup-win32-x64-msvc": "^4.0.0"
   },
   "eslintConfig": {
     "root": true,
@@ -35,22 +28,17 @@
       "node": true
     },
     "extends": [
-      "plugin:vue/essential",
+      "plugin:vue/vue3-essential",
       "eslint:recommended"
     ],
-    "rules": {},
-    "parserOptions": {
-      "parser": "babel-eslint"
-    }
-  },
-  "postcss": {
-    "plugins": {
-      "autoprefixer": {}
-    }
+    "rules": {}
   },
   "browserslist": [
     "> 1%",
     "last 2 versions",
     "not ie <= 8"
-  ]
+  ],
+  "optionalDependencies": {
+    "@rollup/rollup-win32-x64-msvc": "^4.60.1"
+  }
 }

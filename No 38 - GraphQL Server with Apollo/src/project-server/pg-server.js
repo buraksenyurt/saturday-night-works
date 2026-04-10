@@ -1,4 +1,6 @@
-const { ApolloServer, gql } = require('apollo-server');
+const { ApolloServer } = require('@apollo/server');
+const { startStandaloneServer } = require('@apollo/server/standalone');
+const { gql } = require('graphql-tag');
 
 //  postgresql kullanabilmek için gerekli modülü ekledik
 const db = require('pg').Pool;
@@ -100,6 +102,6 @@ const resolvers = {
 };
 
 const houston = new ApolloServer({ typeDefs, resolvers });
-houston.listen({ port: 4445 }).then(({ url }) => {
+startStandaloneServer(houston, { listen: { port: 4445 } }).then(({ url }) => {
     console.log(`Houston ${url} kanalı üzerinden dinlemede`);
 });

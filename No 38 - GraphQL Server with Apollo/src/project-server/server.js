@@ -1,4 +1,6 @@
-const { ApolloServer, gql } = require('apollo-server');
+const { ApolloServer } = require('@apollo/server');
+const { startStandaloneServer } = require('@apollo/server/standalone');
+const { gql } = require('graphql-tag');
 
 const tasks = []; // İlk denemeler için veri kümesini dummy array olarak tasarlayabiliriz
 
@@ -100,6 +102,6 @@ const resolvers = {
     Varsayılan olarak 4000 numaralı port üzerinde yayın yapar.
 */
 const houston = new ApolloServer({ typeDefs, resolvers });
-houston.listen({ port: 4444 }).then(({ url }) => {
+startStandaloneServer(houston, { listen: { port: 4444 } }).then(({ url }) => {
     console.log(`Houston ${url} kanalı üzerinden dinlemede`);
 });

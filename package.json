@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "@rollup/rollup-win32-x64-msvc": "^4.60.1",
+    "@vitejs/plugin-vue": "^6.0.5",
+    "axios": "^1.15.0",
+    "vite": "^8.0.8",
+    "vue": "^3.5.32"
+  }
+}
